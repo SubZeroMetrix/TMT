@@ -1,0 +1,13 @@
+﻿node_modules
+.next
+.env*.local
+.vercel
+*.log
+desktop.ini
+*.docx
+Self Photo.png
+*.tsbuildinfo
+qa-screenshots
+Logo.png
+AGENTS.md
+CLAUDE.md
