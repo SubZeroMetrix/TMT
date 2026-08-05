@@ -1,155 +1,406 @@
 import type { Metadata } from "next";
-import {
-  PageHero,
-  ContentSection,
-  InfoCard,
-  BulletList,
-  CtaBand,
-} from "@/components/PageChrome";
-import { PrimaryCTA } from "@/components/CTAButton";
+import Image from "next/image";
+import Link from "next/link";
+import { PrimaryCTA, SecondaryCTA, GhostCTA } from "@/components/CTAButton";
 import SignatureName from "@/components/SignatureName";
 import { contact } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Book a Strategy Call",
+  title: "Book an Onsite Shop Visit",
   description:
-    "Schedule a practical strategy call with Richard Fritzke — no software pitch, no obligation. Discuss your contractor business systems, workflows, and technology goals.",
+    "Schedule an onsite strategy visit at your shop with Richard Fritzke of The Modern Trades Mentor LLC — see your real systems, team, and workflows in person across Tampa Bay.",
 };
 
-const callTopics = [
-  "Your trades, team size, and how the business is structured today",
-  "Current software stack — CRM, dispatch, invoicing, communication tools",
-  "Biggest operational pain points — scheduling, follow-up, documentation, adoption",
-  "Where you suspect revenue is leaking — missed calls, unsold estimates, lapsed agreements",
-  "AI curiosity or pressure — what you have tried, what confused you, what you want to explore",
-  "Timeline and budget expectations for technology changes",
-  "Whether an audit, software selection, training, or recovery engagement fits best",
+/** Paste your Go High Level calendar / booking widget URL here via env. */
+const GHL_BOOKING_URL = process.env.NEXT_PUBLIC_GHL_BOOKING_URL ?? "";
+
+const whyOnsite = [
+  {
+    title: "See the real operation",
+    body: "Screenshots and phone calls hide the mess. In your shop, Richard sees how calls, dispatch, estimates, and follow-up actually move — or stall.",
+  },
+  {
+    title: "Meet the people who run it",
+    body: "Office staff, dispatchers, and techs tell the truth face-to-face. Adoption problems show up in five minutes when the team is in the room.",
+  },
+  {
+    title: "Walk the workflow together",
+    body: "From the front desk to the van to the invoice — you map bottlenecks on a whiteboard, not through a sales deck on Zoom.",
+  },
+  {
+    title: "Leave with a clear next step",
+    body: "You walk away knowing whether you need an audit, software changes, training, or simply to leave things alone — with no software pitch.",
+  },
+];
+
+const visitAgenda = [
+  "Walk-through of how a job moves from first call to paid invoice",
+  "Quick look at the tools you already use (CRM, dispatch, texts, accounting)",
+  "Where work piles up, gets re-entered, or falls through the cracks",
+  "Staff readiness — who will actually adopt a change, and who will fight it",
+  "Honest recommendation: audit, selection help, training — or wait",
 ];
 
 const prepareItems = [
-  "A rough list of software tools you currently use (even if it is spreadsheets and group texts)",
-  "Your team size — office staff, dispatchers, technicians, and owners wearing multiple hats",
-  "The top 2–3 problems you want solved — in your own words, not vendor language",
-  "Any recent estimates, invoices, or reports that show where things break down (optional but helpful)",
-  "Questions you have been afraid to ask a software rep because you did not want a sales call",
+  "Have the person who answers phones / runs the office available if possible",
+  "Pull up (or list) the software you use day-to-day — even if it is Excel and group texts",
+  "Know your rough team size: office, field, owners wearing multiple hats",
+  "Pick 2–3 problems you want fixed — in plain contractor language",
+  "Clear a table or bay for 45–60 minutes so you can talk without interruptions",
+];
+
+const faqs = [
+  {
+    q: "Is this a software sales demo?",
+    a: "No. The Modern Trades Mentor LLC does not sell software licenses and is not paid to push a platform. The visit is advisory — systems, process, people, and practical AI readiness.",
+  },
+  {
+    q: "How long is the visit?",
+    a: "Plan on 45–60 minutes at your shop. If the conversation is productive, it can run a bit longer — you control the clock.",
+  },
+  {
+    q: "Do I have to buy something afterward?",
+    a: "No. Many visits end with a clear DIY priority list. If a paid engagement fits, you get a scoped recommendation. If it does not fit, you will hear that too.",
+  },
+  {
+    q: "Where do you go?",
+    a: "Greater Tampa Bay — St. Petersburg, Tampa, Clearwater, and surrounding contractor shops. Remote video is available when an onsite visit is not practical.",
+  },
+  {
+    q: "What if I am outside Tampa Bay?",
+    a: "Book a remote strategy session first. Onsite travel outside the Bay can be discussed once there is a clear fit.",
+  },
 ];
 
 export default function BookStrategyCallPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Get Started"
-        title="Book a Strategy Call"
-        description="A practical conversation about your contractor business — your systems, your team, and where technology or AI can create real value. No software demo. No platform pitch. No obligation."
-      />
+      {/* HERO — onsite-first */}
+      <section className="relative overflow-hidden bg-navy-deep border-b border-white/10">
+        <div
+          className="absolute inset-0 bg-grid-blueprint bg-grid opacity-40 pointer-events-none"
+          aria-hidden="true"
+        />
+        <div className="relative mx-auto max-w-container px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
+          <div className="grid lg:grid-cols-[1.15fr,0.85fr] gap-12 items-center">
+            <div>
+              <p className="bp-label mb-4 flex items-center gap-3">
+                <span className="inline-block h-px w-8 bg-blue-light" />
+                Tampa Bay · Onsite at your shop
+              </p>
+              <h1
+                className="font-display font-bold text-white tracking-tight leading-[1.08]"
+                style={{ fontSize: "clamp(1.85rem, 3.5vw + 0.6rem, 3.25rem)" }}
+              >
+                Book a Shop Visit —{" "}
+                <span className="text-blue-light">Not Another Phone Pitch</span>
+              </h1>
+              <p className="mt-5 text-lg leading-relaxed max-w-xl" style={{ color: "#E2E8F0" }}>
+                Get <SignatureName className="text-2xl mx-1 text-blue-light">Richard</SignatureName>{" "}
+                in front of your operation. See the real systems, meet the team, and leave with a
+                clear plan — before you buy another tool or lose another lead to a sales call.
+              </p>
+              <ul className="mt-6 space-y-2.5 max-w-lg">
+                {[
+                  "45–60 minutes at your shop",
+                  "Vendor-neutral — no software commission",
+                  "Built for owner-led teams with 0–15 employees",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#CBD5E1" }}>
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-blue-light" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <a
+                  href="#schedule"
+                  className="group inline-flex items-center justify-center gap-2 rounded-md bg-blue px-7 py-3.5 text-sm font-semibold tracking-wide text-white shadow-cta hover:bg-blue-hover transition-colors"
+                >
+                  Schedule your shop visit
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="transition-transform group-hover:translate-y-0.5">
+                    <path d="M8 3v9M4 8l4 4 4-4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+                <SecondaryCTA href="#why-onsite">Why onsite beats a phone call</SecondaryCTA>
+              </div>
+            </div>
 
-      <ContentSection>
-        <div className="max-w-2xl mx-auto text-center mb-12">
-          <p className="font-display text-2xl text-navy mb-2">
-            Talk with <SignatureName className="text-3xl mx-1">Richard Fritzke</SignatureName>
-          </p>
-          <p className="text-navy/70 leading-relaxed">
-            Founder of The Modern Trades Mentor. 24+ years in HVAC, facilities, and contractor
-            operations. Vendor-neutral advisory for owner-led teams with 0–15 employees.
-          </p>
+            <div className="relative">
+              <div className="relative aspect-[4/5] max-w-sm mx-auto overflow-hidden rounded-md border border-white/15 bg-navy">
+                <Image
+                  src="/richard-portrait.png"
+                  alt="Richard Fritzke, founder of The Modern Trades Mentor LLC"
+                  fill
+                  sizes="(min-width: 1024px) 24rem, 80vw"
+                  className="object-cover object-top"
+                  priority
+                />
+              </div>
+              <div className="mt-4 text-center">
+                <SignatureName flourish>Richard Fritzke</SignatureName>
+                <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.16em]" style={{ color: "#94A3B8" }}>
+                  Founder · The Modern Trades Mentor LLC
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div className="grid lg:grid-cols-2 gap-10">
+      {/* WHY ONSITE */}
+      <section id="why-onsite" className="bg-surface-light scroll-mt-24">
+        <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+          <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-blue mb-3">
+            Why this converts better
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy tracking-tight max-w-2xl mb-4">
+            Phone calls lose deals. Shop visits win trust.
+          </h2>
+          <p className="text-slate max-w-2xl mb-12 leading-relaxed">
+            A phone pitch is easy to forget, easy to ghost, and easy for a software vendor to
+            out-talk. Standing in your shop — looking at the same screens your dispatcher uses —
+            builds the kind of trust that closes advisory work and stops bad software buys.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {whyOnsite.map((item, i) => (
+              <div key={item.title} className="bp-frame bp-panel-light p-6">
+                <span className="font-mono text-[10px] text-blue">0{i + 1}</span>
+                <h3 className="mt-2 font-display font-semibold text-navy text-lg">{item.title}</h3>
+                <p className="mt-2 text-sm text-slate leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AGENDA + PREPARE */}
+      <section className="bg-white border-y border-border-light">
+        <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-8 py-16 lg:py-20 grid lg:grid-cols-2 gap-12">
           <div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-dim mb-3">
-              What to Expect
+            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-blue mb-3">
+              On the visit
             </p>
             <h2 className="font-display text-3xl font-bold text-navy tracking-tight mb-6">
-              A Real Conversation — Not a Sales Call
+              What we cover in your shop
             </h2>
-            <p className="text-navy/70 leading-relaxed mb-6">
-              This is a 30–45 minute call to understand your business and recommend the right
-              starting point. Richard will ask direct questions about how your operation runs, listen
-              to what is not working, and give honest guidance — even if that guidance is
-              &ldquo;you do not need new software yet.&rdquo;
-            </p>
-            <BulletList items={callTopics} />
+            <ul className="space-y-3">
+              {visitAgenda.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm text-navy/80">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-blue" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
-          <InfoCard title="What to Prepare">
-            <p className="mb-4">
-              You do not need a formal presentation or a technology audit before calling. Come
-              ready to talk about your business in plain language.
+          <div className="bp-frame bp-panel-light p-7">
+            <h3 className="font-display font-semibold text-navy text-lg mb-3">What to prepare</h3>
+            <p className="text-sm text-slate mb-5 leading-relaxed">
+              No slide deck. No formal presentation. Just your real business — ready to talk in
+              plain language.
             </p>
-            <BulletList items={prepareItems} />
-          </InfoCard>
+            <ul className="space-y-3">
+              {prepareItems.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm text-navy/75">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-blue" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </ContentSection>
+      </section>
 
-      <ContentSection dark>
-        <p className="bp-label mb-3">How to Book</p>
-        <h2 className="font-display text-3xl font-bold text-white tracking-tight mb-6">
-          Reach Out Directly
-        </h2>
-        <p className="text-silver-light/85 max-w-2xl mb-10 leading-relaxed">
-          There is no automated calendar widget on this site — because a strategy call deserves a
-          real conversation, not a slot machine. Call or email and Richard will schedule a time
-          that works for both of you.
-        </p>
-
-        <div className="grid sm:grid-cols-2 gap-6 max-w-2xl">
-          <a
-            href={contact.phone.href}
-            className="bp-frame bp-panel p-6 block hover:border-cyan/50 transition-colors group"
-          >
-            <p className="font-mono text-[10px] uppercase tracking-wider text-cyan mb-2">Phone</p>
-            <p className="font-display text-2xl font-bold text-white group-hover:text-cyan transition-colors">
-              {contact.phone.label}
-            </p>
-            <p className="mt-2 text-sm text-silver-light/70">Tap to call — fastest way to connect</p>
-          </a>
-          <a
-            href={contact.email.href}
-            className="bp-frame bp-panel p-6 block hover:border-cyan/50 transition-colors group"
-          >
-            <p className="font-mono text-[10px] uppercase tracking-wider text-cyan mb-2">Email</p>
-            <p className="font-display text-lg font-bold text-white group-hover:text-cyan transition-colors break-all">
-              {contact.email.label}
-            </p>
-            <p className="mt-2 text-sm text-silver-light/70">Include your name, business, and best time to call</p>
-          </a>
-        </div>
-
-        <div className="mt-10 flex flex-col sm:flex-row gap-4">
-          <PrimaryCTA href={contact.phone.href}>Call {contact.phone.label}</PrimaryCTA>
-          <a
-            href={contact.email.href}
-            className="inline-flex items-center justify-center border border-cyan/50 px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-cyan hover:bg-cyan/10 transition-colors"
-          >
-            Send an Email
-          </a>
-        </div>
-      </ContentSection>
-
-      <ContentSection>
-        <h2 className="font-display text-3xl font-bold text-navy tracking-tight mb-4">
-          What Happens After the Call
-        </h2>
-        <p className="text-navy/70 max-w-2xl mb-8 leading-relaxed">
-          If there is a fit, Richard will recommend a next step — typically the Technology &amp; AI
-          Readiness Audit, a focused software selection engagement, or a training session. If there
-          is not a fit, you will know that too. No follow-up spam. No drip campaigns. No pressure.
-        </p>
-        <BulletList
-          items={[
-            "Clear recommendation on what service fits — or honest feedback that you are not ready yet",
-            "Scope and timeline discussion if you want to move forward",
-            "Written proposal for paid engagements — pricing discussed on the call, not hidden behind a form",
-            "You decide the pace — there is no artificial urgency",
-          ]}
+      {/* SCHEDULE — GHL */}
+      <section id="schedule" className="relative bg-navy scroll-mt-24 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-grid-blueprint bg-grid opacity-30 pointer-events-none"
+          aria-hidden="true"
         />
-      </ContentSection>
+        <div className="relative mx-auto max-w-container px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+          <div className="max-w-2xl mb-10">
+            <p className="bp-label mb-3">Step 1 · Book it</p>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
+              Pick a time for your shop visit
+            </h2>
+            <p className="mt-4 leading-relaxed" style={{ color: "#CBD5E1" }}>
+              Use the scheduler below to reserve an onsite visit at your location. Prefer a quick
+              question first? Call or email — then lock the visit so it does not slip.
+            </p>
+          </div>
 
-      <CtaBand
-        headline="No Pressure. No Software Pitch. No Obligation."
-        body="Call or email to schedule your strategy call."
-        primary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
-        secondary={{ label: "Email Richard", href: "mailto:Info@TheModernTradesMentorllc.com" }}
-      />
+          <div className="grid lg:grid-cols-[1fr,320px] gap-8 items-start">
+            <div
+              className="rounded-md overflow-hidden border border-white/15 bg-white min-h-[560px]"
+              id="ghl-booking"
+            >
+              {GHL_BOOKING_URL ? (
+                <iframe
+                  src={GHL_BOOKING_URL}
+                  title="Schedule an onsite shop visit"
+                  className="w-full min-h-[560px] h-[640px] border-0"
+                  loading="lazy"
+                  allow="clipboard-write"
+                />
+              ) : (
+                <div className="flex flex-col items-center justify-center text-center px-6 py-16 min-h-[560px] bg-surface-light">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-blue mb-3">
+                    Calendar ready for Go High Level
+                  </p>
+                  <h3 className="font-display text-2xl font-bold text-navy max-w-md">
+                    Connect your GHL booking widget to go live
+                  </h3>
+                  <p className="mt-4 text-sm text-slate max-w-md leading-relaxed">
+                    Add your Go High Level calendar / booking link as{" "}
+                    <code className="font-mono text-xs bg-surface-warm px-1.5 py-0.5 rounded text-navy">
+                      NEXT_PUBLIC_GHL_BOOKING_URL
+                    </code>{" "}
+                    in Vercel env vars. Until then, book by phone or email below.
+                  </p>
+                  <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                    <GhostCTA href={contact.phone.href}>Call {contact.phone.label}</GhostCTA>
+                    <a
+                      href={contact.email.href}
+                      className="inline-flex items-center justify-center rounded-md border border-navy/20 bg-white px-7 py-3.5 text-sm font-semibold text-navy hover:border-blue hover:text-blue transition-colors"
+                    >
+                      Email to schedule
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <aside className="space-y-4">
+              <div className="bp-frame bp-panel p-5">
+                <p className="font-mono text-[10px] uppercase tracking-wider text-blue-light mb-2">
+                  Prefer to talk first?
+                </p>
+                <a
+                  href={contact.phone.href}
+                  className="font-display text-xl font-bold text-white hover:text-blue-light transition-colors"
+                >
+                  {contact.phone.label}
+                </a>
+                <p className="mt-2 text-xs" style={{ color: "#94A3B8" }}>
+                  Use the call to confirm your address and time — then keep the shop visit on the
+                  calendar so the lead does not go cold.
+                </p>
+              </div>
+              <div className="bp-frame bp-panel p-5">
+                <p className="font-mono text-[10px] uppercase tracking-wider text-blue-light mb-2">
+                  Email
+                </p>
+                <a
+                  href={contact.email.href}
+                  className="text-sm font-semibold text-white hover:text-blue-light break-all transition-colors"
+                >
+                  {contact.email.label}
+                </a>
+                <p className="mt-2 text-xs" style={{ color: "#94A3B8" }}>
+                  Include shop address, trade, team size, and 2–3 problems you want solved.
+                </p>
+              </div>
+              <div className="bp-frame bp-panel p-5">
+                <p className="font-mono text-[10px] uppercase tracking-wider text-blue-light mb-2">
+                  Service area
+                </p>
+                <p className="text-sm text-white font-semibold">Greater Tampa Bay</p>
+                <p className="mt-2 text-xs" style={{ color: "#94A3B8" }}>
+                  St. Petersburg · Tampa · Clearwater · surrounding shops. Remote available when
+                  needed.
+                </p>
+                <Link
+                  href="/locations/tampa-bay"
+                  className="mt-3 inline-block text-xs text-blue-light hover:text-white transition-colors"
+                >
+                  View service area →
+                </Link>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* AFTER */}
+      <section className="bg-surface-light">
+        <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+          <h2 className="font-display text-3xl font-bold text-navy tracking-tight mb-4">
+            What happens after the visit
+          </h2>
+          <p className="text-slate max-w-2xl mb-8 leading-relaxed">
+            You leave with clarity — not a pressure close. If there is a fit, the usual next step is
+            the Technology &amp; AI Readiness Audit or a focused engagement. If there is not a fit,
+            you will know that on the spot.
+          </p>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              {
+                step: "01",
+                title: "Honest read",
+                body: "What to fix first, what to leave alone, and whether new software is even the answer.",
+              },
+              {
+                step: "02",
+                title: "Clear path",
+                body: "Audit, stack design, training, or recovery — scoped only if it makes sense for your shop.",
+              },
+              {
+                step: "03",
+                title: "Your pace",
+                body: "No drip spam. No fake urgency. You decide when — and whether — to move forward.",
+              },
+            ].map((s) => (
+              <div key={s.step} className="border-t-2 border-blue pt-4">
+                <span className="font-mono text-[10px] text-blue">{s.step}</span>
+                <h3 className="mt-2 font-display font-semibold text-navy">{s.title}</h3>
+                <p className="mt-2 text-sm text-slate leading-relaxed">{s.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-white border-t border-border-light">
+        <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+          <h2 className="font-display text-3xl font-bold text-navy tracking-tight mb-10">
+            Common questions
+          </h2>
+          <div className="max-w-3xl space-y-6">
+            {faqs.map((f) => (
+              <div key={f.q} className="border-b border-border-light pb-6">
+                <h3 className="font-display font-semibold text-navy">{f.q}</h3>
+                <p className="mt-2 text-sm text-slate leading-relaxed">{f.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="bg-navy-deep border-t border-white/10">
+        <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-8 py-16 text-center">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight max-w-2xl mx-auto">
+            Get in front of the customer. Keep the lead.
+          </h2>
+          <p className="mt-4 max-w-xl mx-auto" style={{ color: "#CBD5E1" }}>
+            Schedule the shop visit now — then show up where the work actually happens.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#schedule"
+              className="inline-flex items-center justify-center rounded-md bg-blue px-7 py-3.5 text-sm font-semibold text-white shadow-cta hover:bg-blue-hover transition-colors"
+            >
+              Schedule your shop visit
+            </a>
+            <PrimaryCTA href={contact.phone.href}>Call {contact.phone.label}</PrimaryCTA>
+          </div>
+          <p className="mt-6 text-xs" style={{ color: "#94A3B8" }}>
+            No software pitch. No obligation. Vendor-neutral advisory from The Modern Trades Mentor
+            LLC.
+          </p>
+        </div>
+      </section>
     </>
   );
 }

@@ -62,7 +62,7 @@ export default function IndustriesPage() {
         eyebrow="Industries"
         title="Technology Guidance for Trades & Field-Service Businesses"
         description="Owner-led contractor and field-service companies with 0–15 employees — across the trades that keep buildings, homes, and infrastructure running."
-        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondaryCta={{ label: "Explore the Audit", href: "/services/technology-audit" }}
       />
 

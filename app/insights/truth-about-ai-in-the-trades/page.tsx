@@ -295,7 +295,7 @@ export default function TruthAboutAIInTheTradesPage() {
       <CtaBand
         headline="Stop buying technology without a plan. Start with clarity."
         body="Book a Technology & AI Readiness Audit or schedule a strategy call to discuss your current systems, team, and priorities."
-        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondary={{ label: "Explore the Audit", href: "/services/technology-audit" }}
       />
     </>

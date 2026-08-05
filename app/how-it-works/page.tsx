@@ -88,7 +88,7 @@ export default function HowItWorksPage() {
         eyebrow="Process"
         title="How It Works"
         description="A straightforward path from first conversation to a modernized contractor operation — with clarity at every step and no software sales pressure."
-        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondaryCta={{ label: "Explore Services", href: "/services" }}
       />
 
@@ -177,8 +177,8 @@ export default function HowItWorksPage() {
 
       <CtaBand
         headline="Ready to Start With a Conversation?"
-        body="Book a strategy call — 30 to 45 minutes, no pitch, no pressure."
-        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        body="Book a Shop Visit — 30 to 45 minutes, no pitch, no pressure."
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

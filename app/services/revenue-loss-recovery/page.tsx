@@ -57,7 +57,7 @@ export default function RevenueLossRecoveryPage() {
         eyebrow="Revenue Recovery"
         title="Find the Revenue You Are Already Losing"
         description="Missed calls, unsold estimates, lapsed maintenance agreements, and follow-up gaps quietly cost contractor businesses more than any software subscription. We find the leaks and build practical recovery workflows."
-        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondaryCta={{ label: "See All Services", href: "/services" }}
       />
 
@@ -121,8 +121,8 @@ export default function RevenueLossRecoveryPage() {
 
       <CtaBand
         headline="Stop Leaving Money on the Table"
-        body="Book a strategy call to discuss revenue recovery for your contractor business."
-        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        body="Book a Shop Visit to discuss revenue recovery for your contractor business."
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

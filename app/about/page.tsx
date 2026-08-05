@@ -7,7 +7,7 @@ import {
   BulletList,
   CtaBand,
 } from "@/components/PageChrome";
-import { SecondaryCTA } from "@/components/CTAButton";
+import { GhostCTA } from "@/components/CTAButton";
 import SignatureName from "@/components/SignatureName";
 import { founder, philosophy, principles } from "@/lib/content";
 
@@ -24,14 +24,14 @@ export default function AboutPage() {
         eyebrow="About"
         title="About Richard Fritzke"
         description="Founder of The Modern Trades Mentor — contractor technology and AI advisory built from 24+ years in HVAC, facilities, mechanical systems, and service operations."
-        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondaryCta={{ label: "View Services", href: "/services" }}
       />
 
       <ContentSection>
         <div className="grid gap-12 lg:grid-cols-[1fr,1.4fr] items-start">
           <div className="mx-auto lg:mx-0 w-full max-w-sm">
-            <div className="relative aspect-[4/5] border border-cyan/30 overflow-hidden shadow-glow-sm bg-ink">
+            <div className="relative aspect-[4/5] border border-steel/30 overflow-hidden rounded-md bg-navy-deep">
               <Image
                 src="/richard-portrait.png"
                 alt="Richard Fritzke, founder of The Modern Trades Mentor"
@@ -40,12 +40,12 @@ export default function AboutPage() {
                 className="object-cover object-top"
               />
             </div>
-            <p className="mt-4 text-center">
-              <SignatureName className="text-3xl sm:text-4xl">Richard Fritzke</SignatureName>
-            </p>
-            <p className="mt-1 text-center font-mono text-[10px] uppercase tracking-[0.16em] text-navy/50">
-              Founder · The Modern Trades Mentor LLC
-            </p>
+            <div className="mt-5 text-center">
+              <SignatureName flourish>Richard Fritzke</SignatureName>
+              <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-slate">
+                Founder · The Modern Trades Mentor LLC
+              </p>
+            </div>
           </div>
 
           <div>
@@ -60,8 +60,8 @@ export default function AboutPage() {
 
             <div className="grid sm:grid-cols-3 gap-6">
               {founder.columns.map((col) => (
-                <div key={col.title} className="border-t border-cyan/40 pt-4">
-                  <p className="font-mono text-[10px] font-semibold tracking-[0.12em] text-cyan uppercase mb-2">
+                <div key={col.title} className="border-t border-blue/40 pt-4">
+                  <p className="font-mono text-[10px] font-semibold tracking-[0.12em] text-blue uppercase mb-2">
                     {col.title}
                   </p>
                   <ul className="space-y-1">
@@ -125,7 +125,7 @@ export default function AboutPage() {
               speaks contractor operations — not just software sales — you are in the right place.
             </p>
             <div className="mt-6">
-              <SecondaryCTA href="/services">Explore Services</SecondaryCTA>
+              <GhostCTA href="/services">Explore Services</GhostCTA>
             </div>
           </InfoCard>
         </div>
@@ -133,8 +133,8 @@ export default function AboutPage() {
 
       <CtaBand
         headline="Work With Someone Who Has Been in the Field"
-        body="Book a strategy call for a practical conversation about your business — no software pitch, no obligation."
-        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        body="Book a Shop Visit for a practical conversation about your business — no software pitch, no obligation."
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

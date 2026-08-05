@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, IBM_Plex_Sans, JetBrains_Mono, Great_Vibes } from "next/font/google";
+import { Space_Grotesk, IBM_Plex_Sans, JetBrains_Mono, Allura } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -26,7 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "600"],
 });
 
-const greatVibes = Great_Vibes({
+const allura = Allura({
   subsets: ["latin"],
   variable: "--font-signature",
   display: "swap",
@@ -61,7 +61,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${jetbrainsMono.variable} ${greatVibes.variable}`}
+      className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${jetbrainsMono.variable} ${allura.variable}`}
     >
       <body className="font-body bg-ink text-silver-light">
         <a href="#main" className="skip-link">

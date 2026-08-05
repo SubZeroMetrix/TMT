@@ -21,7 +21,7 @@ export default function MobileStickyCTA() {
         href="/book-a-strategy-call"
         className="flex-1 inline-flex items-center justify-center rounded-md bg-blue px-5 py-3 text-sm font-semibold text-white shadow-cta hover:bg-blue-hover"
       >
-        Book a Strategy Call
+        Book a Shop Visit
       </Link>
     </div>
   );

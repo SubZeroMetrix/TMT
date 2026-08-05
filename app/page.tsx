@@ -287,12 +287,12 @@ export default function HomePage() {
                   className="object-cover object-top"
                 />
               </div>
-              <p className="mt-4 text-center">
-                <SignatureName className="text-3xl sm:text-4xl">Richard Fritzke</SignatureName>
-              </p>
-              <p className="mt-1 text-center text-[10px] uppercase tracking-[0.16em]" style={{ color: "#94A3B8" }}>
-                Founder · The Modern Trades Mentor
-              </p>
+              <div className="mt-5 text-center">
+                <SignatureName flourish>Richard Fritzke</SignatureName>
+                <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.16em]" style={{ color: "#94A3B8" }}>
+                  Founder · The Modern Trades Mentor LLC
+                </p>
+              </div>
             </div>
 
             <div>

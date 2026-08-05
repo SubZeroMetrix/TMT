@@ -47,7 +47,7 @@ export default function TampaBayPage() {
         eyebrow="Service Area"
         title="Greater Tampa Bay Contractors"
         description="We serve owner-led contractor and field-service businesses across the Tampa Bay region — with the same advisory services, whether you're in St. Petersburg, Tampa, Clearwater, or the surrounding communities."
-        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondaryCta={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
 
@@ -95,7 +95,7 @@ export default function TampaBayPage() {
       <CtaBand
         headline="Ready to modernize your Tampa Bay contracting business?"
         body="Start with a strategy call or explore the Technology & AI Readiness Audit."
-        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondary={{ label: "Explore the Audit", href: "/services/technology-audit" }}
       />
     </>

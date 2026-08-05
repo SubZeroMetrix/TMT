@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import BrandLogo from "@/components/BrandLogo";
 
 const COLUMNS = [
   {
@@ -53,14 +53,8 @@ export default function Footer() {
         aria-hidden="true"
       />
       <div className="relative mx-auto max-w-container px-4 sm:px-6 lg:px-8 pt-14 pb-28 xl:pb-14">
-        <div className="mb-12 flex items-center gap-4">
-          <Image
-            src="/logo.png"
-            alt="The Modern Trades Mentor"
-            width={160}
-            height={160}
-            className="h-24 w-auto sm:h-28"
-          />
+        <div className="mb-12">
+          <BrandLogo variant="footer" />
         </div>
 
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">

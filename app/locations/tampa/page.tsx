@@ -34,7 +34,7 @@ export default function TampaPage() {
         eyebrow="Tampa, FL"
         title="Contractor Technology Advisory in Tampa"
         description="Vendor-neutral guidance on software, AI, workflows, and modernization for Tampa-area contractor and field-service businesses."
-        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondaryCta={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
 
@@ -82,8 +82,8 @@ export default function TampaPage() {
 
       <CtaBand
         headline="Tampa contractor looking for clarity?"
-        body="Book a strategy call to discuss your current systems, team, and technology priorities."
-        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        body="Book a Shop Visit to discuss your current systems, team, and technology priorities."
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondary={{ label: "Explore the Audit", href: "/services/technology-audit" }}
       />
     </>

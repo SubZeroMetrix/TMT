@@ -3,7 +3,7 @@
 export const header = {
   wordmarkLine1: "THE",
   wordmarkLine2: "MODERN",
-  wordmarkLine3: "TRADES MENTOR",
+  wordmarkLine3: "TRADES MENTOR LLC",
   descriptor: "CONTRACTOR TECHNOLOGY & AI ADVISORY",
   nav: [
     { label: "Services", href: "/services" },
@@ -14,7 +14,7 @@ export const header = {
     { label: "Insights", href: "/insights" },
     { label: "Product Development", href: "/product-development" },
   ],
-  primaryCta: { label: "Book a Strategy Call", href: "/book-a-strategy-call" },
+  primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call" },
 };
 
 export const hero = {
@@ -23,7 +23,7 @@ export const hero = {
   headlineLine2: "WITHOUT LOSING CONTROL OF IT.",
   description:
     "We help HVAC, plumbing, electrical, roofing, general contracting, and service businesses choose the right software, fix the process, train the team, and use AI where it actually earns its keep — not where a vendor says it should.",
-  primaryCta: { label: "Book a Strategy Call", href: "/book-a-strategy-call" },
+  primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call" },
   secondaryCta: { label: "Explore the Technology & AI Readiness Audit", href: "/services/technology-audit" },
   phone: { label: "Prefer to talk now? Call 727-600-3425", href: "tel:+17276003425" },
   credibilityLine:
@@ -192,7 +192,7 @@ export const aiPositioning = {
 export const finalCta = {
   headline: "Ready to Build a More Modern Contracting Business?",
   body: "Start with a practical conversation about your current systems, your team, and where technology or AI can create real value.",
-  primaryCta: { label: "Book a Strategy Call", href: "/book-a-strategy-call" },
+  primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call" },
   secondaryCta: { label: "Call 727-600-3425", href: "tel:+17276003425" },
   footnote: "No pressure. No software pitch. No obligation to buy a platform.",
 };

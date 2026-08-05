@@ -64,7 +64,7 @@ export default function TechnologyAuditPage() {
         eyebrow="Flagship Service"
         title="Technology & AI Readiness Audit"
         description="A structured, vendor-neutral review of your systems, workflows, staff readiness, security exposure, and modernization priorities — with a prioritized roadmap you can act on immediately."
-        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondaryCta={{ label: "See All Services", href: "/services" }}
       />
 
@@ -155,8 +155,8 @@ export default function TechnologyAuditPage() {
 
       <CtaBand
         headline="Start With Clarity, Not Another Demo"
-        body="Book a strategy call to discuss whether the audit is the right starting point for your business."
-        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        body="Book a Shop Visit to discuss whether the audit is the right starting point for your business."
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

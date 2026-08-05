@@ -73,7 +73,7 @@ export default function AIAdoptionTrainingPage() {
         eyebrow="AI Adoption"
         title="Practical AI Training for Contractor Teams"
         description="AI is part of the future — but it is not the whole strategy. We train owners, office staff, and technicians on what AI actually helps with, what to watch out for, and how to keep humans in control of every important decision."
-        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondaryCta={{ label: "See All Services", href: "/services" }}
       />
 
@@ -140,8 +140,8 @@ export default function AIAdoptionTrainingPage() {
 
       <CtaBand
         headline="Train Your Team on AI That Actually Works"
-        body="Book a strategy call to discuss AI training for your owners, office, and field staff."
-        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        body="Book a Shop Visit to discuss AI training for your owners, office, and field staff."
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

@@ -34,7 +34,7 @@ export default function ClearwaterPage() {
         eyebrow="Clearwater, FL"
         title="Contractor Technology Advisory in Clearwater"
         description="Vendor-neutral technology and AI guidance for Clearwater-area contractor and field-service businesses — same services as our full Tampa Bay coverage."
-        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondaryCta={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
 
@@ -79,8 +79,8 @@ export default function ClearwaterPage() {
 
       <CtaBand
         headline="Clearwater contractor need a technology roadmap?"
-        body="Book a strategy call or explore the Technology & AI Readiness Audit."
-        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        body="Book a Shop Visit or explore the Technology & AI Readiness Audit."
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondary={{ label: "Explore the Audit", href: "/services/technology-audit" }}
       />
     </>

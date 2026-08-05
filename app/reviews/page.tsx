@@ -73,9 +73,9 @@ export default function ReviewsPage() {
 
       <CtaBand
         headline="Worked with us — or considering it?"
-        body="Share feedback, ask questions, or book a strategy call to discuss your contractor technology needs."
+        body="Share feedback, ask questions, or Book a Shop Visit to discuss your contractor technology needs."
         primary={{ label: "Contact Us", href: "/contact" }}
-        secondary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call" }}
+        secondary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
       />
     </>
   );

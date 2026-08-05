@@ -42,7 +42,7 @@ export function GhostCTA({ href, children }: { href: string; children: React.Rea
   return (
     <Link
       href={href}
-      className="inline-flex items-center justify-center rounded-md border border-border-light bg-white px-7 py-3.5 text-sm font-semibold tracking-wide text-navy transition-colors hover:border-blue hover:text-blue"
+      className="inline-flex items-center justify-center rounded-md bg-blue px-7 py-3.5 text-sm font-semibold tracking-wide text-white shadow-cta transition-colors hover:bg-blue-hover"
     >
       {children}
     </Link>
