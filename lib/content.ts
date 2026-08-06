@@ -200,8 +200,8 @@ export const finalCta = {
 export const contact = {
   phone: { label: "727-600-3425", href: "tel:+17276003425" },
   email: {
-    label: "Info@TheModernTradesMentorllc.com",
-    href: "mailto:Info@TheModernTradesMentorllc.com",
+    label: "Richard@TheModernTradesMentor.com",
+    href: "mailto:Richard@TheModernTradesMentor.com",
   },
   address: "PO Box 66093, St. Petersburg, FL 33767",
   company: "The Modern Trades Mentor LLC",

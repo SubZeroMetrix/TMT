@@ -91,10 +91,10 @@ export default function Footer() {
               </a>
               <span className="text-silver/40 mx-2">·</span>
               <a
-                href="mailto:Info@TheModernTradesMentorllc.com"
+                href="mailto:Richard@TheModernTradesMentor.com"
                 className="text-blue-light hover:text-white transition-colors"
               >
-                Info@TheModernTradesMentorllc.com
+                Richard@TheModernTradesMentor.com
               </a>
             </p>
           </div>

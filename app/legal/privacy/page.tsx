@@ -24,8 +24,8 @@ export default function PrivacyPage() {
               The Modern Trades Mentor LLC (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;)
               provides contractor technology and AI advisory services. Our mailing address is PO Box
               66093, St. Petersburg, FL 33767. Contact:{" "}
-              <a href="mailto:Info@TheModernTradesMentorllc.com" className="text-cyan-dim hover:text-cyan">
-                Info@TheModernTradesMentorllc.com
+              <a href="mailto:Richard@TheModernTradesMentor.com" className="text-cyan-dim hover:text-cyan">
+                Richard@TheModernTradesMentor.com
               </a>
               .
             </p>
@@ -86,8 +86,8 @@ export default function PrivacyPage() {
             <p>
               You may request access to, correction of, or deletion of personal information we hold
               about you by contacting us at{" "}
-              <a href="mailto:Info@TheModernTradesMentorllc.com" className="text-cyan-dim hover:text-cyan">
-                Info@TheModernTradesMentorllc.com
+              <a href="mailto:Richard@TheModernTradesMentor.com" className="text-cyan-dim hover:text-cyan">
+                Richard@TheModernTradesMentor.com
               </a>
               . We will respond within a reasonable timeframe.
             </p>

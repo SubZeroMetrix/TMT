@@ -60,8 +60,8 @@ export default function StPetersburgPage() {
                 <a href="tel:+17276003425" className="text-cyan hover:text-white">727-600-3425</a>
               </li>
               <li>
-                <a href="mailto:Info@TheModernTradesMentorllc.com" className="text-cyan hover:text-white">
-                  Info@TheModernTradesMentorllc.com
+                <a href="mailto:Richard@TheModernTradesMentor.com" className="text-cyan hover:text-white">
+                  Richard@TheModernTradesMentor.com
                 </a>
               </li>
               <li className="text-silver-light/75">PO Box 66093, St. Petersburg, FL 33767</li>

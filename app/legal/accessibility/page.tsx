@@ -62,8 +62,8 @@ export default function AccessibilityPage() {
               </li>
               <li>
                 Email:{" "}
-                <a href="mailto:Info@TheModernTradesMentorllc.com" className="text-cyan-dim hover:text-cyan">
-                  Info@TheModernTradesMentorllc.com
+                <a href="mailto:Richard@TheModernTradesMentor.com" className="text-cyan-dim hover:text-cyan">
+                  Richard@TheModernTradesMentor.com
                 </a>
               </li>
               <li>Mail: PO Box 66093, St. Petersburg, FL 33767</li>

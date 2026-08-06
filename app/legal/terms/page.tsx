@@ -114,8 +114,8 @@ export default function TermsPage() {
             <h2 className="font-display text-xl font-semibold text-navy mb-3">Contact</h2>
             <p>
               Questions about these terms:{" "}
-              <a href="mailto:Info@TheModernTradesMentorllc.com" className="text-cyan-dim hover:text-cyan">
-                Info@TheModernTradesMentorllc.com
+              <a href="mailto:Richard@TheModernTradesMentor.com" className="text-cyan-dim hover:text-cyan">
+                Richard@TheModernTradesMentor.com
               </a>{" "}
               · PO Box 66093, St. Petersburg, FL 33767 ·{" "}
               <a href="tel:+17276003425" className="text-cyan-dim hover:text-cyan">727-600-3425</a>

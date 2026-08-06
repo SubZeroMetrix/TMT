@@ -98,8 +98,8 @@ export default function AiDisclaimerPage() {
             <h2 className="font-display text-xl font-semibold text-navy mb-3">Contact</h2>
             <p>
               Questions about this disclaimer:{" "}
-              <a href="mailto:Info@TheModernTradesMentorllc.com" className="text-cyan-dim hover:text-cyan">
-                Info@TheModernTradesMentorllc.com
+              <a href="mailto:Richard@TheModernTradesMentor.com" className="text-cyan-dim hover:text-cyan">
+                Richard@TheModernTradesMentor.com
               </a>{" "}
               ·{" "}
               <a href="tel:+17276003425" className="text-cyan-dim hover:text-cyan">727-600-3425</a>
