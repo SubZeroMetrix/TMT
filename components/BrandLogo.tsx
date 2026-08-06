@@ -7,7 +7,7 @@ type BrandLogoProps = {
   className?: string;
 };
 
-/** Full TMT lockup — fills header height, no cropped empty circle. */
+/** Horizontal TMT banner lockup for header / footer. */
 export default function BrandLogo({
   variant = "header",
   scrolled = false,
@@ -22,16 +22,16 @@ export default function BrandLogo({
       aria-label="The Modern Trades Mentor LLC home"
     >
       <Image
-        src="/logo.png"
+        src="/logo-banner.png"
         alt="The Modern Trades Mentor LLC"
-        width={isFooter ? 280 : 320}
-        height={isFooter ? 280 : 320}
+        width={640}
+        height={240}
         className={
           isFooter
-            ? "h-28 w-auto object-contain"
+            ? "h-20 sm:h-24 w-auto max-w-[280px] sm:max-w-[360px] object-contain object-left"
             : scrolled
-              ? "h-14 sm:h-16 w-auto object-contain"
-              : "h-16 sm:h-20 md:h-[5.5rem] w-auto object-contain"
+              ? "h-12 sm:h-14 w-auto max-w-[220px] sm:max-w-[300px] object-contain object-left"
+              : "h-14 sm:h-16 md:h-[4.75rem] w-auto max-w-[260px] sm:max-w-[380px] md:max-w-[440px] object-contain object-left"
         }
         priority
       />
