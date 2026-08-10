@@ -6,28 +6,74 @@ export const header = {
   wordmarkLine3: "TRADES MENTOR LLC",
   descriptor: "CONTRACTOR TECHNOLOGY & AI ADVISORY",
   nav: [
+    { label: "AI Consulting", href: "/ai-consulting-st-petersburg-fl" },
+    { label: "AI Automation", href: "/ai-automation" },
+    { label: "CRM & Workflow", href: "/crm-workflow-consulting" },
     { label: "Services", href: "/services" },
-    { label: "Technology Audit", href: "/services/technology-audit" },
-    { label: "How It Works", href: "/how-it-works" },
     { label: "Industries", href: "/industries" },
-    { label: "About Richard", href: "/about" },
+    { label: "Locations", href: "/locations/pinellas-county-fl" },
+    { label: "About Richard", href: "/about-richard-fritzke" },
     { label: "Insights", href: "/insights" },
-    { label: "Product Development", href: "/product-development" },
   ],
   primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call" },
 };
 
+/**
+ * The broad front door. These run directly under the hero so a visitor
+ * searching "AI consulting" or "workflow automation" sees themselves before
+ * the contractor specialization appears further down the page.
+ */
+export const broadServices = {
+  heading: "What we do",
+  items: [
+    {
+      title: "AI Consulting",
+      body: "Where AI earns its keep in your business, where it is a liability, and what to fix first.",
+      href: "/ai-consulting-st-petersburg-fl",
+    },
+    {
+      title: "AI Automation",
+      body: "Narrow, reliable automation of the admin work that eats the week — calls, follow-up, notes, billing gaps.",
+      href: "/ai-consulting-st-petersburg-fl",
+    },
+    {
+      title: "CRM & Workflow Consulting",
+      body: "How customer and job information should move through the business, and which system actually fits it.",
+      href: "/services/software-selection",
+    },
+    {
+      title: "Technology Audits",
+      body: "Where the business is losing money and time, before a single tool gets named.",
+      href: "/services/technology-audit",
+    },
+    {
+      title: "On-Site Shop Visits",
+      body: "Free, no obligation, at your place. How the office runs on a Tuesday is the thing worth seeing.",
+      href: "/book-a-strategy-call",
+    },
+    {
+      title: "Serving Pinellas & Hillsborough",
+      body: "St. Petersburg, Clearwater, Largo, Tampa, Brandon and every city across both counties.",
+      href: "/locations/pinellas-county-fl",
+    },
+  ],
+};
+
 export const hero = {
   eyebrow: "FIELD-TESTED. CONTRACTOR-BUILT.",
-  headlineLine1: "MODERNIZE YOUR CONTRACTING BUSINESS.",
-  headlineLine2: "WITHOUT LOSING CONTROL OF IT.",
+  // H1 targets the head term contractors actually search ("AI consulting").
+  // The locked brand promise moved to `promise` directly beneath it — the
+  // search term wins the click, the promise wins the read.
+  headlineLine1: "AI CONSULTING FOR CONTRACTORS",
+  headlineLine2: "AND SERVICE BUSINESSES",
+  promise: "Modernize your contracting business. Without losing control of it.",
   description:
-    "We help HVAC, plumbing, electrical, roofing, general contracting, and service businesses choose the right software, fix the process, train the team, and use AI where it actually earns its keep — not where a vendor says it should.",
+    "AI consulting and business automation for small businesses in St. Petersburg, Tampa, and across Pinellas and Hillsborough counties. The Modern Trades Mentor helps companies choose technology, improve workflows, put practical AI to work, and cut wasted time.",
   primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call" },
   secondaryCta: { label: "Explore the Technology & AI Readiness Audit", href: "/services/technology-audit" },
   phone: { label: "Prefer to talk now? Call 727-600-3425", href: "tel:+17276003425" },
   credibilityLine:
-    "Built by a trades and operations leader with more than 24 years of HVAC, facilities, service-management, and mechanical-systems experience.",
+    "Built by a trades and operations leader with more than 26 years of HVAC, facilities, service-management, and mechanical-systems experience.",
   founderImage: {
     src: "/richard-founder-banner.png",
     alt: "Richard Fritzke, founder of The Modern Trades Mentor",
@@ -39,7 +85,7 @@ export const hero = {
 };
 
 export const trustBar = [
-  { value: "24+", label: "Years in HVAC, Facilities & Operations" },
+  { value: "26+", label: "Years in HVAC, Facilities & Operations" },
   { value: "20+", label: "Technicians Supervised" },
   { value: "40+", label: "Commercial Facilities Managed" },
   { value: "EPA", label: "Universal EPA Certified" },
@@ -132,7 +178,7 @@ export const founder = {
   heading: "Built From the Field, Not From a Sales Deck",
   columns: [
     {
-      title: "24+ Years in the Trades",
+      title: "26+ Years in the Trades",
       items: ["Commercial HVAC", "Facilities", "Mechanical Systems", "Operations"],
     },
     {
@@ -140,15 +186,48 @@ export const founder = {
       items: ["20+ technicians supervised", "40+ facilities managed", "Capital planning", "Building optimization"],
     },
     {
+      title: "Licenses & Credentials",
+      items: [
+        "ICC Master Mechanical License",
+        "EPA Universal Certified",
+        "A.S. HVAC/R, Redstone College",
+        "OSHA 30 · MSHA certified",
+      ],
+    },
+    {
       title: "Today",
       items: ["Helping contractors modernize", "Software selection", "Practical AI adoption", "Staff training"],
     },
   ],
+  subhead:
+    "Practical AI, technology, and workflow guidance built on more than 26 years in HVAC, mechanical systems, facilities, technician leadership, and service operations.",
   narrative:
-    "Richard brings more than 24 years of experience across HVAC/R, facilities, mechanical systems, service operations, technician leadership, building controls, optimization, and commercial and mission-critical environments — including current recommissioning and optimization work supporting operations at MacDill Air Force Base. That experience shapes every recommendation, because software only works when it fits the people and operations using it. Richard also builds and runs modern software, AI tools, CRM, and marketing systems for his own businesses — which is exactly why he can tell a contractor when a vendor is overselling them.",
+    "Richard Fritzke founded The Modern Trades Mentor to help business owners make better technology decisions without getting pulled into a software sales pitch.",
+  narrative2:
+    "For more than 26 years, Richard has worked across HVAC/R, facilities, mechanical systems, technician leadership, building optimization, capital planning, and service operations. He has led technical teams, supported complex commercial environments, and worked through the operational problems that software alone cannot solve: inconsistent processes, missed follow-up, disconnected systems, weak adoption, and wasted administrative time.",
+  narrative3:
+    "Today, Richard applies that field-and-operations experience to AI consulting, workflow improvement, CRM and software guidance, and practical technology planning for owner-led service businesses. Every recommendation starts with the business process, the people doing the work, and the outcome the owner needs — not a preferred software platform.",
   disclaimer:
     "Experience references are provided for professional background only and do not imply endorsement by any current or former employer or government entity.",
   cta: { label: "See Why Contractors Trust Richard", href: "/about" },
+};
+
+export const howRichardWorks = {
+  heading: "How Richard Works With Your Business",
+  steps: [
+    {
+      title: "1. Understand the operation",
+      body: "We start with the real work: how leads move, how jobs are scheduled, how the office and field communicate, and where time or revenue is being lost.",
+    },
+    {
+      title: "2. Identify the practical opportunity",
+      body: "We review the workflows, systems, and AI opportunities that can make the business easier to manage — without forcing unnecessary technology changes.",
+    },
+    {
+      title: "3. Create a clear next step",
+      body: "You receive vendor-neutral guidance on what to improve first, what to leave alone, and what information you need before making a software or automation decision.",
+    },
+  ],
 };
 
 export const differentiators = [

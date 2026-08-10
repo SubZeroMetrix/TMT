@@ -1,5 +1,8 @@
 ﻿node_modules
 .next
+.env
+.env.*
+!.env.example
 .env*.local
 .vercel
 *.log
@@ -11,4 +14,4 @@ qa-screenshots
 Logo.png
 AGENTS.md
 CLAUDE.md
-.vercel
+media

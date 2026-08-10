@@ -2,25 +2,44 @@
   "name": "the-modern-trades-mentor",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:migrate": "payload migrate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "payload": "payload",
+    "generate:types": "payload generate:types",
+    "generate:importmap": "payload generate:importmap",
+    "migrate": "payload migrate",
+    "migrate:create": "payload migrate:create",
+    "seed": "tsx --env-file=.env.local scripts/seed.ts",
+    "test:access": "tsx --env-file=.env.local scripts/test-access.ts"
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "^3.87.0",
+    "@payloadcms/next": "^3.87.0",
+    "@payloadcms/richtext-lexical": "^3.87.0",
+    "@payloadcms/storage-vercel-blob": "^3.87.0",
+    "graphql": "^16.14.2",
     "next": "16.3.0",
+    "payload": "^3.87.0",
+    "pg": "^8.22.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "sharp": "^0.35.3"
   },
   "devDependencies": {
     "@types/node": "22.10.7",
+    "@types/pg": "^8.20.4",
     "@types/react": "19.0.7",
     "@types/react-dom": "19.0.3",
     "autoprefixer": "10.4.20",
     "playwright-core": "^1.62.1",
     "postcss": "8.5.25",
     "tailwindcss": "3.4.17",
+    "tsx": "^4.23.8",
     "typescript": "5.7.3"
   }
 }
