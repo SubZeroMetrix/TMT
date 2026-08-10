@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PrimaryCTA, SecondaryCTA, GhostCTA } from "@/components/CTAButton";
 import SignatureName from "@/components/SignatureName";
-import { contact } from "@/lib/content";
+import { contact, fitCheck } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Book an Onsite Shop Visit",
@@ -246,6 +246,42 @@ export default function BookStrategyCallPage() {
               Use the scheduler below to reserve an onsite visit at your location. Prefer a quick
               question first? Call or email — then lock the visit so it does not slip.
             </p>
+          </div>
+
+          {/* FIT CHECK — lets a wrong-fit visitor self-select out before the drive */}
+          <div className="mb-10 bp-frame bp-panel p-6 sm:p-8">
+            <p className="bp-label mb-2">{fitCheck.eyebrow}</p>
+            <h3 className="font-display text-xl sm:text-2xl font-bold text-white tracking-tight">
+              {fitCheck.heading}
+            </h3>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-silver-light/80">
+              {fitCheck.intro}
+            </p>
+
+            <ol className="mt-6 grid gap-5 md:grid-cols-3">
+              {fitCheck.questions.map((item, i) => (
+                <li key={item.q} className="border-t border-blue/40 pt-4">
+                  <span className="font-mono text-[10px] font-semibold tracking-[0.12em] text-blue-light">
+                    0{i + 1}
+                  </span>
+                  <p className="mt-2 font-display font-semibold text-white leading-snug">
+                    {item.q}
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-silver-light/75">
+                    {item.why}
+                  </p>
+                </li>
+              ))}
+            </ol>
+
+            <div className="mt-7 border-l-[3px] border-blue-soft pl-4">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-blue-light mb-1.5">
+                {fitCheck.notAFit.heading}
+              </p>
+              <p className="max-w-3xl text-sm leading-relaxed text-silver-light/75">
+                {fitCheck.notAFit.body}
+              </p>
+            </div>
           </div>
 
           <div className="grid lg:grid-cols-[1fr,320px] gap-8 items-start">

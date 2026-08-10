@@ -294,6 +294,43 @@ export const finalCta = {
   footnote: "No pressure. No software pitch. No obligation to buy a platform.",
 };
 
+/**
+ * Pre-booking fit check.
+ *
+ * A shop visit costs 2-3 hours once drive time across the bay is counted, so
+ * the point of this block is to let the wrong-fit visitor disqualify
+ * themselves before Richard drives — without adding a form or a paywall in
+ * front of a stranger who found the site through search.
+ *
+ * These three questions are also set as required questions on the Google
+ * Calendar appointment schedule, which is where the answers are actually
+ * captured. Keep the two in sync.
+ */
+export const fitCheck = {
+  eyebrow: "Before you book",
+  heading: "Three questions worth answering first",
+  intro:
+    "The visit works best when Richard knows what he is walking into. You will be asked these when you pick a time — short answers are fine.",
+  questions: [
+    {
+      q: "What do you run, and how big is the team?",
+      why: "Office and field, owners included. It sets what is realistic to change and what software tier fits.",
+    },
+    {
+      q: "What are you using today?",
+      why: "CRM, dispatch, invoicing, texts — even if the honest answer is a whiteboard, a shared inbox, and group texts. There is no wrong answer here.",
+    },
+    {
+      q: "What two or three things do you most want fixed?",
+      why: "In plain language. This is what the hour gets spent on, so it is the one worth thinking about before you book.",
+    },
+  ],
+  notAFit: {
+    heading: "When it is not a fit",
+    body: "This is built for owner-led service businesses that are already running — someone who can make the call, and who is open to changing how the work moves. If the business is pre-revenue, if the decision needs a committee, or if the goal is the cheapest possible tool rather than a better operation, the visit will waste your time and Richard will say so early.",
+  },
+};
+
 export const contact = {
   phone: { label: "727-600-3425", href: "tel:+17276003425" },
   email: {
