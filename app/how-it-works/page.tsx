@@ -141,7 +141,7 @@ export default function HowItWorksPage() {
                 "Vendor-neutral — no software commissions driving recommendations",
                 "Business before AI — process fixes come before automation",
                 "Practical scope — engagements sized for 0–15 employee teams",
-                "No fake urgency — you decide the pace and the priorities",
+                "You set the pace and the priorities",
               ]}
             />
           </InfoCard>

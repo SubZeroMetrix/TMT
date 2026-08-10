@@ -12,8 +12,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "/book-a-strategy-call" },
 };
 
-/** Paste your Go High Level calendar / booking widget URL here via env. */
-const GHL_BOOKING_URL = process.env.NEXT_PUBLIC_GHL_BOOKING_URL ?? "";
+/**
+ * The live booking calendar URL.
+ *
+ * Set NEXT_PUBLIC_BOOKING_URL in Vercel to the Google Calendar appointment
+ * page. When it is set, the scheduler embeds and every CTA points at it.
+ * When it is not, the page falls back to a real call/text/email path — it
+ * must never show setup instructions to a visitor.
+ */
+const BOOKING_URL = process.env.NEXT_PUBLIC_BOOKING_URL ?? "";
 
 const whyOnsite = [
   {
@@ -94,18 +101,18 @@ export default function BookStrategyCallPage() {
                 style={{ fontSize: "clamp(1.85rem, 3.5vw + 0.6rem, 3.25rem)" }}
               >
                 Book a Shop Visit —{" "}
-                <span className="text-blue-light">Not Another Phone Pitch</span>
+                <span className="text-blue-light">See Your Operation Clearly</span>
               </h1>
               <p className="mt-5 text-lg leading-relaxed max-w-xl" style={{ color: "#E2E8F0" }}>
                 Get <SignatureName className="text-2xl mx-1 text-blue-light">Richard</SignatureName>{" "}
                 in front of your operation. See the real systems, meet the team, and leave with a
-                clear plan — before you buy another tool or lose another lead to a sales call.
+                clear plan — so the next tool you buy is the right one and fewer jobs slip through the cracks.
               </p>
               <ul className="mt-6 space-y-2.5 max-w-lg">
                 {[
                   "45–60 minutes at your shop",
                   "Vendor-neutral — no software commission",
-                  "Built for owner-led teams with 0–15 employees",
+                  "Built for owner-led service businesses, especially teams with 0–15 employees",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#CBD5E1" }}>
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-blue-light" />
@@ -123,7 +130,7 @@ export default function BookStrategyCallPage() {
                     <path d="M8 3v9M4 8l4 4 4-4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </a>
-                <SecondaryCTA href="#why-onsite">Why onsite beats a phone call</SecondaryCTA>
+                <SecondaryCTA href="#why-onsite">Why we meet onsite</SecondaryCTA>
               </div>
             </div>
 
@@ -156,7 +163,7 @@ export default function BookStrategyCallPage() {
             Why this converts better
           </p>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy tracking-tight max-w-2xl mb-4">
-            Phone calls lose deals. Shop visits win trust.
+            Shop visits show what a phone call cannot.
           </h2>
           <p className="text-slate max-w-2xl mb-12 leading-relaxed">
             A phone pitch is easy to forget, easy to ghost, and easy for a software vendor to
@@ -212,7 +219,7 @@ export default function BookStrategyCallPage() {
         </div>
       </section>
 
-      {/* SCHEDULE — GHL */}
+      {/* SCHEDULE */}
       <section id="schedule" className="relative bg-navy scroll-mt-24 overflow-hidden">
         <div
           className="absolute inset-0 bg-grid-blueprint bg-grid opacity-30 pointer-events-none"
@@ -235,9 +242,9 @@ export default function BookStrategyCallPage() {
               className="rounded-md overflow-hidden border border-white/15 bg-white min-h-[560px]"
               id="ghl-booking"
             >
-              {GHL_BOOKING_URL ? (
+              {BOOKING_URL ? (
                 <iframe
-                  src={GHL_BOOKING_URL}
+                  src={BOOKING_URL}
                   title="Schedule an onsite shop visit"
                   className="w-full min-h-[560px] h-[640px] border-0"
                   loading="lazy"
@@ -245,21 +252,22 @@ export default function BookStrategyCallPage() {
                 />
               ) : (
                 <div className="flex flex-col items-center justify-center text-center px-6 py-16 min-h-[560px] bg-surface-light">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-blue mb-3">
-                    Calendar ready for Go High Level
-                  </p>
-                  <h3 className="font-display text-2xl font-bold text-navy max-w-md">
-                    Connect your GHL booking widget to go live
+                  <h3 className="font-display text-2xl sm:text-3xl font-bold text-navy max-w-md">
+                    Call or text to lock in your shop visit
                   </h3>
                   <p className="mt-4 text-sm text-slate max-w-md leading-relaxed">
-                    Add your Go High Level calendar / booking link as{" "}
-                    <code className="font-mono text-xs bg-surface-warm px-1.5 py-0.5 rounded text-navy">
-                      NEXT_PUBLIC_GHL_BOOKING_URL
-                    </code>{" "}
-                    in Vercel env vars. Until then, book by phone or email below.
+                    Richard books visits directly — one call and you have a time.
+                    Most visits are scheduled within the same week, and he
+                    travels to your shop anywhere in Pinellas and Hillsborough
+                    counties.
                   </p>
                   <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                    <GhostCTA href={contact.phone.href}>Call {contact.phone.label}</GhostCTA>
+                    <a
+                      href={contact.phone.href}
+                      className="inline-flex items-center justify-center rounded-md bg-blue px-7 py-3.5 text-sm font-semibold text-white hover:bg-blue-dark transition-colors"
+                    >
+                      Call or text {contact.phone.label}
+                    </a>
                     <a
                       href={contact.email.href}
                       className="inline-flex items-center justify-center rounded-md border border-navy/20 bg-white px-7 py-3.5 text-sm font-semibold text-navy hover:border-blue hover:text-blue transition-colors"
@@ -267,6 +275,9 @@ export default function BookStrategyCallPage() {
                       Email to schedule
                     </a>
                   </div>
+                  <p className="mt-6 text-xs text-slate/80 max-w-sm">
+                    No pressure and no obligation — the first visit is free.
+                  </p>
                 </div>
               )}
             </div>
@@ -348,7 +359,7 @@ export default function BookStrategyCallPage() {
               {
                 step: "03",
                 title: "Your pace",
-                body: "No drip spam. No fake urgency. You decide when — and whether — to move forward.",
+                body: "You decide when — and whether — to move forward, at your own pace.",
               },
             ].map((s) => (
               <div key={s.step} className="border-t-2 border-blue pt-4">
