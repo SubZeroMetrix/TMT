@@ -14,14 +14,25 @@ export const metadata: Metadata = {
 };
 
 /**
- * The live booking calendar URL.
+ * The tested, working booking calendar — Google Calendar appointment schedule.
  *
- * Set NEXT_PUBLIC_BOOKING_URL in Vercel to the Google Calendar appointment
- * page. When it is set, the scheduler embeds and every CTA points at it.
- * When it is not, the page falls back to a real call/text/email path — it
- * must never show setup instructions to a visitor.
+ * This is deliberately hardcoded rather than env-only. Booking is the single
+ * most important conversion path on the site, and an env var that silently
+ * writes empty (which has happened) would drop the calendar on the next
+ * deploy without anyone noticing until a booking was lost.
+ *
+ * TO SWITCH PROVIDERS: set NEXT_PUBLIC_BOOKING_URL in Vercel, which overrides
+ * this. The Go High Level widget
+ * (https://api.leadconnectorhq.com/widget/booking/p3Eg9CU6B1CzBII5W6jq) is
+ * ready in BookingEmbed but must NOT go live until its Advanced Settings are
+ * finished, the calendar is published, and a real incognito test booking has
+ * confirmed it blocks the right calendars and sends the right confirmation.
  */
-const BOOKING_URL = process.env.NEXT_PUBLIC_BOOKING_URL ?? "";
+const DEFAULT_BOOKING_URL =
+  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ27Z5AfK56jFISTfcybp0pQvb27j3TXeNzzZFnDzIrkkX77tSlFvnP-a-445NcWcjM7kAhU77ps";
+
+const BOOKING_URL =
+  process.env.NEXT_PUBLIC_BOOKING_URL || DEFAULT_BOOKING_URL;
 
 
 const whyOnsite = [
