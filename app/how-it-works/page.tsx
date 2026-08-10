@@ -140,7 +140,7 @@ export default function HowItWorksPage() {
                 "Operator-led — built by someone who has run contractor and facilities operations",
                 "Vendor-neutral — no software commissions driving recommendations",
                 "Business before AI — process fixes come before automation",
-                "Practical scope — engagements sized for 0–15 employee teams",
+                "Practical scope — engagements sized for 5–30 employee teams",
                 "You set the pace and the priorities",
               ]}
             />

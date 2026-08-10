@@ -7,9 +7,10 @@
 
 ## What this business does
 
-The Modern Trades Mentor LLC helps small contracting firms — typically 0 to 15
-employees, where the owner still answers the phone — decide which software and
-AI tools fit their business, and then actually get their crews using them.
+The Modern Trades Mentor LLC helps owner-led contracting firms — typically 5 to
+30 employees, with a real office-to-field workflow — find and fix the operating
+problems that waste time and make technology investments fail, then decide which
+software and AI tools actually fit.
 
 The core position: fix the underlying business problems *before* adopting
 technology. The contractor keeps control of their business, their data, and

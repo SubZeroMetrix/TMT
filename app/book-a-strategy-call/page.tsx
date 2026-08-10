@@ -51,17 +51,17 @@ const whyOnsite = [
     body: "From the front desk to the van to the invoice — you map bottlenecks on a whiteboard, not through a sales deck on Zoom.",
   },
   {
-    title: "Leave with a clear next step",
-    body: "You walk away knowing whether you need an audit, software changes, training, or simply to leave things alone — with no software pitch.",
+    title: "Know whether an audit is worth it",
+    body: "You leave knowing whether there is a real operating problem here worth paying to diagnose — or whether you are fine as you are. Either answer is a straight one.",
   },
 ];
 
 const visitAgenda = [
-  "Walk-through of how a job moves from first call to paid invoice",
+  "A quick look at how work moves from first call to paid invoice — enough to spot whether there is a problem, not to map it",
   "Quick look at the tools you already use (CRM, dispatch, texts, accounting)",
   "Where work piles up, gets re-entered, or falls through the cracks",
   "Staff readiness — who will actually adopt a change, and who will fight it",
-  "Honest recommendation: audit, selection help, training — or wait",
+  "A straight answer on whether the paid audit is worth your money — or not",
 ];
 
 const prepareItems = [
@@ -83,7 +83,7 @@ const faqs = [
   },
   {
     q: "Do I have to buy something afterward?",
-    a: "No. Many visits end with a clear DIY priority list. If a paid engagement fits, you get a scoped recommendation. If it does not fit, you will hear that too.",
+    a: "No. The visit exists to work out whether a paid audit is worth doing. If it is, you get a scoped proposal within 24 hours. If it is not, you will hear that plainly and the conversation costs you nothing.",
   },
   {
     q: "Where do you go?",
@@ -120,14 +120,14 @@ export default function BookStrategyCallPage() {
               </h1>
               <p className="mt-5 text-lg leading-relaxed max-w-xl" style={{ color: "#E2E8F0" }}>
                 Get <SignatureName className="text-2xl mx-1 text-blue-light">Richard</SignatureName>{" "}
-                in front of your operation. See the real systems, meet the team, and leave with a
-                clear plan — so the next tool you buy is the right one and fewer jobs slip through the cracks.
+                in front of your operation for 60 minutes. See the real systems, meet the team, and
+                find out whether there is an operating problem worth paying to fix.
               </p>
               <ul className="mt-6 space-y-2.5 max-w-lg">
                 {[
-                  "45–60 minutes at your shop",
+                  "60 minutes at your shop — fit conversation, not a free audit",
                   "Vendor-neutral — no software commission",
-                  "Built for owner-led service businesses, especially teams with 0–15 employees",
+                  "Built for owner-led service businesses, typically 5–30 employees",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#CBD5E1" }}>
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-blue-light" />
@@ -278,6 +278,19 @@ export default function BookStrategyCallPage() {
               ))}
             </ol>
 
+
+            <div className="mt-7 border-l-[3px] border-blue-soft pl-4">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-blue-light mb-1.5">
+                What the visit is not
+              </p>
+              <p className="max-w-3xl text-sm leading-relaxed text-silver-light/75">
+                Sixty minutes is enough to tell whether you have an operating
+                problem worth fixing. It is not enough to map your workflow,
+                compare vendors, or write you a roadmap — that is the paid audit,
+                and doing it properly takes five days. Anyone offering you all of
+                that for free is either guessing or selling you something.
+              </p>
+            </div>
             <div className="mt-7 border-l-[3px] border-blue-soft pl-4">
               <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-blue-light mb-1.5">
                 {fitCheck.notAFit.heading}

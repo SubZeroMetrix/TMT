@@ -76,7 +76,7 @@ export default function ServicesPage() {
         <p className="text-navy/70 max-w-2xl mb-12 leading-relaxed">
           The Modern Trades Mentor does not sell software licenses or earn commissions on
           platform referrals. Recommendations are vendor-neutral and based on what fits your
-          operations, your team size, and your budget — typically owner-led companies with 0–15
+          operations, your team size, and your budget — typically owner-led companies of 5–30
           employees.
         </p>
 

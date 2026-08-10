@@ -92,7 +92,7 @@ export default function AiAutomationPage() {
           </p>
           <p className="mt-4 text-navy/75 leading-relaxed">
             The Modern Trades Mentor works with owner-led businesses of roughly
-            zero to fifteen employees across St. Petersburg and Tampa Bay. We do
+            five to thirty employees across St. Petersburg and Tampa Bay. We do
             not sell software licenses and take no commission from any vendor.
             The recommendation is whatever fits your business.
           </p>

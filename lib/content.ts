@@ -12,7 +12,7 @@ export const header = {
     { label: "Services", href: "/services" },
     { label: "Industries", href: "/industries" },
     { label: "Locations", href: "/locations/pinellas-county-fl" },
-    { label: "About Richard", href: "/about-richard-fritzke" },
+    { label: "About Richard", href: "/about" },
     { label: "Insights", href: "/insights" },
   ],
   primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call" },
@@ -42,13 +42,13 @@ export const broadServices = {
       href: "/crm-workflow-consulting",
     },
     {
-      title: "Technology Audits",
-      body: "Where the business is losing money and time, before a single tool gets named.",
+      title: "Operational Audits",
+      body: "Where the business is losing money and time, measured and ranked. $1,500 founding price, five business days.",
       href: "/services/technology-audit",
     },
     {
       title: "On-Site Shop Visits",
-      body: "Free, no obligation, at your place. How the office runs on a Tuesday is the thing worth seeing.",
+      body: "Free, 60 minutes, at your place — a fit conversation to see whether a paid audit is worth it.",
       href: "/book-a-strategy-call",
     },
     {
@@ -68,9 +68,9 @@ export const hero = {
   headlineLine2: "AND SERVICE BUSINESSES",
   promise: "Modernize your contracting business. Without losing control of it.",
   description:
-    "AI consulting and business automation for small businesses in St. Petersburg, Tampa, and across Pinellas and Hillsborough counties. The Modern Trades Mentor helps companies choose technology, improve workflows, put practical AI to work, and cut wasted time.",
+    "The Modern Trades Mentor helps Tampa Bay service businesses find and fix the operating problems that waste time, delay follow-up, and make technology investments fail. We start with the workflow — not the software — and make vendor-neutral recommendations backed by a practical implementation plan.",
   primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call" },
-  secondaryCta: { label: "Explore the Technology & AI Readiness Audit", href: "/services/technology-audit" },
+  secondaryCta: { label: "See the Operational AI Readiness Audit", href: "/services/technology-audit" },
   phone: { label: "Prefer to talk now? Call 727-600-3425", href: "tel:+17276003425" },
   credibilityLine:
     "Built by a trades and operations leader with more than 26 years of HVAC, facilities, service-management, and mechanical-systems experience.",
@@ -107,7 +107,7 @@ export const trades = [
 export const whoThisIsFor = {
   heading: "Built for Small Contractor and Field-Service Teams",
   support:
-    "Designed primarily for owner-led companies with 0–15 employees that need a practical technology roadmap — not another software sales pitch.",
+    "Designed primarily for owner-led companies of 5–30 employees that need a practical technology roadmap — not another software sales pitch.",
 };
 
 export const painPoints = [
@@ -139,9 +139,9 @@ export const painPoints = [
 
 export const audit = {
   eyebrow: "Start With Clarity",
-  title: "Technology & AI Readiness Audit",
+  title: "Operational AI Readiness Audit",
   description:
-    "A structured review of your systems, workflows, staff readiness, security exposure, and modernization priorities.",
+    "$1,500 fixed fee, delivered in five business days: a workflow map, your top three operating leaks, a measured baseline, and a 30/60/90-day plan.",
   items: [
     "Current software and tool inventory",
     "Workflow and bottleneck analysis",
@@ -313,8 +313,8 @@ export const fitCheck = {
     "The visit works best when Richard knows what he is walking into. You will be asked these when you pick a time — short answers are fine.",
   questions: [
     {
-      q: "What do you run, and how big is the team?",
-      why: "Office and field, owners included. It sets what is realistic to change and what software tier fits.",
+      q: "How big is the team, office and field?",
+      why: "Owners included. The work fits businesses of roughly 5 to 30 people — enough that jobs have to move between the office and the crew, small enough that one person can still decide to change a process.",
     },
     {
       q: "What are you using today?",
@@ -322,12 +322,12 @@ export const fitCheck = {
     },
     {
       q: "What two or three things do you most want fixed?",
-      why: "In plain language. This is what the hour gets spent on, so it is the one worth thinking about before you book.",
+      why: "In plain language — follow-up, scheduling, quoting, dispatch, reporting, or admin that eats the week. This is what the hour gets spent on.",
     },
   ],
   notAFit: {
     heading: "When it is not a fit",
-    body: "This is built for owner-led service businesses that are already running — someone who can make the call, and who is open to changing how the work moves. If the business is pre-revenue, if the decision needs a committee, or if the goal is the cheapest possible tool rather than a better operation, the visit will waste your time and Richard will say so early.",
+    body: "The owner or decision-maker needs to be at the visit — an hour with someone who cannot decide anything helps nobody. Beyond that: pre-revenue businesses, anyone shopping for a cheap AI chatbot rather than a better operation, and anyone unwilling to change a process. Software cannot fix a process the business will not change, and Richard will say so early rather than take the work.",
   },
 };
 

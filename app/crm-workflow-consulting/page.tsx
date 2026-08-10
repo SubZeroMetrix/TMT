@@ -94,7 +94,7 @@ export default function CrmWorkflowConsultingPage() {
           </p>
           <p className="mt-4 leading-relaxed text-navy/75">
             This is for owner-led contracting and service businesses of roughly
-            zero to fifteen employees in St. Petersburg, Tampa and the
+            five to thirty employees in St. Petersburg, Tampa and the
             surrounding counties. No software licenses are sold here and no
             commission is taken from any vendor — the recommendation is whatever
             fits your shop.

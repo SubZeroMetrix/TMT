@@ -158,7 +158,7 @@ export default function AboutPage() {
           <div className="space-y-5">
             <InfoCard title="Who This Is For">
               <p className="mb-4">
-                Owner-led small and midsize service businesses, especially teams with 0–15
+                Owner-led service businesses, typically 5–30
                 employees — HVAC, plumbing, electrical, roofing, general contracting, and related
                 trades, plus service businesses with the same operating shape.
               </p>

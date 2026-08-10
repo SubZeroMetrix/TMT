@@ -7,11 +7,17 @@ import {
   CtaBand,
 } from "@/components/PageChrome";
 import SignatureName from "@/components/SignatureName";
+import JsonLd from "@/components/JsonLd";
+import { serviceSchema, faqSchema, breadcrumbSchema, NAP } from "@/lib/seo/schema";
+import { AUDIT_FAQS } from "@/lib/seo/faqs";
+
+/** Founding-client pilot price. First three engagements, then reassessed. */
+const AUDIT_PRICE = "$1,500";
 
 export const metadata: Metadata = {
-  title: "Technology & AI Readiness Audit",
+  title: "Operational AI Readiness Audit",
   description:
-    "A vendor-neutral audit of your contractor business systems, workflows, staff readiness, and AI opportunities — with a prioritized implementation roadmap.",
+    "A fixed-fee operational audit for Tampa Bay service businesses: workflow map, your top three operating leaks, a measured baseline, and a 30/60/90-day plan. $1,500 founding price, delivered in five business days.",
   alternates: { canonical: "/services/technology-audit" },
 };
 
@@ -27,12 +33,38 @@ const evaluationAreas = [
 ];
 
 const deliverables = [
-  "Written assessment of current technology and operational state",
-  "Gap analysis with prioritized findings — critical, important, and optional",
-  "Vendor-neutral software and process recommendations",
-  "AI readiness summary — where it helps, where it does not, and what to watch for",
-  "Prioritized implementation roadmap with suggested sequencing",
-  "Executive summary suitable for owner review and team discussion",
+  "A map of how work actually moves through your business today",
+  "Your top three operational leaks, named and ranked",
+  "A measured baseline — hours, delays, missed follow-up, rework, and revenue exposure",
+  "A prioritized action plan scored by impact, effort, cost, and risk",
+  "Two to three specific technology or AI use cases worth pursuing",
+  "A vendor-neutral implementation recommendation",
+  "A 30/60/90-day roadmap",
+  "AI-use safeguards and the points where you approve before anything runs",
+];
+
+/**
+ * NIST AI Risk Management Framework — Govern, Map, Measure, Manage. Every
+ * recommendation is run through these four before it reaches the roadmap.
+ * This is the part a consultant without operations experience cannot fake.
+ */
+const riskStandard = [
+  {
+    title: "Govern",
+    body: "Who owns the decision, and who signs off on what the system produces before a customer sees it.",
+  },
+  {
+    title: "Map",
+    body: "Exactly which process and which data are involved. No vague 'we will automate follow-up'.",
+  },
+  {
+    title: "Measure",
+    body: "The baseline taken before anything changes, and the number that will prove whether it worked.",
+  },
+  {
+    title: "Manage",
+    body: "What happens when it is wrong, when it is down, or when it creates a risk you did not have before.",
+  },
 ];
 
 const processSteps = [
@@ -54,17 +86,34 @@ const processSteps = [
   {
     step: "04",
     title: "Delivery & Walkthrough",
-    body: "Written report and roadmap delivered with a walkthrough session to answer questions and clarify priorities.",
+    body: "Written report and roadmap delivered within five business days, with a walkthrough session to answer questions and agree priorities.",
   },
 ];
 
 export default function TechnologyAuditPage() {
   return (
     <>
+      <JsonLd
+        data={serviceSchema({
+          name: "Operational AI Readiness Audit",
+          description:
+            "A fixed-fee operational audit for owner-led service businesses: workflow map, top three operating leaks, a measured baseline, prioritized action plan, and a 30/60/90-day roadmap.",
+          slug: "/services/technology-audit",
+        })}
+      />
+      <JsonLd data={faqSchema(AUDIT_FAQS)} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: "Operational AI Readiness Audit", path: "/services/technology-audit" },
+        ])}
+      />
+
       <PageHero
-        eyebrow="Flagship Service"
-        title="Technology & AI Readiness Audit"
-        description="A structured, vendor-neutral review of your systems, workflows, staff readiness, security exposure, and modernization priorities — with a prioritized roadmap you can act on immediately."
+        eyebrow={`Fixed fee · ${AUDIT_PRICE} · Delivered in 5 business days`}
+        title="Operational AI Readiness Audit"
+        description="Find the operating problems that waste time, delay follow-up, and make technology investments fail — measured, ranked, and turned into a 30/60/90-day plan. We start with the workflow, not the software."
         primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondaryCta={{ label: "See All Services", href: "/services" }}
       />
@@ -89,7 +138,7 @@ export default function TechnologyAuditPage() {
           <InfoCard title="Who This Is For">
             <p className="mb-4">
               Owner-led contractor and field-service businesses with{" "}
-              <strong className="text-navy">0–15 employees</strong> — HVAC, plumbing, electrical,
+              <strong className="text-navy">5–30 employees</strong> — HVAC, plumbing, electrical,
               roofing, general contracting, and related trades in the Tampa Bay area and beyond.
             </p>
             <p className="mb-4">A strong fit if you are experiencing:</p>
@@ -128,6 +177,76 @@ export default function TechnologyAuditPage() {
             <SignatureName className="text-lg mr-1">Richard</SignatureName> does not sell software
             licenses or earn commissions on platform referrals. Audit recommendations are based on
             what fits your business — not what pays a referral fee.
+          </p>
+        </div>
+      </ContentSection>
+
+      <ContentSection>
+        <div className="max-w-3xl">
+          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-dim mb-3">
+            The Standard Behind Every Recommendation
+          </p>
+          <h2 className="font-display text-3xl font-bold text-navy tracking-tight">
+            Four questions every recommendation has to survive
+          </h2>
+          <p className="mt-5 leading-relaxed text-navy/70">
+            Anyone can suggest automating something. The harder job is deciding
+            whether it should be automated at all, and what happens the day it
+            gets something wrong. Every recommendation in your roadmap is run
+            through the four functions of the{" "}
+            <a
+              href="https://www.nist.gov/itl/ai-risk-management-framework/nist-ai-rmf-playbook"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue hover:underline"
+            >
+              NIST AI Risk Management Framework
+            </a>
+            . If it cannot survive all four, it does not go in the plan.
+          </p>
+        </div>
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {riskStandard.map((item) => (
+            <InfoCard key={item.title} title={item.title}>
+              {item.body}
+            </InfoCard>
+          ))}
+        </div>
+        <div className="mt-8 max-w-3xl border-l-[3px] border-blue-soft pl-4">
+          <p className="text-sm leading-relaxed text-navy/70">
+            <strong className="text-navy">The audit is the diagnosis and the
+            decision plan.</strong>{" "}
+            Implementation is quoted separately as a fixed-scope project once
+            you know what is actually worth doing. That boundary is what stops
+            an engagement turning into open-ended troubleshooting nobody can
+            price.
+          </p>
+        </div>
+      </ContentSection>
+
+      <ContentSection dark>
+        <div className="max-w-3xl">
+          <p className="bp-label mb-3">Common questions</p>
+          <h2 className="font-display text-3xl font-bold text-white tracking-tight">
+            Price, scope, and what happens next
+          </h2>
+          <div className="mt-8 space-y-7">
+            {AUDIT_FAQS.map((faq) => (
+              <div key={faq.question}>
+                <h3 className="font-display text-lg font-semibold text-white">
+                  {faq.question}
+                </h3>
+                <p className="mt-2.5 leading-relaxed text-silver-light/85">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-10 text-sm text-silver-light/75">
+            Call or text {NAP.phoneDisplay} ·{" "}
+            <a href={`mailto:${NAP.email}`} className="text-blue-light hover:underline">
+              {NAP.email}
+            </a>
           </p>
         </div>
       </ContentSection>

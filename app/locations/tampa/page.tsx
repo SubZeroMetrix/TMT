@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const localFocus = [
   "HVAC, plumbing, electrical, roofing, and general contracting operations across Hillsborough County",
   "Commercial and residential service businesses navigating CRM, dispatch, and follow-up gaps",
-  "Owner-led teams with 0–15 employees evaluating software and AI without a vendor sales pitch",
+  "Owner-led teams of 5–30 employees evaluating software and AI without a vendor sales pitch",
   "Strategy calls and Technology & AI Readiness Audits — remote or local as appropriate",
 ];
 

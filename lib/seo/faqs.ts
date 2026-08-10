@@ -57,7 +57,7 @@ export const GENERAL_FAQS: Faq[] = [
   {
     question: "What size contracting business is this for?",
     answer:
-      "Owner-led firms with roughly zero to fifteen employees — shops where the owner still answers the phone or has only recently stopped. That includes HVAC, plumbing, electrical, roofing and general contracting, plus non-trades service businesses with the same shape, such as med spas, dental practices and salons. Pre-revenue businesses and firms without a single decision maker are not a fit.",
+      "Owner-led firms of roughly five to thirty employees, with a real office-to-field workflow — enough people that work has to move between the office and the crew, and small enough that the owner still makes the call. That includes HVAC, plumbing, electrical, roofing and general contracting, plus non-trades service businesses with the same shape. Pre-revenue businesses and firms without a single decision maker are not a fit.",
   },
 ];
 
@@ -71,12 +71,12 @@ export const AI_CONSULTING_STPETE_FAQS: Faq[] = [
   {
     question: "How much does AI consulting cost in St. Petersburg?",
     answer:
-      "Engagements are scoped to the business rather than billed by the hour, and start with a readiness audit before any tool is recommended. The first conversation is a free shop visit with no obligation. Call 727-600-3425 to get a scope and a number for your situation.",
+      "The Operational AI Readiness Audit is $1,500 as a fixed fee, delivered within five business days — a founding-client price for the first three engagements. Before that, the shop visit is free and runs 60 minutes; it exists to work out whether the paid audit is worth your money. Implementation, if you want it, is quoted separately as a fixed-scope project. No hourly billing.",
   },
   {
     question: "Is my business too small for AI consulting?",
     answer:
-      "Small is the point. The work is built for owner-led businesses with roughly zero to fifteen employees — where the owner still answers the phone or recently stopped. Businesses that size get the most out of removing admin work, because there is no back office to absorb it. Pre-revenue businesses are not a fit.",
+      "The work is built for owner-led businesses of roughly five to thirty employees. That size gets the most out of fixing operations: there are enough moving parts for admin work and follow-up to pile up, no large back office to absorb it, and still one person who can decide to change a process. Pre-revenue businesses are not a fit.",
   },
   {
     question: "Do I need to buy new software to use AI in my business?",
@@ -105,12 +105,51 @@ export const PINELLAS_COUNTY_FAQS: Faq[] = [
   {
     question: "What kinds of businesses in Pinellas County do you work with?",
     answer:
-      "Owner-led businesses with roughly zero to fifteen employees. Most are contracting and field service firms — HVAC, plumbing, electrical, roofing, general contracting — and the rest are service businesses with the same operating shape, such as med spas, dental practices, salons and professional services. The common thread is phones, scheduling, follow-up and admin load.",
+      "Owner-led businesses of roughly five to thirty employees. Most are contracting and field service firms — HVAC, plumbing, electrical, roofing, general contracting — and the rest are service businesses with the same operating shape, such as med spas, dental practices, salons and professional services. The common thread is an office-to-field workflow with pain in scheduling, follow-up, quoting or admin load.",
   },
   {
     question: "How is this different from hiring an IT company in Pinellas County?",
     answer:
       "An IT company keeps your existing systems running. This work decides which systems you should have in the first place, and whether a process change would work better than buying anything. No hardware, no help desk, no software licenses sold, and no commission taken for recommending a vendor.",
+  },
+];
+
+/**
+ * /services/technology-audit — the paid product.
+ *
+ * Price questions are among the highest-intent things anyone asks an answer
+ * engine, so these answer directly with the number rather than deflecting.
+ */
+export const AUDIT_FAQS: Faq[] = [
+  {
+    question: "How much does an operational AI readiness audit cost?",
+    answer:
+      "$1,500 as a fixed fee, delivered within five business days. That is a founding-client price for the first three engagements, after which it is reassessed against real delivery time. There is no hourly billing and no open-ended retainer — you know the number and the scope before you start.",
+  },
+  {
+    question: "What exactly do I get for the fee?",
+    answer:
+      "A map of how work moves through your business today, your top three operational leaks, a measured baseline covering hours, delays, missed follow-up, rework and revenue exposure, a prioritized action plan scored by impact, effort, cost and risk, two to three specific technology or AI use cases worth pursuing, a vendor-neutral implementation recommendation, a 30/60/90-day roadmap, and the safeguards and approval points for any AI that gets used.",
+  },
+  {
+    question: "Is implementation included in the audit?",
+    answer:
+      "No, and that is deliberate. The audit is the diagnosis and the decision plan. Implementation is quoted separately as a fixed-scope project once you know what is actually worth doing. Bundling the two is how consulting engagements turn into open-ended troubleshooting nobody can price.",
+  },
+  {
+    question: "What if the audit finds we do not need to buy anything?",
+    answer:
+      "That is a legitimate and fairly common outcome, and you still get the full deliverable. Several of the highest-value fixes in a service business — naming an owner for the dispatch board, defining the job close-out step, giving estimate follow-up to a named person on a set day — cost nothing but a decision. You would leave knowing that, with the baseline to prove it later.",
+  },
+  {
+    question: "How do you decide where AI is safe to use?",
+    answer:
+      "Every recommendation is run through the four functions in the NIST AI Risk Management Framework: Govern (who owns the decision and approves the output), Map (which exact process and data are involved), Measure (the baseline and the number that proves it worked), and Manage (what happens when it is wrong, unavailable, or creates new risk). Anything that cannot pass those four does not go in the roadmap.",
+  },
+  {
+    question: "Do I need the free shop visit before the audit?",
+    answer:
+      "Yes. The shop visit is 60 minutes, free, and exists to work out whether a paid audit is worth your money. If it is, you get a scoped proposal within 24 hours. If it is not, you will hear that plainly.",
   },
 ];
 
@@ -135,7 +174,7 @@ export const HILLSBOROUGH_COUNTY_FAQS: Faq[] = [
   {
     question: "What kinds of businesses do you work with in Tampa?",
     answer:
-      "Owner-led businesses with roughly zero to fifteen employees — HVAC, plumbing, electrical, roofing and general contracting, plus non-trades service businesses with the same operating shape. The work is choosing technology, improving workflow, and training the team. No software licenses are sold and no commission is taken from any vendor.",
+      "Owner-led businesses of roughly five to thirty employees — HVAC, plumbing, electrical, roofing and general contracting, plus non-trades service businesses with the same operating shape. The work is finding the operating problems first, then choosing technology, improving workflow, and training the team. No software licenses are sold and no commission is taken from any vendor.",
   },
 ];
 
@@ -224,7 +263,7 @@ export const LOCATION_FAQS: Record<string, Faq[]> = {
       question:
         "How much does it cost to get help choosing contractor software in Tampa?",
       answer:
-        "Engagements are scoped to the business rather than billed hourly, and start with a readiness audit before any recommendation is made. The first conversation — the shop visit — is free and carries no obligation. Call 727-600-3425.",
+        "The Operational AI Readiness Audit is a $1,500 fixed fee delivered in five business days, currently a founding-client price for the first three engagements. The shop visit that comes first is free, runs 60 minutes, and carries no obligation. Call or text 727-600-3425.",
     },
   ],
 };

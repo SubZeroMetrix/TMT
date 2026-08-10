@@ -227,7 +227,7 @@ export default function TruthAboutAIInTheTradesPage() {
           <p className="mt-5 text-silver-light/85 leading-relaxed">
             The Modern Trades Mentor LLC helps small contractor and field-service businesses
             evaluate their operations, software, workforce readiness, and practical opportunities
-            for AI. The initial focus is owner-led companies with approximately 0–15 employees that
+            for AI. The initial focus is owner-led companies of roughly 5–30 employees that
             need clarity before making another technology investment.
           </p>
           <p className="mt-5 text-silver-light/85 leading-relaxed">
