@@ -9,12 +9,20 @@ import {
 } from "@/components/PageChrome";
 import { GhostCTA } from "@/components/CTAButton";
 import SignatureName from "@/components/SignatureName";
-import { founder, philosophy, principles } from "@/lib/content";
+import {
+  founder,
+  philosophy,
+  principles,
+  howRichardWorks,
+  insuranceBackground,
+} from "@/lib/content";
+import { NAP } from "@/lib/seo/schema";
 
 export const metadata: Metadata = {
   title: "About Richard Fritzke",
   description:
-    "Richard Fritzke brings 24+ years of HVAC, facilities, and operations experience to contractor technology advisory — vendor-neutral, field-tested, and business-first.",
+    "Richard Fritzke brings 26+ years of HVAC, facilities, and operations experience to contractor technology advisory — vendor-neutral, field-tested, and business-first.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
@@ -23,7 +31,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About"
         title="About Richard Fritzke"
-        description="Founder of The Modern Trades Mentor — contractor technology and AI advisory built from 24+ years in HVAC, facilities, mechanical systems, and service operations."
+        description="Founder of The Modern Trades Mentor — contractor technology and AI advisory built from 26+ years in HVAC, facilities, mechanical systems, and service operations."
         primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondaryCta={{ label: "View Services", href: "/services" }}
       />
@@ -52,13 +60,30 @@ export default function AboutPage() {
             <h2 className="font-display text-3xl font-bold text-navy tracking-tight mb-6">
               {founder.heading}
             </h2>
-            <p className="text-navy/70 leading-relaxed mb-6">
+            <p className="text-lg text-navy/80 leading-relaxed mb-6">
+              {founder.subhead}
+            </p>
+            <p className="text-navy/70 leading-relaxed mb-4">
               <SignatureName className="text-2xl mr-1 align-baseline">Richard</SignatureName>
               {founder.narrative.replace(/^Richard/, "")}
             </p>
+            <p className="text-navy/70 leading-relaxed mb-4">{founder.narrative2}</p>
+            <p className="text-navy/70 leading-relaxed mb-6">{founder.narrative3}</p>
             <p className="text-xs text-navy/50 max-w-xl mb-8">{founder.disclaimer}</p>
 
-            <div className="grid sm:grid-cols-3 gap-6">
+            <div className="mb-8 border-l-[3px] border-blue-soft pl-4">
+              <h3 className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-blue mb-2">
+                {insuranceBackground.heading}
+              </h3>
+              <p className="text-sm text-navy/70 leading-relaxed max-w-2xl">
+                {insuranceBackground.body}
+              </p>
+              <p className="mt-3 text-xs text-navy/50 max-w-2xl">
+                {insuranceBackground.disclaimer}
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {founder.columns.map((col) => (
                 <div key={col.title} className="border-t border-blue/40 pt-4">
                   <p className="font-mono text-[10px] font-semibold tracking-[0.12em] text-blue uppercase mb-2">
@@ -95,6 +120,19 @@ export default function AboutPage() {
       </ContentSection>
 
       <ContentSection>
+        <h2 className="font-display text-3xl font-bold text-navy tracking-tight mb-8">
+          {howRichardWorks.heading}
+        </h2>
+        <div className="grid gap-5 md:grid-cols-3">
+          {howRichardWorks.steps.map((step) => (
+            <InfoCard key={step.title} title={step.title}>
+              {step.body}
+            </InfoCard>
+          ))}
+        </div>
+      </ContentSection>
+
+      <ContentSection>
         <div className="grid lg:grid-cols-2 gap-10">
           <div>
             <h2 className="font-display text-3xl font-bold text-navy tracking-tight mb-4">
@@ -102,11 +140,13 @@ export default function AboutPage() {
             </h2>
             <BulletList
               items={[
-                "24+ years of hands-on HVAC, facilities, and mechanical systems experience",
+                "26+ years of hands-on HVAC, facilities, and mechanical systems experience",
                 "Led teams of 20+ technicians across 40+ commercial facilities",
-                "Currently active in recommissioning and optimization work, including operations supporting MacDill Air Force Base",
+                "ICC Master Mechanical License · EPA Universal Certified",
+                "A.S. in HVAC/R, Redstone College · OSHA 30 and MSHA certified",
+                "Currently active in recommissioning and optimization work across commercial, mission-critical, and complex facilities environments",
                 "Builds and runs modern software, AI tools, CRM, and marketing systems for his own businesses",
-                "Vendor-neutral — no software commissions or referral fees driving recommendations",
+                "Recommendations are vendor-neutral and based on your operational needs",
                 "Understands both the field and the office — because he has worked in both",
               ]}
             />
@@ -115,19 +155,43 @@ export default function AboutPage() {
               endorsement by any current or former employer or government entity.
             </p>
           </div>
-          <InfoCard title="Who This Is For">
-            <p className="mb-4">
-              Owner-led contractor and field-service businesses with 0–15 employees in HVAC,
-              plumbing, electrical, roofing, general contracting, and related trades.
-            </p>
-            <p>
-              Based in the Tampa Bay area with remote advisory available. If you need someone who
-              speaks contractor operations — not just software sales — you are in the right place.
-            </p>
-            <div className="mt-6">
-              <GhostCTA href="/services">Explore Services</GhostCTA>
-            </div>
-          </InfoCard>
+          <div className="space-y-5">
+            <InfoCard title="Who This Is For">
+              <p className="mb-4">
+                Owner-led small and midsize service businesses, especially teams with 0–15
+                employees — HVAC, plumbing, electrical, roofing, general contracting, and related
+                trades, plus service businesses with the same operating shape.
+              </p>
+              <p>
+                Based in the Tampa Bay area with remote advisory available. If you need someone who
+                speaks contractor operations — not just software sales — you are in the right place.
+              </p>
+              <div className="mt-6">
+                <GhostCTA href="/services">Explore Services</GhostCTA>
+              </div>
+            </InfoCard>
+
+            <InfoCard title="Talk to Richard">
+              <ul className="space-y-2">
+                <li>
+                  <a href={`tel:${NAP.phone}`} className="text-blue hover:underline">
+                    {NAP.phoneDisplay}
+                  </a>{" "}
+                  — call or text
+                </li>
+                <li>
+                  <a href={`mailto:${NAP.email}`} className="text-blue hover:underline">
+                    {NAP.email}
+                  </a>
+                </li>
+                <li>Serving Pinellas County, Tampa Bay, and Hillsborough County</li>
+                <li>On-site shop visits available — Richard travels to you</li>
+              </ul>
+              <div className="mt-6">
+                <GhostCTA href="/book-a-strategy-call">Book a Shop Visit</GhostCTA>
+              </div>
+            </InfoCard>
+          </div>
         </div>
       </ContentSection>
 

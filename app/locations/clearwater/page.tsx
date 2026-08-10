@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Clearwater, FL",
   description:
     "Contractor technology and AI advisory for Clearwater, Florida — vendor-neutral software selection and workflow guidance for Pinellas County trades businesses.",
+  alternates: { canonical: "/locations/clearwater" },
 };
 
 const localFocus = [

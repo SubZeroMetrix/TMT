@@ -231,7 +231,7 @@ export default function TruthAboutAIInTheTradesPage() {
           </p>
           <p className="mt-5 text-silver-light/85 leading-relaxed">
             <SignatureName className="text-2xl mr-1 align-baseline">Richard</SignatureName>
-            Fritzke brings more than 24 years of experience across HVAC/R, facilities, mechanical
+            Fritzke brings more than 26 years of experience across HVAC/R, facilities, mechanical
             systems, service operations, technician leadership, controls, optimization, and
             commercial and mission-critical environments — including supervising more than 20
             HVAC/R technicians and managing maintenance operations across more than 40 restaurant

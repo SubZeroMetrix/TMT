@@ -1,8 +1,11 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { PrimaryCTA, SecondaryCTA } from "@/components/CTAButton";
 import SignatureName from "@/components/SignatureName";
+import Link from "next/link";
 import {
   hero,
+  broadServices,
   trustBar,
   trades,
   whoThisIsFor,
@@ -15,6 +18,13 @@ import {
   aiPositioning,
   finalCta,
 } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "AI Consulting & Business Technology for Contractors",
+  description:
+    "AI consulting, automation, and business technology guidance for contractors and small service businesses in St. Petersburg, Tampa, and across Pinellas County. Run by a 26-year HVAC and facilities operations professional.",
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (
@@ -60,7 +70,12 @@ export default function HomePage() {
               <br />
               <span className="text-blue-light">{hero.headlineLine2}</span>
             </h1>
-            <p className="mt-6 text-lg leading-relaxed max-w-xl" style={{ color: "#E2E8F0" }}>
+            <p
+              className="mt-5 font-display text-xl sm:text-2xl uppercase tracking-tight text-blue-light"
+            >
+              {hero.promise}
+            </p>
+            <p className="mt-5 text-lg leading-relaxed max-w-xl" style={{ color: "#E2E8F0" }}>
               {hero.description}
             </p>
 
@@ -113,6 +128,31 @@ export default function HomePage() {
                 {hero.vendorNeutralBadge.body}
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BROAD SERVICES — the front door for non-contractor search terms */}
+      <section className="bg-silver-pale border-b border-navy/10">
+        <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl text-navy tracking-tight">
+            {broadServices.heading}
+          </h2>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {broadServices.items.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="bp-frame bp-panel-light block p-6 transition-colors hover:bg-white"
+              >
+                <h3 className="font-display font-semibold text-lg text-navy">
+                  {item.title}
+                </h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-navy/70">
+                  {item.body}
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

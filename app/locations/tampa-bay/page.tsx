@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Greater Tampa Bay",
   description:
     "The Modern Trades Mentor serves contractor and field-service businesses across Greater Tampa Bay — St. Petersburg, Tampa, Clearwater, and surrounding communities.",
+  alternates: { canonical: "/locations/tampa-bay" },
 };
 
 const locations = [

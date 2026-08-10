@@ -7,11 +7,15 @@ import {
   BulletList,
   CtaBand,
 } from "@/components/PageChrome";
+import JsonLd from "@/components/JsonLd";
+import { faqSchema, breadcrumbSchema } from "@/lib/seo/schema";
+import { LOCATION_FAQS } from "@/lib/seo/faqs";
 
 export const metadata: Metadata = {
   title: "St. Petersburg, FL",
   description:
     "Contractor technology and AI advisory based in St. Petersburg, Florida — serving Pinellas County trades and field-service businesses with vendor-neutral guidance.",
+  alternates: { canonical: "/locations/st-petersburg" },
 };
 
 const localFocus = [
@@ -30,6 +34,14 @@ const nearbyAreas = [
 export default function StPetersburgPage() {
   return (
     <>
+      <JsonLd data={faqSchema(LOCATION_FAQS["st-petersburg"])} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Locations", path: "/locations/tampa-bay" },
+          { name: "St. Petersburg", path: "/locations/st-petersburg" },
+        ])}
+      />
       <PageHero
         eyebrow="St. Petersburg, FL"
         title="Contractor Technology Advisory in St. Petersburg"
@@ -78,6 +90,22 @@ export default function StPetersburgPage() {
               ))}
             </ul>
           </InfoCard>
+        </div>
+      </ContentSection>
+
+      <ContentSection>
+        <h2 className="font-display font-bold text-2xl sm:text-3xl text-navy tracking-tight">
+          Common questions
+        </h2>
+        <div className="mt-8 max-w-3xl space-y-7">
+          {LOCATION_FAQS["st-petersburg"].map((faq) => (
+            <div key={faq.question}>
+              <h3 className="font-display font-semibold text-lg text-navy">
+                {faq.question}
+              </h3>
+              <p className="mt-2.5 text-navy/70 leading-relaxed">{faq.answer}</p>
+            </div>
+          ))}
         </div>
       </ContentSection>
 

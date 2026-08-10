@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileStickyCTA from "@/components/MobileStickyCTA";
+import JsonLd from "@/components/JsonLd";
+import { siteGraph } from "@/lib/seo/schema";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -71,6 +73,7 @@ export default function RootLayout({
         <main id="main">{children}</main>
         <Footer />
         <MobileStickyCTA />
+        <JsonLd data={siteGraph()} />
       </body>
     </html>
   );

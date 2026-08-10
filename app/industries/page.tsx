@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const industries = [
   {
     name: "HVAC",
-    help: "Dispatch and maintenance-agreement workflows, technician documentation, estimating support, CRM and follow-up gaps, and practical AI for call handling and SOP development — grounded in 24+ years of HVAC/R operations experience.",
+    help: "Dispatch and maintenance-agreement workflows, technician documentation, estimating support, CRM and follow-up gaps, and practical AI for call handling and SOP development — grounded in 26+ years of HVAC/R operations experience.",
   },
   {
     name: "Plumbing",
