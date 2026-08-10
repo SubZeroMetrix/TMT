@@ -76,7 +76,7 @@ Operator-led. Contractor-focused. Business before technology.
 
 The Modern Trades Mentor LLC helps small contractor and field-service businesses evaluate their operations, software, workforce readiness, and practical opportunities for AI. The initial focus is owner-led companies with approximately 0–15 employees that need clarity before making another technology investment.
 
-Richard Fritzke brings more than 24 years of experience across HVAC/R, facilities, mechanical systems, service operations, technician leadership, controls, optimization, and commercial and mission-critical environments, including supervising more than 20 HVAC/R technicians and managing maintenance operations across more than 40 restaurant and commercial facilities.
+Richard Fritzke brings more than 26 years of experience across HVAC/R, facilities, mechanical systems, service operations, technician leadership, controls, optimization, and commercial and mission-critical environments, including supervising more than 20 HVAC/R technicians and managing maintenance operations across more than 40 restaurant and commercial facilities.
 
 Experience references are provided for professional background only and do not imply endorsement by any current or former employer or government entity.
 
