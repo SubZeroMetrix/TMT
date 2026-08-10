@@ -150,7 +150,7 @@ export function organizationSchema() {
     legalName: NAP.legalName,
     url: SITE_URL,
     telephone: NAP.phone,
-    logo: `${SITE_URL}/logo-full.png`,
+    logo: `${SITE_URL}/logo-mark.png`,
     image: `${SITE_URL}/logo-banner.png`,
     priceRange: "$$",
     founder: { "@id": id("richard") },
