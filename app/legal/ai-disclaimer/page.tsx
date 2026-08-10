@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "AI & Professional Guidance Disclaimer",
   description:
     "Disclaimer for AI recommendations and professional guidance from The Modern Trades Mentor — not legal, tax, or PE advice; human judgment required.",
+  alternates: { canonical: "/legal/ai-disclaimer" },
 };
 
 export default function AiDisclaimerPage() {

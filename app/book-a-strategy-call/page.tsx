@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Book an Onsite Shop Visit",
   description:
     "Schedule an onsite strategy visit at your shop with Richard Fritzke of The Modern Trades Mentor LLC — see your real systems, team, and workflows in person across Tampa Bay.",
+  alternates: { canonical: "/book-a-strategy-call" },
 };
 
 /** Paste your Go High Level calendar / booking widget URL here via env. */

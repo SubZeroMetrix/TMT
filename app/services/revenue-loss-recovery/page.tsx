@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Revenue Loss Recovery",
   description:
     "Find and fix revenue leaks in contractor businesses — missed calls, unsold estimates, lapsed maintenance agreements, and follow-up gaps.",
+  alternates: { canonical: "/services/revenue-loss-recovery" },
 };
 
 const leakCategories = [

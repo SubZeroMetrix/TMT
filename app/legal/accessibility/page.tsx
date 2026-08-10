@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Accessibility Statement",
   description:
     "The Modern Trades Mentor accessibility commitment — our goal to make this website usable for all visitors and how to report accessibility issues.",
+  alternates: { canonical: "/legal/accessibility" },
 };
 
 export default function AccessibilityPage() {

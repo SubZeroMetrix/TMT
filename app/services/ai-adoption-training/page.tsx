@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "AI Adoption & Staff Training",
   description:
     "Practical AI training for contractor owners, office staff, and technicians — what to use, what to avoid, and how to keep humans in control.",
+  alternates: { canonical: "/services/ai-adoption-training" },
 };
 
 const practicalUses = [

@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Terms of Use",
   description:
     "Terms of use for The Modern Trades Mentor website and advisory guidance — limitations, acceptable use, and disclaimers.",
+  alternates: { canonical: "/legal/terms" },
 };
 
 export default function TermsPage() {

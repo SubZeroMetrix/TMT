@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Software Selection & Stack Design",
   description:
     "Vendor-neutral help choosing CRM, FSM, dispatch, and accounting software for contractor businesses — no commissions, no preferred platforms.",
+  alternates: { canonical: "/services/software-selection" },
 };
 
 const selectionCriteria = [

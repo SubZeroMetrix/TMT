@@ -19,7 +19,6 @@ const COLUMNS = [
       { label: "About Richard", href: "/about" },
       { label: "Product Development", href: "/product-development" },
       { label: "Insights", href: "/insights" },
-      { label: "Reviews", href: "/reviews" },
       { label: "Contact", href: "/contact" },
     ],
   },

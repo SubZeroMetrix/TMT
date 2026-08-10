@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Implementation Planning",
   description:
     "Sequenced implementation plans, adoption strategy, and change management for contractor technology rollouts that actually stick.",
+  alternates: { canonical: "/services/implementation-planning" },
 };
 
 const planningElements = [

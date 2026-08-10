@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "How It Works",
   description:
     "A clear, practical process for contractor technology advisory — from discovery call to audit, roadmap, implementation support, and training.",
+  alternates: { canonical: "/how-it-works" },
 };
 
 const steps = [

@@ -11,7 +11,12 @@
 
 import { ALL_PLACE_NAMES, TIER_1 } from "./geo";
 
-export const SITE_URL = "https://themoderntradesmentor.com";
+/**
+ * Canonical host is www. The site serves at www, so canonicals, sitemap and
+ * schema must all agree with it — a mismatch splits ranking signals between
+ * two hosts. The apex domain should 301 to www in the Vercel domain settings.
+ */
+export const SITE_URL = "https://www.themoderntradesmentor.com";
 
 export const NAP = {
   legalName: "The Modern Trades Mentor LLC",

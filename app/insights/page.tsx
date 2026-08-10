@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Insights",
   description:
     "Practical articles on contractor technology, AI adoption, software selection, and operational readiness — written for owner-led trades businesses.",
+  alternates: { canonical: "/insights" },
 };
 
 const articles = [

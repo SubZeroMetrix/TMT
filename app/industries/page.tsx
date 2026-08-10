@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Industries We Serve",
   description:
     "Vendor-neutral technology and AI guidance for HVAC, plumbing, electrical, roofing, general contracting, handyman, landscaping, painting, cleaning, and solar contractors.",
+  alternates: { canonical: "/industries" },
 };
 
 const industries = [

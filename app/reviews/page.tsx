@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   title: "Reviews & Client Feedback",
   description:
     "The Modern Trades Mentor is in its early stage. We invite honest feedback from clients — no fabricated ratings or testimonials.",
+  alternates: { canonical: "/reviews" },
+  robots: { index: false, follow: true },
 };
 
 const LINKEDIN_URL = "https://www.linkedin.com/company/the-modern-trades-mentor-llc/";

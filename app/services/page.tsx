@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Vendor-neutral contractor technology advisory: audits, software selection, AI training, workflow development, implementation planning, and revenue recovery.",
+  alternates: { canonical: "/services" },
 };
 
 const services = [

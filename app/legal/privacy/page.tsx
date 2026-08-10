@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "Privacy policy for The Modern Trades Mentor LLC — how we collect, use, and protect information submitted through this website.",
+  alternates: { canonical: "/legal/privacy" },
 };
 
 export default function PrivacyPage() {

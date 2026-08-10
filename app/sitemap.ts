@@ -42,7 +42,6 @@ const ROUTES: Entry[] = [
   { path: "/about", priority: 0.8, changeFrequency: "monthly" },
   { path: "/how-it-works", priority: 0.7, changeFrequency: "monthly" },
   { path: "/industries", priority: 0.7, changeFrequency: "monthly" },
-  { path: "/reviews", priority: 0.6, changeFrequency: "monthly" },
   { path: "/book-a-strategy-call", priority: 0.8, changeFrequency: "yearly" },
   { path: "/contact", priority: 0.7, changeFrequency: "yearly" },
   { path: "/product-development", priority: 0.5, changeFrequency: "monthly" },

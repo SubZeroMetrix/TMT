@@ -36,7 +36,7 @@ const allura = Allura({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://themoderntradesmentor.com"),
+  metadataBase: new URL("https://www.themoderntradesmentor.com"),
   title: {
     default: "The Modern Trades Mentor | Contractor Technology & AI Guidance",
     template: "%s | The Modern Trades Mentor",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "The Modern Trades Mentor",
     description:
       "Real HVAC knowledge from the field, applied to modern software and AI decisions for contractors.",
-    url: "https://themoderntradesmentor.com",
+    url: "https://www.themoderntradesmentor.com",
     siteName: "The Modern Trades Mentor",
     locale: "en_US",
     type: "website",

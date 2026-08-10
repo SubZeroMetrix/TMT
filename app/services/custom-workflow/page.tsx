@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Custom Workflow & Program Development",
   description:
     "Purpose-built workflows and operational programs for contractor businesses — from estimate follow-up to maintenance agreement renewal.",
+  alternates: { canonical: "/services/custom-workflow" },
 };
 
 const workflowExamples = [

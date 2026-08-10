@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "The Truth About AI in the Trades",
   description:
     "Contractors do not need more AI hype. They need a plan that works in the real business — with sourced research on adoption, readiness gaps, and responsible implementation.",
+  alternates: { canonical: "/insights/truth-about-ai-in-the-trades" },
 };
 
 const readinessChecklist = [

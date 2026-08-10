@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Product Development",
   description:
     "Richard Fritzke builds modern contractor software, AI tools, CRM, and marketing systems for his own businesses — experience that informs vendor-neutral advisory, not a product storefront.",
+  alternates: { canonical: "/product-development" },
 };
 
 const buildCategories = [

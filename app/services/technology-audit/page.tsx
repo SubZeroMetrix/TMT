@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Technology & AI Readiness Audit",
   description:
     "A vendor-neutral audit of your contractor business systems, workflows, staff readiness, and AI opportunities — with a prioritized implementation roadmap.",
+  alternates: { canonical: "/services/technology-audit" },
 };
 
 const evaluationAreas = [

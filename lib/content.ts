@@ -34,12 +34,12 @@ export const broadServices = {
     {
       title: "AI Automation",
       body: "Narrow, reliable automation of the admin work that eats the week — calls, follow-up, notes, billing gaps.",
-      href: "/ai-consulting-st-petersburg-fl",
+      href: "/ai-automation",
     },
     {
       title: "CRM & Workflow Consulting",
       body: "How customer and job information should move through the business, and which system actually fits it.",
-      href: "/services/software-selection",
+      href: "/crm-workflow-consulting",
     },
     {
       title: "Technology Audits",

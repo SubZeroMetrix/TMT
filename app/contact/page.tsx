@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Contact The Modern Trades Mentor — phone, email, and mailing address. Serving Tampa Bay contractor and field-service businesses.",
+  alternates: { canonical: "/contact" },
 };
 
 const serviceAreas = [
