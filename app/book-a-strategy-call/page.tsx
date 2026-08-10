@@ -4,6 +4,7 @@ import Link from "next/link";
 import { PrimaryCTA, SecondaryCTA, GhostCTA } from "@/components/CTAButton";
 import SignatureName from "@/components/SignatureName";
 import { contact, fitCheck } from "@/lib/content";
+import BookingEmbed from "@/components/BookingEmbed";
 
 export const metadata: Metadata = {
   title: "Book an Onsite Shop Visit",
@@ -22,16 +23,6 @@ export const metadata: Metadata = {
  */
 const BOOKING_URL = process.env.NEXT_PUBLIC_BOOKING_URL ?? "";
 
-/**
- * Google's appointment-schedule page sends `X-Frame-Options: SAMEORIGIN`, so
- * the plain share link cannot be embedded — it renders a blank box. Appending
- * `?gv=true` serves the embeddable variant. Verified 2026-08-09.
- *
- * The un-suffixed URL is still the right thing to LINK to, so we keep both.
- */
-const BOOKING_EMBED_URL = BOOKING_URL
-  ? `${BOOKING_URL}${BOOKING_URL.includes("?") ? "&" : "?"}gv=true`
-  : "";
 
 const whyOnsite = [
   {
@@ -291,13 +282,7 @@ export default function BookStrategyCallPage() {
             >
               {BOOKING_URL ? (
                 <div className="bg-white">
-                  <iframe
-                    src={BOOKING_EMBED_URL}
-                    title="Schedule an onsite shop visit"
-                    className="w-full min-h-[560px] h-[640px] border-0"
-                    loading="lazy"
-                    allow="clipboard-write"
-                  />
+                  <BookingEmbed url={BOOKING_URL} />
                   <p className="px-6 pb-6 pt-1 text-center text-sm text-slate">
                     Calendar not loading?{" "}
                     <a
