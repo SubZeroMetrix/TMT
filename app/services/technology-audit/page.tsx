@@ -181,15 +181,47 @@ export default function TechnologyAuditPage() {
         </div>
       </ContentSection>
 
+      {/* THE OFFER — stated once, in full, on this page only */}
       <ContentSection>
-        <div className="max-w-3xl">
+        <div className="bp-frame bp-panel-light max-w-3xl p-7 sm:p-9">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-dim mb-3">
+            The Offer
+          </p>
+          <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-navy">
+            Operational AI Readiness Audit — {AUDIT_PRICE} fixed founding rate
+          </h2>
+          <p className="mt-5 leading-relaxed text-navy/75">
+            Available for the first three completed client audits. Includes an
+            on-site workflow review, documented findings, prioritized
+            recommendations, and a practical 30/60/90-day action plan. Any
+            implementation work is separately scoped and priced.
+          </p>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="/book-a-strategy-call"
+              className="inline-flex items-center justify-center rounded-md bg-blue px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-blue-hover"
+            >
+              Book a Shop Visit
+            </a>
+            <a
+              href={`tel:${NAP.phone}`}
+              className="inline-flex items-center justify-center rounded-md border border-navy/20 bg-white px-7 py-3.5 text-sm font-semibold text-navy transition-colors hover:border-blue hover:text-blue"
+            >
+              Call or text {NAP.phoneDisplay}
+            </a>
+          </div>
+        </div>
+      </ContentSection>
+
+      <ContentSection dark>
+        <div className="max-w-3xl">
+          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cyan mb-3">
             The Standard Behind Every Recommendation
           </p>
-          <h2 className="font-display text-3xl font-bold text-navy tracking-tight">
+          <h2 className="font-display text-3xl font-bold text-white tracking-tight">
             Four questions every recommendation has to survive
           </h2>
-          <p className="mt-5 leading-relaxed text-navy/70">
+          <p className="mt-5 leading-relaxed text-silver-light/85">
             Anyone can suggest automating something. The harder job is deciding
             whether it should be automated at all, and what happens the day it
             gets something wrong. Every recommendation in your roadmap is run
@@ -198,7 +230,7 @@ export default function TechnologyAuditPage() {
               href="https://www.nist.gov/itl/ai-risk-management-framework/nist-ai-rmf-playbook"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue hover:underline"
+              className="text-blue-light hover:underline"
             >
               NIST AI Risk Management Framework
             </a>
@@ -207,14 +239,14 @@ export default function TechnologyAuditPage() {
         </div>
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {riskStandard.map((item) => (
-            <InfoCard key={item.title} title={item.title}>
+            <InfoCard key={item.title} title={item.title} dark>
               {item.body}
             </InfoCard>
           ))}
         </div>
         <div className="mt-8 max-w-3xl border-l-[3px] border-blue-soft pl-4">
-          <p className="text-sm leading-relaxed text-navy/70">
-            <strong className="text-navy">The audit is the diagnosis and the
+          <p className="text-sm leading-relaxed text-silver-light/85">
+            <strong className="text-white">The audit is the diagnosis and the
             decision plan.</strong>{" "}
             Implementation is quoted separately as a fixed-scope project once
             you know what is actually worth doing. That boundary is what stops
@@ -224,27 +256,29 @@ export default function TechnologyAuditPage() {
         </div>
       </ContentSection>
 
-      <ContentSection dark>
+      <ContentSection>
         <div className="max-w-3xl">
-          <p className="bp-label mb-3">Common questions</p>
-          <h2 className="font-display text-3xl font-bold text-white tracking-tight">
+          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-dim mb-3">
+            Common questions
+          </p>
+          <h2 className="font-display text-3xl font-bold text-navy tracking-tight">
             Price, scope, and what happens next
           </h2>
           <div className="mt-8 space-y-7">
             {AUDIT_FAQS.map((faq) => (
               <div key={faq.question}>
-                <h3 className="font-display text-lg font-semibold text-white">
+                <h3 className="font-display text-lg font-semibold text-navy">
                   {faq.question}
                 </h3>
-                <p className="mt-2.5 leading-relaxed text-silver-light/85">
+                <p className="mt-2.5 leading-relaxed text-navy/70">
                   {faq.answer}
                 </p>
               </div>
             ))}
           </div>
-          <p className="mt-10 text-sm text-silver-light/75">
+          <p className="mt-10 text-sm text-navy/70">
             Call or text {NAP.phoneDisplay} ·{" "}
-            <a href={`mailto:${NAP.email}`} className="text-blue-light hover:underline">
+            <a href={`mailto:${NAP.email}`} className="text-blue hover:underline">
               {NAP.email}
             </a>
           </p>

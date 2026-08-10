@@ -19,7 +19,7 @@ const localFocus = [
   "Service and construction contractors across Clearwater and Pinellas County",
   "CRM, scheduling, dispatch, and customer follow-up improvements for owner-led teams",
   "Practical AI adoption guidance — what helps, what to avoid, and how to measure results",
-  "Operational AI Readiness Audits and shop visits for businesses of 5–30 employees",
+  "Operational AI Readiness Audits and shop visits for owner-led service businesses",
 ];
 
 const nearbyAreas = [

@@ -238,7 +238,7 @@ export function serviceSchema({ name, description, slug, city }: ServiceInput) {
     areaServed: area,
     audience: {
       "@type": "BusinessAudience",
-      name: "Owner-led contracting and service businesses with 5-30 employees",
+      name: "Owner-led contracting and field-service businesses",
     },
   };
 }

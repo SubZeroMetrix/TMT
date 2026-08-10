@@ -107,7 +107,7 @@ export const trades = [
 export const whoThisIsFor = {
   heading: "Built for Small Contractor and Field-Service Teams",
   support:
-    "Designed primarily for owner-led companies of 5–30 employees that need a practical technology roadmap — not another software sales pitch.",
+    "Designed primarily for owner-led service companies that need a practical technology roadmap — not another software sales pitch.",
 };
 
 export const painPoints = [

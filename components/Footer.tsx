@@ -3,14 +3,23 @@ import BrandLogo from "@/components/BrandLogo";
 
 const COLUMNS = [
   {
+    // These five must stay identical to the services listed on the Google
+    // Business Profile. A mismatch between GBP services and the site is a
+    // conflicting signal about what the business actually does.
     title: "Services",
     links: [
-      { label: "Technology & AI Readiness Audit", href: "/services/technology-audit" },
-      { label: "Software Selection & Stack Design", href: "/services/software-selection" },
-      { label: "AI Adoption & Staff Training", href: "/services/ai-adoption-training" },
-      { label: "Custom Workflow & Program Development", href: "/services/custom-workflow" },
-      { label: "Implementation Planning", href: "/services/implementation-planning" },
-      { label: "Revenue Loss Recovery", href: "/services/revenue-loss-recovery" },
+      { label: "Operational AI Readiness Audit", href: "/services/technology-audit" },
+      { label: "AI Automation Consulting", href: "/ai-automation" },
+      { label: "CRM & Workflow Consulting", href: "/crm-workflow-consulting" },
+      {
+        label: "Software Selection & Implementation Planning",
+        href: "/services/software-selection",
+      },
+      {
+        label: "Contractor Technology Consulting",
+        href: "/ai-consulting-st-petersburg-fl",
+      },
+      { label: "All services", href: "/services" },
     ],
   },
   {
@@ -67,7 +76,7 @@ export default function Footer() {
                   <li key={l.href}>
                     <Link
                       href={l.href}
-                      className="text-sm text-silver hover:text-blue-light transition-colors"
+                      className="text-sm text-silver-light/90 hover:text-blue-light transition-colors"
                     >
                       {l.label}
                     </Link>
@@ -83,12 +92,23 @@ export default function Footer() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="text-sm text-silver">
             <p className="font-semibold text-white font-display">The Modern Trades Mentor LLC</p>
-            <p className="mt-1 font-mono text-xs text-silver/80">PO Box 66093, St. Petersburg, FL 33767</p>
+            {/*
+              Labelled as a mailing address on purpose. TMT is a service-area
+              business — this is not a location customers visit, and it is
+              deliberately absent from the business schema.
+            */}
+            <p className="mt-1 font-mono text-xs text-silver">
+              <span className="text-silver/70">Mailing address:</span> PO Box 66093,
+              St. Petersburg, FL 33767
+            </p>
+            <p className="mt-1 text-xs text-silver">
+              Serving Pinellas &amp; Hillsborough counties — on site at your shop
+            </p>
             <p className="mt-1 font-mono text-xs">
               <a href="tel:+17276003425" className="text-blue-light hover:text-white transition-colors">
                 727-600-3425
               </a>
-              <span className="text-silver/40 mx-2">·</span>
+              <span className="text-silver/60 mx-2">·</span>
               <a
                 href="mailto:Richard@TheModernTradesMentor.com"
                 className="text-blue-light hover:text-white transition-colors"
@@ -111,14 +131,14 @@ export default function Footer() {
           </a>
         </div>
 
-        <p className="mt-8 text-xs text-silver/50 max-w-3xl leading-relaxed">
+        <p className="mt-8 text-xs text-silver/85 max-w-3xl leading-relaxed">
           Experience references are provided for professional background only and do not imply
           endorsement by any current or former employer or government entity. The Modern Trades
           Mentor provides technology and operations guidance for contractors; it does not provide
           legal, tax, or licensed professional-engineering services.
         </p>
 
-        <p className="mt-4 font-mono text-[10px] uppercase tracking-wider text-silver/40">
+        <p className="mt-4 font-mono text-[11px] uppercase tracking-wider text-silver/75">
           © {new Date().getFullYear()} The Modern Trades Mentor LLC. All rights reserved.
         </p>
       </div>

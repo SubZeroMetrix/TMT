@@ -15,40 +15,64 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services" },
 };
 
+/**
+ * The first five must stay identical, in name and order, to the services
+ * listed on the Google Business Profile. A visitor arriving from GBP should
+ * see exactly what they clicked. The remainder are supporting engagements
+ * that keep their existing pages rather than being orphaned.
+ */
 const services = [
   {
-    slug: "technology-audit",
-    title: "Technology & AI Readiness Audit",
+    href: "/services/technology-audit",
+    title: "Operational AI Readiness Audit",
     description:
-      "A structured review of your systems, workflows, staff readiness, and modernization priorities — with a prioritized roadmap you can act on.",
+      "The paid entry point. $1,500 fixed founding rate, delivered in five business days: an on-site workflow review, your top three operating leaks, documented findings, and a 30/60/90-day action plan.",
     featured: true,
   },
   {
-    slug: "software-selection",
-    title: "Software Selection & Stack Design",
+    href: "/ai-automation",
+    title: "AI Automation Consulting",
     description:
-      "Help choosing CRM, FSM, dispatch, and accounting tools without commissions or vendor pressure. Recommendations based on how your business actually runs.",
+      "Narrow, reliable automation of the admin work that eats the week — after-hours calls, estimate follow-up, job notes, and billing gaps. And a clear list of what should not be automated.",
   },
   {
-    slug: "ai-adoption-training",
+    href: "/crm-workflow-consulting",
+    title: "CRM & Workflow Consulting",
+    description:
+      "How customer and job information should move from first call to paid invoice — and which system actually fits that, rather than the one with the best demo.",
+  },
+  {
+    href: "/services/software-selection",
+    title: "Software Selection & Implementation Planning",
+    description:
+      "Choosing CRM, FSM, dispatch and accounting tools without commissions or vendor pressure, then sequencing the rollout so the team actually adopts it.",
+  },
+  {
+    href: "/ai-consulting-st-petersburg-fl",
+    title: "Contractor Technology Consulting",
+    description:
+      "Ongoing vendor-neutral guidance on technology decisions for owner-led service businesses across Pinellas and Hillsborough counties.",
+  },
+  {
+    href: "/services/ai-adoption-training",
     title: "AI Adoption & Staff Training",
     description:
       "Practical AI training for owners, office staff, and technicians — what to use, what to avoid, and how to keep humans in control of decisions.",
   },
   {
-    slug: "custom-workflow",
+    href: "/services/custom-workflow",
     title: "Custom Workflow & Program Development",
     description:
       "Purpose-built workflows and operational programs for contractor businesses — from estimate follow-up to maintenance agreement renewal.",
   },
   {
-    slug: "implementation-planning",
+    href: "/services/implementation-planning",
     title: "Implementation Planning",
     description:
       "Sequenced rollout plans, adoption strategy, and change management so new tools actually get used instead of sitting on the shelf.",
   },
   {
-    slug: "revenue-loss-recovery",
+    href: "/services/revenue-loss-recovery",
     title: "Revenue Loss Recovery",
     description:
       "Find and fix revenue leaks: missed calls, unsold estimates, lapsed maintenance agreements, and follow-up gaps that cost more than any software subscription.",
@@ -76,15 +100,15 @@ export default function ServicesPage() {
         <p className="text-navy/70 max-w-2xl mb-12 leading-relaxed">
           The Modern Trades Mentor does not sell software licenses or earn commissions on
           platform referrals. Recommendations are vendor-neutral and based on what fits your
-          operations, your team size, and your budget — typically owner-led companies of 5–30
+          operations, your team size, and your budget — typically owner-led service companies
           employees.
         </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
             <Link
-              key={service.slug}
-              href={`/services/${service.slug}`}
+              key={service.href}
+              href={service.href}
               className="group block"
             >
               <div

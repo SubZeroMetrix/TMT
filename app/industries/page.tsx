@@ -62,7 +62,7 @@ export default function IndustriesPage() {
       <PageHero
         eyebrow="Industries"
         title="Technology Guidance for Trades & Field-Service Businesses"
-        description="Owner-led contractor and field-service companies, typically 5–30 employees — across the trades that keep buildings, homes, and infrastructure running."
+        description="Owner-led contractor and field-service companies — across the trades that keep buildings, homes, and infrastructure running."
         primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
         secondaryCta={{ label: "Explore the Audit", href: "/services/technology-audit" }}
       />

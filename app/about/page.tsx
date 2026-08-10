@@ -158,9 +158,9 @@ export default function AboutPage() {
           <div className="space-y-5">
             <InfoCard title="Who This Is For">
               <p className="mb-4">
-                Owner-led service businesses, typically 5–30
-                employees — HVAC, plumbing, electrical, roofing, general contracting, and related
-                trades, plus service businesses with the same operating shape.
+                Owner-led service businesses — HVAC, plumbing, electrical, roofing, general
+                contracting, and related trades, plus service businesses with the same operating
+                shape.
               </p>
               <p>
                 Based in the Tampa Bay area with remote advisory available. If you need someone who

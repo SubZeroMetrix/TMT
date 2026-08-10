@@ -57,7 +57,7 @@ export const GENERAL_FAQS: Faq[] = [
   {
     question: "What size contracting business is this for?",
     answer:
-      "Owner-led firms of roughly five to thirty employees, with a real office-to-field workflow — enough people that work has to move between the office and the crew, and small enough that the owner still makes the call. That includes HVAC, plumbing, electrical, roofing and general contracting, plus non-trades service businesses with the same shape. Pre-revenue businesses and firms without a single decision maker are not a fit.",
+      "Owner-led service firms with a real office-to-field workflow — enough people that work has to move between the office and the crew, and small enough that the owner still makes the call. In practice that is usually a team of five to thirty. That includes HVAC, plumbing, electrical, roofing and general contracting, plus non-trades service businesses with the same shape. Pre-revenue businesses and firms without a single decision maker are not a fit.",
   },
 ];
 
@@ -76,7 +76,7 @@ export const AI_CONSULTING_STPETE_FAQS: Faq[] = [
   {
     question: "Is my business too small for AI consulting?",
     answer:
-      "The work is built for owner-led businesses of roughly five to thirty employees. That size gets the most out of fixing operations: there are enough moving parts for admin work and follow-up to pile up, no large back office to absorb it, and still one person who can decide to change a process. Pre-revenue businesses are not a fit.",
+      "The work is built for owner-led service businesses with a real office-to-field workflow. That shape gets the most out of fixing operations: there are enough moving parts for admin work and follow-up to pile up, no large back office to absorb it, and still one person who can decide to change a process. Pre-revenue businesses are not a fit.",
   },
   {
     question: "Do I need to buy new software to use AI in my business?",
@@ -105,7 +105,7 @@ export const PINELLAS_COUNTY_FAQS: Faq[] = [
   {
     question: "What kinds of businesses in Pinellas County do you work with?",
     answer:
-      "Owner-led businesses of roughly five to thirty employees. Most are contracting and field service firms — HVAC, plumbing, electrical, roofing, general contracting — and the rest are service businesses with the same operating shape, such as med spas, dental practices, salons and professional services. The common thread is an office-to-field workflow with pain in scheduling, follow-up, quoting or admin load.",
+      "Owner-led service businesses. Most are contracting and field service firms — HVAC, plumbing, electrical, roofing, general contracting — and the rest are service businesses with the same operating shape, such as med spas, dental practices, salons and professional services. The common thread is an office-to-field workflow with pain in scheduling, follow-up, quoting or admin load.",
   },
   {
     question: "How is this different from hiring an IT company in Pinellas County?",
@@ -174,7 +174,7 @@ export const HILLSBOROUGH_COUNTY_FAQS: Faq[] = [
   {
     question: "What kinds of businesses do you work with in Tampa?",
     answer:
-      "Owner-led businesses of roughly five to thirty employees — HVAC, plumbing, electrical, roofing and general contracting, plus non-trades service businesses with the same operating shape. The work is finding the operating problems first, then choosing technology, improving workflow, and training the team. No software licenses are sold and no commission is taken from any vendor.",
+      "Owner-led service businesses — HVAC, plumbing, electrical, roofing and general contracting, plus non-trades service businesses with the same operating shape. The work is finding the operating problems first, then choosing technology, improving workflow, and training the team. No software licenses are sold and no commission is taken from any vendor.",
   },
 ];
 

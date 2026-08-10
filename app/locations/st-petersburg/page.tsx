@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const localFocus = [
   "Home base for The Modern Trades Mentor LLC — PO Box 66093, St. Petersburg, FL 33767",
   "HVAC, plumbing, electrical, handyman, landscaping, painting, cleaning, and solar contractors in Pinellas County",
-  "Owner-led businesses of 5–30 employees evaluating CRM, dispatch, invoicing, and AI tools",
+  "Owner-led service businesses evaluating CRM, dispatch, invoicing, and AI tools",
   "Strategy calls, audits, and implementation guidance — practical and vendor-neutral",
 ];
 
