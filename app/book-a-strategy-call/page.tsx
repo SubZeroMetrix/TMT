@@ -22,6 +22,17 @@ export const metadata: Metadata = {
  */
 const BOOKING_URL = process.env.NEXT_PUBLIC_BOOKING_URL ?? "";
 
+/**
+ * Google's appointment-schedule page sends `X-Frame-Options: SAMEORIGIN`, so
+ * the plain share link cannot be embedded — it renders a blank box. Appending
+ * `?gv=true` serves the embeddable variant. Verified 2026-08-09.
+ *
+ * The un-suffixed URL is still the right thing to LINK to, so we keep both.
+ */
+const BOOKING_EMBED_URL = BOOKING_URL
+  ? `${BOOKING_URL}${BOOKING_URL.includes("?") ? "&" : "?"}gv=true`
+  : "";
+
 const whyOnsite = [
   {
     title: "See the real operation",
@@ -243,13 +254,31 @@ export default function BookStrategyCallPage() {
               id="ghl-booking"
             >
               {BOOKING_URL ? (
-                <iframe
-                  src={BOOKING_URL}
-                  title="Schedule an onsite shop visit"
-                  className="w-full min-h-[560px] h-[640px] border-0"
-                  loading="lazy"
-                  allow="clipboard-write"
-                />
+                <div className="bg-white">
+                  <iframe
+                    src={BOOKING_EMBED_URL}
+                    title="Schedule an onsite shop visit"
+                    className="w-full min-h-[560px] h-[640px] border-0"
+                    loading="lazy"
+                    allow="clipboard-write"
+                  />
+                  <p className="px-6 pb-6 pt-1 text-center text-sm text-slate">
+                    Calendar not loading?{" "}
+                    <a
+                      href={BOOKING_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-blue hover:underline"
+                    >
+                      Open the booking page
+                    </a>{" "}
+                    or call/text{" "}
+                    <a href={contact.phone.href} className="font-semibold text-blue hover:underline">
+                      {contact.phone.label}
+                    </a>
+                    .
+                  </p>
+                </div>
               ) : (
                 <div className="flex flex-col items-center justify-center text-center px-6 py-16 min-h-[560px] bg-surface-light">
                   <h3 className="font-display text-2xl sm:text-3xl font-bold text-navy max-w-md">
