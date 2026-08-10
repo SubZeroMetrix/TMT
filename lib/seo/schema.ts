@@ -71,9 +71,9 @@ export function personSchema() {
      * entity graph already knows Richard from his personal LinkedIn — this is
      * what welds that known entity to this site.
      *
-     * Do not add another business's channel here (e.g. Porchlight). Declaring
-     * it `sameAs` tells Google the entities are identical, which can merge
-     * brands in the knowledge graph and is difficult to unwind.
+     * Person-level profiles only. Business channels belong on the Organization
+     * (see `organizationSchema`), because `sameAs` asserts entity identity and
+     * mixing the two levels muddies who Google thinks is who.
      */
     sameAs: ["https://www.linkedin.com/in/richard-fritzke-178b25205"],
     /**
@@ -173,7 +173,18 @@ export function organizationSchema() {
         name: "Tampa Bay, Florida",
       },
     })),
-    sameAs: ["https://www.linkedin.com/company/the-modern-trades-mentor-llc/"],
+    /**
+     * TMT's own channels. Porchlight Club is TMT's top-of-funnel YouTube arm
+     * (confirmed by the owner 2026-08-09), not a separate brand — so it belongs
+     * here and should match what is listed on the Google Business Profile.
+     * Keep these two in sync; a mismatch between site schema and GBP is a
+     * conflicting signal about who the business is.
+     */
+    sameAs: [
+      "https://www.linkedin.com/company/the-modern-trades-mentor-llc/",
+      "https://www.facebook.com/profile.php?id=61592848241796",
+      "https://www.youtube.com/@Porchlight_Club",
+    ],
     knowsAbout: personSchema().knowsAbout,
   };
 }
