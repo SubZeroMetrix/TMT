@@ -145,10 +145,9 @@ export function organizationSchema() {
      * No `address` object at all — deliberate.
      *
      * TMT is a service-area business whose only mailing address is a PO Box,
-     * which cannot verify a Google Business Profile. There is also an
-     * unresolved ZIP discrepancy (the site says 33767; other business records
-     * say 33707) and publishing the wrong postal code as a machine-readable
-     * claim is worse than publishing none.
+     * which cannot verify a Google Business Profile. The ZIP is confirmed as
+     * 33767 (owner, 2026-08-09) — the omission here is about the PO Box, not
+     * about uncertainty.
      *
      * Location is instead expressed through `areaServed`, phone, email, URL and
      * on-page text. The mailing address stays on the legal pages, which need a

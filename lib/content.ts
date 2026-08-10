@@ -212,6 +212,24 @@ export const founder = {
   cta: { label: "See Why Contractors Trust Richard", href: "/about" },
 };
 
+/**
+ * Supporting credibility signal — NOT a headline.
+ *
+ * Wording is deliberate and must not change without the owner's say-so: the
+ * licenses are NOT active, and TMT does not sell insurance or give insurance,
+ * legal, tax or financial advice. Never describe Richard as a "licensed
+ * insurance broker" or imply current licensure. Use "previously held licenses"
+ * and "former insurance underwriting experience" only. The disclaimer below
+ * must always render with it.
+ */
+export const insuranceBackground = {
+  heading: "Earlier career",
+  body:
+    "Earlier in his career, Richard worked in insurance underwriting with Burns & Wilcox and previously held licenses in property and casualty, life, and health insurance. Although those licenses are no longer active, that experience continues to inform his practical approach to risk, documentation, vendor evaluation, and operational decision-making.",
+  disclaimer:
+    "The Modern Trades Mentor does not provide insurance, legal, tax, or financial advice, and does not sell insurance products.",
+};
+
 export const howRichardWorks = {
   heading: "How Richard Works With Your Business",
   steps: [

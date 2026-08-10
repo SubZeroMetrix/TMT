@@ -9,7 +9,13 @@ import {
 } from "@/components/PageChrome";
 import { GhostCTA } from "@/components/CTAButton";
 import SignatureName from "@/components/SignatureName";
-import { founder, philosophy, principles, howRichardWorks } from "@/lib/content";
+import {
+  founder,
+  philosophy,
+  principles,
+  howRichardWorks,
+  insuranceBackground,
+} from "@/lib/content";
 import { NAP } from "@/lib/seo/schema";
 
 export const metadata: Metadata = {
@@ -64,6 +70,18 @@ export default function AboutPage() {
             <p className="text-navy/70 leading-relaxed mb-4">{founder.narrative2}</p>
             <p className="text-navy/70 leading-relaxed mb-6">{founder.narrative3}</p>
             <p className="text-xs text-navy/50 max-w-xl mb-8">{founder.disclaimer}</p>
+
+            <div className="mb-8 border-l-[3px] border-blue-soft pl-4">
+              <h3 className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-blue mb-2">
+                {insuranceBackground.heading}
+              </h3>
+              <p className="text-sm text-navy/70 leading-relaxed max-w-2xl">
+                {insuranceBackground.body}
+              </p>
+              <p className="mt-3 text-xs text-navy/50 max-w-2xl">
+                {insuranceBackground.disclaimer}
+              </p>
+            </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {founder.columns.map((col) => (
