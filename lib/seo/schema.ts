@@ -66,7 +66,16 @@ export function personSchema() {
     url: `${SITE_URL}/about`,
     image: `${SITE_URL}/richard-portrait.png`,
     worksFor: { "@id": id("organization") },
-    sameAs: ["https://www.linkedin.com/company/the-modern-trades-mentor-llc/"],
+    /**
+     * `sameAs` on a Person must list profiles that ARE this person. Google's
+     * entity graph already knows Richard from his personal LinkedIn — this is
+     * what welds that known entity to this site.
+     *
+     * Do not add another business's channel here (e.g. Porchlight). Declaring
+     * it `sameAs` tells Google the entities are identical, which can merge
+     * brands in the knowledge graph and is difficult to unwind.
+     */
+    sameAs: ["https://www.linkedin.com/in/richard-fritzke-178b25205"],
     /**
      * Real, verifiable credentials only. These are the strongest trust signal
      * on the site — a named person with licences that can be checked. Never add
