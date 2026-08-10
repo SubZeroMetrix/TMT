@@ -14,22 +14,24 @@ export const metadata: Metadata = {
 };
 
 /**
- * The tested, working booking calendar — Google Calendar appointment schedule.
+ * The live booking calendar — Go High Level. Confirmed configured, published
+ * and test-booked by the owner 2026-08-10.
  *
- * This is deliberately hardcoded rather than env-only. Booking is the single
- * most important conversion path on the site, and an env var that silently
- * writes empty (which has happened) would drop the calendar on the next
- * deploy without anyone noticing until a booking was lost.
+ * Deliberately hardcoded rather than env-only. Booking is the single most
+ * important conversion path on the site, and the Vercel CLI has silently
+ * written an empty value for this var before — which would drop the calendar
+ * on the next deploy without anyone noticing until a booking was lost.
  *
- * TO SWITCH PROVIDERS: set NEXT_PUBLIC_BOOKING_URL in Vercel, which overrides
- * this. The Go High Level widget
- * (https://api.leadconnectorhq.com/widget/booking/p3Eg9CU6B1CzBII5W6jq) is
- * ready in BookingEmbed but must NOT go live until its Advanced Settings are
- * finished, the calendar is published, and a real incognito test booking has
- * confirmed it blocks the right calendars and sends the right confirmation.
+ * TO SWITCH PROVIDERS: set NEXT_PUBLIC_BOOKING_URL in Vercel (it overrides
+ * this), or change the constant. `BookingEmbed` handles the provider-specific
+ * embed contract either way.
+ *
+ * Previous, still-valid Google Calendar appointment schedule, kept for
+ * rollback:
+ * https://calendar.google.com/calendar/appointments/schedules/AcZssZ27Z5AfK56jFISTfcybp0pQvb27j3TXeNzzZFnDzIrkkX77tSlFvnP-a-445NcWcjM7kAhU77ps
  */
 const DEFAULT_BOOKING_URL =
-  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ27Z5AfK56jFISTfcybp0pQvb27j3TXeNzzZFnDzIrkkX77tSlFvnP-a-445NcWcjM7kAhU77ps";
+  "https://api.leadconnectorhq.com/widget/booking/p3Eg9CU6B1CzBII5W6jq";
 
 const BOOKING_URL =
   process.env.NEXT_PUBLIC_BOOKING_URL || DEFAULT_BOOKING_URL;
