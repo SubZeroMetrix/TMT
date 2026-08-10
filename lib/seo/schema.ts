@@ -261,6 +261,39 @@ export function faqSchema(faqs: { question: string; answer: string }[]) {
   };
 }
 
+/**
+ * Article schema. Author is always the real named person — that is the whole
+ * point of publishing under Richard rather than a faceless brand, and it ties
+ * each post back to the Person entity Google already knows.
+ */
+export function articleSchema({
+  headline,
+  description,
+  slug,
+  published,
+  updated,
+}: {
+  headline: string;
+  description: string;
+  slug: string;
+  published: string;
+  updated: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${SITE_URL}${slug}#article`,
+    headline,
+    description,
+    datePublished: published,
+    dateModified: updated,
+    author: { "@id": id("richard") },
+    publisher: { "@id": id("organization") },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}${slug}` },
+    inLanguage: "en-US",
+  };
+}
+
 export function breadcrumbSchema(trail: { name: string; path: string }[]) {
   return {
     "@context": "https://schema.org",

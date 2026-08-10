@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero, ContentSection, InfoCard, CtaBand } from "@/components/PageChrome";
+import { ARTICLES } from "@/lib/articles";
 
 export const metadata: Metadata = {
   title: "Insights",
@@ -8,17 +9,6 @@ export const metadata: Metadata = {
     "Practical articles on contractor technology, AI adoption, software selection, and operational readiness — written for owner-led trades businesses.",
   alternates: { canonical: "/insights" },
 };
-
-const articles = [
-  {
-    slug: "truth-about-ai-in-the-trades",
-    title: "The Truth About AI in the Trades",
-    subtitle:
-      "Contractors do not need more AI hype. They need a plan that works in the real business.",
-    eyebrow: "AI & Operations",
-    readTime: "12 min read",
-  },
-];
 
 export default function InsightsPage() {
   return (
@@ -32,7 +22,7 @@ export default function InsightsPage() {
       <ContentSection>
         <p className="bp-label mb-8">Latest Articles</p>
         <div className="grid gap-6 lg:grid-cols-2">
-          {articles.map((article) => (
+          {ARTICLES.map((article) => (
             <Link
               key={article.slug}
               href={`/insights/${article.slug}`}

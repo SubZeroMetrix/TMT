@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { SITE_URL } from "@/lib/seo/schema";
+import { ARTICLES } from "@/lib/articles";
 
 type Entry = {
   path: string;
@@ -48,7 +49,6 @@ const ROUTES: Entry[] = [
 
   // Insights
   { path: "/insights", priority: 0.7, changeFrequency: "weekly" },
-  { path: "/insights/truth-about-ai-in-the-trades", priority: 0.6, changeFrequency: "yearly" },
 
   // Legal — indexed but low priority; they carry NAP consistency signals
   { path: "/legal/privacy", priority: 0.2, changeFrequency: "yearly" },
@@ -60,10 +60,21 @@ const ROUTES: Entry[] = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  return ROUTES.map(({ path, priority, changeFrequency }) => ({
+  const staticRoutes = ROUTES.map(({ path, priority, changeFrequency }) => ({
     url: `${SITE_URL}${path}`,
     lastModified,
     changeFrequency,
     priority,
   }));
+
+  // Articles come from the registry, so a new post can never be published
+  // without appearing here.
+  const articleRoutes = ARTICLES.map((a) => ({
+    url: `${SITE_URL}/insights/${a.slug}`,
+    lastModified: new Date(`${a.updated}T12:00:00Z`),
+    changeFrequency: "yearly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...articleRoutes];
 }
