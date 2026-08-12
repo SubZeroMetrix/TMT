@@ -10,5 +10,7 @@ Self Photo.png
 qa-screenshots
 Logo.png
 AGENTS.md
-CLAUDE.md
+# CLAUDE.md is authoritative project instructions — tracked on purpose.
+# AGENTS.md above stays ignored: `next dev` regenerates it.
+!CLAUDE.md
 .vercel
