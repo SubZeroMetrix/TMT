@@ -29,7 +29,22 @@ const locations = [
   {
     name: "Clearwater",
     href: "/locations/clearwater",
-    note: "Pinellas County service and construction businesses",
+    note: "Tourism, hospitality, and year-round residential demand",
+  },
+  {
+    name: "Largo",
+    href: "/locations/largo",
+    note: "Central Pinellas — where many county contractors are based",
+  },
+  {
+    name: "Pinellas Park",
+    href: "/locations/pinellas-park",
+    note: "The county's industrial and warehouse hub",
+  },
+  {
+    name: "Brandon",
+    href: "/locations/brandon",
+    note: "Eastern Hillsborough's commercial anchor — county-governed",
   },
 ];
 

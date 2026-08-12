@@ -226,8 +226,177 @@ export const CRM_WORKFLOW_FAQS: Faq[] = [
   },
 ];
 
+/**
+ * Outcome Sprints. Keyed by the /services/<slug> segment. Each answers price
+ * and scope directly — same rule as AUDIT_FAQS: price questions are
+ * high-intent, so answer with the number, not a deflection to "contact us."
+ */
+export const SPRINT_FAQS: Record<string, Faq[]> = {
+  "unsold-estimate-recovery-sprint": [
+    {
+      question: "How much does the Unsold Estimate Recovery Sprint cost?",
+      answer:
+        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Operational AI Readiness Audit finds — estimate volume, current tools, and where follow-up breaks down today. No hourly billing.",
+    },
+    {
+      question: "Do I need the audit before this sprint?",
+      answer:
+        "Yes. The audit is what determines whether unsold estimates are the highest-value problem to fix first, and it sets the sprint's scope and price. Sprints are not sold without it.",
+    },
+    {
+      question: "Will this replace our CRM or add new software?",
+      answer:
+        "Usually not. Most CRM and FSM platforms already have a follow-up or pipeline feature that was never configured or adopted. New software is only recommended when nothing suitable already exists.",
+    },
+  ],
+  "missed-call-recovery-sprint": [
+    {
+      question: "How much does the Missed Call Recovery Sprint cost?",
+      answer:
+        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Operational AI Readiness Audit finds — current phone setup, call volume, and where calls are actually being lost. No hourly billing.",
+    },
+    {
+      question: "Does this involve AI answering customer calls?",
+      answer:
+        "Only where it removes real admin work with a human reviewing the outcome — after-hours call handling and routing, for example. It is never used to make unreviewed customer-facing decisions.",
+    },
+    {
+      question: "How do you measure whether it worked?",
+      answer:
+        "The audit establishes a baseline for missed-call volume before anything changes. A 30-day check afterward compares against that same baseline — the same rule as every engagement: no baseline, no claimed result.",
+    },
+  ],
+  "office-workflow-reduction-sprint": [
+    {
+      question: "How much does the Office Workflow Reduction Sprint cost?",
+      answer:
+        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Operational AI Readiness Audit finds — which systems are involved and where duplicate work actually happens. No hourly billing.",
+    },
+    {
+      question: "Is this the right sprint if we don't know which problem we have?",
+      answer:
+        "That is exactly what the audit is for. If the top operating leak is duplicate data entry and disconnected systems rather than a specific pain point like missed calls or unsold estimates, this is the sprint the audit will recommend.",
+    },
+  ],
+  "maintenance-agreement-reactivation-sprint": [
+    {
+      question: "How much does the Maintenance Agreement Reactivation Sprint cost?",
+      answer:
+        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Operational AI Readiness Audit finds — how many agreements exist and what platform manages them today. No hourly billing.",
+    },
+    {
+      question: "Is this only for HVAC businesses?",
+      answer:
+        "It applies to any business running recurring maintenance or service agreements, though it is most common in HVAC. The audit confirms whether lapsed agreements are a significant enough leak to justify the sprint.",
+    },
+  ],
+  "crm-fsm-utilization-sprint": [
+    {
+      question: "How much does the CRM/FSM Utilization Sprint cost?",
+      answer:
+        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Operational AI Readiness Audit finds — which platform, what is configured today, and where adoption breaks down. No hourly billing.",
+    },
+    {
+      question: "What if the audit finds we should switch platforms entirely?",
+      answer:
+        "That is a legitimate outcome and the recommendation stays vendor-neutral either way — no commission is taken on any platform. If switching is the right call, that becomes a separately scoped project rather than this sprint.",
+    },
+  ],
+};
+
 /** Per-city. Keyed by the /locations/<slug> segment. */
 export const LOCATION_FAQS: Record<string, Faq[]> = {
+  clearwater: [
+    {
+      question: "Do you work with contractors in Clearwater and the beaches?",
+      answer:
+        "Yes. Clearwater and the beach communities — Clearwater Beach, Sand Key, and the barrier islands — are core service area, along with the rest of Pinellas County. Visits happen at the shop, since how the office actually runs during the tourist season is what matters most.",
+    },
+    {
+      question:
+        "How does Clearwater's tourism economy affect a contractor's technology needs?",
+      answer:
+        "Clearwater runs two overlapping demand cycles: year-round residential and commercial work, plus a hospitality and short-term-rental sector tied to the beaches that needs fast turnaround between guest stays. A property management or hospitality-adjacent contractor client has tighter scheduling windows than a standard residential job, which changes what 'good' dispatch and follow-up look like — a system built only for residential service calls tends to break under same-day turnaround pressure.",
+    },
+    {
+      question: "What kinds of businesses in Clearwater do you work with?",
+      answer:
+        "Owner-led contracting and field-service firms — HVAC, plumbing, electrical, roofing, general contracting — plus service businesses supporting Clearwater's hospitality and vacation-rental sector, where the operating shape (fast turnaround, seasonal volume swings) is similar even outside the trades.",
+    },
+    {
+      question: "Is Clearwater different from St. Petersburg for a service business?",
+      answer:
+        "The core Pinellas operating constraints are the same — narrow county, unforgiving drive time, a real summer peak. What differs is demand mix: Clearwater carries more tourism and hospitality-driven work than St. Petersburg's more residential/commercial balance, and its growing tech-sector presence (AnyDesk, KnowBe4, and others have opened offices there) means more office and mixed-use commercial buildout for contractors serving that space.",
+    },
+  ],
+  largo: [
+    {
+      question: "Do you work with contractors based in Largo?",
+      answer:
+        "Yes. Largo sits centrally in Pinellas County, and that central position is exactly why many Pinellas contractor and field-service businesses are physically headquartered there — it is close to dispatch coverage running both north toward Clearwater and south toward St. Petersburg without the drive-time penalty either end of the county carries.",
+    },
+    {
+      question: "What makes Largo a strong base for a contractor business?",
+      answer:
+        "Largo has one of the stronger industrial and office real estate markets in Pinellas County, anchored by major employers including TD Synnex, and the West Bay Drive and Clearwater-Largo Road corridors have seen active redevelopment. For a contractor business, that combination of central location and available industrial/flex space makes Largo a practical place to base trucks, storage, and an office — rather than a place a business merely services.",
+    },
+    {
+      question: "What operational problems are common for Largo-based contractors?",
+      answer:
+        "Because Largo sits mid-county, dispatch efficiency depends heavily on whether the board is built with drive time in mind — a Largo-based crew covering both the Clearwater and St. Petersburg sides of the county in the same day is a very different scheduling problem than a business anchored at one end. Businesses that never account for that in how jobs get sequenced lose more hours to driving than the map distance suggests.",
+    },
+    {
+      question: "Do you serve Largo directly, or only as part of Pinellas County?",
+      answer:
+        "Directly. Largo gets the same on-site shop visit and advisory work as St. Petersburg or Clearwater — the location does not change the service, only the drive.",
+    },
+  ],
+  "pinellas-park": [
+    {
+      question: "Do you work with contractors in Pinellas Park?",
+      answer:
+        "Yes, and Pinellas Park is a particularly common base for them. It carries one of the largest concentrations of industrial and warehouse space in Pinellas County, with industrial vacancy historically running near the low single digits — which makes it one of the few places in the county where a contractor business can actually find warehouse, flex, or shop space to lease or buy.",
+    },
+    {
+      question: "Why do so many contractor businesses operate out of Pinellas Park?",
+      answer:
+        "Zoning and available real estate. Most of Pinellas County is built out residentially, but Pinellas Park has real industrial and flex-space inventory — the kind a contractor business actually needs for trucks, equipment, and material storage. A business headquartered there is not necessarily working there; it is based there because that is where the space exists, then dispatches across the rest of the county.",
+    },
+    {
+      question:
+        "What does that mean for a Pinellas Park contractor's technology needs?",
+      answer:
+        "A business based in warehouse/flex space with a truck fleet has different operational pressure points than a purely office-based service business — inventory and equipment tracking, fleet coordination, and dispatch efficiency out of a single hub location tend to matter more here than for a business without a physical yard. That shapes which parts of a CRM or FSM platform are worth configuring first.",
+    },
+    {
+      question: "How tight is industrial space in Pinellas Park right now?",
+      answer:
+        "Tight. Countywide industrial vacancy in Pinellas has run near 2 percent in recent market reporting, and Pinellas Park carries a meaningful share of what exists. A contractor business already based there holds a real advantage over one still looking for space — worth knowing before assuming relocation is an easy option.",
+    },
+  ],
+  brandon: [
+    {
+      question: "Do you work with contractors in Brandon?",
+      answer:
+        "Yes. Brandon is the commercial and residential anchor of eastern Hillsborough County, and it is core service area alongside Tampa. Richard is based in St. Petersburg and works on site throughout the Brandon area.",
+    },
+    {
+      question: "Is Brandon a city, and does that affect permitting?",
+      answer:
+        "Brandon is unincorporated — a census-designated place with a real identity (roughly 115,000 residents) but no city government of its own. Zoning, permitting, and most public services run through Hillsborough County directly rather than a city hall, which matters for any contractor business that assumes 'the city' handles permits — in Brandon, it is the county, on the county's process and timeline.",
+    },
+    {
+      question:
+        "What is different about running a service business out of Brandon versus Tampa proper?",
+      answer:
+        "Brandon carries real commercial density of its own — one of the larger unincorporated business districts in the state, with thousands of businesses along the SR 60 corridor — but without a separate municipal government, so a Brandon-based contractor is navigating county process for permits and licensing even while serving what functions like its own commercial center. That combination of scale without a distinct city bureaucracy is worth planning around, not discovering mid-project.",
+    },
+    {
+      question: "Do you travel to Brandon and the surrounding communities?",
+      answer:
+        "Yes — Brandon, along with Riverview, Valrico, and the rest of eastern Hillsborough County. These unincorporated communities cover most of the county geographically, and most of Hillsborough's contractor businesses operate somewhere in that unincorporated ring rather than inside Tampa's city limits.",
+    },
+  ],
   "st-petersburg": [
     {
       question:

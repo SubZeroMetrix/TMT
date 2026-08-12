@@ -20,16 +20,23 @@ It is not a software development shop and does not resell software.
 
 ## Services
 
-- **Technology & AI Readiness Audit** — the entry engagement. Where the business
-  is losing money and time before any tool is chosen.
-- **Software Selection & Stack Design** — picking field service management and
-  supporting tools that fit the shop's size and budget.
-- **AI Adoption & Staff Training** — getting office staff and technicians to
-  actually use what was bought.
-- **Implementation Planning** — sequencing a rollout so it does not collapse.
-- **Revenue Loss Recovery** — finding missed calls, unclosed estimates, and
-  unbilled work.
-- **Custom Workflow & Program Development**
+The offer ladder: diagnose, then fix, then maintain.
+
+- **Contractor Operations Audit** (formerly Technology & AI Readiness Audit) —
+  the entry engagement. Where the business is losing money and time before any
+  tool is chosen. $1,500 founding price, five business days.
+- **Outcome Sprints** — named, specific fixes for one diagnosed problem,
+  scoped by the audit. Not a generic "implementation" engagement:
+  - Unsold Estimate Recovery Sprint
+  - Missed Call Recovery Sprint
+  - Office Workflow Reduction Sprint
+  - Maintenance Agreement Reactivation Sprint
+  - CRM/FSM Utilization Sprint
+- **Modern Operations Partnership** — ongoing advisory once a sprint has
+  proven value, not sold as a cold retainer.
+- **Software Selection & Stack Design**, **AI Adoption & Staff Training**,
+  **Implementation Planning**, **Revenue Loss Recovery**, **Custom Workflow &
+  Program Development** — supporting engagements, same vendor-neutral basis.
 
 ## Who it serves
 
@@ -97,7 +104,15 @@ is made.
 - https://www.themoderntradesmentor.com/crm-workflow-consulting
 - https://www.themoderntradesmentor.com/locations/pinellas-county-fl
 - https://www.themoderntradesmentor.com/locations/hillsborough-county-fl
+- https://www.themoderntradesmentor.com/locations/largo
+- https://www.themoderntradesmentor.com/locations/pinellas-park
+- https://www.themoderntradesmentor.com/locations/brandon
 - https://www.themoderntradesmentor.com/services
 - https://www.themoderntradesmentor.com/services/technology-audit
+- https://www.themoderntradesmentor.com/services/unsold-estimate-recovery-sprint
+- https://www.themoderntradesmentor.com/services/missed-call-recovery-sprint
+- https://www.themoderntradesmentor.com/services/office-workflow-reduction-sprint
+- https://www.themoderntradesmentor.com/services/maintenance-agreement-reactivation-sprint
+- https://www.themoderntradesmentor.com/services/crm-fsm-utilization-sprint
 - https://www.themoderntradesmentor.com/about
 - https://www.themoderntradesmentor.com/insights

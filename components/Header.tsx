@@ -72,7 +72,7 @@ export default function Header() {
             <nav aria-label="Primary" className="hidden 2xl:flex items-center gap-5">
               {content.nav.map((item) => (
                 <Link
-                  key={item.href}
+                  key={item.label}
                   href={item.href}
                   className="text-[13px] font-medium text-steel-light hover:text-white transition-colors whitespace-nowrap"
                 >

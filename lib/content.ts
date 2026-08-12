@@ -4,16 +4,27 @@ export const header = {
   wordmarkLine1: "THE",
   wordmarkLine2: "MODERN",
   wordmarkLine3: "TRADES MENTOR LLC",
-  descriptor: "CONTRACTOR TECHNOLOGY & AI ADVISORY",
+  descriptor: "CONTRACTOR OPERATIONS & TECHNOLOGY",
+  // Restructured around the diagnose -> fix -> maintain offer ladder rather
+  // than service categories (AI Consulting / AI Automation / CRM & Workflow).
+  // URLs are unchanged for pages that already exist - this is a navigation
+  // relabel, not a route change (see /services/technology-audit's own
+  // "don't 301 on a positioning change" precedent).
+  //
+  // "90-Day Sprint" points at /services rather than a single page: five
+  // separate named sprint pages exist there (Unsold Estimate Recovery,
+  // Missed Call Recovery, etc.) - one nav label can't fan out to five URLs.
+  // "Ongoing Partnership" points at /contact: a dedicated partnership page
+  // was not part of the approved build scope, so this links to where that
+  // conversation actually starts today rather than a page that doesn't exist.
   nav: [
-    { label: "AI Consulting", href: "/ai-consulting-st-petersburg-fl" },
-    { label: "AI Automation", href: "/ai-automation" },
-    { label: "CRM & Workflow", href: "/crm-workflow-consulting" },
-    { label: "Services", href: "/services" },
-    { label: "Industries", href: "/industries" },
-    { label: "Locations", href: "/locations/pinellas-county-fl" },
-    { label: "About Richard", href: "/about" },
+    { label: "Problems We Fix", href: "/services" },
+    { label: "Operations Audit", href: "/services/technology-audit" },
+    { label: "90-Day Sprint", href: "/services" },
+    { label: "Ongoing Partnership", href: "/contact" },
+    { label: "HVAC", href: "/industries" },
     { label: "Insights", href: "/insights" },
+    { label: "About Richard", href: "/about" },
   ],
   primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call" },
 };

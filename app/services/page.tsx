@@ -7,6 +7,7 @@ import {
   CtaBand,
 } from "@/components/PageChrome";
 import { SecondaryCTA } from "@/components/CTAButton";
+import { SPRINTS } from "@/lib/content/sprints";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -77,6 +78,14 @@ const services = [
     description:
       "Find and fix revenue leaks: missed calls, unsold estimates, lapsed maintenance agreements, and follow-up gaps that cost more than any software subscription.",
   },
+  // Outcome Sprints appended after the GBP-matched five above — never
+  // reordered ahead of them (see the file-level comment on `services`).
+  // Sourced from lib/content/sprints.ts rather than duplicated by hand.
+  ...SPRINTS.map((sprint) => ({
+    href: `/services/${sprint.slug}`,
+    title: sprint.name,
+    description: sprint.heroDescription,
+  })),
 ];
 
 export default function ServicesPage() {
@@ -92,7 +101,7 @@ export default function ServicesPage() {
 
       <ContentSection>
         <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-dim mb-3">
-          Six Ways We Help
+          How We Help
         </p>
         <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy tracking-tight max-w-2xl mb-4">
           Practical Advisory — Not a Software Sales Pitch

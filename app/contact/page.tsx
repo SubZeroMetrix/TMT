@@ -8,7 +8,17 @@ import {
 } from "@/components/PageChrome";
 import { PrimaryCTA } from "@/components/CTAButton";
 import SignatureName from "@/components/SignatureName";
+import CaptureFormEmbed from "@/components/CaptureFormEmbed";
 import { contact } from "@/lib/content";
+
+/**
+ * Lead-capture form for visitors not ready to call or book a full shop
+ * visit. Built and owned inside GoHighLevel (Sites > Forms) — same pattern
+ * as the booking calendar in app/book-a-strategy-call/page.tsx. Rendering
+ * is conditional so the page never ships a broken/empty embed before the
+ * form exists: set NEXT_PUBLIC_CAPTURE_FORM_URL once it's built.
+ */
+const CAPTURE_FORM_URL = process.env.NEXT_PUBLIC_CAPTURE_FORM_URL;
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -106,6 +116,26 @@ export default function ContactPage() {
           </InfoCard>
         </div>
       </ContentSection>
+
+      {CAPTURE_FORM_URL && (
+        <ContentSection>
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-dim mb-3">
+              Not Ready to Call or Book Yet?
+            </p>
+            <h2 className="font-display text-3xl font-bold text-navy tracking-tight mb-4">
+              Get the Operational AI Readiness Checklist
+            </h2>
+            <p className="text-navy/70 leading-relaxed mb-10">
+              A short, practical checklist — not a sales sequence. Leave your email and it lands in
+              your inbox once. No autoresponder chain, no drip campaign after it.
+            </p>
+          </div>
+          <div className="max-w-xl mx-auto">
+            <CaptureFormEmbed url={CAPTURE_FORM_URL} />
+          </div>
+        </ContentSection>
+      )}
 
       <ContentSection dark>
         <div className="grid lg:grid-cols-2 gap-10">

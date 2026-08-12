@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, IBM_Plex_Sans, JetBrains_Mono, Allura } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -74,6 +75,7 @@ export default function RootLayout({
         <Footer />
         <MobileStickyCTA />
         <JsonLd data={siteGraph()} />
+        <Analytics />
       </body>
     </html>
   );
