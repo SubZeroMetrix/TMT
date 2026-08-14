@@ -8,8 +8,14 @@ import Script from "next/script";
  *
  *  - **Go High Level** (`api.leadconnectorhq.com/widget/booking/<id>`)
  *    Needs `form_embed.js` to auto-resize the iframe, an element `id` that
- *    matches the widget id, `allow="payment"`, and `scrolling="no"`. Without
- *    the script the iframe keeps a fixed height and the calendar gets clipped.
+ *    matches the widget id, and `allow="payment"`. Without the script the
+ *    iframe keeps a fixed height and the calendar gets clipped — this bit
+ *    the mobile layout once already: `scrolling="no"` + `overflow-hidden`
+ *    hid the date grid entirely on narrow viewports where the widget
+ *    stacks the calendar above the time list instead of side-by-side,
+ *    needing far more height than the resize script had granted yet.
+ *    Native scrolling (no `overflow-hidden`) is the fallback if the resize
+ *    script is ever slow to fire.
  *
  *  - **Google Calendar appointment schedules**
  *    The plain share URL sends `X-Frame-Options: SAMEORIGIN` and cannot be
@@ -50,8 +56,7 @@ export default function BookingEmbed({
           id={id}
           title={title}
           allow="payment"
-          scrolling="no"
-          className="w-full min-h-[700px] border-0 overflow-hidden"
+          className="w-full min-h-[900px] sm:min-h-[700px] border-0"
         />
         <Script
           src="https://api.leadconnectorhq.com/js/form_embed.js"

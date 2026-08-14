@@ -32,7 +32,7 @@ export default function AboutPage() {
         eyebrow="About"
         title="About Richard Fritzke"
         description="Founder of The Modern Trades Mentor — contractor technology and AI advisory built from 26+ years in HVAC, facilities, mechanical systems, and service operations."
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "View Services", href: "/services" }}
       />
 
@@ -188,7 +188,7 @@ export default function AboutPage() {
                 <li>On-site shop visits available — Richard travels to you</li>
               </ul>
               <div className="mt-6">
-                <GhostCTA href="/book-a-strategy-call">Book a Shop Visit</GhostCTA>
+                <GhostCTA href="/book-a-strategy-call#schedule">Book a Shop Visit</GhostCTA>
               </div>
             </InfoCard>
           </div>
@@ -198,7 +198,7 @@ export default function AboutPage() {
       <CtaBand
         headline="Work With Someone Who Has Been in the Field"
         body="Book a Shop Visit for a practical conversation about your business — no software pitch, no obligation."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

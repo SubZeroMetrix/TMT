@@ -128,7 +128,7 @@ export default function TermsPage() {
       <CtaBand
         headline="Ready to discuss advisory services?"
         body="Website terms are separate from formal engagement agreements. Book a call to learn more."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Contact Us", href: "/contact" }}
       />
     </>

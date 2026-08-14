@@ -5,6 +5,7 @@ import { PrimaryCTA, SecondaryCTA, GhostCTA } from "@/components/CTAButton";
 import SignatureName from "@/components/SignatureName";
 import { contact, fitCheck } from "@/lib/content";
 import BookingEmbed from "@/components/BookingEmbed";
+import ScrollToHash from "@/components/ScrollToHash";
 
 export const metadata: Metadata = {
   title: "Book an Onsite Shop Visit",
@@ -98,6 +99,7 @@ const faqs = [
 export default function BookStrategyCallPage() {
   return (
     <>
+      <ScrollToHash />
       {/* HERO — onsite-first */}
       <section className="relative overflow-hidden bg-navy-deep border-b border-white/10">
         <div

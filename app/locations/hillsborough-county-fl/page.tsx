@@ -53,7 +53,7 @@ export default function HillsboroughCountyPage() {
         eyebrow="Hillsborough County, FL"
         title="AI Consulting in Hillsborough County, FL"
         description="AI consulting, automation, CRM and workflow guidance for contractors and small service businesses across Tampa and Hillsborough County. Based in St. Petersburg, on site across the bay."
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "Call (727) 600-3425", href: "tel:+17276003425" }}
       />
 
@@ -192,7 +192,7 @@ export default function HillsboroughCountyPage() {
       <CtaBand
         headline="Book a shop visit anywhere in Hillsborough County"
         body="Free, no obligation, at your place. Call or text (727) 600-3425."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call (727) 600-3425", href: "tel:+17276003425" }}
       />
     </>

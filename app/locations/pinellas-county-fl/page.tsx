@@ -89,7 +89,7 @@ export default function PinellasCountyPage() {
         eyebrow="Pinellas County, FL"
         title="AI Consulting in Pinellas County, FL"
         description="AI consulting, automation, CRM and workflow guidance for contractors and small service businesses across all of Pinellas County. Based in St. Petersburg, on site countywide."
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
 
@@ -236,7 +236,7 @@ export default function PinellasCountyPage() {
       <CtaBand
         headline="Book a shop visit anywhere in Pinellas County"
         body="Free, no obligation, and it happens at your place. Call or text 727-600-3425."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

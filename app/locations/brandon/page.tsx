@@ -63,7 +63,7 @@ export default function BrandonPage() {
         eyebrow="Brandon, FL"
         title="Contractor Technology Advisory in Brandon"
         description="Eastern Hillsborough County's commercial anchor — a real business district running on county process rather than a city hall. Vendor-neutral technology, workflow, and AI guidance built for that reality."
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
 
@@ -145,7 +145,7 @@ export default function BrandonPage() {
       <CtaBand
         headline="Brandon contractor ready for a practical plan?"
         body="Start with a Contractor Operations Audit or Book a Shop Visit."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Explore the Audit", href: "/services/technology-audit" }}
       />
     </>

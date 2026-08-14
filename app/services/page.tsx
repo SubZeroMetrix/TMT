@@ -95,7 +95,7 @@ export default function ServicesPage() {
         eyebrow="What We Do"
         title="Services Built for Owner-Led Contractor Teams"
         description="Every engagement starts with your business — not a software demo. We help HVAC, plumbing, electrical, roofing, and field-service companies choose the right tools, fix the process, train the team, and use AI where it earns its keep."
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "How It Works", href: "/how-it-works" }}
       />
 
@@ -195,7 +195,7 @@ export default function ServicesPage() {
       <CtaBand
         headline="Ready to Modernize Without Losing Control?"
         body="Start with a practical conversation about your business — not a vendor pitch."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

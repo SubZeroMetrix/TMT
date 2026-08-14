@@ -26,7 +26,7 @@ export const header = {
     { label: "Insights", href: "/insights" },
     { label: "About Richard", href: "/about" },
   ],
-  primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call" },
+  primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" },
 };
 
 /**
@@ -60,7 +60,7 @@ export const broadServices = {
     {
       title: "On-Site Shop Visits",
       body: "Free, 60 minutes, at your place — a fit conversation to see whether a paid audit is worth it.",
-      href: "/book-a-strategy-call",
+      href: "/book-a-strategy-call#schedule",
     },
     {
       title: "Serving Pinellas & Hillsborough",
@@ -80,7 +80,7 @@ export const hero = {
   promise: "Modernize your contracting business. Without losing control of it.",
   description:
     "The Modern Trades Mentor helps Tampa Bay service businesses find and fix the operating problems that waste time, delay follow-up, and make technology investments fail. We start with the workflow — not the software — and make vendor-neutral recommendations backed by a practical implementation plan.",
-  primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call" },
+  primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" },
   secondaryCta: { label: "See the Operational AI Readiness Audit", href: "/services/technology-audit" },
   phone: { label: "Prefer to talk now? Call 727-600-3425", href: "tel:+17276003425" },
   credibilityLine:
@@ -300,7 +300,7 @@ export const aiPositioning = {
 export const finalCta = {
   headline: "Ready to Build a More Modern Contracting Business?",
   body: "Start with a practical conversation about your current systems, your team, and where technology or AI can create real value.",
-  primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call" },
+  primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" },
   secondaryCta: { label: "Call 727-600-3425", href: "tel:+17276003425" },
   footnote: "No pressure. No software pitch. No obligation to buy a platform.",
 };

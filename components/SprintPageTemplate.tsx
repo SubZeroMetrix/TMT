@@ -44,7 +44,7 @@ export default function SprintPageTemplate({ sprint }: { sprint: Sprint }) {
         eyebrow={`Outcome Sprint · Founding range ${FOUNDING_SPRINT_PRICE} · Scoped by the audit`}
         title={sprint.name}
         description={sprint.heroDescription}
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "See the Operations Audit", href: "/services/technology-audit" }}
       />
 
@@ -106,7 +106,7 @@ export default function SprintPageTemplate({ sprint }: { sprint: Sprint }) {
           <p className="mt-5 leading-relaxed text-navy/75">{sprint.processNote}</p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <a
-              href="/book-a-strategy-call"
+              href="/book-a-strategy-call#schedule"
               className="inline-flex items-center justify-center rounded-md bg-blue px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-blue-hover"
             >
               Book a Shop Visit
@@ -147,7 +147,7 @@ export default function SprintPageTemplate({ sprint }: { sprint: Sprint }) {
       <CtaBand
         headline="Find Out If This Is the Right Sprint"
         body="The Operational AI Readiness Audit determines which sprint fits — book a shop visit to start there."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

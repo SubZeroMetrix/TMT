@@ -56,7 +56,7 @@ export default function InsightsPage() {
       <CtaBand
         headline="Want guidance tailored to your business?"
         body="Start with a Technology & AI Readiness Audit or Book a Shop Visit to discuss your current systems and priorities."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Explore the Audit", href: "/services/technology-audit" }}
       />
     </>

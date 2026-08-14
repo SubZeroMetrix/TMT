@@ -114,7 +114,7 @@ export default function TechnologyAuditPage() {
         eyebrow={`Fixed fee · ${AUDIT_PRICE} · Delivered in 5 business days`}
         title="Operational AI Readiness Audit"
         description="Find the operating problems that waste time, delay follow-up, and make technology investments fail — measured, ranked, and turned into a 30/60/90-day plan. We start with the workflow, not the software."
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "See All Services", href: "/services" }}
       />
 
@@ -198,7 +198,7 @@ export default function TechnologyAuditPage() {
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <a
-              href="/book-a-strategy-call"
+              href="/book-a-strategy-call#schedule"
               className="inline-flex items-center justify-center rounded-md bg-blue px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-blue-hover"
             >
               Book a Shop Visit
@@ -310,7 +310,7 @@ export default function TechnologyAuditPage() {
       <CtaBand
         headline="Start With Clarity, Not Another Demo"
         body="Book a Shop Visit to discuss whether the audit is the right starting point for your business."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

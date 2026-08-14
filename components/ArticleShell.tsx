@@ -101,7 +101,7 @@ export default function ArticleShell({
       <CtaBand
         headline="Want this looked at in your shop?"
         body="A shop visit is free and carries no obligation. Richard travels to you across Pinellas and Hillsborough counties."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call (727) 600-3425", href: "tel:+17276003425" }}
       />
     </>

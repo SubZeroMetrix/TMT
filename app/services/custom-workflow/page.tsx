@@ -51,7 +51,7 @@ export default function CustomWorkflowPage() {
         eyebrow="Workflow Development"
         title="Custom Workflows & Programs for Contractor Operations"
         description="Software only works when the process behind it is clear. We design purpose-built workflows and operational programs tailored to how your contractor business actually runs — not generic templates from a vendor onboarding guide."
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "See All Services", href: "/services" }}
       />
 
@@ -127,7 +127,7 @@ export default function CustomWorkflowPage() {
       <CtaBand
         headline="Fix the Process. Then Automate It."
         body="Book a Shop Visit to discuss workflow gaps in your contractor operation."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

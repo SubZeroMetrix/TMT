@@ -77,7 +77,7 @@ export default function ReviewsPage() {
         headline="Worked with us — or considering it?"
         body="Share feedback, ask questions, or Book a Shop Visit to discuss your contractor technology needs."
         primary={{ label: "Contact Us", href: "/contact" }}
-        secondary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call" }}
+        secondary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
       />
     </>
   );
