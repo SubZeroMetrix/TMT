@@ -164,7 +164,7 @@ export const audit = {
     "Vendor-neutral recommendations",
     "Prioritized implementation roadmap",
   ],
-  cta: { label: "Explore the Audit", href: "/services/technology-audit" },
+  cta: { label: "Explore the Blueprint", href: "/services/technology-audit" },
 };
 
 export const principles = [
@@ -208,7 +208,7 @@ export const founder = {
     },
     {
       title: "Today",
-      items: ["Helping contractors modernize", "Software selection", "Practical AI adoption", "Staff training"],
+      items: ["Growth & operating systems", "Software selection", "Staff training", "AI adoption where it helps"],
     },
   ],
   subhead:
@@ -218,7 +218,7 @@ export const founder = {
   narrative2:
     "For more than 26 years, Richard has worked across HVAC/R, facilities, mechanical systems, technician leadership, building optimization, capital planning, and service operations. He has led technical teams, supported complex commercial environments, and worked through the operational problems that software alone cannot solve: inconsistent processes, missed follow-up, disconnected systems, weak adoption, and wasted administrative time.",
   narrative3:
-    "Today, Richard applies that field-and-operations experience to AI consulting, workflow improvement, CRM and software guidance, and practical technology planning for owner-led service businesses. Every recommendation starts with the business process, the people doing the work, and the outcome the owner needs — not a preferred software platform.",
+    "Today, Richard applies that field-and-operations experience to growth and operating systems, workflow improvement, CRM and software guidance, and practical technology and AI planning for owner-led service businesses. Every recommendation starts with the business process, the people doing the work, and the outcome the owner needs — not a preferred software platform.",
   disclaimer:
     "Experience references are provided for professional background only and do not imply endorsement by any current or former employer or government entity.",
   cta: { label: "See Why Contractors Trust Richard", href: "/about" },
@@ -243,19 +243,27 @@ export const insuranceBackground = {
 };
 
 export const howRichardWorks = {
-  heading: "How Richard Works With Your Business",
+  heading: "How It Works",
   steps: [
     {
-      title: "1. Understand the operation",
-      body: "We start with the real work: how leads move, how jobs are scheduled, how the office and field communicate, and where time or revenue is being lost.",
+      title: "1. Diagnose the business",
+      body: "We start with the real work: how customers find you, how leads are handled, and how work gets delivered and paid for.",
     },
     {
-      title: "2. Identify the practical opportunity",
-      body: "We review the workflows, systems, and AI opportunities that can make the business easier to manage — without forcing unnecessary technology changes.",
+      title: "2. Identify the biggest constraints",
+      body: "The specific gaps costing the business time, money, or growth — ranked, not guessed at.",
     },
     {
-      title: "3. Create a clear next step",
-      body: "You receive vendor-neutral guidance on what to improve first, what to leave alone, and what information you need before making a software or automation decision.",
+      title: "3. Build the Growth & Systems Blueprint",
+      body: "A prioritized path for what to fix first and how the pieces should work together.",
+    },
+    {
+      title: "4. Implement the right systems",
+      body: "Fixed-scope, milestone-based work — only where it solves a real constraint.",
+    },
+    {
+      title: "5. Measure what changed",
+      body: "A baseline taken up front, and a real number to show whether it worked.",
     },
   ],
 };
@@ -298,9 +306,28 @@ export const aiPositioning = {
   ],
 };
 
+export const objections = [
+  {
+    q: "We already have a CRM.",
+    a: "Good. We start by determining whether the business process works before recommending replacement software.",
+  },
+  {
+    q: "We already have a marketing company.",
+    a: "Marketing is only one part of the system. We look across acquisition, conversion, operations, follow-up, retention, and measurement.",
+  },
+  {
+    q: "We're already busy.",
+    a: "Growth without capacity, handoffs, and visibility creates more chaos, not less. We look at demand and operational control together.",
+  },
+  {
+    q: "I don't need AI.",
+    a: "AI is optional. We use automation or AI only where it solves a real business problem — never as the point of the engagement.",
+  },
+];
+
 export const finalCta = {
-  headline: "Ready to Build a More Modern Contracting Business?",
-  body: "Start with a practical conversation about your current systems, your team, and where technology or AI can create real value.",
+  headline: "Ready to Grow Without Losing Control of the Business?",
+  body: "Start with a practical conversation about your current systems, your team, and where the business is losing time, money, or opportunity.",
   primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" },
   secondaryCta: { label: "Call 727-600-3425", href: "tel:+17276003425" },
   footnote: "No pressure. No software pitch. No obligation to buy a platform.",

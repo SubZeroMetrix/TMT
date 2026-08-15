@@ -16,6 +16,8 @@ import {
   differentiators,
   philosophy,
   aiPositioning,
+  howRichardWorks,
+  objections,
   finalCta,
 } from "@/lib/content";
 
@@ -229,6 +231,23 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* HOW IT WORKS — the process, so the Blueprint below has context */}
+      <section className="bg-white border-y border-border-light">
+        <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-8 py-16">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy tracking-tight mb-10">
+            {howRichardWorks.heading}
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {howRichardWorks.steps.map((s) => (
+              <div key={s.title} className="border-t-2 border-blue pt-4">
+                <h3 className="font-display font-semibold text-navy">{s.title}</h3>
+                <p className="mt-2 text-sm text-slate leading-relaxed">{s.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FLAGSHIP AUDIT */}
       <section className="relative bg-navy overflow-hidden">
         <div
@@ -252,7 +271,7 @@ export default function HomePage() {
             <div className="flex items-center gap-3 mb-6">
               <span className="h-2 w-2 rounded-sm bg-accent-warning" />
               <span className="font-mono text-[11px] uppercase tracking-wider text-steel-light">
-                What the audit covers
+                What the Blueprint covers
               </span>
             </div>
             <ul className="space-y-3">
@@ -449,6 +468,23 @@ export default function HomePage() {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* OBJECTIONS — concise, right before the ask */}
+      <section className="bg-surface-light border-t border-border-light">
+        <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-8 py-16">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy tracking-tight max-w-2xl mb-10">
+            What Owners Ask First
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-8 max-w-4xl">
+            {objections.map((o) => (
+              <div key={o.q}>
+                <h3 className="font-display font-semibold text-navy">&ldquo;{o.q}&rdquo;</h3>
+                <p className="mt-2 text-sm text-slate leading-relaxed">{o.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
