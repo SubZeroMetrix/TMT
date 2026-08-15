@@ -20,9 +20,9 @@ import {
 } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "AI Consulting & Business Technology for Contractors",
+  title: "Growth & Operating Systems for Contractors",
   description:
-    "AI consulting, automation, and business technology guidance for contractors and small service businesses in St. Petersburg, Tampa, and across Pinellas County. Run by a 26-year HVAC and facilities operations professional.",
+    "The Modern Trades Mentor helps contractors and service businesses in St. Petersburg, Tampa, and across Pinellas County build the growth and operating systems they need to scale — marketing, sales, CRM, operations, automation and AI where it helps. Run by a 26-year HVAC and facilities operations professional.",
   alternates: { canonical: "/" },
 };
 
@@ -37,7 +37,7 @@ export default function HomePage() {
             alt=""
             fill
             sizes="100vw"
-            className="object-cover object-center opacity-70"
+            className="object-cover object-center opacity-40"
             priority
             aria-hidden="true"
           />
@@ -45,7 +45,7 @@ export default function HomePage() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(90deg, rgba(7, 20, 38, 0.97) 0%, rgba(7, 20, 38, 0.90) 42%, rgba(11, 31, 58, 0.72) 70%, rgba(11, 31, 58, 0.52) 100%)",
+                "linear-gradient(90deg, rgba(7, 20, 38, 0.97) 0%, rgba(7, 20, 38, 0.94) 42%, rgba(11, 31, 58, 0.88) 70%, rgba(11, 31, 58, 0.82) 100%)",
             }}
             aria-hidden="true"
           />

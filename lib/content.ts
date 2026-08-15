@@ -35,51 +35,52 @@ export const header = {
  * the contractor specialization appears further down the page.
  */
 export const broadServices = {
-  heading: "What we do",
+  heading: "Where We Help",
   items: [
     {
-      title: "AI Consulting",
-      body: "Where AI earns its keep in your business, where it is a liability, and what to fix first.",
+      title: "Generate Demand",
+      body: "Get the right opportunities into the business — how customers find you and what happens when they do.",
       href: "/ai-consulting-st-petersburg-fl",
     },
     {
-      title: "AI Automation",
-      body: "Narrow, reliable automation of the admin work that eats the week — calls, follow-up, notes, billing gaps.",
-      href: "/ai-automation",
+      title: "Convert More Opportunities",
+      body: "Improve response, qualification, estimating, sales, and follow-up so fewer leads go cold.",
+      href: "/services/unsold-estimate-recovery-sprint",
     },
     {
-      title: "CRM & Workflow Consulting",
-      body: "How customer and job information should move through the business, and which system actually fits it.",
+      title: "Capture More Revenue",
+      body: "Reduce missed calls, unsold estimates, and unbilled work — and improve repeat business and referrals.",
+      href: "/services/revenue-loss-recovery",
+    },
+    {
+      title: "Run the Operation Better",
+      body: "Improve handoffs, accountability, workflow, capacity visibility, and owner control.",
+      href: "/services/custom-workflow",
+    },
+    {
+      title: "Connect the Systems",
+      body: "CRM, field software, reporting, automation, and AI — only where they support the process.",
       href: "/crm-workflow-consulting",
     },
     {
       title: "Growth & Systems Blueprint",
-      body: "Where the business is losing money and time, measured and ranked. $1,500 founding-client price, delivered in five business days.",
+      body: "The gateway into implementation. $1,500 founding-client price, delivered in five business days.",
       href: "/services/technology-audit",
-    },
-    {
-      title: "On-Site Shop Visits",
-      body: "Free, 60 minutes, at your place — a fit conversation to see whether a paid audit is worth it.",
-      href: "/book-a-strategy-call#schedule",
-    },
-    {
-      title: "Serving Pinellas & Hillsborough",
-      body: "St. Petersburg, Clearwater, Largo, Tampa, Brandon and every city across both counties.",
-      href: "/locations/pinellas-county-fl",
     },
   ],
 };
 
 export const hero = {
-  eyebrow: "FIELD-TESTED. CONTRACTOR-BUILT.",
-  // H1 targets the head term contractors actually search ("AI consulting").
-  // The locked brand promise moved to `promise` directly beneath it — the
-  // search term wins the click, the promise wins the read.
-  headlineLine1: "AI CONSULTING FOR CONTRACTORS",
-  headlineLine2: "AND SERVICE BUSINESSES",
-  promise: "Modernize your contracting business. Without losing control of it.",
+  eyebrow: "GROWTH & OPERATING SYSTEMS FOR CONTRACTORS",
+  // Repositioned 2026-08-14: growth and operating systems lead, AI is a
+  // supporting capability rather than the headline. The business hierarchy
+  // is Business growth -> operating systems -> implementation ->
+  // technology/automation/AI, not the reverse. See tmt.md for the decision.
+  headlineLine1: "GROW THE BUSINESS",
+  headlineLine2: "WITHOUT LOSING CONTROL OF IT",
+  promise: "Marketing. Sales. CRM. Operations. Automation and AI where it helps.",
   description:
-    "The Modern Trades Mentor helps Tampa Bay service businesses find and fix the operating problems that waste time, delay follow-up, and make technology investments fail. We start with the workflow — not the software — and make vendor-neutral recommendations backed by a practical implementation plan.",
+    "The Modern Trades Mentor helps Tampa Bay contractors build the growth and operating systems they need to scale. We look at how customers find you, how leads are handled, how sales turns into work, how the work gets delivered, how customers come back, and how the business is measured — then fix the gaps and connect the systems that make it work.",
   primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" },
   secondaryCta: { label: "See the Growth & Systems Blueprint", href: "/services/technology-audit" },
   phone: { label: "Prefer to talk now? Call 727-600-3425", href: "tel:+17276003425" },
