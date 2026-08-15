@@ -1,18 +1,28 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 /**
  * Client feedback intake — /reviews#share-feedback.
  *
- * There is no email service, database, or CRM webhook already wired into
- * this repo (checked: no app/api routes existed before this one, no
- * nodemailer/resend/postgres/etc. in package.json). Rather than fake a
- * success response, delivery is gated behind FEEDBACK_WEBHOOK_URL — a
- * server-only env var (never NEXT_PUBLIC_, since this endpoint should not
- * be callable directly by a browser). Point it at any inbound webhook
- * (Zapier, Make, a GHL inbound webhook built in GHL itself, a Slack
- * webhook) and this starts working with no code changes. Until it's set,
- * the API honestly reports itself as unconfigured and the frontend shows
- * a real error instead of a fake "thank you."
+ * Checked for an existing delivery mechanism before writing this: no
+ * email provider, database, or webhook was already wired into this repo
+ * or configured in Vercel (Production/Preview/Development env vars were
+ * inspected by name only — 19 vars exist, all Postgres/Neon/Payload/Blob
+ * leftovers from an unrelated earlier scaffold this codebase doesn't use
+ * — zero `pg`/`payload` dependencies in package.json).
+ *
+ * Primary delivery: Gmail / Google Workspace SMTP via nodemailer, gated
+ * behind GMAIL_USER + GMAIL_APP_PASSWORD — both server-only env vars,
+ * never NEXT_PUBLIC_. GMAIL_APP_PASSWORD is a 16-character Google App
+ * Password (Google Account -> Security -> 2-Step Verification -> App
+ * Passwords), NOT the regular account password — Google requires
+ * 2-Step Verification to be enabled first to generate one.
+ *
+ * Falls back to Resend's REST API if RESEND_API_KEY is set instead, then
+ * to a generic FEEDBACK_WEBHOOK_URL if neither is set. Until one of the
+ * three is configured, the API honestly reports itself as unconfigured
+ * and the frontend shows a real error instead of a fake "thank you" — it
+ * never claims delivery it can't back up.
  *
  * Every field here matches the internal data shape a future durable store
  * should use: name, company, email, service, feedback, preferredPublicName,
@@ -30,6 +40,82 @@ function isNonEmptyString(v: unknown, max = MAX_LEN): v is string {
 
 function isValidEmail(v: unknown): v is string {
   return typeof v === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) && v.length <= 254;
+}
+
+type Submission = {
+  name: string;
+  company: string;
+  email: string;
+  service: string;
+  feedback: string;
+  preferredPublicName: string;
+  permissionToPublish: boolean;
+  verificationStatus: "unverified";
+  approvedForDisplay: false;
+  submittedAt: string;
+};
+
+function emailBody(s: Submission) {
+  return [
+    `Name: ${s.name}`,
+    `Company: ${s.company}`,
+    `Email: ${s.email}`,
+    `What TMT helped with: ${s.service || "(not specified)"}`,
+    `Preferred public name/company: ${s.preferredPublicName || "(not specified)"}`,
+    `Permission to publish: ${s.permissionToPublish ? "YES" : "No"}`,
+    "",
+    "Feedback:",
+    s.feedback,
+    "",
+    `Submitted: ${s.submittedAt}`,
+  ].join("\n");
+}
+
+async function deliverViaGmail(submission: Submission, gmailUser: string, gmailAppPassword: string) {
+  const toEmail = process.env.FEEDBACK_TO_EMAIL || "themoderntradesmentor@gmail.com";
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: { user: gmailUser, pass: gmailAppPassword },
+  });
+  await transporter.sendMail({
+    from: `TMT Feedback Form <${gmailUser}>`,
+    to: toEmail,
+    replyTo: submission.email,
+    subject: `New client feedback — ${submission.name} (${submission.company})`,
+    text: emailBody(submission),
+  });
+}
+
+async function deliverViaResend(submission: Submission, resendApiKey: string) {
+  const toEmail = process.env.FEEDBACK_TO_EMAIL || "themoderntradesmentor@gmail.com";
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${resendApiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      from: process.env.FEEDBACK_FROM_EMAIL || "TMT Feedback Form <onboarding@resend.dev>",
+      to: [toEmail],
+      reply_to: submission.email,
+      subject: `New client feedback — ${submission.name} (${submission.company})`,
+      text: emailBody(submission),
+    }),
+  });
+  if (!res.ok) {
+    throw new Error(`Resend responded ${res.status}: ${await res.text().catch(() => "")}`);
+  }
+}
+
+async function deliverViaWebhook(submission: Submission, webhookUrl: string) {
+  const res = await fetch(webhookUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(submission),
+  });
+  if (!res.ok) {
+    throw new Error(`Webhook responded ${res.status}: ${await res.text().catch(() => "")}`);
+  }
 }
 
 export async function POST(request: Request) {
@@ -70,7 +156,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid consent field." }, { status: 400 });
   }
 
-  const submission = {
+  const submission: Submission = {
     name: (name as string).trim(),
     company: (company as string).trim(),
     email: (email as string).trim(),
@@ -78,15 +164,19 @@ export async function POST(request: Request) {
     feedback: (feedback as string).trim(),
     preferredPublicName: typeof preferredPublicName === "string" ? preferredPublicName.trim() : "",
     permissionToPublish,
-    verificationStatus: "unverified" as const,
+    verificationStatus: "unverified",
     approvedForDisplay: false,
     submittedAt: new Date().toISOString(),
   };
 
+  const gmailUser = process.env.GMAIL_USER;
+  const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
+  const resendApiKey = process.env.RESEND_API_KEY;
   const webhookUrl = process.env.FEEDBACK_WEBHOOK_URL;
-  if (!webhookUrl) {
+
+  if (!gmailUser && !resendApiKey && !webhookUrl) {
     console.error(
-      "[feedback] FEEDBACK_WEBHOOK_URL is not configured — submission was NOT delivered.",
+      "[feedback] No delivery mechanism configured (GMAIL_USER, RESEND_API_KEY, FEEDBACK_WEBHOOK_URL all unset) — submission was NOT delivered.",
       submission
     );
     return NextResponse.json(
@@ -96,17 +186,15 @@ export async function POST(request: Request) {
   }
 
   try {
-    const res = await fetch(webhookUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(submission),
-    });
-    if (!res.ok) {
-      console.error("[feedback] webhook delivery failed", res.status, await res.text().catch(() => ""));
-      return NextResponse.json({ error: "Could not deliver feedback right now. Please try again shortly." }, { status: 502 });
+    if (gmailUser && gmailAppPassword) {
+      await deliverViaGmail(submission, gmailUser, gmailAppPassword);
+    } else if (resendApiKey) {
+      await deliverViaResend(submission, resendApiKey);
+    } else {
+      await deliverViaWebhook(submission, webhookUrl as string);
     }
   } catch (err) {
-    console.error("[feedback] webhook delivery threw", err);
+    console.error("[feedback] delivery failed", err);
     return NextResponse.json({ error: "Could not deliver feedback right now. Please try again shortly." }, { status: 502 });
   }
 
