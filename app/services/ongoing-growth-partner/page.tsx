@@ -27,6 +27,37 @@ const partnerIncludes = [
   "Limited hands-on configuration and optimization",
 ];
 
+/**
+ * How the Partner engagement actually runs, as a repeating cycle rather
+ * than a list of inclusions. Pressure test: a fractional-anything offer
+ * that can't say what happens in a cycle and how the next priority gets
+ * picked reads as a vague retainer. This names the loop, who's
+ * accountable inside it, and what happens when a request falls outside
+ * scope — the places retainers usually go soft.
+ */
+const rhythm = [
+  {
+    step: "1. Review the current growth and operations priorities",
+    body: "Every cycle starts against one list — the Blueprint's baseline and priorities, or a baseline built in week one if there wasn't a prior Blueprint. Not a shared doc nobody opens; the thing every review checks against.",
+  },
+  {
+    step: "2. Set the next constraint worth fixing",
+    body: "Picked by measured impact on the constraint the roadmap is built around, scored the same way the Blueprint scores it — not re-argued from scratch every cycle, and not whichever request was loudest.",
+  },
+  {
+    step: "3. Keep implementation moving with the owner and team",
+    body: "One name accountable for coordination — chasing a slow vendor, unsticking a handoff between the office and the field, keeping two systems agreeing on the same data. Not three people assuming someone else has it.",
+  },
+  {
+    step: "4. Review performance, friction, and system adoption",
+    body: "Did it work, is the team actually using it, and where is it creating friction instead of removing it. AI and automation priorities pass the same governance check every cycle — who owns the decision, what's touched, what the baseline is — because a recurring engagement is exactly where AI scope quietly creeps if nothing enforces this.",
+  },
+  {
+    step: "5. Adjust priorities as the business changes",
+    body: "A full roadmap reset on a fixed schedule, because the priority list from month one is rarely still the right one by month four. A request that's really a separate project — a rebuild, a new integration — gets scoped and quoted on its own rather than quietly consuming retainer hours.",
+  },
+];
+
 const partnerExcludes = [
   "Unlimited availability or unlimited system building",
   "Full-time employee management",
@@ -92,6 +123,28 @@ export default function OngoingGrowthPartnerPage() {
             <p className="mb-4">TMT runs point with your team to drive the plan forward.</p>
             <BulletList items={partnerIncludes} />
           </InfoCard>
+        </div>
+      </ContentSection>
+
+      <ContentSection>
+        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-dim mb-3">
+          The Operating Rhythm
+        </p>
+        <h2 className="font-display text-3xl font-bold text-navy tracking-tight mb-4 max-w-2xl">
+          How the Partner Engagement Actually Runs
+        </h2>
+        <p className="text-navy/70 max-w-2xl mb-12 leading-relaxed">
+          A retainer that can't say what happens in week one and what the recurring cadence
+          actually is isn't a system — it's a vague promise to be available. This is the
+          mechanics, not a list of inclusions.
+        </p>
+        <div className="space-y-8">
+          {rhythm.map((r) => (
+            <div key={r.step} className="border-t border-border-light pt-6">
+              <h3 className="font-display font-semibold text-navy text-lg">{r.step}</h3>
+              <p className="mt-2 text-sm text-navy/70 leading-relaxed max-w-3xl">{r.body}</p>
+            </div>
+          ))}
         </div>
       </ContentSection>
 

@@ -18,6 +18,37 @@ const goodFits = [
   "Scheduling support and reporting",
 ];
 
+/**
+ * The actual method, not a restatement of "where AI helps." Most AI
+ * consultants sell a tool looking for a problem — a chatbot, a voice
+ * agent, an automation platform — and the pitch starts with the
+ * technology. This starts with the constraint and only reaches for AI if
+ * a plain process fix doesn't close the gap on its own. No invented
+ * outcomes — only the order of operations and the checkpoints.
+ */
+const process = [
+  {
+    step: "1. Find the repetitive work and handoff failures worth automating",
+    body: "Measure the actual admin burden before naming a tool — how many after-hours calls, how many follow-ups actually get skipped, where information drops between the office and the field. A guess doesn't get automated.",
+  },
+  {
+    step: "2. Fix the workflow before introducing AI or automation",
+    body: "Often a named owner, a fixed cadence, or a configuration change closes the gap with no new tool at all. AI is considered only when a process fix alone can't do the job — automating a broken process just breaks it faster.",
+  },
+  {
+    step: "3. Connect approved systems and data safely",
+    body: "Exactly which systems and data are touched, who approves access, and who signs off before a customer sees the output — mapped and agreed before anything is connected, never assumed.",
+  },
+  {
+    step: "4. Build practical automations for follow-up, routing, reminders, visibility, and admin reduction",
+    body: "Narrow and specific — after-hours call handling, estimate follow-up that would otherwise get skipped, job routing, internal reminders, owner visibility into what's happening. One workflow at a time, with a human checkpoint before anything reaches a customer or touches a price.",
+  },
+  {
+    step: "5. Test, document, train, and improve it with the owner's team",
+    body: "A baseline taken before anything changes and a real number to check it against, a written record of what the automation does and why, and hands-on training so the team runs it — not TMT running it for them indefinitely.",
+  },
+];
+
 const cautions = [
   "Not every process should be automated",
   "A poor process becomes a poor automated process — fix the process first",
@@ -71,6 +102,27 @@ export default function AiConsultingAutomationPage() {
           <InfoCard title="Where AI Actually Helps a Contractor">
             <BulletList items={goodFits} />
           </InfoCard>
+        </div>
+      </ContentSection>
+
+      <ContentSection>
+        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-dim mb-3">
+          The Process
+        </p>
+        <h2 className="font-display text-3xl font-bold text-navy tracking-tight mb-4 max-w-2xl">
+          The Problem Comes First, the Tool Comes Last
+        </h2>
+        <p className="text-navy/70 max-w-2xl mb-12 leading-relaxed">
+          Most AI consultants start with the technology and go looking for a place to use it.
+          This runs in the opposite order — and most candidates never make it past step two.
+        </p>
+        <div className="space-y-8">
+          {process.map((p) => (
+            <div key={p.step} className="border-t border-border-light pt-6">
+              <h3 className="font-display font-semibold text-navy text-lg">{p.step}</h3>
+              <p className="mt-2 text-sm text-navy/70 leading-relaxed max-w-3xl">{p.body}</p>
+            </div>
+          ))}
         </div>
       </ContentSection>
 
