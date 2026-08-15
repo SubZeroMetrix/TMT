@@ -28,6 +28,7 @@ const COLUMNS = [
       { label: "About Richard", href: "/about" },
       { label: "Insights", href: "/insights" },
       { label: "Contact", href: "/contact" },
+      { label: "Share Feedback", href: "/reviews#share-feedback" },
     ],
   },
   {

@@ -1,16 +1,25 @@
 import type { Metadata } from "next";
 import { PageHero, ContentSection, InfoCard, CtaBand } from "@/components/PageChrome";
 import SignatureName from "@/components/SignatureName";
+import FeedbackForm from "@/components/FeedbackForm";
 
 export const metadata: Metadata = {
-  title: "Reviews & Client Feedback",
+  title: "Client Feedback & Reviews",
   description:
-    "The Modern Trades Mentor is in its early stage. We invite honest feedback from clients — no fabricated ratings or testimonials.",
+    "The Modern Trades Mentor is early-stage and does not have published customer reviews yet. Share honest feedback about working with TMT, or leave a Google review.",
   alternates: { canonical: "/reviews" },
   robots: { index: false, follow: true },
 };
 
 const LINKEDIN_URL = "https://www.linkedin.com/company/the-modern-trades-mentor-llc/";
+
+/**
+ * Set once a verified Google Business Profile review link exists. Never
+ * hardcode or guess this — an unverified or wrong link is worse than no
+ * button. Until it's set, the "Leave a Google Review" section doesn't
+ * render at all.
+ */
+const GOOGLE_REVIEW_URL = process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL;
 
 export default function ReviewsPage() {
   return (
@@ -72,6 +81,44 @@ export default function ReviewsPage() {
           </p>
         </div>
       </ContentSection>
+
+      <ContentSection>
+        <div id="share-feedback" className="scroll-mt-24">
+          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-dim mb-3">
+            Tell Us What Working With TMT Was Like
+          </p>
+          <h2 className="font-display text-3xl font-bold text-navy tracking-tight mb-4">
+            Share Your Experience
+          </h2>
+          <p className="text-navy/70 max-w-2xl mb-10 leading-relaxed">
+            Honest feedback helps us improve. Tell us what working with The Modern Trades Mentor
+            was like. We may contact you to verify your feedback. Nothing is published without
+            your written permission.
+          </p>
+          <FeedbackForm />
+        </div>
+      </ContentSection>
+
+      {GOOGLE_REVIEW_URL && (
+        <ContentSection dark>
+          <div className="max-w-2xl">
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight mb-3">
+              Prefer to leave a Google review?
+            </h2>
+            <p className="text-silver-light/85 leading-relaxed mb-6">
+              Public reviews help other contractors understand what to expect from TMT.
+            </p>
+            <a
+              href={GOOGLE_REVIEW_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md bg-blue px-7 py-3.5 text-sm font-semibold text-white shadow-cta hover:bg-blue-hover transition-colors"
+            >
+              Leave a Google Review
+            </a>
+          </div>
+        </ContentSection>
+      )}
 
       <CtaBand
         headline="Worked with us — or considering it?"
