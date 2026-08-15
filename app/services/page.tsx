@@ -12,9 +12,62 @@ import { SPRINTS } from "@/lib/content/sprints";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Vendor-neutral contractor technology advisory: audits, software selection, AI training, workflow development, implementation planning, and revenue recovery.",
+    "Fix the connected growth and operating systems behind your contracting business — the Growth & Systems Blueprint, fixed-scope implementation, AI & automation, and Ongoing Growth Partner support.",
   alternates: { canonical: "/services" },
 };
+
+/**
+ * The four real ways to work with TMT — the front-door decision, distinct
+ * from the GBP-locked grid below (which lists individual service pages,
+ * not the engagement paths). Blueprint included as a path here even though
+ * it's also item 01 in that grid, because a visitor choosing how to work
+ * with TMT needs to see it alongside the other three, not buried in a list
+ * of nine.
+ */
+const workPaths = [
+  {
+    title: "Growth & Systems Blueprint",
+    fit: "Start here when you need to identify what is actually holding the business back and what to fix first.",
+    href: "/services/technology-audit",
+  },
+  {
+    title: "Growth & Operations Systems",
+    fit: "Fix the connected systems behind demand, sales, follow-up, delivery, retention, and visibility.",
+    href: "/services/growth-operations-systems",
+  },
+  {
+    title: "AI Consulting & Automation",
+    fit: "Reduce repetitive work and improve follow-through where automation or AI genuinely fits.",
+    href: "/services/ai-consulting-automation",
+  },
+  {
+    title: "Ongoing Growth Partner",
+    fit: "Keep the highest-priority work moving with TMT involved alongside your team.",
+    href: "/services/ongoing-growth-partner",
+  },
+];
+
+const howItWorks = [
+  { title: "1. Understand the business", body: "How the operation actually runs today — not how the org chart says it runs." },
+  { title: "2. Find the real constraint", body: "The specific thing costing time, money, or growth — named, not guessed at." },
+  { title: "3. Prioritize the right fix", body: "Ranked by business need and impact, not by what's easiest to sell." },
+  { title: "4. Build the system or implementation plan", body: "Process fixes first, then the systems, automation, or AI support that genuinely fit." },
+  { title: "5. Measure, improve, and move to the next priority", body: "A baseline to check against, and a defined next step — not an open-ended engagement." },
+];
+
+const whatsDifferent = [
+  "TMT looks across growth, sales, operations, customer follow-up, systems, and visibility — not one department in isolation.",
+  "TMT is platform-neutral and does not force a software product.",
+  "Process and business priorities come before automation or AI.",
+  "Work is structured around a defined next step, not an open-ended consulting arrangement.",
+];
+
+const decisionGuide = [
+  { q: "Not sure what to fix first?", a: "Growth & Systems Blueprint", href: "/services/technology-audit" },
+  { q: "Know the bottleneck and need a defined build?", a: "Foundation, Full, or Flagship — determined after the Strategy Call or Blueprint", href: "/services/growth-operations-systems" },
+  { q: "Need workflow automation or practical AI support?", a: "AI Consulting & Automation", href: "/services/ai-consulting-automation" },
+  { q: "Need an accountable partner to keep priorities and implementation moving?", a: "Ongoing Growth Partner", href: "/services/ongoing-growth-partner" },
+];
 
 /**
  * The first five must stay identical, in name and order, to the services
@@ -98,6 +151,89 @@ export default function ServicesPage() {
         primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "How It Works", href: "/how-it-works" }}
       />
+
+      <ContentSection>
+        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-dim mb-3">
+          The Front Door
+        </p>
+        <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy tracking-tight max-w-2xl mb-10">
+          Find the Right Way to Work With TMT
+        </h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {workPaths.map((p, i) => (
+            <Link key={p.title} href={p.href} className="group block">
+              <div className="bp-frame bp-panel-light h-full p-6 transition-colors hover:border-cyan/30">
+                <span className="font-mono text-[10px] text-cyan-dim">0{i + 1}</span>
+                <h3 className="mt-2 font-display font-semibold text-navy text-lg group-hover:text-cyan transition-colors">
+                  {p.title}
+                </h3>
+                <p className="mt-2.5 text-sm text-navy/65 leading-relaxed">{p.fit}</p>
+                <p className="mt-4 font-mono text-[10px] uppercase tracking-wider text-cyan group-hover:underline">
+                  Learn more →
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </ContentSection>
+
+      <ContentSection dark>
+        <p className="bp-label mb-3">How TMT Works</p>
+        <h2 className="font-display text-3xl font-bold text-white tracking-tight mb-4 max-w-2xl">
+          One System, Not One Fixed Sequence
+        </h2>
+        <p className="text-silver-light/85 max-w-2xl mb-10 leading-relaxed">
+          The right path depends on whether the business needs diagnosis, a bounded fix,
+          connected system work, automation, or continuing execution support — not a
+          one-size-fits-all sequence, and never a software pitch.
+        </p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          {howItWorks.map((s) => (
+            <div key={s.title} className="border-t-2 border-cyan pt-4">
+              <h3 className="font-display font-semibold text-white text-sm">{s.title}</h3>
+              <p className="mt-2 text-sm text-silver-light/75 leading-relaxed">{s.body}</p>
+            </div>
+          ))}
+        </div>
+      </ContentSection>
+
+      <ContentSection>
+        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-dim mb-3">
+          What Makes This Different
+        </p>
+        <h2 className="font-display text-3xl font-bold text-navy tracking-tight mb-8 max-w-2xl">
+          Business First, Tools Second
+        </h2>
+        <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4 max-w-3xl">
+          {whatsDifferent.map((d) => (
+            <li key={d} className="flex items-start gap-3 text-navy/80">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" className="mt-0.5 shrink-0 text-blue">
+                <path d="M4 10.5l3.5 3.5L16 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              {d}
+            </li>
+          ))}
+        </ul>
+      </ContentSection>
+
+      <ContentSection dark>
+        <p className="bp-label mb-3">Decision Guide</p>
+        <h2 className="font-display text-3xl font-bold text-white tracking-tight mb-10 max-w-2xl">
+          Which Path Fits Right Now?
+        </h2>
+        <div className="grid sm:grid-cols-2 gap-6">
+          {decisionGuide.map((d) => (
+            <Link key={d.q} href={d.href} className="group block">
+              <div className="bp-frame bp-panel h-full p-6 transition-colors hover:border-cyan/30">
+                <p className="font-display font-semibold text-white leading-snug">&ldquo;{d.q}&rdquo;</p>
+                <p className="mt-3 text-sm text-cyan-dim group-hover:text-cyan transition-colors">
+                  → {d.a}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </ContentSection>
 
       <ContentSection>
         <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-dim mb-3">
