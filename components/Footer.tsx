@@ -8,7 +8,7 @@ const COLUMNS = [
     // conflicting signal about what the business actually does.
     title: "Services",
     links: [
-      { label: "Operational AI Readiness Audit", href: "/services/technology-audit" },
+      { label: "Growth & Systems Blueprint", href: "/services/technology-audit" },
       { label: "AI Automation Consulting", href: "/ai-automation" },
       { label: "CRM & Workflow Consulting", href: "/crm-workflow-consulting" },
       {
@@ -26,7 +26,6 @@ const COLUMNS = [
     title: "Company",
     links: [
       { label: "About Richard", href: "/about" },
-      { label: "Product Development", href: "/product-development" },
       { label: "Insights", href: "/insights" },
       { label: "Contact", href: "/contact" },
     ],

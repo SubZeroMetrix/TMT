@@ -71,7 +71,7 @@ export const AI_CONSULTING_STPETE_FAQS: Faq[] = [
   {
     question: "How much does AI consulting cost in St. Petersburg?",
     answer:
-      "The Operational AI Readiness Audit is $1,500 as a fixed fee, delivered within five business days — a founding-client price for the first three engagements. Before that, the shop visit is free and runs 60 minutes; it exists to work out whether the paid audit is worth your money. Implementation, if you want it, is quoted separately as a fixed-scope project. No hourly billing.",
+      "The Growth & Systems Blueprint is $1,500 founding-client price, delivered within five business days, and credited toward an approved implementation engagement. Before that, the shop visit is free and runs 60 minutes; it exists to work out whether the paid Blueprint is worth your money. Implementation, if you want it, is quoted separately as a fixed-scope project. No hourly billing.",
   },
   {
     question: "Is my business too small for AI consulting?",
@@ -122,9 +122,9 @@ export const PINELLAS_COUNTY_FAQS: Faq[] = [
  */
 export const AUDIT_FAQS: Faq[] = [
   {
-    question: "How much does an operational AI readiness audit cost?",
+    question: "How much does the Growth & Systems Blueprint cost?",
     answer:
-      "$1,500 as a fixed fee, delivered within five business days. That is a founding-client price for the first three engagements, after which it is reassessed against real delivery time. There is no hourly billing and no open-ended retainer — you know the number and the scope before you start.",
+      "$1,500 founding-client price, delivered within five business days, and credited toward an approved implementation engagement. After the first three founding-client engagements, it is reassessed against real delivery time. There is no hourly billing and no open-ended retainer — you know the number and the scope before you start.",
   },
   {
     question: "What exactly do I get for the fee?",
@@ -236,7 +236,7 @@ export const SPRINT_FAQS: Record<string, Faq[]> = {
     {
       question: "How much does the Unsold Estimate Recovery Sprint cost?",
       answer:
-        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Operational AI Readiness Audit finds — estimate volume, current tools, and where follow-up breaks down today. No hourly billing.",
+        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Growth & Systems Blueprint finds — estimate volume, current tools, and where follow-up breaks down today. No hourly billing.",
     },
     {
       question: "Do I need the audit before this sprint?",
@@ -253,7 +253,7 @@ export const SPRINT_FAQS: Record<string, Faq[]> = {
     {
       question: "How much does the Missed Call Recovery Sprint cost?",
       answer:
-        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Operational AI Readiness Audit finds — current phone setup, call volume, and where calls are actually being lost. No hourly billing.",
+        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Growth & Systems Blueprint finds — current phone setup, call volume, and where calls are actually being lost. No hourly billing.",
     },
     {
       question: "Does this involve AI answering customer calls?",
@@ -270,7 +270,7 @@ export const SPRINT_FAQS: Record<string, Faq[]> = {
     {
       question: "How much does the Office Workflow Reduction Sprint cost?",
       answer:
-        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Operational AI Readiness Audit finds — which systems are involved and where duplicate work actually happens. No hourly billing.",
+        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Growth & Systems Blueprint finds — which systems are involved and where duplicate work actually happens. No hourly billing.",
     },
     {
       question: "Is this the right sprint if we don't know which problem we have?",
@@ -282,7 +282,7 @@ export const SPRINT_FAQS: Record<string, Faq[]> = {
     {
       question: "How much does the Maintenance Agreement Reactivation Sprint cost?",
       answer:
-        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Operational AI Readiness Audit finds — how many agreements exist and what platform manages them today. No hourly billing.",
+        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Growth & Systems Blueprint finds — how many agreements exist and what platform manages them today. No hourly billing.",
     },
     {
       question: "Is this only for HVAC businesses?",
@@ -294,7 +294,7 @@ export const SPRINT_FAQS: Record<string, Faq[]> = {
     {
       question: "How much does the CRM/FSM Utilization Sprint cost?",
       answer:
-        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Operational AI Readiness Audit finds — which platform, what is configured today, and where adoption breaks down. No hourly billing.",
+        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Growth & Systems Blueprint finds — which platform, what is configured today, and where adoption breaks down. No hourly billing.",
     },
     {
       question: "What if the audit finds we should switch platforms entirely?",
@@ -432,7 +432,7 @@ export const LOCATION_FAQS: Record<string, Faq[]> = {
       question:
         "How much does it cost to get help choosing contractor software in Tampa?",
       answer:
-        "The Operational AI Readiness Audit is a $1,500 fixed fee delivered in five business days, currently a founding-client price for the first three engagements. The shop visit that comes first is free, runs 60 minutes, and carries no obligation. Call or text 727-600-3425.",
+        "The Growth & Systems Blueprint is $1,500 founding-client price, delivered in five business days, and credited toward an approved implementation engagement. The shop visit that comes first is free, runs 60 minutes, and carries no obligation. Call or text 727-600-3425.",
     },
   ],
 };

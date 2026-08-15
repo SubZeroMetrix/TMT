@@ -146,7 +146,7 @@ export default function SprintPageTemplate({ sprint }: { sprint: Sprint }) {
 
       <CtaBand
         headline="Find Out If This Is the Right Sprint"
-        body="The Operational AI Readiness Audit determines which sprint fits — book a shop visit to start there."
+        body="The Growth & Systems Blueprint determines which sprint fits — book a shop visit to start there."
         primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />

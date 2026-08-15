@@ -15,9 +15,9 @@ import { AUDIT_FAQS } from "@/lib/seo/faqs";
 const AUDIT_PRICE = "$1,500";
 
 export const metadata: Metadata = {
-  title: "Operational AI Readiness Audit",
+  title: "Growth & Systems Blueprint",
   description:
-    "A fixed-fee operational audit for Tampa Bay service businesses: workflow map, your top three operating leaks, a measured baseline, and a 30/60/90-day plan. $1,500 founding price, delivered in five business days.",
+    "A fixed-fee operational blueprint for Tampa Bay service businesses: workflow map, your top three operating leaks, a measured baseline, and a 30/60/90-day plan. $1,500 founding-client price, delivered in five business days.",
   alternates: { canonical: "/services/technology-audit" },
 };
 
@@ -95,7 +95,7 @@ export default function TechnologyAuditPage() {
     <>
       <JsonLd
         data={serviceSchema({
-          name: "Operational AI Readiness Audit",
+          name: "Growth & Systems Blueprint",
           description:
             "A fixed-fee operational audit for owner-led service businesses: workflow map, top three operating leaks, a measured baseline, prioritized action plan, and a 30/60/90-day roadmap.",
           slug: "/services/technology-audit",
@@ -106,13 +106,13 @@ export default function TechnologyAuditPage() {
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
           { name: "Services", path: "/services" },
-          { name: "Operational AI Readiness Audit", path: "/services/technology-audit" },
+          { name: "Growth & Systems Blueprint", path: "/services/technology-audit" },
         ])}
       />
 
       <PageHero
-        eyebrow={`Fixed fee · ${AUDIT_PRICE} · Delivered in 5 business days`}
-        title="Operational AI Readiness Audit"
+        eyebrow={`${AUDIT_PRICE} founding-client price · Delivered in 5 business days`}
+        title="Growth & Systems Blueprint"
         description="Find the operating problems that waste time, delay follow-up, and make technology investments fail — measured, ranked, and turned into a 30/60/90-day plan. We start with the workflow, not the software."
         primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "See All Services", href: "/services" }}
@@ -188,13 +188,13 @@ export default function TechnologyAuditPage() {
             The Offer
           </p>
           <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-navy">
-            Operational AI Readiness Audit — {AUDIT_PRICE} fixed founding rate
+            Growth &amp; Systems Blueprint — {AUDIT_PRICE} founding-client price
           </h2>
           <p className="mt-5 leading-relaxed text-navy/75">
-            Available for the first three completed client audits. Includes an
+            Available for the first three completed client engagements. Includes an
             on-site workflow review, documented findings, prioritized
-            recommendations, and a practical 30/60/90-day action plan. Any
-            implementation work is separately scoped and priced.
+            recommendations, and a practical 30/60/90-day action plan. The fee is
+            credited toward an approved implementation engagement.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <a

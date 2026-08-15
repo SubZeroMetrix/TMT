@@ -25,9 +25,9 @@ export const metadata: Metadata = {
 const services = [
   {
     href: "/services/technology-audit",
-    title: "Operational AI Readiness Audit",
+    title: "Growth & Systems Blueprint",
     description:
-      "The paid entry point. $1,500 fixed founding rate, delivered in five business days: an on-site workflow review, your top three operating leaks, documented findings, and a 30/60/90-day action plan.",
+      "The paid entry point. $1,500 founding-client price, delivered in five business days: an on-site workflow review, your top three operating leaks, documented findings, and a 30/60/90-day action plan. Credited toward an approved implementation engagement.",
     featured: true,
   },
   {

@@ -53,8 +53,8 @@ export const broadServices = {
       href: "/crm-workflow-consulting",
     },
     {
-      title: "Operational Audits",
-      body: "Where the business is losing money and time, measured and ranked. $1,500 founding price, five business days.",
+      title: "Growth & Systems Blueprint",
+      body: "Where the business is losing money and time, measured and ranked. $1,500 founding-client price, delivered in five business days.",
       href: "/services/technology-audit",
     },
     {
@@ -81,7 +81,7 @@ export const hero = {
   description:
     "The Modern Trades Mentor helps Tampa Bay service businesses find and fix the operating problems that waste time, delay follow-up, and make technology investments fail. We start with the workflow — not the software — and make vendor-neutral recommendations backed by a practical implementation plan.",
   primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" },
-  secondaryCta: { label: "See the Operational AI Readiness Audit", href: "/services/technology-audit" },
+  secondaryCta: { label: "See the Growth & Systems Blueprint", href: "/services/technology-audit" },
   phone: { label: "Prefer to talk now? Call 727-600-3425", href: "tel:+17276003425" },
   credibilityLine:
     "Built by a trades and operations leader with more than 26 years of HVAC, facilities, service-management, and mechanical-systems experience.",
@@ -150,9 +150,9 @@ export const painPoints = [
 
 export const audit = {
   eyebrow: "Start With Clarity",
-  title: "Operational AI Readiness Audit",
+  title: "Growth & Systems Blueprint",
   description:
-    "$1,500 fixed fee, delivered in five business days: a workflow map, your top three operating leaks, a measured baseline, and a 30/60/90-day plan.",
+    "$1,500 founding-client price, delivered in five business days: a workflow map, your top three operating leaks, a measured baseline, and a 30/60/90-day plan. Credited toward an approved implementation engagement.",
   items: [
     "Current software and tool inventory",
     "Workflow and bottleneck analysis",
