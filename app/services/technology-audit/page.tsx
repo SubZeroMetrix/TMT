@@ -67,6 +67,44 @@ const riskStandard = [
   },
 ];
 
+/**
+ * The methodology — what the Blueprint actually does, not the engagement
+ * logistics (that's `processSteps` below, kept separate on purpose: this
+ * is the method, that's the meeting cadence). This is what makes it a
+ * diagnosis and action plan rather than a generic "audit" or a software
+ * sales call in disguise.
+ */
+const method = [
+  {
+    step: "1. Understand the operation",
+    body: "How leads, estimates, follow-up, sales handoff, job delivery, customer communication, reporting, and current tools actually work today — not how the org chart says they work.",
+  },
+  {
+    step: "2. Find the real constraints",
+    body: "Where revenue, time, visibility, customer experience, or owner capacity is actually being lost. Root problems get separated from surface symptoms — a slow CRM is often a slow process wearing a CRM's name.",
+  },
+  {
+    step: "3. Prioritize what matters first",
+    body: "Ranked by business need, implementation effort, dependencies, and likely operational value — never by what software happens to be easiest to sell.",
+  },
+  {
+    step: "4. Build the practical plan",
+    body: "A clear sequence: process fixes first, then the systems, integrations, automation, or AI support that genuinely fit — not a wish list of tools.",
+  },
+  {
+    step: "5. Turn it into action",
+    body: "A walkthrough with the owner to answer questions and agree the right next path — internal execution, a Foundation Build, Full Growth System, Flagship Partnership, or Ongoing Growth Partner.",
+  },
+];
+
+const whatYouReceive = [
+  "A clear picture of the current growth and operating system",
+  "The most important constraints to address first",
+  "Prioritized recommendations and an implementation sequence",
+  "Platform-neutral guidance on processes, systems, automation, and AI where relevant",
+  "A practical next-step recommendation",
+];
+
 const processSteps = [
   {
     step: "01",
@@ -97,7 +135,7 @@ export default function TechnologyAuditPage() {
         data={serviceSchema({
           name: "Growth & Systems Blueprint",
           description:
-            "A fixed-fee operational audit for owner-led service businesses: workflow map, top three operating leaks, a measured baseline, prioritized action plan, and a 30/60/90-day roadmap.",
+            "A fixed-fee growth and operating systems blueprint for owner-led service businesses: workflow map, top three operating leaks, a measured baseline, prioritized action plan, and a 30/60/90-day roadmap.",
           slug: "/services/technology-audit",
         })}
       />
@@ -131,7 +169,7 @@ export default function TechnologyAuditPage() {
               Most contractors do not need another software demo. They need someone to look at the
               whole operation — how calls get answered, how jobs get scheduled, how estimates get
               followed up, how technicians document work, and whether the tools they already own are
-              actually being used. This audit does exactly that.
+              actually being used. This Blueprint does exactly that.
             </p>
             <BulletList items={evaluationAreas} />
           </div>
@@ -140,6 +178,11 @@ export default function TechnologyAuditPage() {
               Owner-led contractor and field-service businesses with{" "}
               <strong className="text-navy">5–30 employees</strong> — HVAC, plumbing, electrical,
               roofing, general contracting, and related trades in the Tampa Bay area and beyond.
+            </p>
+            <p className="mb-4">
+              Best for contractors who know something is slowing growth or creating operational
+              friction, but need to determine what to fix first — before investing in software,
+              marketing, automation, or implementation.
             </p>
             <p className="mb-4">A strong fit if you are experiencing:</p>
             <BulletList
@@ -153,6 +196,46 @@ export default function TechnologyAuditPage() {
             />
           </InfoCard>
         </div>
+      </ContentSection>
+
+      <ContentSection>
+        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-dim mb-3">
+          The Method
+        </p>
+        <h2 className="font-display text-3xl font-bold text-navy tracking-tight mb-4 max-w-2xl">
+          A Diagnosis and a Plan — Not a Generic Audit
+        </h2>
+        <p className="text-navy/70 max-w-2xl mb-12 leading-relaxed">
+          Not a software sales call in disguise, and not a vague consulting report. Five steps,
+          in this order, every time.
+        </p>
+        <div className="space-y-8">
+          {method.map((m) => (
+            <div key={m.step} className="border-t border-border-light pt-6">
+              <h3 className="font-display font-semibold text-navy text-lg">{m.step}</h3>
+              <p className="mt-2 text-sm text-navy/70 leading-relaxed max-w-3xl">{m.body}</p>
+            </div>
+          ))}
+        </div>
+      </ContentSection>
+
+      <ContentSection>
+        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-dim mb-3">
+          What You Receive
+        </p>
+        <h2 className="font-display text-3xl font-bold text-navy tracking-tight mb-8 max-w-2xl">
+          What the Blueprint Actually Gives You
+        </h2>
+        <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4 max-w-3xl">
+          {whatYouReceive.map((item) => (
+            <li key={item} className="flex items-start gap-3 text-navy/80">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" className="mt-0.5 shrink-0 text-blue">
+                <path d="M4 10.5l3.5 3.5L16 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
       </ContentSection>
 
       <ContentSection dark>
@@ -175,8 +258,8 @@ export default function TechnologyAuditPage() {
           </p>
           <p className="text-sm text-silver-light/85 leading-relaxed">
             <SignatureName className="text-lg mr-1">Richard</SignatureName> does not sell software
-            licenses or earn commissions on platform referrals. Audit recommendations are based on
-            what fits your business — not what pays a referral fee.
+            licenses or earn commissions on platform referrals. Blueprint recommendations are based
+            on what fits your business — not what pays a referral fee.
           </p>
         </div>
       </ContentSection>
@@ -246,7 +329,7 @@ export default function TechnologyAuditPage() {
         </div>
         <div className="mt-8 max-w-3xl border-l-[3px] border-blue-soft pl-4">
           <p className="text-sm leading-relaxed text-silver-light/85">
-            <strong className="text-white">The audit is the diagnosis and the
+            <strong className="text-white">The Blueprint is the diagnosis and the
             decision plan.</strong>{" "}
             Implementation is quoted separately as a fixed-scope project once
             you know what is actually worth doing. That boundary is what stops
@@ -287,10 +370,10 @@ export default function TechnologyAuditPage() {
 
       <ContentSection>
         <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-dim mb-3">
-          Process Overview
+          Engagement Timeline
         </p>
         <h2 className="font-display text-3xl font-bold text-navy tracking-tight mb-10">
-          How the Audit Works
+          How the Engagement Runs
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {processSteps.map((s) => (

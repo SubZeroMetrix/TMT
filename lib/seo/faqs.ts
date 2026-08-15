@@ -132,12 +132,12 @@ export const AUDIT_FAQS: Faq[] = [
       "A map of how work moves through your business today, your top three operational leaks, a measured baseline covering hours, delays, missed follow-up, rework and revenue exposure, a prioritized action plan scored by impact, effort, cost and risk, two to three specific technology or AI use cases worth pursuing, a vendor-neutral implementation recommendation, a 30/60/90-day roadmap, and the safeguards and approval points for any AI that gets used.",
   },
   {
-    question: "Is implementation included in the audit?",
+    question: "Is implementation included in the Blueprint?",
     answer:
-      "No, and that is deliberate. The audit is the diagnosis and the decision plan. Implementation is quoted separately as a fixed-scope project once you know what is actually worth doing. Bundling the two is how consulting engagements turn into open-ended troubleshooting nobody can price.",
+      "No, and that is deliberate. The Blueprint is the diagnosis and the decision plan. Implementation is quoted separately as a fixed-scope project once you know what is actually worth doing. Bundling the two is how consulting engagements turn into open-ended troubleshooting nobody can price.",
   },
   {
-    question: "What if the audit finds we do not need to buy anything?",
+    question: "What if the Blueprint finds we do not need to buy anything?",
     answer:
       "That is a legitimate and fairly common outcome, and you still get the full deliverable. Several of the highest-value fixes in a service business — naming an owner for the dispatch board, defining the job close-out step, giving estimate follow-up to a named person on a set day — cost nothing but a decision. You would leave knowing that, with the baseline to prove it later.",
   },
@@ -147,9 +147,9 @@ export const AUDIT_FAQS: Faq[] = [
       "Every recommendation is run through the four functions in the NIST AI Risk Management Framework: Govern (who owns the decision and approves the output), Map (which exact process and data are involved), Measure (the baseline and the number that proves it worked), and Manage (what happens when it is wrong, unavailable, or creates new risk). Anything that cannot pass those four does not go in the roadmap.",
   },
   {
-    question: "Do I need the free shop visit before the audit?",
+    question: "Do I need the free strategy call before the Blueprint?",
     answer:
-      "Yes. The shop visit is 60 minutes, free, and exists to work out whether a paid audit is worth your money. If it is, you get a scoped proposal within 24 hours. If it is not, you will hear that plainly.",
+      "Yes. The strategy call is 60 minutes, free, and exists to work out whether a paid Blueprint is worth your money. If it is, you get a scoped proposal within 24 hours. If it is not, you will hear that plainly.",
   },
 ];
 
