@@ -37,7 +37,7 @@ export default function HomePage() {
             alt=""
             fill
             sizes="100vw"
-            className="object-cover object-center opacity-40"
+            className="object-cover object-center opacity-70"
             priority
             aria-hidden="true"
           />
@@ -45,7 +45,7 @@ export default function HomePage() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(90deg, rgba(7, 20, 38, 0.97) 0%, rgba(7, 20, 38, 0.94) 42%, rgba(11, 31, 58, 0.88) 70%, rgba(11, 31, 58, 0.82) 100%)",
+                "linear-gradient(90deg, rgba(7, 20, 38, 0.97) 0%, rgba(7, 20, 38, 0.90) 42%, rgba(11, 31, 58, 0.72) 70%, rgba(11, 31, 58, 0.52) 100%)",
             }}
             aria-hidden="true"
           />
