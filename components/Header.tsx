@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { track } from "@vercel/analytics/react";
 import { header as content } from "@/lib/content";
 import BrandLogo from "@/components/BrandLogo";
 
@@ -83,6 +84,7 @@ export default function Header() {
 
             <Link
               href={content.primaryCta.href}
+              onClick={() => track("cta_click", { label: content.primaryCta.label, href: content.primaryCta.href, location: "header" })}
               className="hidden md:inline-flex items-center rounded-md bg-blue px-4 lg:px-5 py-2.5 text-[13px] font-semibold text-white shadow-cta hover:bg-blue-hover transition-colors whitespace-nowrap"
             >
               {content.primaryCta.label}
@@ -140,7 +142,10 @@ export default function Header() {
             </a>
             <Link
               href={content.primaryCta.href}
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                track("cta_click", { label: content.primaryCta.label, href: content.primaryCta.href, location: "header_mobile_drawer" });
+                setOpen(false);
+              }}
               className="mt-4 inline-flex items-center justify-center rounded-md bg-blue px-5 py-3 text-base font-semibold text-white hover:bg-blue-hover"
             >
               {content.primaryCta.label}

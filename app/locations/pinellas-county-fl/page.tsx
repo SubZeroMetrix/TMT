@@ -14,7 +14,7 @@ import { PINELLAS_CITIES, PINELLAS_UNINCORPORATED } from "@/lib/seo/geo";
 export const metadata: Metadata = {
   title: "AI Consulting in Pinellas County, FL",
   description:
-    "AI consulting, automation, CRM and workflow guidance for contractors and small service businesses across Pinellas County, FL — St. Petersburg, Clearwater, Largo, Pinellas Park, Seminole, Dunedin, Palm Harbor and every city in the county.",
+    "AI consulting, automation, CRM and workflow guidance for contractors across Pinellas County, FL — St. Petersburg, Clearwater, Largo, and every city in the county.",
   alternates: { canonical: "/locations/pinellas-county-fl" },
 };
 

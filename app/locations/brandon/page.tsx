@@ -14,7 +14,7 @@ import { LOCATION_FAQS } from "@/lib/seo/faqs";
 export const metadata: Metadata = {
   title: "Brandon, FL",
   description:
-    "Contractor technology and AI advisory for Brandon, Florida — the commercial anchor of eastern Hillsborough County. Vendor-neutral guidance for HVAC, plumbing, electrical, and field-service businesses operating under county, not city, permitting.",
+    "Contractor technology and AI advisory for Brandon, Florida, the commercial anchor of eastern Hillsborough County. Vendor-neutral guidance for HVAC and field-service firms.",
   alternates: { canonical: "/locations/brandon" },
 };
 

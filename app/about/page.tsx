@@ -21,7 +21,7 @@ import { NAP } from "@/lib/seo/schema";
 export const metadata: Metadata = {
   title: "About Richard Fritzke",
   description:
-    "Richard Fritzke brings 26+ years of HVAC, facilities, and operations experience to contractor technology advisory — vendor-neutral, field-tested, and business-first.",
+    "Richard Fritzke brings 26+ years of HVAC and facilities experience to contractor growth advisory — vendor-neutral and business-first.",
   alternates: { canonical: "/about" },
 };
 

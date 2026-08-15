@@ -6,7 +6,7 @@ import { serviceSchema, breadcrumbSchema } from "@/lib/seo/schema";
 export const metadata: Metadata = {
   title: "Ongoing Growth Partner for Contractors",
   description:
-    "Ongoing help driving priorities, coordinating systems and vendors, and reviewing results for a Tampa Bay contractor business — without hiring a full-time executive.",
+    "Ongoing help driving priorities and coordinating systems for a Tampa Bay contractor business — without hiring a full-time executive.",
   alternates: { canonical: "/services/ongoing-growth-partner" },
 };
 

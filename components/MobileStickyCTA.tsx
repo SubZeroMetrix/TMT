@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { track } from "@vercel/analytics/react";
 
 export default function MobileStickyCTA() {
   return (
@@ -19,6 +22,7 @@ export default function MobileStickyCTA() {
       </a>
       <Link
         href="/book-a-strategy-call#schedule"
+        onClick={() => track("cta_click", { label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule", location: "mobile_sticky" })}
         className="flex-1 inline-flex items-center justify-center rounded-md bg-blue px-5 py-3 text-sm font-semibold text-white shadow-cta hover:bg-blue-hover"
       >
         Book a Strategy Call

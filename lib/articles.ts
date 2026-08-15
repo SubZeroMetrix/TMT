@@ -30,7 +30,7 @@ export const ARTICLES: Article[] = [
     subtitle:
       "Start with the work that repeats daily, follows the same steps every time, and costs you money when it is forgotten.",
     description:
-      "Automate the work that repeats daily, follows identical steps, and costs money when forgotten — usually missed calls and estimate follow-up. A practical order of operations for small service businesses in St. Petersburg and Tampa.",
+      "Automate the work that repeats daily and costs money when forgotten — usually missed calls and estimate follow-up. A practical order of operations for St. Petersburg and Tampa service businesses.",
     eyebrow: "AI & Automation",
     readTime: "9 min read",
     published: "2026-08-10",
@@ -42,7 +42,7 @@ export const ARTICLES: Article[] = [
     subtitle:
       "The demo is designed to hide the setup work. Six questions that surface what a platform actually costs you.",
     description:
-      "Field service CRM demos hide the setup burden. Six questions that reveal what a platform really costs a small shop — pricebook work, data migration, contract terms, and who owns your data if you leave.",
+      "Field service CRM demos hide the setup burden. Six questions that reveal what a platform really costs a small shop — pricebook, migration, and data ownership.",
     eyebrow: "Software Selection",
     readTime: "11 min read",
     published: "2026-08-10",
@@ -54,7 +54,7 @@ export const ARTICLES: Article[] = [
     subtitle:
       "What actually happens, what it should cost you in time, and how to tell a real engagement from a sales process.",
     description:
-      "What AI consulting looks like for a small business in St. Petersburg: a free on-site visit, a readiness audit before any tool is named, and a written recommendation. How to tell a real engagement from a sales process.",
+      "What AI consulting looks like for a small business in St. Petersburg: a free strategy call, a Blueprint before any tool is named, and a written recommendation.",
     eyebrow: "Local · St. Petersburg",
     readTime: "8 min read",
     published: "2026-08-10",

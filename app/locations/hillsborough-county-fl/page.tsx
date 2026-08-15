@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: "AI Consulting in Hillsborough County, FL",
   description:
-    "AI consulting, automation, CRM and workflow guidance for contractors and small service businesses across Hillsborough County, FL — Tampa, Brandon, Riverview, Valrico, Temple Terrace, Plant City and the surrounding communities.",
+    "AI consulting, automation, CRM and workflow guidance for contractors across Hillsborough County, FL — Tampa, Brandon, Riverview, and the surrounding area.",
   alternates: { canonical: "/locations/hillsborough-county-fl" },
 };
 

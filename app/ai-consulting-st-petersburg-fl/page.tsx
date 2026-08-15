@@ -14,7 +14,7 @@ import { AI_CONSULTING_STPETE_FAQS } from "@/lib/seo/faqs";
 export const metadata: Metadata = {
   title: "AI Consulting St. Petersburg, FL",
   description:
-    "AI consulting in St. Petersburg, FL for contractors and small service businesses. Practical guidance on where AI earns its keep, where it does not, and what to fix first — from a 26-year HVAC and facilities operations professional.",
+    "AI consulting in St. Petersburg, FL for contractors — where AI earns its keep, where it does not, and what to fix first, from a 26-year HVAC professional.",
   alternates: { canonical: "/ai-consulting-st-petersburg-fl" },
 };
 

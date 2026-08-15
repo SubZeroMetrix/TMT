@@ -6,7 +6,7 @@ import { serviceSchema, breadcrumbSchema } from "@/lib/seo/schema";
 export const metadata: Metadata = {
   title: "AI Consulting & Automation for Contractors",
   description:
-    "Find where AI or automation can improve response, reduce repetitive work, strengthen follow-up, or improve visibility for a Tampa Bay contractor business — without buying tools that don't fit.",
+    "Find where AI or automation can improve response, follow-up, or visibility for a Tampa Bay contractor business — without buying tools that don't fit.",
   alternates: { canonical: "/services/ai-consulting-automation" },
 };
 

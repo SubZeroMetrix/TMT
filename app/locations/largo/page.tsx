@@ -14,7 +14,7 @@ import { LOCATION_FAQS } from "@/lib/seo/faqs";
 export const metadata: Metadata = {
   title: "Largo, FL",
   description:
-    "Contractor technology and AI advisory for Largo, Florida — the central-Pinellas hub where many county contractor businesses are actually based. Vendor-neutral guidance for HVAC, plumbing, electrical, and field-service firms.",
+    "Contractor technology and AI advisory for Largo, Florida, the central-Pinellas hub. Vendor-neutral guidance for HVAC, plumbing, electrical, and field-service firms.",
   alternates: { canonical: "/locations/largo" },
 };
 

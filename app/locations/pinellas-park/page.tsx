@@ -14,7 +14,7 @@ import { LOCATION_FAQS } from "@/lib/seo/faqs";
 export const metadata: Metadata = {
   title: "Pinellas Park, FL",
   description:
-    "Contractor technology and AI advisory for Pinellas Park, Florida — the county's industrial and warehouse hub, and a common home base for HVAC, plumbing, and electrical businesses.",
+    "Contractor technology and AI advisory for Pinellas Park, Florida — the county's industrial hub for HVAC, plumbing, and electrical businesses.",
   alternates: { canonical: "/locations/pinellas-park" },
 };
 

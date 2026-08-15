@@ -14,7 +14,7 @@ import { LOCATION_FAQS } from "@/lib/seo/faqs";
 export const metadata: Metadata = {
   title: "Clearwater, FL",
   description:
-    "Contractor technology and AI advisory for Clearwater, Florida — where a tourism-and-hospitality economy meets year-round residential demand. Vendor-neutral guidance for HVAC, plumbing, electrical, and field-service businesses.",
+    "Contractor technology and AI advisory for Clearwater, Florida. Vendor-neutral guidance for HVAC, plumbing, electrical, and field-service businesses.",
   alternates: { canonical: "/locations/clearwater" },
 };
 

@@ -26,7 +26,7 @@ import {
 export const metadata: Metadata = {
   title: "Growth & Operating Systems for Contractors",
   description:
-    "The Modern Trades Mentor helps contractors and service businesses in St. Petersburg, Tampa, and across Pinellas County build the growth and operating systems they need to scale — marketing, sales, CRM, operations, automation and AI where it helps. Run by a 26-year HVAC and facilities operations professional.",
+    "The Modern Trades Mentor helps St. Petersburg and Tampa contractors build the growth and operating systems they need to scale — business first, tools second.",
   alternates: { canonical: "/" },
 };
 

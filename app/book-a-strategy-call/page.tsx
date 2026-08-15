@@ -10,7 +10,7 @@ import ScrollToHash from "@/components/ScrollToHash";
 export const metadata: Metadata = {
   title: "Book a Free Strategy Call",
   description:
-    "Book a free strategy call with Richard Fritzke of The Modern Trades Mentor LLC — confirm fit, discuss the business problem, and find the right next step. Onsite shop visits available for qualified Tampa Bay businesses.",
+    "Book a free strategy call with Richard Fritzke — confirm fit, discuss the business problem, and find the right next step. No obligation.",
   alternates: { canonical: "/book-a-strategy-call" },
 };
 

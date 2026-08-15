@@ -17,7 +17,7 @@ const AUDIT_PRICE = "$1,500";
 export const metadata: Metadata = {
   title: "Growth & Systems Blueprint",
   description:
-    "A fixed-fee operational blueprint for Tampa Bay service businesses: workflow map, your top three operating leaks, a measured baseline, and a 30/60/90-day plan. $1,500 founding-client price, delivered in five business days.",
+    "A fixed-fee blueprint for Tampa Bay contractors: workflow map, your top three operating leaks, and a 30/60/90-day plan. $1,500, delivered in five business days.",
   alternates: { canonical: "/services/technology-audit" },
 };
 

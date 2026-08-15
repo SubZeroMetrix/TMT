@@ -14,7 +14,7 @@ import { CRM_WORKFLOW_FAQS } from "@/lib/seo/faqs";
 export const metadata: Metadata = {
   title: "CRM & Workflow Consulting for Contractors | St. Petersburg & Tampa",
   description:
-    "CRM consulting and workflow automation consulting for contractors and small service businesses in St. Petersburg, Tampa and across Pinellas and Hillsborough counties. Vendor-neutral help choosing and setting up field service software.",
+    "CRM and workflow consulting for contractors in St. Petersburg and Tampa. Vendor-neutral help choosing and setting up field service software.",
   alternates: { canonical: "/crm-workflow-consulting" },
 };
 
