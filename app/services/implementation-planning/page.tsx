@@ -51,7 +51,7 @@ export default function ImplementationPlanningPage() {
         eyebrow="Implementation Planning"
         title="Roll Out Technology Your Team Will Actually Use"
         description="A recommendation is only useful if the team adopts it. We build sequenced implementation plans with training, change management, and adoption checkpoints — so new tools stick instead of sitting on the shelf."
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "Start With the Audit", href: "/services/technology-audit" }}
       />
 
@@ -128,8 +128,8 @@ export default function ImplementationPlanningPage() {
 
       <CtaBand
         headline="Plan the Rollout Before You Buy the License"
-        body="Book a Shop Visit to discuss implementation planning for your next technology change."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        body="Book a Strategy Call to discuss implementation planning for your next technology change."
+        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

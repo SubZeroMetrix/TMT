@@ -62,7 +62,7 @@ export default function SoftwareSelectionPage() {
         eyebrow="Software Selection"
         title="Choose the Right Stack — Without the Sales Pressure"
         description="Help selecting CRM, FSM, dispatch, accounting, and communication tools based on how your contractor business actually runs. No commissions. No preferred vendor. No demo theater."
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "Start With the Audit", href: "/services/technology-audit" }}
       />
 
@@ -143,8 +143,8 @@ export default function SoftwareSelectionPage() {
 
       <CtaBand
         headline="Stop Guessing. Start Choosing With Confidence."
-        body="Book a Shop Visit to discuss your current stack and what you need next."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        body="Book a Strategy Call to discuss your current stack and what you need next."
+        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

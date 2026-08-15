@@ -45,7 +45,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Get in Touch"
         description="Reach The Modern Trades Mentor by phone, email, or mail. Based in St. Petersburg, FL — serving Tampa Bay contractors and field-service businesses with in-person and remote advisory."
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "View Services", href: "/services" }}
       />
 
@@ -201,8 +201,8 @@ export default function ContactPage() {
 
       <CtaBand
         headline="Ready to Start the Conversation?"
-        body="Book a Shop Visit or reach out directly — whichever you prefer."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        body="Book a Strategy Call or reach out directly — whichever you prefer."
+        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

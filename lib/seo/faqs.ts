@@ -236,7 +236,7 @@ export const SPRINT_FAQS: Record<string, Faq[]> = {
     {
       question: "How much does the Unsold Estimate Recovery Sprint cost?",
       answer:
-        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Growth & Systems Blueprint finds — estimate volume, current tools, and where follow-up breaks down today. No hourly billing.",
+        "Starting at $4,500 as a Foundation Build use case, founding-client price — scoped and fixed before work starts based on what the Growth & Systems Blueprint finds — estimate volume, current tools, and where follow-up breaks down today. No hourly billing.",
     },
     {
       question: "Do I need the audit before this sprint?",
@@ -253,7 +253,7 @@ export const SPRINT_FAQS: Record<string, Faq[]> = {
     {
       question: "How much does the Missed Call Recovery Sprint cost?",
       answer:
-        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Growth & Systems Blueprint finds — current phone setup, call volume, and where calls are actually being lost. No hourly billing.",
+        "Starting at $4,500 as a Foundation Build use case, founding-client price — scoped and fixed before work starts based on what the Growth & Systems Blueprint finds — current phone setup, call volume, and where calls are actually being lost. No hourly billing.",
     },
     {
       question: "Does this involve AI answering customer calls?",
@@ -270,7 +270,7 @@ export const SPRINT_FAQS: Record<string, Faq[]> = {
     {
       question: "How much does the Office Workflow Reduction Sprint cost?",
       answer:
-        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Growth & Systems Blueprint finds — which systems are involved and where duplicate work actually happens. No hourly billing.",
+        "Starting at $4,500 as a Foundation Build use case, founding-client price — scoped and fixed before work starts based on what the Growth & Systems Blueprint finds — which systems are involved and where duplicate work actually happens. No hourly billing.",
     },
     {
       question: "Is this the right sprint if we don't know which problem we have?",
@@ -282,7 +282,7 @@ export const SPRINT_FAQS: Record<string, Faq[]> = {
     {
       question: "How much does the Maintenance Agreement Reactivation Sprint cost?",
       answer:
-        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Growth & Systems Blueprint finds — how many agreements exist and what platform manages them today. No hourly billing.",
+        "Starting at $4,500 as a Foundation Build use case, founding-client price — scoped and fixed before work starts based on what the Growth & Systems Blueprint finds — how many agreements exist and what platform manages them today. No hourly billing.",
     },
     {
       question: "Is this only for HVAC businesses?",
@@ -294,7 +294,7 @@ export const SPRINT_FAQS: Record<string, Faq[]> = {
     {
       question: "How much does the CRM/FSM Utilization Sprint cost?",
       answer:
-        "$5,000 to $7,500 as a founding-client range, scoped and fixed before the sprint starts based on what the Growth & Systems Blueprint finds — which platform, what is configured today, and where adoption breaks down. No hourly billing.",
+        "Starting at $4,500 as a Foundation Build use case, founding-client price — scoped and fixed before work starts based on what the Growth & Systems Blueprint finds — which platform, what is configured today, and where adoption breaks down. No hourly billing.",
     },
     {
       question: "What if the audit finds we should switch platforms entirely?",

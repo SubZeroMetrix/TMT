@@ -46,7 +46,7 @@ export default function StPetersburgPage() {
         eyebrow="St. Petersburg, FL"
         title="Contractor Technology Advisory in St. Petersburg"
         description="Based in St. Petersburg and serving Pinellas County contractors who need honest software, AI, and workflow guidance — without a vendor agenda."
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
 
@@ -111,8 +111,8 @@ export default function StPetersburgPage() {
 
       <CtaBand
         headline="St. Pete contractor ready for a practical plan?"
-        body="Start with a Technology & AI Readiness Audit or Book a Shop Visit."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        body="Start with a Technology & AI Readiness Audit or Book a Strategy Call."
+        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Explore the Audit", href: "/services/technology-audit" }}
       />
     </>

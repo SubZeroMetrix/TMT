@@ -114,7 +114,7 @@ export default function TechnologyAuditPage() {
         eyebrow={`${AUDIT_PRICE} founding-client price · Delivered in 5 business days`}
         title="Growth & Systems Blueprint"
         description="Find the operating problems that waste time, delay follow-up, and make technology investments fail — measured, ranked, and turned into a 30/60/90-day plan. We start with the workflow, not the software."
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "See All Services", href: "/services" }}
       />
 
@@ -201,7 +201,7 @@ export default function TechnologyAuditPage() {
               href="/book-a-strategy-call#schedule"
               className="inline-flex items-center justify-center rounded-md bg-blue px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-blue-hover"
             >
-              Book a Shop Visit
+              Book a Strategy Call
             </a>
             <a
               href={`tel:${NAP.phone}`}
@@ -303,14 +303,14 @@ export default function TechnologyAuditPage() {
         </div>
         <p className="mt-8 text-sm text-navy/60 max-w-2xl">
           Timeline and scope are discussed during the initial strategy call. Every business is
-          different — the audit is tailored to your size, trades, and current state.
+          different — the Blueprint is tailored to your size, trades, and current state.
         </p>
       </ContentSection>
 
       <CtaBand
         headline="Start With Clarity, Not Another Demo"
-        body="Book a Shop Visit to discuss whether the audit is the right starting point for your business."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        body="Book a Strategy Call to discuss whether the Blueprint is the right starting point for your business."
+        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

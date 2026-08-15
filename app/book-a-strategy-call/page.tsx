@@ -8,9 +8,9 @@ import BookingEmbed from "@/components/BookingEmbed";
 import ScrollToHash from "@/components/ScrollToHash";
 
 export const metadata: Metadata = {
-  title: "Book an Onsite Shop Visit",
+  title: "Book a Free Strategy Call",
   description:
-    "Schedule an onsite strategy visit at your shop with Richard Fritzke of The Modern Trades Mentor LLC — see your real systems, team, and workflows in person across Tampa Bay.",
+    "Book a free strategy call with Richard Fritzke of The Modern Trades Mentor LLC — confirm fit, discuss the business problem, and find the right next step. Onsite shop visits available for qualified Tampa Bay businesses.",
   alternates: { canonical: "/book-a-strategy-call" },
 };
 
@@ -62,7 +62,7 @@ const visitAgenda = [
   "Quick look at the tools you already use (CRM, dispatch, texts, accounting)",
   "Where work piles up, gets re-entered, or falls through the cracks",
   "Staff readiness — who will actually adopt a change, and who will fight it",
-  "A straight answer on whether the paid audit is worth your money — or not",
+  "A straight answer on whether the paid Blueprint is worth your money — or not",
 ];
 
 const prepareItems = [
@@ -84,7 +84,7 @@ const faqs = [
   },
   {
     q: "Do I have to buy something afterward?",
-    a: "No. The visit exists to work out whether a paid audit is worth doing. If it is, you get a scoped proposal within 24 hours. If it is not, you will hear that plainly and the conversation costs you nothing.",
+    a: "No. The visit exists to work out whether a paid Blueprint is worth doing. If it is, you get a scoped proposal within 24 hours. If it is not, you will hear that plainly and the conversation costs you nothing.",
   },
   {
     q: "Where do you go?",
@@ -111,23 +111,24 @@ export default function BookStrategyCallPage() {
             <div>
               <p className="bp-label mb-4 flex items-center gap-3">
                 <span className="inline-block h-px w-8 bg-blue-light" />
-                Tampa Bay · Onsite at your shop
+                Free · No obligation · Tampa Bay onsite when it helps
               </p>
               <h1
                 className="font-display font-bold text-white tracking-tight leading-[1.08]"
                 style={{ fontSize: "clamp(1.85rem, 3.5vw + 0.6rem, 3.25rem)" }}
               >
-                Book a Shop Visit —{" "}
+                Book a Free Strategy Call —{" "}
                 <span className="text-blue-light">See Your Operation Clearly</span>
               </h1>
               <p className="mt-5 text-lg leading-relaxed max-w-xl" style={{ color: "#E2E8F0" }}>
-                Get <SignatureName className="text-2xl mx-1 text-blue-light">Richard</SignatureName>{" "}
-                in front of your operation for 60 minutes. See the real systems, meet the team, and
-                find out whether there is an operating problem worth paying to fix.
+                Talk with <SignatureName className="text-2xl mx-1 text-blue-light">Richard</SignatureName>{" "}
+                for 60 minutes about the business problem, whether TMT can help, and the right next
+                step. For qualified Tampa Bay businesses, that conversation often happens as a shop
+                visit — in front of the real operation, not over a generic sales call.
               </p>
               <ul className="mt-6 space-y-2.5 max-w-lg">
                 {[
-                  "60 minutes at your shop — fit conversation, not a free audit",
+                  "60 minutes, free — fit conversation, not a free Blueprint",
                   "Vendor-neutral — no software commission",
                   "Built for owner-led service businesses, typically 5–30 employees",
                 ].map((item) => (
@@ -142,7 +143,7 @@ export default function BookStrategyCallPage() {
                   href="#schedule"
                   className="group inline-flex items-center justify-center gap-2 rounded-md bg-blue px-7 py-3.5 text-sm font-semibold tracking-wide text-white shadow-cta hover:bg-blue-hover transition-colors"
                 >
-                  Schedule your shop visit
+                  Schedule your strategy call
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="transition-transform group-hover:translate-y-0.5">
                     <path d="M8 3v9M4 8l4 4 4-4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -246,7 +247,7 @@ export default function BookStrategyCallPage() {
           <div className="max-w-2xl mb-10">
             <p className="bp-label mb-3">Step 1 · Book it</p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
-              Pick a time for your shop visit
+              Pick a time for your strategy call
             </h2>
             <p className="mt-4 leading-relaxed" style={{ color: "#CBD5E1" }}>
               Use the scheduler below to reserve an onsite visit at your location. Prefer a quick
@@ -288,7 +289,7 @@ export default function BookStrategyCallPage() {
               <p className="max-w-3xl text-sm leading-relaxed text-silver-light/75">
                 Sixty minutes is enough to tell whether you have an operating
                 problem worth fixing. It is not enough to map your workflow,
-                compare vendors, or write you a roadmap — that is the paid audit,
+                compare vendors, or write you a roadmap — that is the paid Blueprint,
                 and doing it properly takes five days. Anyone offering you all of
                 that for free is either guessing or selling you something.
               </p>
@@ -481,7 +482,7 @@ export default function BookStrategyCallPage() {
               href="#schedule"
               className="inline-flex items-center justify-center rounded-md bg-blue px-7 py-3.5 text-sm font-semibold text-white shadow-cta hover:bg-blue-hover transition-colors"
             >
-              Schedule your shop visit
+              Schedule your strategy call
             </a>
             <PrimaryCTA href={contact.phone.href}>Call {contact.phone.label}</PrimaryCTA>
           </div>

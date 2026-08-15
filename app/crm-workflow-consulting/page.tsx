@@ -79,7 +79,7 @@ export default function CrmWorkflowConsultingPage() {
         eyebrow="CRM & Workflow Consulting"
         title="CRM and Workflow Consulting for Contractors"
         description="Vendor-neutral help deciding how job and customer information should move through your business — and which system actually fits it. St. Petersburg, Tampa and across Pinellas and Hillsborough counties."
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "Call (727) 600-3425", href: "tel:+17276003425" }}
       />
 
@@ -197,7 +197,7 @@ export default function CrmWorkflowConsultingPage() {
       <CtaBand
         headline="Find out whether it is the software or the workflow"
         body="A free shop visit will tell you which one you are actually dealing with — usually before anything gets bought."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call (727) 600-3425", href: "tel:+17276003425" }}
       />
     </>

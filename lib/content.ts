@@ -5,28 +5,27 @@ export const header = {
   wordmarkLine2: "MODERN",
   wordmarkLine3: "TRADES MENTOR LLC",
   descriptor: "CONTRACTOR OPERATIONS & TECHNOLOGY",
-  // Restructured around the diagnose -> fix -> maintain offer ladder rather
-  // than service categories (AI Consulting / AI Automation / CRM & Workflow).
-  // URLs are unchanged for pages that already exist - this is a navigation
-  // relabel, not a route change (see /services/technology-audit's own
-  // "don't 301 on a positioning change" precedent).
+  // Restructured 2026-08-15 around the funnel: Strategy Call -> Blueprint ->
+  // fixed-scope implementation or Ongoing Growth Partner. URLs are unchanged
+  // for pages that already exist - this is a navigation relabel, not a route
+  // change (see /services/technology-audit's own "don't 301 on a
+  // positioning change" precedent).
   //
   // "90-Day Sprint" points at /services rather than a single page: five
-  // separate named sprint pages exist there (Unsold Estimate Recovery,
-  // Missed Call Recovery, etc.) - one nav label can't fan out to five URLs.
-  // "Ongoing Partnership" points at /contact: a dedicated partnership page
-  // was not part of the approved build scope, so this links to where that
-  // conversation actually starts today rather than a page that doesn't exist.
+  // separate Foundation Build use-case pages exist there (Unsold Estimate
+  // Recovery, Missed Call Recovery, etc.) - one nav label can't fan out to
+  // five URLs. "Ongoing Partner" now has a real page (built 2026-08-15,
+  // replacing the earlier /contact placeholder).
   nav: [
     { label: "Problems We Fix", href: "/services" },
-    { label: "Operations Audit", href: "/services/technology-audit" },
+    { label: "Growth Blueprint", href: "/services/technology-audit" },
     { label: "90-Day Sprint", href: "/services" },
-    { label: "Ongoing Partnership", href: "/contact" },
+    { label: "Ongoing Partner", href: "/services/ongoing-growth-partner" },
     { label: "HVAC", href: "/industries" },
     { label: "Insights", href: "/insights" },
     { label: "About Richard", href: "/about" },
   ],
-  primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" },
+  primaryCta: { label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" },
 };
 
 /**
@@ -81,7 +80,7 @@ export const hero = {
   promise: "Marketing. Sales. CRM. Operations. Automation and AI where it helps.",
   description:
     "The Modern Trades Mentor helps Tampa Bay contractors build the growth and operating systems they need to scale. We look at how customers find you, how leads are handled, how sales turns into work, how the work gets delivered, how customers come back, and how the business is measured — then fix the gaps and connect the systems that make it work.",
-  primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" },
+  primaryCta: { label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" },
   secondaryCta: { label: "See the Growth & Systems Blueprint", href: "/services/technology-audit" },
   phone: { label: "Prefer to talk now? Call 727-600-3425", href: "tel:+17276003425" },
   credibilityLine:
@@ -246,27 +245,79 @@ export const howRichardWorks = {
   heading: "How It Works",
   steps: [
     {
-      title: "1. Diagnose the business",
-      body: "We start with the real work: how customers find you, how leads are handled, and how work gets delivered and paid for.",
+      title: "1. Book a Strategy Call",
+      body: "A free conversation to confirm fit and find the constraint worth talking about first.",
     },
     {
-      title: "2. Identify the biggest constraints",
-      body: "The specific gaps costing the business time, money, or growth — ranked, not guessed at.",
+      title: "2. Identify the business constraint",
+      body: "The specific gap costing the business time, money, or growth — named, not guessed at.",
     },
     {
-      title: "3. Build the Growth & Systems Blueprint",
-      body: "A prioritized path for what to fix first and how the pieces should work together.",
+      title: "3. Build a Growth & Systems Blueprint",
+      body: "When real diagnosis is needed: a prioritized path for what to fix first and how the pieces work together.",
     },
     {
-      title: "4. Implement the right systems",
-      body: "Fixed-scope, milestone-based work — only where it solves a real constraint.",
+      title: "4. Fix the right system or begin ongoing support",
+      body: "Fixed-scope, milestone-based implementation, or an Ongoing Growth Partner engagement — only where it solves a real constraint.",
     },
     {
-      title: "5. Measure what changed",
+      title: "5. Measure and improve what changed",
       body: "A baseline taken up front, and a real number to show whether it worked.",
     },
   ],
+  shopVisitNote:
+    "For qualified Tampa Bay businesses, a Shop Visit may be the right next step after the Strategy Call — when seeing the operation in person will improve the diagnosis or implementation plan.",
 };
+
+export const servicePaths = {
+  heading: "Find the Right Way to Work With TMT",
+  items: [
+    {
+      title: "Growth & Operations Systems",
+      body: "Fix the broken handoffs, follow-up, workflow, accountability, visibility, and capacity issues that make growth harder.",
+      bestFor: "Owners who know the business has operational or revenue leaks and need a focused system fixed.",
+      linkLabel: "Explore Growth & Operations Systems",
+      href: "/services/growth-operations-systems",
+    },
+    {
+      title: "AI Consulting & Automation",
+      body: "Find where AI or automation can improve response, reduce repetitive work, strengthen follow-up, or improve visibility — without buying tools that don't fit the business.",
+      bestFor: "Owners who want practical AI help tied to a real business problem.",
+      linkLabel: "Explore AI Consulting & Automation",
+      href: "/services/ai-consulting-automation",
+    },
+    {
+      title: "Ongoing Growth Partner",
+      body: "Ongoing help driving priorities, coordinating systems and vendors, reviewing results, and keeping improvements moving.",
+      bestFor: "Owners who need more than advice but don't need a full-time executive.",
+      linkLabel: "Explore Ongoing Support",
+      href: "/services/ongoing-growth-partner",
+    },
+  ],
+  notSure: {
+    heading: "Not Sure Where to Start?",
+    body: "Book a Strategy Call. We will discuss the business problem, determine fit, and identify the right next step.",
+    cta: { label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" },
+  },
+};
+
+export const pricingSummary = [
+  {
+    title: "Growth & Systems Blueprint",
+    price: "$1,500 founding-client price",
+    detail: "Delivered in five business days",
+  },
+  {
+    title: "Fixed-Scope Implementation",
+    price: "Starting at $4,500",
+    detail: "Scope set by the Blueprint, agreed before work starts",
+  },
+  {
+    title: "Ongoing Growth Partner",
+    price: "Starting at $3,500/month",
+    detail: "Founding-client price · 3-month initial term",
+  },
+];
 
 export const differentiators = [
   "Real field experience",
@@ -328,7 +379,7 @@ export const objections = [
 export const finalCta = {
   headline: "Ready to Grow Without Losing Control of the Business?",
   body: "Start with a practical conversation about your current systems, your team, and where the business is losing time, money, or opportunity.",
-  primaryCta: { label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" },
+  primaryCta: { label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" },
   secondaryCta: { label: "Call 727-600-3425", href: "tel:+17276003425" },
   footnote: "No pressure. No software pitch. No obligation to buy a platform.",
 };

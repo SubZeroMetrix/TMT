@@ -64,7 +64,7 @@ export default function LargoPage() {
         eyebrow="Largo, FL"
         title="Contractor Technology Advisory in Largo"
         description="Central Pinellas County's operating hub for contractor and field-service businesses — vendor-neutral technology, workflow, and AI guidance built around how a mid-county dispatch operation actually runs."
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
 
@@ -148,8 +148,8 @@ export default function LargoPage() {
 
       <CtaBand
         headline="Largo contractor ready for a practical plan?"
-        body="Start with a Contractor Operations Audit or Book a Shop Visit."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        body="Start with a Contractor Operations Audit or Book a Strategy Call."
+        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Explore the Audit", href: "/services/technology-audit" }}
       />
     </>

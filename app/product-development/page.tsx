@@ -103,7 +103,7 @@ export default function ProductDevelopmentPage() {
       <CtaBand
         headline="Need help choosing the right approach?"
         body="Whether you need vendor-neutral software guidance or want to discuss whether custom work makes sense for your operation, start with a conversation."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

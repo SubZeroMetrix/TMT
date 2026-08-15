@@ -112,7 +112,7 @@ export default function AiDisclaimerPage() {
       <CtaBand
         headline="Questions about our advisory scope?"
         body="We are transparent about what we do and do not provide. Book a call to discuss your needs."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Terms of Use", href: "/legal/terms" }}
       />
     </>

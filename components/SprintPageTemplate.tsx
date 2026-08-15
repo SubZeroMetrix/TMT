@@ -9,7 +9,7 @@ import SignatureName from "@/components/SignatureName";
 import JsonLd from "@/components/JsonLd";
 import { serviceSchema, faqSchema, breadcrumbSchema, NAP } from "@/lib/seo/schema";
 import { SPRINT_FAQS, type Faq } from "@/lib/seo/faqs";
-import { FOUNDING_SPRINT_PRICE, type Sprint } from "@/lib/content/sprints";
+import { type Sprint } from "@/lib/content/sprints";
 
 /**
  * Shared page body for every Outcome Sprint. One template, five content
@@ -41,11 +41,11 @@ export default function SprintPageTemplate({ sprint }: { sprint: Sprint }) {
       />
 
       <PageHero
-        eyebrow={`Outcome Sprint · Founding range ${FOUNDING_SPRINT_PRICE} · Scoped by the audit`}
+        eyebrow="A Foundation Build use case · Starting at $4,500 founding-client price"
         title={sprint.name}
         description={sprint.heroDescription}
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
-        secondaryCta={{ label: "See the Operations Audit", href: "/services/technology-audit" }}
+        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
+        secondaryCta={{ label: "See the Growth & Systems Blueprint", href: "/services/technology-audit" }}
       />
 
       <ContentSection>
@@ -101,15 +101,20 @@ export default function SprintPageTemplate({ sprint }: { sprint: Sprint }) {
             The Offer
           </p>
           <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-navy">
-            {sprint.name} — {FOUNDING_SPRINT_PRICE} founding range
+            {sprint.name} — a Foundation Build use case
           </h2>
           <p className="mt-5 leading-relaxed text-navy/75">{sprint.processNote}</p>
+          <p className="mt-3 text-sm text-navy/60 leading-relaxed">
+            Foundation Build starts at $4,500 founding-client price for one clearly bounded fix.
+            If the Blueprint finds broader work across the business, it moves into Full or
+            Flagship instead — never forced into Foundation.
+          </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <a
               href="/book-a-strategy-call#schedule"
               className="inline-flex items-center justify-center rounded-md bg-blue px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-blue-hover"
             >
-              Book a Shop Visit
+              Book a Strategy Call
             </a>
             <a
               href={`tel:${NAP.phone}`}
@@ -145,9 +150,9 @@ export default function SprintPageTemplate({ sprint }: { sprint: Sprint }) {
       )}
 
       <CtaBand
-        headline="Find Out If This Is the Right Sprint"
-        body="The Growth & Systems Blueprint determines which sprint fits — book a shop visit to start there."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        headline="Find Out If This Is the Right Fix"
+        body="The Growth & Systems Blueprint determines what your business actually needs — start with a free strategy call."
+        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

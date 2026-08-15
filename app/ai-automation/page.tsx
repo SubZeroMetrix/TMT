@@ -77,7 +77,7 @@ export default function AiAutomationPage() {
         eyebrow="AI Automation"
         title="AI Automation for Small Businesses"
         description="Cut the manual admin work that eats your week — calls, follow-up, job notes, billing — without buying software you do not need. Serving St. Petersburg, Tampa and all of Pinellas and Hillsborough counties."
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "Call (727) 600-3425", href: "tel:+17276003425" }}
       />
 
@@ -194,7 +194,7 @@ export default function AiAutomationPage() {
       <CtaBand
         headline="Start with a shop visit"
         body="Free, no obligation, at your place. You will get a straight answer on what is worth automating and what is not."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call (727) 600-3425", href: "tel:+17276003425" }}
       />
     </>

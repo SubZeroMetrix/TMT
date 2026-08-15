@@ -85,7 +85,7 @@ export default function AiConsultingStPetersburgPage() {
         eyebrow="St. Petersburg, FL"
         title="AI Consulting in St. Petersburg, Florida"
         description="AI consulting, workflow automation, CRM guidance, and business technology planning for small businesses in St. Petersburg and the Tampa Bay area."
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
 
@@ -202,7 +202,7 @@ export default function AiConsultingStPetersburgPage() {
       <CtaBand
         headline="Start with a shop visit"
         body="No pitch, no obligation. An hour in your shop and you will get a straight answer on whether any of this is worth your money right now."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

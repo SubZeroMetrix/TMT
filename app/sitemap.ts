@@ -26,6 +26,11 @@ const ROUTES: Entry[] = [
   { path: "/services/technology-audit", priority: 0.9, changeFrequency: "monthly" },
   { path: "/services/software-selection", priority: 0.9, changeFrequency: "monthly" },
   { path: "/services/revenue-loss-recovery", priority: 0.9, changeFrequency: "monthly" },
+
+  // Three service paths — added 2026-08-15 alongside the funnel rebuild
+  { path: "/services/growth-operations-systems", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/services/ai-consulting-automation", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/services/ongoing-growth-partner", priority: 0.9, changeFrequency: "monthly" },
   { path: "/services/ai-adoption-training", priority: 0.8, changeFrequency: "monthly" },
   { path: "/services/implementation-planning", priority: 0.8, changeFrequency: "monthly" },
   { path: "/services/custom-workflow", priority: 0.7, changeFrequency: "monthly" },

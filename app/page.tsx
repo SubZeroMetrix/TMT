@@ -18,6 +18,8 @@ import {
   aiPositioning,
   howRichardWorks,
   objections,
+  servicePaths,
+  pricingSummary,
   finalCta,
 } from "@/lib/content";
 
@@ -159,6 +161,57 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* SERVICE PATHS — the three ways to work with TMT, plus visible pricing */}
+      <section className="bg-white border-b border-border-light">
+        <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl text-navy tracking-tight mb-10">
+            {servicePaths.heading}
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {servicePaths.items.map((item, i) => (
+              <div key={item.title} className="bp-frame bp-panel-light p-6 flex flex-col">
+                <span className="font-mono text-[10px] text-blue">0{i + 1}</span>
+                <h3 className="mt-2 font-display font-semibold text-navy text-lg">{item.title}</h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-navy/70">{item.body}</p>
+                <p className="mt-3 text-xs text-navy/50 leading-relaxed">
+                  <span className="font-semibold">Best for:</span> {item.bestFor}
+                </p>
+                <Link
+                  href={item.href}
+                  className="mt-4 text-sm font-semibold text-blue hover:underline"
+                >
+                  {item.linkLabel} →
+                </Link>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 bp-frame bp-panel-light p-6 sm:p-7">
+            <h3 className="font-display font-semibold text-navy text-lg">
+              {servicePaths.notSure.heading}
+            </h3>
+            <p className="mt-2 text-sm text-navy/70 leading-relaxed max-w-xl">
+              {servicePaths.notSure.body}
+            </p>
+            <div className="mt-5">
+              <PrimaryCTA href={servicePaths.notSure.cta.href}>
+                {servicePaths.notSure.cta.label}
+              </PrimaryCTA>
+            </div>
+          </div>
+
+          <div className="mt-10 grid sm:grid-cols-3 gap-6">
+            {pricingSummary.map((p) => (
+              <div key={p.title} className="border-t-2 border-blue pt-4">
+                <h4 className="font-display font-semibold text-navy text-sm">{p.title}</h4>
+                <p className="mt-1.5 font-mono text-[13px] text-blue">{p.price}</p>
+                <p className="mt-1.5 text-xs text-navy/60 leading-relaxed">{p.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* WHO THIS IS FOR — trade band */}
       <section className="bg-navy-secondary border-b border-white/10">
         <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-8 py-7">
@@ -245,6 +298,9 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <p className="mt-10 text-sm text-navy/60 max-w-2xl leading-relaxed border-l-[3px] border-blue-soft pl-4">
+            {howRichardWorks.shopVisitNote}
+          </p>
         </div>
       </section>
 

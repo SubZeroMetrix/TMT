@@ -95,7 +95,7 @@ export default function ServicesPage() {
         eyebrow="What We Do"
         title="Services Built for Owner-Led Contractor Teams"
         description="Every engagement starts with your business — not a software demo. We help HVAC, plumbing, electrical, roofing, and field-service companies choose the right tools, fix the process, train the team, and use AI where it earns its keep."
-        primaryCta={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "How It Works", href: "/how-it-works" }}
       />
 
@@ -109,8 +109,8 @@ export default function ServicesPage() {
         <p className="text-navy/70 max-w-2xl mb-12 leading-relaxed">
           The Modern Trades Mentor does not sell software licenses or earn commissions on
           platform referrals. Recommendations are vendor-neutral and based on what fits your
-          operations, your team size, and your budget — typically owner-led service companies
-          employees.
+          operations, your team size, and your budget — typically owner-led service businesses
+          of 5–30 employees.
         </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -134,7 +134,7 @@ export default function ServicesPage() {
                 </span>
                 {service.featured && (
                   <span className="ml-2 font-mono text-[9px] uppercase tracking-wider text-cyan/70 border border-cyan/30 px-2 py-0.5">
-                    Flagship
+                    Start Here
                   </span>
                 )}
                 <h3
@@ -165,23 +165,23 @@ export default function ServicesPage() {
           <div>
             <p className="bp-label mb-3">Where to Start</p>
             <h2 className="font-display text-3xl font-bold text-white tracking-tight mb-4">
-              Most Contractors Begin With the Audit
+              Most Contractors Begin With the Blueprint
             </h2>
             <p className="text-silver-light/85 leading-relaxed max-w-xl">
-              If you are not sure which service fits, the Technology &amp; AI Readiness Audit gives
+              If you are not sure which service fits, the Growth &amp; Systems Blueprint gives
               you a clear picture of where you stand and a prioritized roadmap for what to fix
-              first. Everything else — software selection, training, implementation — flows from
-              that clarity.
+              first. Everything else — implementation, software selection, training, ongoing
+              support — flows from that clarity.
             </p>
             <div className="mt-8">
               <SecondaryCTA href="/services/technology-audit">
-                Explore the Technology Audit
+                Explore the Blueprint
               </SecondaryCTA>
             </div>
           </div>
           <InfoCard title="Not Sure What You Need?" dark>
             <p className="mb-4">
-              Book a Shop Visit. We will talk through your current systems, pain points, and
+              Book a Strategy Call. We will talk through your current systems, pain points, and
               goals — and recommend the right starting point. No obligation, no software demo, no
               pressure to buy a platform.
             </p>
@@ -193,9 +193,9 @@ export default function ServicesPage() {
       </ContentSection>
 
       <CtaBand
-        headline="Ready to Modernize Without Losing Control?"
+        headline="Ready to Grow Without Losing Control?"
         body="Start with a practical conversation about your business — not a vendor pitch."
-        primary={{ label: "Book a Shop Visit", href: "/book-a-strategy-call#schedule" }}
+        primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>

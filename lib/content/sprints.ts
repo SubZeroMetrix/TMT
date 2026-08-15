@@ -1,14 +1,12 @@
 /**
- * Outcome Sprints — the second rung of the ladder (Audit -> Sprint -> Ongoing
- * Partnership). Each sprint fixes one named, specific operating problem
- * rather than selling a generic "implementation" engagement. The audit
- * determines which sprint, if any, a given business needs.
- *
- * Pricing follows the exact device already established by the audit page
- * (`app/services/technology-audit/page.tsx`): a founding-client price for
- * early engagements, framed as a range because scope is set by the audit,
- * not fixed in advance. No invented before/after numbers anywhere here —
- * consistent with content-drafts/proof-loop.md.
+ * Foundation Build use cases (formerly "Outcome Sprints") — each one fixes a
+ * named, specific operating problem. Retired as separately-priced products
+ * 2026-08-15: they no longer carry their own $5,000-$7,500 range. Each is
+ * now a use case under Foundation Build ($4,500 founding-client price for
+ * one clearly bounded fix); the Blueprint decides whether a given business's
+ * work fits Foundation or needs to move into Full or Flagship instead.
+ * URLs, metadata, and content unchanged — only the pricing/offer framing in
+ * SprintPageTemplate.tsx changed, to preserve existing search value.
  */
 
 export type Sprint = {
@@ -23,8 +21,6 @@ export type Sprint = {
   deliverables: string[];
   processNote: string;
 };
-
-export const FOUNDING_SPRINT_PRICE = "$5,000–$7,500";
 
 export const SPRINTS: Sprint[] = [
   {
