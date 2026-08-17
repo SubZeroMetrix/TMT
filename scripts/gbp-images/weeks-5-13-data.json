@@ -1,0 +1,37 @@
+[
+  { "slug": "week5-mon-revenue-gap", "eyebrow": "Business Problem", "headline": "Where Revenue Gets Lost Between Sales and Operations", "lede": "The handoff, not the pitch, is usually where the money leaks out.", "cta": "Learn More" },
+  { "slug": "week5-wed-ai-vs-automation", "eyebrow": "AI Explained", "headline": "AI and Automation Are Not the Same Thing", "lede": "One follows a fixed rule. The other interprets a situation. Know which one you're actually buying.", "cta": "Learn More" },
+  { "slug": "week5-fri-founder-diagnosis", "eyebrow": "Founder Insight", "headline": "A Customer Asking For AI Is Not The Diagnosis", "lede": "It's the starting point for a conversation, not the answer to it.", "cta": "Learn More" },
+
+  { "slug": "week6-mon-owner-nextaction", "eyebrow": "Business Problem", "headline": "Every Live Opportunity Needs An Owner, A Next Action, And A Date", "lede": "Without all three, a lead doesn't disappear — it just stops moving.", "cta": "Learn More" },
+  { "slug": "week6-wed-system-breakdown", "eyebrow": "System Breakdown", "headline": "Business Knowledge to AI Reasoning to Workflow to Action", "lede": "Then a human checks the result. That's the whole chain — skip a link and it breaks.", "cta": "Learn More" },
+  { "slug": "week6-fri-estimate-followup", "eyebrow": "Owner Diagnostic", "headline": "How Fast Would You Know An Estimate Was Never Followed Up?", "lede": "If the honest answer is “eventually,” that's the gap costing you jobs.", "cta": "Think About It" },
+
+  { "slug": "week7-mon-handoff", "eyebrow": "Business Problem", "headline": "What A Clean Sales-to-Delivery Handoff Actually Looks Like", "lede": "The salesperson knows what was sold. Delivery needs to know it too — automatically.", "cta": "Learn More" },
+  { "slug": "week7-wed-ai-limits", "eyebrow": "AI Explained", "headline": "What AI Should Never Be Allowed To Decide On Its Own", "lede": "Price. Scope. Anything that reaches a customer without a person reading it first.", "cta": "Learn More" },
+  { "slug": "week7-fri-blueprint", "eyebrow": "Growth & Systems Blueprint", "headline": "Diagnose First. Recommend Second.", "lede": "A fixed-fee, 5-day read on where your business is actually losing time and money.", "cta": "Book a Call" },
+
+  { "slug": "week8-mon-scope-creep", "eyebrow": "Business Problem", "headline": "How A Small Job Quietly Becomes A Big Unpaid One", "lede": "One extra ask, then another, until the fixed price stopped covering the real work.", "cta": "Learn More" },
+  { "slug": "week8-wed-files-folders", "eyebrow": "AI Explained", "headline": "Why Files, SOPs, and Business Data Matter To An AI Agent", "lede": "The model is one layer. What it actually knows about your business is the other.", "cta": "Learn More" },
+  { "slug": "week8-fri-source-of-truth", "eyebrow": "Owner Diagnostic", "headline": "Where Is The Source of Truth For Your Customer Information?", "lede": "If the answer is “it depends who you ask,” that's the actual project.", "cta": "Think About It" },
+
+  { "slug": "week9-mon-repeat-customers", "eyebrow": "Business Problem", "headline": "A Repeat Customer Shouldn't Overwrite Their Own History", "lede": "One company, multiple jobs, one CRM record — without losing what happened before.", "cta": "Learn More" },
+  { "slug": "week9-wed-multiple-engagements", "eyebrow": "System Breakdown", "headline": "One Customer Can Have Multiple Sales and Delivery Records", "lede": "Contact, company, opportunity, and project are four different things — not one.", "cta": "Learn More" },
+  { "slug": "week9-fri-preserve-history", "eyebrow": "Founder Insight", "headline": "Good Systems Preserve History Instead Of Rewriting It", "lede": "A CRM that quietly overwrites the last job is worse than no CRM at all.", "cta": "Learn More" },
+
+  { "slug": "week10-mon-missed-calls", "eyebrow": "Business Problem", "headline": "A Missed Call Is A Revenue Problem, Not Just A Phone Problem", "lede": "Whoever answers first usually gets the job — and it's rarely you.", "cta": "Learn More" },
+  { "slug": "week10-wed-ai-judgment", "eyebrow": "AI Explained", "headline": "Where AI Adds Judgment, and Where Automation Is Just Better", "lede": "Sorting and routing don't need a model. Interpreting a messy voicemail might.", "cta": "Learn More" },
+  { "slug": "week10-fri-reply-stops-automation", "eyebrow": "Owner Diagnostic", "headline": "What Happens When A Real Person Replies To Your Automated Follow-Up?", "lede": "If the sequence keeps firing anyway, that's a trust problem you're creating on purpose.", "cta": "Think About It" },
+
+  { "slug": "week11-mon-disconnected-systems", "eyebrow": "Business Problem", "headline": "Disconnected Systems Cost More Than The Software Bill", "lede": "Duplicate entry, stale data, and missed handoffs — the real price is time nobody tracks.", "cta": "Learn More" },
+  { "slug": "week11-wed-one-operating-system", "eyebrow": "System Breakdown", "headline": "How CRM, Calendar, Files, Workflow, and AI Should Work Together", "lede": "As one connected system with a single source of truth — not five separate tools.", "cta": "Learn More" },
+  { "slug": "week11-fri-process-first", "eyebrow": "Founder Insight", "headline": "Technology Cannot Fix A Process Nobody Has Agreed On", "lede": "Automate a disagreement and you just get a faster disagreement.", "cta": "Learn More" },
+
+  { "slug": "week12-mon-installed-vs-improved", "eyebrow": "Business Problem", "headline": "Installing Automation Is Not The Same As Improving The Business", "lede": "A workflow can run perfectly and still not fix the thing that was actually broken.", "cta": "Learn More" },
+  { "slug": "week12-wed-measuring-automation", "eyebrow": "AI Explained", "headline": "How Do You Know Whether Automation Actually Helped?", "lede": "Track the baseline before you build it — or you'll never know what changed.", "cta": "Learn More" },
+  { "slug": "week12-fri-measure-more", "eyebrow": "Owner Diagnostic", "headline": "What Are You Measuring Besides Activity?", "lede": "Calls made and emails sent aren't outcomes. Jobs booked and cash collected are.", "cta": "Think About It" },
+
+  { "slug": "week13-mon-visibility", "eyebrow": "Business Problem", "headline": "What A Connected Operating System Should Show An Owner", "lede": "Every opportunity, its owner, its next action, and whether it's actually moving.", "cta": "Learn More" },
+  { "slug": "week13-wed-recap", "eyebrow": "Inside the System", "headline": "90 Days In: The Operating Principles Behind TMT's Own Systems", "lede": "Business first. Tools second. The agent operates inside the process, not instead of it.", "cta": "Learn More" },
+  { "slug": "week13-fri-strategy-call", "eyebrow": "Book a Strategy Call", "headline": "Find The Bottleneck Before You Buy Another Tool", "lede": "Free, no obligation, at your shop. No pitch — just a straight read on what's actually holding you back.", "cta": "Book a Call" }
+]
