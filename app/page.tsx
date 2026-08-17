@@ -3,9 +3,6 @@ import Image from "next/image";
 import { PrimaryCTA, SecondaryCTA } from "@/components/CTAButton";
 import SignatureName from "@/components/SignatureName";
 import Link from "next/link";
-import JsonLd from "@/components/JsonLd";
-import { faqSchema } from "@/lib/seo/schema";
-import { GENERAL_FAQS } from "@/lib/seo/faqs";
 import {
   hero,
   broadServices,
@@ -27,17 +24,15 @@ import {
 } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title:
-    "Growth & Operating Systems for Contractors | Workflow Consultant | St. Petersburg & Tampa",
+  title: "Growth & Operating Systems for Contractors | The Modern Trades Mentor",
   description:
-    "The Modern Trades Mentor helps Tampa Bay contractors and other owner-led service businesses build the growth and operating systems they need to scale — marketing, sales, CRM, operations, automation and AI where it helps. Business mentoring for trades and service businesses from a 26-year HVAC operations leader, vendor-neutral, business first, tools second.",
+    "The Modern Trades Mentor helps contractors and owner-led service businesses improve growth, sales, CRM, operations, workflow and automation so the business can scale without losing control.",
   alternates: { canonical: "/" },
 };
 
 export default function HomePage() {
   return (
     <>
-      <JsonLd data={faqSchema(GENERAL_FAQS)} />
       {/* HERO — full-bleed AI contractor blueprint */}
       <section className="relative overflow-hidden bg-navy-deep min-h-[640px] lg:min-h-[720px] flex items-end">
         <div className="absolute inset-0 overflow-hidden">

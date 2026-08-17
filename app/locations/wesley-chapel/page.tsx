@@ -12,9 +12,9 @@ import { faqSchema, breadcrumbSchema } from "@/lib/seo/schema";
 import { LOCATION_FAQS } from "@/lib/seo/faqs";
 
 export const metadata: Metadata = {
-  title: "Automation Consultant Wesley Chapel, FL",
+  title: "Growth & Operations Consulting for Wesley Chapel, FL Contractors",
   description:
-    "Automation consultant and workflow advisory for Wesley Chapel, Florida contractors and field-service businesses — one of the fastest-growing communities in Pasco County. Vendor-neutral guidance for HVAC, plumbing, electrical, roofing and general contracting shops.",
+    "Growth, workflow, and automation consulting for Wesley Chapel, Florida contractors and field-service businesses — one of the fastest-growing communities in Pasco County. Vendor-neutral guidance for HVAC, plumbing, electrical, roofing and general contracting shops.",
   alternates: { canonical: "/locations/wesley-chapel" },
 };
 
@@ -61,8 +61,8 @@ export default function WesleyChapelPage() {
 
       <PageHero
         eyebrow="Wesley Chapel, FL"
-        title="Automation Consultant for Wesley Chapel Contractors"
-        description="One of the fastest-growing communities in Pasco County — more calls, more competition, and dispatch problems that show up earlier than owners expect. Vendor-neutral workflow, technology, and AI guidance built for that pace of growth."
+        title="Growth & Operations Consulting for Wesley Chapel Contractors"
+        description="One of the fastest-growing communities in Pasco County — more calls, more competition, and dispatch problems that show up earlier than owners expect. Vendor-neutral growth, workflow, and automation guidance built for that pace of growth."
         primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />

@@ -442,9 +442,9 @@ export const LOCATION_FAQS: Record<string, Faq[]> = {
         "Yes. Wesley Chapel is one of the fastest-growing communities in Pasco County, and it is served directly — HVAC, plumbing, electrical, roofing, and general contracting businesses, plus non-trades service businesses with the same office-to-field shape. Richard travels to your shop from St. Petersburg; the first visit is on site.",
     },
     {
-      question: "What does an automation consultant do for a Wesley Chapel business?",
+      question: "Do you help with automation for a Wesley Chapel business?",
       answer:
-        "An automation consultant for a Wesley Chapel contractor looks at the office-to-field workflow first — how calls get answered, how estimates get followed up, how jobs get closed out — and identifies which narrow, repetitive pieces of that workflow are worth handing to software or AI. New-construction growth in Wesley Chapel means many shops are adding trucks and office staff fast, which is exactly when dispatch and follow-up start breaking without anyone noticing.",
+        "Yes, as part of a broader growth and operations engagement — never as the starting point. The work looks at the office-to-field workflow first — how calls get answered, how estimates get followed up, how jobs get closed out — and identifies which narrow, repetitive pieces of that workflow are worth handing to software or AI. New-construction growth in Wesley Chapel means many shops are adding trucks and office staff fast, which is exactly when dispatch and follow-up start breaking without anyone noticing.",
     },
     {
       question: "What makes Wesley Chapel different from the rest of Pasco County?",
