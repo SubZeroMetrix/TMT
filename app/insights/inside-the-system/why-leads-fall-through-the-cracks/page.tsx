@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   PageHero,
   ContentSection,
@@ -94,6 +95,24 @@ export default function WhyLeadsFallThroughTheCracksPage() {
             choice: a templated sequence continuing to run after someone has actually responded is
             exactly the kind of automation mistake that makes a business look like nobody&apos;s
             paying attention.
+          </p>
+        </div>
+
+        <div className="mt-10 max-w-4xl">
+          <div className="bp-frame overflow-hidden bp-panel-light">
+            <Image
+              src="/case-studies/tmt-warm-inbound-instant-acknowledgment-workflow.png"
+              alt="The Modern Trades Mentor Warm Inbound workflow: a warm-inbound tag triggers an instant acknowledgment email, creates a task, sets the conversation state to Active, then branches on whether a meeting is already booked."
+              width={1326}
+              height={846}
+              className="w-full h-auto"
+              sizes="(min-width: 1024px) 896px, 100vw"
+            />
+          </div>
+          <p className="mt-3 text-sm text-navy/60">
+            TMT&apos;s Warm Inbound workflow. A reply gets acknowledged immediately, an owner gets
+            a task, and the conversation state changes to Active — so the opportunity has a
+            record of ownership before anyone has to remember to check on it.
           </p>
         </div>
 
