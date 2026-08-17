@@ -71,6 +71,11 @@ const ROUTES: Entry[] = [
   // Insights
   { path: "/insights", priority: 0.7, changeFrequency: "weekly" },
 
+  // Inside the System — TMT internal case studies, individually canonical
+  { path: "/insights/inside-the-system/ai-operating-system", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/insights/inside-the-system/when-ai-isnt-the-problem", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/insights/inside-the-system/why-leads-fall-through-the-cracks", priority: 0.6, changeFrequency: "monthly" },
+
   // Legal — indexed but low priority; they carry NAP consistency signals
   { path: "/legal/privacy", priority: 0.2, changeFrequency: "yearly" },
   { path: "/legal/terms", priority: 0.2, changeFrequency: "yearly" },

@@ -358,7 +358,7 @@ export default function HomePage() {
           </p>
           <div className="mt-10 grid gap-5 sm:grid-cols-3">
             <Link
-              href="/ai-automation#case-study"
+              href="/insights/inside-the-system/ai-operating-system"
               className="group bp-frame bp-panel-light p-6 hover:border-cyan/60 transition-colors block"
             >
               <p className="font-mono text-[10px] uppercase tracking-wider text-cyan mb-2.5">
@@ -372,7 +372,7 @@ export default function HomePage() {
               </p>
             </Link>
             <Link
-              href="/insights/inside-the-system#when-ai-isnt-the-problem"
+              href="/insights/inside-the-system/when-ai-isnt-the-problem"
               className="group bp-frame bp-panel-light p-6 hover:border-cyan/60 transition-colors block"
             >
               <p className="font-mono text-[10px] uppercase tracking-wider text-cyan mb-2.5">
@@ -386,7 +386,7 @@ export default function HomePage() {
               </p>
             </Link>
             <Link
-              href="/insights/inside-the-system#leads-falling-through-cracks"
+              href="/insights/inside-the-system/why-leads-fall-through-the-cracks"
               className="group bp-frame bp-panel-light p-6 hover:border-cyan/60 transition-colors block"
             >
               <p className="font-mono text-[10px] uppercase tracking-wider text-cyan mb-2.5">
