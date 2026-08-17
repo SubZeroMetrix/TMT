@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHero, ContentSection, CtaBand } from "@/components/PageChrome";
+import { PageHero, ContentSection, CtaBand, NewsletterCta } from "@/components/PageChrome";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/seo/schema";
 
@@ -92,6 +92,10 @@ export default function InsideTheSystemPage() {
               </Link>
             ))}
           </div>
+        </div>
+
+        <div className="mt-12">
+          <NewsletterCta />
         </div>
       </ContentSection>
 

@@ -126,6 +126,34 @@ export function BulletList({
   );
 }
 
+export function NewsletterCta({
+  className = "",
+}: {
+  className?: string;
+}) {
+  return (
+    <div className={`bp-frame bp-panel-light p-6 sm:p-7 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 ${className}`}>
+      <div>
+        <p className="font-mono text-[10px] uppercase tracking-wider text-cyan mb-2">
+          Field Notes
+        </p>
+        <h3 className="font-display font-semibold text-navy text-lg">
+          Not ready to talk yet? Keep reading.
+        </h3>
+        <p className="mt-1.5 text-sm text-navy/70 max-w-md">
+          One practical systems lesson at a time, straight to your inbox. No pitch, no hype.
+        </p>
+      </div>
+      <Link
+        href="/field-notes"
+        className="shrink-0 inline-flex items-center justify-center rounded-md bg-blue px-6 py-3 text-sm font-semibold tracking-wide text-white hover:bg-blue-hover transition-colors"
+      >
+        Join Field Notes
+      </Link>
+    </div>
+  );
+}
+
 export function CtaBand({
   headline,
   body,

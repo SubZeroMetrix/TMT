@@ -70,6 +70,7 @@ const ROUTES: Entry[] = [
 
   // Insights
   { path: "/insights", priority: 0.7, changeFrequency: "weekly" },
+  { path: "/field-notes", priority: 0.6, changeFrequency: "monthly" },
 
   // Inside the System — TMT internal case studies, individually canonical
   { path: "/insights/inside-the-system/ai-operating-system", priority: 0.6, changeFrequency: "monthly" },

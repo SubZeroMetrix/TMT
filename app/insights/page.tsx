@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHero, ContentSection, InfoCard, CtaBand } from "@/components/PageChrome";
+import { PageHero, ContentSection, InfoCard, CtaBand, NewsletterCta } from "@/components/PageChrome";
 import { ARTICLES } from "@/lib/articles";
 
 export const metadata: Metadata = {
@@ -43,6 +43,10 @@ export default function InsightsPage() {
         </div>
 
         <div className="mt-12 max-w-2xl">
+          <NewsletterCta />
+        </div>
+
+        <div className="mt-8 max-w-2xl">
           <InfoCard title="What you'll find here">
             <p>
               Articles focused on what actually matters for small contractor and field-service
