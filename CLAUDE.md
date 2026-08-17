@@ -60,7 +60,12 @@ substitute a guess for it.
 ## Project rules
 
 - **Claims require evidence.** Never invent a metric, testimonial, case study, or client name — use
-  `[CLIENT TO CONFIRM]`. There are no published case studies yet; do not imply otherwise.
+  `[CLIENT TO CONFIRM]`. There are no published **client** case studies yet; do not imply
+  otherwise. TMT may publish clearly labeled **internal** case studies based on TMT's own systems
+  and documented implementation (e.g. "TMT Internal Case Study" on the `/ai-automation` page) —
+  these must never imply client outcomes, fabricated ROI, or measured results that do not exist.
+  If no outcome has been measured, say so explicitly ("Outcome data: not yet measured") rather than
+  omitting the label.
 - **No vendor-partnership claims.** TMT has no vendor relationships and takes no commission.
   "Vendor-neutral" is accurate; "participates in partner programs" is false and has shipped once
   before. Site copy, the vendor-payment FAQ, and `llms.txt` change together, disclosure first.

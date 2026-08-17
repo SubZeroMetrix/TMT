@@ -58,13 +58,16 @@ export function ContentSection({
   children,
   dark = false,
   className = "",
+  id,
 }: {
   children: React.ReactNode;
   dark?: boolean;
   className?: string;
+  id?: string;
 }) {
   return (
     <section
+      id={id}
       className={`relative ${dark ? "bg-navy text-silver-light" : "bg-silver-pale text-navy"} ${className}`}
     >
       {dark && (
