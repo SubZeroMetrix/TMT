@@ -44,8 +44,8 @@ export default function WhenAiIsntTheProblemPage() {
           description:
             "A TMT internal case study on separating what a customer asks for from what the business actually needs, before recommending a tool.",
           slug: "/insights/inside-the-system/when-ai-isnt-the-problem",
-          published: "2026-08-17",
-          updated: "2026-08-17",
+          published: "2026-08-16",
+          updated: "2026-08-16",
         })}
       />
 
@@ -56,11 +56,14 @@ export default function WhenAiIsntTheProblemPage() {
       />
 
       <ContentSection>
-        <p className="max-w-3xl text-sm text-navy/55 mb-8">
-          <span className="font-semibold text-navy/75">Richard Fritzke</span> — Founder, The
-          Modern Trades Mentor. Trades and operations leader with more than 26 years of HVAC,
-          facilities, and mechanical-systems experience.
+        <p className="max-w-3xl text-sm text-navy/55 mb-1">
+          <Link href="/about" className="font-semibold text-navy/75 hover:text-cyan">
+            Richard Fritzke
+          </Link>{" "}
+          — Founder, The Modern Trades Mentor. Trades and operations leader with more than 26
+          years of HVAC, facilities, and mechanical-systems experience.
         </p>
+        <p className="max-w-3xl text-xs text-navy/45 mb-8">Published August 16, 2026</p>
         <div className="max-w-3xl space-y-5 text-navy/80 leading-relaxed">
           <p>
             A business owner calls and says, &quot;I need AI.&quot; It&apos;s tempting to take
@@ -82,6 +85,10 @@ export default function WhenAiIsntTheProblemPage() {
           <p><span className="font-semibold text-navy/70">Outcome data:</span> Not yet measured</p>
           <p><span className="font-semibold text-navy/70">Purpose:</span> Keep customer intent recorded separately from business diagnosis</p>
         </div>
+        <p className="mt-4 max-w-xl text-sm text-navy/60 leading-relaxed border-l-[3px] border-blue-soft pl-4">
+          What this does not prove: this is a system-design case study, not measured client
+          ROI. No result is claimed until one has actually been measured.
+        </p>
 
         <div className="mt-12 max-w-3xl">
           <h2 className="font-display font-bold text-2xl text-navy tracking-tight">
@@ -153,6 +160,16 @@ export default function WhenAiIsntTheProblemPage() {
               Book a Strategy Call
             </Link>
           </div>
+        </div>
+
+        <div className="mt-12 max-w-3xl border-t border-navy/10 pt-6">
+          <p className="text-xs uppercase tracking-wide text-navy/45 mb-2">Related</p>
+          <Link
+            href="/insights/inside-the-system/ai-operating-system"
+            className="block text-sm font-semibold text-blue hover:underline"
+          >
+            How TMT Built AI Into Its Own Operating System →
+          </Link>
         </div>
       </ContentSection>
 

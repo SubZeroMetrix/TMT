@@ -59,6 +59,12 @@ export default function InsideTheSystemPage() {
             TMT documents what was built, what is being tested, and what changed once there is
             evidence to show — not before.
           </p>
+          <p className="mt-4 text-sm text-navy/55 leading-relaxed border-l-[3px] border-blue-soft pl-4">
+            How TMT publishes evidence: real internal systems, screenshots, and documented
+            implementation. Internal case studies are labeled separately from client case
+            studies, and measured outcomes are published only once they have actually been
+            measured.
+          </p>
         </div>
 
         <div className="mt-12">
