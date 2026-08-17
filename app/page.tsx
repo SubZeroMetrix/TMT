@@ -401,7 +401,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="mt-10">
-            <SecondaryCTA href="/insights/inside-the-system">Explore Inside the System</SecondaryCTA>
+            <PrimaryCTA href="/insights/inside-the-system">Explore Inside the System</PrimaryCTA>
           </div>
         </div>
       </section>
