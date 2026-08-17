@@ -6,11 +6,14 @@ import {
   BulletList,
   CtaBand,
 } from "@/components/PageChrome";
+import JsonLd from "@/components/JsonLd";
+import { serviceSchema, faqSchema, breadcrumbSchema, NAP } from "@/lib/seo/schema";
+import { REVENUE_LOSS_RECOVERY_FAQS } from "@/lib/seo/faqs";
 
 export const metadata: Metadata = {
-  title: "Revenue Loss Recovery",
+  title: "Lost Revenue Recovery for Contractors | St. Petersburg & Tampa Bay",
   description:
-    "Find and fix revenue leaks in contractor businesses — missed calls, unsold estimates, lapsed maintenance agreements, and follow-up gaps.",
+    "Lost revenue recovery for St. Petersburg and Tampa Bay contractors — find and fix the money already leaking out of your business: missed calls, unsold estimates, lapsed maintenance agreements, and follow-up gaps. Measured, ranked, and fixed without new marketing spend.",
   alternates: { canonical: "/services/revenue-loss-recovery" },
 };
 
@@ -54,8 +57,25 @@ const impactAreas = [
 export default function RevenueLossRecoveryPage() {
   return (
     <>
+      <JsonLd
+        data={serviceSchema({
+          name: "Lost Revenue Recovery",
+          description:
+            "Lost revenue recovery for owner-led contracting and field-service businesses — finding and fixing missed calls, unsold estimates, lapsed maintenance agreements, and follow-up gaps.",
+          slug: "/services/revenue-loss-recovery",
+        })}
+      />
+      <JsonLd data={faqSchema(REVENUE_LOSS_RECOVERY_FAQS)} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: "Revenue Loss Recovery", path: "/services/revenue-loss-recovery" },
+        ])}
+      />
+
       <PageHero
-        eyebrow="Revenue Recovery"
+        eyebrow="Lost Revenue Recovery"
         title="Find the Revenue You Are Already Losing"
         description="Missed calls, unsold estimates, lapsed maintenance agreements, and follow-up gaps quietly cost contractor businesses more than any software subscription. We find the leaks and build practical recovery workflows."
         primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
@@ -117,6 +137,26 @@ export default function RevenueLossRecoveryPage() {
         <p className="text-navy/70 max-w-2xl leading-relaxed">
           This service works standalone or as part of a Growth &amp; Systems Blueprint, where
           revenue leakage is one of the core evaluation areas.
+        </p>
+      </ContentSection>
+
+      <ContentSection>
+        <h2 className="font-display text-3xl font-bold text-navy tracking-tight mb-8 max-w-2xl">
+          Common questions
+        </h2>
+        <div className="max-w-3xl space-y-7">
+          {REVENUE_LOSS_RECOVERY_FAQS.map((faq) => (
+            <div key={faq.question}>
+              <h3 className="font-display text-lg font-semibold text-navy">{faq.question}</h3>
+              <p className="mt-2.5 leading-relaxed text-navy/70">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-10 text-sm text-navy/70">
+          Call or text {NAP.phoneDisplay} ·{" "}
+          <a href={`mailto:${NAP.email}`} className="text-blue hover:underline">
+            {NAP.email}
+          </a>
         </p>
       </ContentSection>
 

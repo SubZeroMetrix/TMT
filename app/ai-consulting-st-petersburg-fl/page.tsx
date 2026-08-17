@@ -12,9 +12,9 @@ import { serviceSchema, faqSchema, breadcrumbSchema } from "@/lib/seo/schema";
 import { AI_CONSULTING_STPETE_FAQS } from "@/lib/seo/faqs";
 
 export const metadata: Metadata = {
-  title: "AI Consulting St. Petersburg, FL",
+  title: "AI Consultant & IT Consultancy St. Petersburg, FL",
   description:
-    "AI consulting in St. Petersburg, FL for contractors — where AI earns its keep, where it does not, and what to fix first, from a 26-year HVAC professional.",
+    "AI consulting and IT consultancy in St. Petersburg, FL for contractors — a St. Petersburg IT consultant who has run HVAC and facilities operations for 26 years, not a generic technology firm. Where AI earns its keep, where it does not, and what to fix first before buying anything.",
   alternates: { canonical: "/ai-consulting-st-petersburg-fl" },
 };
 

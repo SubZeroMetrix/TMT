@@ -129,7 +129,9 @@ export const PLACES: Place[] = [
   // --- Pasco County — the northern ring ------------------------------------
   { name: "New Port Richey", county: "Pasco", tier: 2 },
   { name: "Trinity", county: "Pasco", tier: 2 },
-  { name: "Wesley Chapel", county: "Pasco", tier: 2 },
+  // Tier 1 (own page) as of 2026-08-16 — real content built for
+  // /locations/wesley-chapel, not a doorway page. See LOCATION_FAQS.
+  { name: "Wesley Chapel", slug: "wesley-chapel", county: "Pasco", tier: 1 },
   { name: "Land O Lakes", county: "Pasco", tier: 2 },
 ];
 

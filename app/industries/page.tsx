@@ -7,9 +7,9 @@ import {
 } from "@/components/PageChrome";
 
 export const metadata: Metadata = {
-  title: "Industries We Serve",
+  title: "Industries We Serve | CRM for Trades & Field Service",
   description:
-    "Vendor-neutral growth and technology guidance for HVAC, plumbing, electrical, roofing, and other trades and field-service contractors.",
+    "Vendor-neutral growth, CRM, and technology guidance for HVAC, plumbing, electrical, roofing, general contracting, and other trades and field-service contractors — including CRM for trades selection, dispatch, and follow-up workflows by industry.",
   alternates: { canonical: "/industries" },
 };
 

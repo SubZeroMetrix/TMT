@@ -12,9 +12,9 @@ import { serviceSchema, faqSchema, breadcrumbSchema, NAP } from "@/lib/seo/schem
 import { CRM_WORKFLOW_FAQS } from "@/lib/seo/faqs";
 
 export const metadata: Metadata = {
-  title: "CRM & Workflow Consulting for Contractors | St. Petersburg & Tampa",
+  title: "Workflow Consultant & CRM for Trades | St. Petersburg & Tampa",
   description:
-    "CRM and workflow consulting for contractors in St. Petersburg and Tampa. Vendor-neutral help choosing and setting up field service software.",
+    "Workflow consultant and CRM for trades in St. Petersburg and Tampa. Vendor-neutral help mapping how job and customer information should move through your business, then choosing and setting up field service software that actually fits it.",
   alternates: { canonical: "/crm-workflow-consulting" },
 };
 

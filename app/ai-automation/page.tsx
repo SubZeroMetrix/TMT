@@ -12,9 +12,9 @@ import { serviceSchema, faqSchema, breadcrumbSchema, NAP } from "@/lib/seo/schem
 import { AI_AUTOMATION_TAMPA_FAQS } from "@/lib/seo/faqs";
 
 export const metadata: Metadata = {
-  title: "AI Automation for Small Business | St. Petersburg & Tampa Bay",
+  title: "AI Consultant Tampa & AI Automation | St. Petersburg & Tampa Bay",
   description:
-    "AI automation for small businesses in St. Petersburg and Tampa. Cut manual admin work on calls, follow-up, and billing — without buying software you don't need.",
+    "AI consulting and AI automation for small businesses in Tampa and St. Petersburg. An AI consultant for Tampa contractors who cuts manual admin work on calls, follow-up, and billing — without buying software you don't need.",
   alternates: { canonical: "/ai-automation" },
 };
 

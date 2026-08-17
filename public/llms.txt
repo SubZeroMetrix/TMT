@@ -107,7 +107,9 @@ is made.
 - https://www.themoderntradesmentor.com/locations/largo
 - https://www.themoderntradesmentor.com/locations/pinellas-park
 - https://www.themoderntradesmentor.com/locations/brandon
+- https://www.themoderntradesmentor.com/locations/wesley-chapel
 - https://www.themoderntradesmentor.com/services
+- https://www.themoderntradesmentor.com/services/revenue-loss-recovery
 - https://www.themoderntradesmentor.com/services/technology-audit
 - https://www.themoderntradesmentor.com/services/unsold-estimate-recovery-sprint
 - https://www.themoderntradesmentor.com/services/missed-call-recovery-sprint

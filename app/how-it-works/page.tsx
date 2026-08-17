@@ -9,9 +9,9 @@ import {
 import SignatureName from "@/components/SignatureName";
 
 export const metadata: Metadata = {
-  title: "How It Works",
+  title: "How It Works | Workflow Consultant Process for Contractors",
   description:
-    "A clear, practical process for contractor technology advisory — from discovery call to audit, roadmap, implementation support, and training.",
+    "How a workflow consultant engagement runs for St. Petersburg and Tampa Bay contractors — from discovery call to audit, roadmap, implementation support, and training. A clear, practical process, not an open-ended consulting bill.",
   alternates: { canonical: "/how-it-works" },
 };
 

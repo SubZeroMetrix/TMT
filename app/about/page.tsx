@@ -19,9 +19,9 @@ import {
 import { NAP } from "@/lib/seo/schema";
 
 export const metadata: Metadata = {
-  title: "About Richard Fritzke",
+  title: "About Richard Fritzke | Business Mentoring for Trades",
   description:
-    "Richard Fritzke brings 26+ years of HVAC and facilities experience to contractor growth advisory — vendor-neutral and business-first.",
+    "Richard Fritzke brings 26+ years of HVAC and facilities experience to business mentoring for trades — vendor-neutral, business-first growth and operations advisory for owner-led contractors in St. Petersburg and Tampa Bay, not generic tech consulting.",
   alternates: { canonical: "/about" },
 };
 

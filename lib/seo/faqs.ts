@@ -59,6 +59,11 @@ export const GENERAL_FAQS: Faq[] = [
     answer:
       "Owner-led service firms with a real office-to-field workflow — enough people that work has to move between the office and the crew, and small enough that the owner still makes the call. In practice that is usually a team of five to thirty. That includes HVAC, plumbing, electrical, roofing and general contracting, plus non-trades service businesses with the same shape. Pre-revenue businesses and firms without a single decision maker are not a fit.",
   },
+  {
+    question: "How do I get more home improvement leads in St. Petersburg, FL?",
+    answer:
+      "Start with the leads you already have before buying new ones. Most St. Petersburg contractors lose more jobs to a missed call or an estimate nobody followed up on than they would ever gain from an extra ad budget. The Growth & Systems Blueprint measures call answer rate, estimate follow-up, and lapsed maintenance agreements first — because recovering a lead you already paid to generate is cheaper than generating a new one.",
+  },
 ];
 
 /** /services/ai-consulting-st-petersburg — the broad head-term page. */
@@ -87,6 +92,39 @@ export const AI_CONSULTING_STPETE_FAQS: Faq[] = [
     question: "What is the difference between AI consulting and IT support?",
     answer:
       "IT support keeps what you have running. This is about deciding what you should have in the first place — which systems fit the way your business actually works, where automation removes real admin work, and where it would create risk. No hardware, no help desk, no software licenses sold.",
+  },
+];
+
+/**
+ * /services/revenue-loss-recovery — targets the "lost revenue recovery"
+ * zero-click query. Price questions answered directly, same rule as the
+ * other paid-offer FAQ sets.
+ */
+export const REVENUE_LOSS_RECOVERY_FAQS: Faq[] = [
+  {
+    question: "What does lost revenue recovery mean for a contracting business?",
+    answer:
+      "It means finding money that already passed through your business and quietly disappeared — a call nobody answered, an estimate nobody chased, a maintenance agreement that lapsed, a job that was finished but never fully invoiced. None of these show up as a line item on a profit and loss statement, which is why they persist for years without anyone noticing.",
+  },
+  {
+    question: "How much revenue do contractors typically lose to missed calls and unsold estimates?",
+    answer:
+      "The honest answer is [CLIENT TO CONFIRM] until it is measured for your specific business — anyone who gives you a number before looking at your call logs and estimate records is guessing. What is consistent across shops is that these leaks are measurable in about a week without buying anything, which is why measuring comes before any recovery plan.",
+  },
+  {
+    question: "How do you find where a contractor is losing revenue?",
+    answer:
+      "By reviewing call logs, estimate records, and maintenance agreement data against what actually closed. The review covers four places specifically: missed and unanswered calls, unsold estimates that never got followed up, lapsed maintenance agreements, and follow-up gaps like post-service check-ins and review requests that get skipped when the office is busy.",
+  },
+  {
+    question: "Is revenue loss recovery the same thing as marketing?",
+    answer:
+      "No. Marketing brings in new leads. Revenue loss recovery finds money already inside your business — a lead that already called, an estimate you already sent, a customer you already served — that is escaping because of a process, ownership, or follow-up gap. Fixing that is usually a faster return than spending more on new leads.",
+  },
+  {
+    question: "Do I need new software to recover lost revenue?",
+    answer:
+      "Often not. Many recovery workflows are a matter of naming who owns estimate follow-up on which day, or turning on a feature already included in software you pay for but never configured. New software is only recommended when nothing suitable already exists.",
   },
 ];
 
@@ -395,6 +433,28 @@ export const LOCATION_FAQS: Record<string, Faq[]> = {
       question: "Do you travel to Brandon and the surrounding communities?",
       answer:
         "Yes — Brandon, along with Riverview, Valrico, and the rest of eastern Hillsborough County. These unincorporated communities cover most of the county geographically, and most of Hillsborough's contractor businesses operate somewhere in that unincorporated ring rather than inside Tampa's city limits.",
+    },
+  ],
+  "wesley-chapel": [
+    {
+      question: "Do you work with contractors and service businesses in Wesley Chapel?",
+      answer:
+        "Yes. Wesley Chapel is one of the fastest-growing communities in Pasco County, and it is served directly — HVAC, plumbing, electrical, roofing, and general contracting businesses, plus non-trades service businesses with the same office-to-field shape. Richard travels to your shop from St. Petersburg; the first visit is on site.",
+    },
+    {
+      question: "What does an automation consultant do for a Wesley Chapel business?",
+      answer:
+        "An automation consultant for a Wesley Chapel contractor looks at the office-to-field workflow first — how calls get answered, how estimates get followed up, how jobs get closed out — and identifies which narrow, repetitive pieces of that workflow are worth handing to software or AI. New-construction growth in Wesley Chapel means many shops are adding trucks and office staff fast, which is exactly when dispatch and follow-up start breaking without anyone noticing.",
+    },
+    {
+      question: "What makes Wesley Chapel different from the rest of Pasco County?",
+      answer:
+        "Growth and density. Wesley Chapel has added residential rooftops and commercial development faster than almost anywhere else in the Tampa Bay area over the past decade, which means more call volume and more competition for the trucks currently on the road. A contracting business that scaled its dispatch process for a smaller, slower-growing area usually feels the strain here first.",
+    },
+    {
+      question: "Do you serve the areas around Wesley Chapel too?",
+      answer:
+        "Yes — Land O' Lakes, Trinity, and New Port Richey, along with the rest of Pasco County, plus Hillsborough and Pinellas counties. Wesley Chapel sits close enough to the Hillsborough County line that many contractor businesses based there already work both counties, which means carrying two sets of permitting process.",
     },
   ],
   "st-petersburg": [

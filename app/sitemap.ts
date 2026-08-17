@@ -56,6 +56,9 @@ const ROUTES: Entry[] = [
   { path: "/locations/largo", priority: 0.8, changeFrequency: "monthly" },
   { path: "/locations/pinellas-park", priority: 0.8, changeFrequency: "monthly" },
   { path: "/locations/brandon", priority: 0.8, changeFrequency: "monthly" },
+  // Wesley Chapel — tier:1 as of 2026-08-16 (see lib/seo/geo.ts), built for
+  // the "automation consultant wesley chapel" search term.
+  { path: "/locations/wesley-chapel", priority: 0.8, changeFrequency: "monthly" },
 
   // Trust and conversion
   { path: "/about", priority: 0.8, changeFrequency: "monthly" },
