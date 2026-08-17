@@ -56,6 +56,11 @@ export default function WhenAiIsntTheProblemPage() {
       />
 
       <ContentSection>
+        <p className="max-w-3xl text-sm text-navy/55 mb-8">
+          <span className="font-semibold text-navy/75">Richard Fritzke</span> — Founder, The
+          Modern Trades Mentor. Trades and operations leader with more than 26 years of HVAC,
+          facilities, and mechanical-systems experience.
+        </p>
         <div className="max-w-3xl space-y-5 text-navy/80 leading-relaxed">
           <p>
             A business owner calls and says, &quot;I need AI.&quot; It&apos;s tempting to take
