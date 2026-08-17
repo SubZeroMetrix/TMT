@@ -342,6 +342,70 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* TRUST — See how the systems actually work */}
+      <section className="bg-white border-b border-border-light">
+        <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+          <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-blue mb-3">
+            Real Systems. Real Implementation.
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy tracking-tight max-w-2xl">
+            See How the Systems Actually Work
+          </h2>
+          <p className="mt-4 max-w-2xl text-navy/70 leading-relaxed">
+            The Modern Trades Mentor applies the same growth, CRM, workflow, automation, and AI
+            principles inside its own business before recommending them to clients. Measured
+            results are shown only when they exist.
+          </p>
+          <div className="mt-10 grid gap-5 sm:grid-cols-3">
+            <Link
+              href="/ai-automation#case-study"
+              className="group bp-frame bp-panel-light p-6 hover:border-cyan/60 transition-colors block"
+            >
+              <p className="font-mono text-[10px] uppercase tracking-wider text-cyan mb-2.5">
+                TMT Internal Case Study
+              </p>
+              <h3 className="font-display font-semibold text-navy group-hover:text-cyan transition-colors">
+                How TMT Built AI Into Its Own Operating System
+              </h3>
+              <p className="mt-2.5 text-sm text-navy/70 leading-relaxed">
+                One business event shouldn&apos;t always trigger one generic automation.
+              </p>
+            </Link>
+            <Link
+              href="/insights/inside-the-system#when-ai-isnt-the-problem"
+              className="group bp-frame bp-panel-light p-6 hover:border-cyan/60 transition-colors block"
+            >
+              <p className="font-mono text-[10px] uppercase tracking-wider text-cyan mb-2.5">
+                TMT Internal Case Study
+              </p>
+              <h3 className="font-display font-semibold text-navy group-hover:text-cyan transition-colors">
+                When &quot;We Need AI&quot; Isn&apos;t Actually the Problem
+              </h3>
+              <p className="mt-2.5 text-sm text-navy/70 leading-relaxed">
+                What a customer asks for isn&apos;t always what the business needs.
+              </p>
+            </Link>
+            <Link
+              href="/insights/inside-the-system#leads-falling-through-cracks"
+              className="group bp-frame bp-panel-light p-6 hover:border-cyan/60 transition-colors block"
+            >
+              <p className="font-mono text-[10px] uppercase tracking-wider text-cyan mb-2.5">
+                TMT Internal Case Study
+              </p>
+              <h3 className="font-display font-semibold text-navy group-hover:text-cyan transition-colors">
+                How TMT Prevents Leads From Falling Through the Cracks
+              </h3>
+              <p className="mt-2.5 text-sm text-navy/70 leading-relaxed">
+                A CRM matters only when every opportunity has an owner and a next action.
+              </p>
+            </Link>
+          </div>
+          <div className="mt-10">
+            <SecondaryCTA href="/insights/inside-the-system">Explore Inside the System</SecondaryCTA>
+          </div>
+        </div>
+      </section>
+
       {/* PRINCIPLES */}
       <section className="bg-surface-light">
         <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-8 py-20">

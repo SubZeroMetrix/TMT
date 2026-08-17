@@ -25,6 +25,18 @@ export type Article = {
 
 export const ARTICLES: Article[] = [
   {
+    slug: "inside-the-system",
+    title: "Inside the System — Real TMT Systems, Explained",
+    subtitle:
+      "How TMT applies its own growth, CRM, workflow, automation, and AI principles inside its own business, before recommending them to clients.",
+    description:
+      "Real Modern Trades Mentor systems, explained in plain language — internal case studies with no fabricated results, just how the systems actually work.",
+    eyebrow: "TMT Internal Case Studies",
+    readTime: "10 min read",
+    published: "2026-08-17",
+    updated: "2026-08-17",
+  },
+  {
     slug: "what-to-automate-first",
     title: "What Should a Small Business Automate First?",
     subtitle:

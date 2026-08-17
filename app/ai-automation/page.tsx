@@ -185,10 +185,15 @@ export default function AiAutomationPage() {
           </p>
           <div className="mt-5 grid gap-x-6 gap-y-1 text-xs uppercase tracking-wide text-navy/55 sm:grid-cols-2">
             <p><span className="font-semibold text-navy/70">System:</span> TMT&apos;s commercial and client-delivery workflow</p>
-            <p><span className="font-semibold text-navy/70">Status:</span> Active internal implementation</p>
+            <p><span className="font-semibold text-navy/70">Status:</span> Active internal implementation — being hardened for multi-engagement idempotency</p>
             <p><span className="font-semibold text-navy/70">Outcome data:</span> Not yet measured</p>
             <p><span className="font-semibold text-navy/70">Purpose:</span> Show how AI and automation should be built around a real business process</p>
           </div>
+          <p className="mt-4 text-sm text-navy/60 leading-relaxed border-l-[3px] border-blue-soft pl-4 max-w-xl">
+            Current work: the routing shown below is live. TMT is currently hardening it so a
+            repeat engagement from the same customer gets its own delivery record — instead of
+            being mistaken for a retry of the first one, or silently overwriting it.
+          </p>
         </div>
 
         <div className="mt-10 max-w-4xl">
