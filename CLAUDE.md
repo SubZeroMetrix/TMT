@@ -45,6 +45,16 @@ keeps the tree clean; deleting it from a diff only recreates it.
 
 `tmt-*` specialist agents are **NOT_INSTALLED** (Track B). Until they exist, use the skills above.
 
+## Source-of-truth order for any TMT work (repo, GHL pages, proposals, ads, anything branded)
+
+**Repository truth first → connected/live system second → public website observation last.**
+For branding/design specifically: read `tailwind.config.ts` (colors, radius, shadows, blueprint-
+grid background), `app/layout.tsx` (font stack — Space Grotesk / IBM Plex Sans / JetBrains Mono /
+Allura), and `public/Logo.png` / `components/BrandLogo.tsx` **before** touching the live site.
+The deployed site is for verifying a rendered result, never for deriving the design system —
+`getComputedStyle()` on the live page only returns resolved values and misses token names, shadow
+specs, and the grid pattern entirely.
+
 ## Evidence labelling — required in any audit, teardown, or proposal
 
 Every material claim carries its provenance. Never let an inference read as a fact.
