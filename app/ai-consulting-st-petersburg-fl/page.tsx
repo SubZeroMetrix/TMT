@@ -119,6 +119,27 @@ export default function AiConsultingStPetersburgPage() {
             No software licenses are sold here and no custom systems are built.
             The work is deciding what fits, then helping your people use it.
           </p>
+          <p className="mt-4 text-navy/75 leading-relaxed">
+            For a look at how this plays out in practice, see{" "}
+            <Link
+              href="/insights/inside-the-system/when-ai-isnt-the-problem"
+              className="text-blue hover:underline"
+            >
+              when &quot;we need AI&quot; isn&apos;t actually the problem
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/insights/inside-the-system/why-leads-fall-through-the-cracks"
+              className="text-blue hover:underline"
+            >
+              why leads fall through the cracks even with a CRM
+            </Link>{" "}
+            — two breakdowns of TMT&apos;s own operating system, from{" "}
+            <Link href="/insights/inside-the-system" className="text-blue hover:underline">
+              Inside the System
+            </Link>
+            .
+          </p>
         </div>
       </ContentSection>
 

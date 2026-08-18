@@ -98,6 +98,16 @@ export default function CrmWorkflowConsultingPage() {
             commission is taken from any vendor — the recommendation is whatever
             fits your shop.
           </p>
+          <p className="mt-4 leading-relaxed text-navy/75">
+            A CRM does not fix this by itself — see{" "}
+            <Link
+              href="/insights/inside-the-system/why-leads-fall-through-the-cracks"
+              className="text-blue hover:underline"
+            >
+              why leads fall through the cracks even with a CRM
+            </Link>{" "}
+            for how that actually plays out.
+          </p>
         </div>
       </ContentSection>
 
@@ -165,6 +175,12 @@ export default function CrmWorkflowConsultingPage() {
             </Link>
             <Link href="/locations/pinellas-county-fl" className="text-blue-light hover:underline">
               Pinellas County
+            </Link>
+            <Link
+              href="/insights/inside-the-system/why-leads-fall-through-the-cracks"
+              className="text-blue-light hover:underline"
+            >
+              Why Leads Fall Through the Cracks — Even With a CRM
             </Link>
           </div>
         </div>
