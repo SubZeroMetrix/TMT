@@ -49,7 +49,7 @@ export default function ImplementationPlanningPage() {
     <>
       <PageHero
         eyebrow="Implementation Planning"
-        title="Roll Out Technology Your Team Will Actually Use"
+        title="An Implementation Plan Your Team Will Actually Use"
         description="A recommendation is only useful if the team adopts it. We build sequenced implementation plans with training, change management, and adoption checkpoints — so new tools stick instead of sitting on the shelf."
         primaryCta={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondaryCta={{ label: "Start With the Audit", href: "/services/technology-audit" }}

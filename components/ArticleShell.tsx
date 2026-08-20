@@ -62,16 +62,22 @@ export default function ArticleShell({
 
       <ContentSection>
         <div className="max-w-3xl">
-          <p className="mb-8 border-b border-navy/10 pb-6 text-sm text-navy/60">
-            By{" "}
-            <Link href="/about" className="font-semibold text-blue hover:underline">
-              Richard B. Fritzke
-            </Link>{" "}
-            · Published {fmt(article.published)}
-            {article.updated !== article.published && (
-              <> · Updated {fmt(article.updated)}</>
-            )}
-          </p>
+          <div className="mb-8 border-b border-navy/10 pb-6 text-sm text-navy/60">
+            <p>
+              By{" "}
+              <Link href="/about" className="font-semibold text-blue hover:underline">
+                Richard B. Fritzke
+              </Link>{" "}
+              · Published {fmt(article.published)}
+              {article.updated !== article.published && (
+                <> · Updated {fmt(article.updated)}</>
+              )}
+            </p>
+            <p className="mt-1 text-xs text-navy/50">
+              26+ years HVAC, facilities, and mechanical systems experience · A.S. HVAC/R,
+              Redstone College · OSHA 30 and MSHA certified
+            </p>
+          </div>
 
           <div className="article-body space-y-5 text-navy/75 leading-relaxed">
             {children}
