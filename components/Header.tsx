@@ -46,7 +46,7 @@ export default function Header() {
           {/* Centered company name */}
           <Link
             href="/"
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center leading-none px-2 max-w-[55%] sm:max-w-none"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center leading-none px-2 max-w-[45%] sm:max-w-[220px] lg:max-w-[260px]"
             aria-label="The Modern Trades Mentor LLC"
           >
             <span className="block text-[9px] sm:text-[10px] font-semibold tracking-[0.22em] text-steel-light uppercase">

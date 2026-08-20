@@ -92,11 +92,13 @@ export default function AiConsultingStPetersburgPage() {
       <ContentSection>
         <div className="max-w-3xl">
           <p className="text-lg text-navy/85 leading-relaxed">
-            The Modern Trades Mentor provides AI consulting, workflow
-            automation, CRM guidance, and business technology planning for small
-            businesses in St. Petersburg and the Tampa Bay area. We help
-            businesses identify where technology can reduce manual work, improve
-            follow-up, and make day-to-day operations easier to manage.
+            Richard Fritzke ran HVAC crews and facilities in and around St.
+            Petersburg for 26 years before doing this work — 20+ technicians
+            supervised, 40+ facilities managed, EPA Universal certified. That
+            background, not a generic technology playbook, is what shapes the
+            AI consulting, workflow automation, and CRM guidance The Modern
+            Trades Mentor provides to small businesses across St. Petersburg
+            and the Tampa Bay area.
           </p>
 
           <h2 className="mt-12 font-display font-bold text-2xl sm:text-3xl text-navy tracking-tight">
@@ -109,11 +111,10 @@ export default function AiConsultingStPetersburgPage() {
             buying the same things.
           </p>
           <p className="mt-4 text-navy/75 leading-relaxed">
-            Richard Fritzke spent 26 years in HVAC and facilities before doing
-            this work — 20+ technicians supervised, 40+ facilities managed, EPA
-            Universal certified. That background is why the recommendations are
-            about dispatch, quoting, follow-up and office-to-field handoffs
-            rather than abstract technology strategy.
+            That&apos;s why the recommendations here are about dispatch,
+            quoting, follow-up and office-to-field handoffs — the things that
+            actually cost a St. Petersburg contractor money — rather than
+            abstract technology strategy.
           </p>
           <p className="mt-4 text-navy/75 leading-relaxed">
             No software licenses are sold here and no custom systems are built.

@@ -6,12 +6,28 @@ import FeedbackForm from "@/components/FeedbackForm";
 export const metadata: Metadata = {
   title: "Client Feedback & Reviews",
   description:
-    "The Modern Trades Mentor is early-stage and does not have published customer reviews yet. Share honest feedback about working with TMT, or leave a Google review.",
+    "Verified Google reviews from contractors who have worked with The Modern Trades Mentor. Share honest feedback about working with TMT, or leave a Google review.",
   alternates: { canonical: "/reviews" },
-  robots: { index: false, follow: true },
 };
 
 const LINKEDIN_URL = "https://www.linkedin.com/company/the-modern-trades-mentor-llc/";
+
+/**
+ * Real reviews only, pulled from the connected Google Business Profile.
+ * Add an entry here only once it is verified live on GBP — never invent
+ * or paraphrase a review. Date/rating/quote must match the GBP listing
+ * exactly.
+ */
+const VERIFIED_REVIEWS = [
+  {
+    name: "Brandon Harvey",
+    rating: 5,
+    date: "August 19, 2026",
+    quote:
+      "Been in the HVAC industry for 25 years. Trades mentor LLC has helped me to transpire my business separate from the trade itself. Thank you so much.",
+    source: "Google",
+  },
+];
 
 /**
  * Set once a verified Google Business Profile review link exists. Never
@@ -27,7 +43,7 @@ export default function ReviewsPage() {
       <PageHero
         eyebrow="Reviews"
         title="Honest Feedback From Real Engagements"
-        description="We are early in building this practice. We do not publish fake five-star reviews or invented testimonials — and we never will."
+        description="We are early in building this practice. We do not publish fake five-star reviews or invented testimonials — and we never will. What's below is pulled directly from Google."
       />
 
       <ContentSection>
@@ -43,6 +59,17 @@ export default function ReviewsPage() {
             conversation. Constructive feedback helps us improve how we serve contractor and
             field-service businesses.
           </p>
+        </div>
+
+        <div className="mt-10 max-w-3xl space-y-5">
+          {VERIFIED_REVIEWS.map((review) => (
+            <InfoCard key={review.name + review.date} title={review.name}>
+              <p className="text-xs font-mono uppercase tracking-wider text-cyan-dim mb-3">
+                {"★".repeat(review.rating)} · {review.date} · via {review.source}
+              </p>
+              <p className="text-navy/80 leading-relaxed">{review.quote}</p>
+            </InfoCard>
+          ))}
         </div>
 
         <div className="mt-12 grid sm:grid-cols-2 gap-6 max-w-3xl">
@@ -75,9 +102,9 @@ export default function ReviewsPage() {
         <div className="max-w-3xl text-center mx-auto">
           <p className="bp-label mb-4">Early stage, committed to honesty</p>
           <p className="text-silver-light/85 leading-relaxed">
-            We would rather have no reviews page filled with real silence than a page filled with
-            marketing fiction. When we have verified client feedback worth sharing, it will appear
-            here with integrity.
+            We would rather have a short, real list than a page filled with marketing fiction. As
+            verified client feedback comes in, it will appear here with integrity — nothing more,
+            nothing manufactured.
           </p>
         </div>
       </ContentSection>

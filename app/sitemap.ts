@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+import { execFileSync } from "node:child_process";
+import path from "node:path";
 
 import { SITE_URL } from "@/lib/seo/schema";
 import { ARTICLES } from "@/lib/articles";
@@ -84,12 +86,35 @@ const ROUTES: Entry[] = [
   { path: "/legal/ai-disclaimer", priority: 0.2, changeFrequency: "yearly" },
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+/**
+ * Real per-page last-modified date, from the file's own git history rather
+ * than one shared build timestamp — Google explicitly discounts a lastmod
+ * that doesn't reflect an actual content change. Falls back to the build
+ * time if git isn't available (e.g. a shallow clone with truncated history).
+ */
+function lastCommitDate(routePath: string): Date {
+  const filePath = path.join(
+    process.cwd(),
+    "app",
+    routePath === "/" ? "" : routePath,
+    "page.tsx",
+  );
+  try {
+    const iso = execFileSync(
+      "git",
+      ["log", "-1", "--format=%cI", "--", filePath],
+      { cwd: process.cwd(), encoding: "utf8" },
+    ).trim();
+    return iso ? new Date(iso) : new Date();
+  } catch {
+    return new Date();
+  }
+}
 
-  const staticRoutes = ROUTES.map(({ path, priority, changeFrequency }) => ({
-    url: `${SITE_URL}${path}`,
-    lastModified,
+export default function sitemap(): MetadataRoute.Sitemap {
+  const staticRoutes = ROUTES.map(({ path: routePath, priority, changeFrequency }) => ({
+    url: `${SITE_URL}${routePath}`,
+    lastModified: lastCommitDate(routePath),
     changeFrequency,
     priority,
   }));

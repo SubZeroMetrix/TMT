@@ -7,6 +7,8 @@ import {
   CtaBand,
 } from "@/components/PageChrome";
 import { SecondaryCTA } from "@/components/CTAButton";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/seo/schema";
 import { SPRINTS } from "@/lib/content/sprints";
 
 export const metadata: Metadata = {
@@ -144,6 +146,12 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+        ])}
+      />
       <PageHero
         eyebrow="What We Do"
         title="Services Built for Owner-Led Contractor Teams"
