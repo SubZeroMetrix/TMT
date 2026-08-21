@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHero, ContentSection, InfoCard, CtaBand } from "@/components/PageChrome";
 import SignatureName from "@/components/SignatureName";
 import FeedbackForm from "@/components/FeedbackForm";
+import { reviewsApprovedForWebsite } from "@/lib/reviews";
 
 export const metadata: Metadata = {
   title: "Client Feedback & Reviews",
@@ -13,21 +14,21 @@ export const metadata: Metadata = {
 const LINKEDIN_URL = "https://www.linkedin.com/company/the-modern-trades-mentor-llc/";
 
 /**
- * Real reviews only, pulled from the connected Google Business Profile.
- * Add an entry here only once it is verified live on GBP — never invent
- * or paraphrase a review. Date/rating/quote must match the GBP listing
- * exactly.
+ * Sourced from lib/reviews.ts, the TMT Review Proof Engine's canonical
+ * record. Only reviews with reuseApproved = true AND usedOn.website = true
+ * render here — approval is a real gate, not a formality.
  */
-const VERIFIED_REVIEWS = [
-  {
-    name: "Brandon Harvey",
-    rating: 5,
-    date: "August 19, 2026",
-    quote:
-      "Been in the HVAC industry for 25 years. Trades mentor LLC has helped me to transpire my business separate from the trade itself. Thank you so much.",
-    source: "Google",
-  },
-];
+const VERIFIED_REVIEWS = reviewsApprovedForWebsite().map((r) => ({
+  name: r.reviewerName,
+  rating: r.rating,
+  date: new Date(`${r.reviewDate}T12:00:00Z`).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }),
+  quote: r.reviewText,
+  source: r.reviewSource,
+}));
 
 /**
  * Set once a verified Google Business Profile review link exists. Never
