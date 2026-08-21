@@ -304,6 +304,24 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* FREE DIAGNOSTIC — bridge to the paid Blueprint below */}
+      <section className="bg-white border-y border-slate-200">
+        <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-8 py-16 text-center">
+          <p className="bp-label mb-3 justify-center">Free, 2-Minute Self-Assessment</p>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy tracking-tight max-w-2xl mx-auto">
+            Get Your Contractor Growth Systems Score
+          </h2>
+          <p className="mt-4 text-navy/70 max-w-xl mx-auto leading-relaxed">
+            Find the systems most likely to be limiting your next stage of growth — demand,
+            conversion, revenue capture, operations, systems &amp; measurement, and growth &amp;
+            scale. A directional self-assessment, not a verified audit.
+          </p>
+          <div className="mt-8 flex justify-center">
+            <PrimaryCTA href="/growth-systems-score">Get Your Growth Systems Score</PrimaryCTA>
+          </div>
+        </div>
+      </section>
+
       {/* FLAGSHIP AUDIT */}
       <section className="relative bg-navy overflow-hidden">
         <div
