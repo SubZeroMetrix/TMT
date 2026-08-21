@@ -14,23 +14,6 @@ export const metadata: Metadata = {
 const LINKEDIN_URL = "https://www.linkedin.com/company/the-modern-trades-mentor-llc/";
 
 /**
- * Sourced from lib/reviews.ts, the TMT Review Proof Engine's canonical
- * record. Only reviews with reuseApproved = true AND usedOn.website = true
- * render here — approval is a real gate, not a formality.
- */
-const VERIFIED_REVIEWS = reviewsApprovedForWebsite().map((r) => ({
-  name: r.reviewerName,
-  rating: r.rating,
-  date: new Date(`${r.reviewDate}T12:00:00Z`).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  }),
-  quote: r.reviewText,
-  source: r.reviewSource,
-}));
-
-/**
  * Set once a verified Google Business Profile review link exists. Never
  * hardcode or guess this — an unverified or wrong link is worse than no
  * button. Until it's set, the "Leave a Google Review" section doesn't
@@ -38,7 +21,28 @@ const VERIFIED_REVIEWS = reviewsApprovedForWebsite().map((r) => ({
  */
 const GOOGLE_REVIEW_URL = process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL;
 
-export default function ReviewsPage() {
+export const revalidate = 60;
+
+export default async function ReviewsPage() {
+  /**
+   * Sourced from lib/reviews.ts, the TMT Review Proof Engine's canonical
+   * record (frozen seed + Blob-persisted automatic ingestion). Only reviews
+   * with reuseApproved = true AND usedOn.website = true render here —
+   * approval is a real gate, not a formality.
+   */
+  const approved = await reviewsApprovedForWebsite();
+  const VERIFIED_REVIEWS = approved.map((r) => ({
+    name: r.reviewerName,
+    rating: r.rating,
+    date: new Date(`${r.reviewDate}T12:00:00Z`).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }),
+    quote: r.reviewText,
+    source: r.reviewSource,
+  }));
+
   return (
     <>
       <PageHero

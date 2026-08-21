@@ -14,3 +14,5 @@ AGENTS.md
 # AGENTS.md above stays ignored: `next dev` regenerates it.
 !CLAUDE.md
 .vercel
+
+.env*
