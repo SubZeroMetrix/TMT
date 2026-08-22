@@ -23,6 +23,9 @@ const ROUTES: Entry[] = [
   { path: "/ai-automation", priority: 0.9, changeFrequency: "monthly" },
   { path: "/crm-workflow-consulting", priority: 0.9, changeFrequency: "monthly" },
 
+  // GSS diagnostic — primary free-tier acquisition path, added 2026-08-22
+  { path: "/growth-systems-score", priority: 0.9, changeFrequency: "monthly" },
+
   // Services — the offer pages
   { path: "/services", priority: 0.9, changeFrequency: "monthly" },
   { path: "/services/technology-audit", priority: 0.9, changeFrequency: "monthly" },

@@ -6,7 +6,7 @@ import {
   BulletList,
   CtaBand,
 } from "@/components/PageChrome";
-import CaptureFormEmbed from "@/components/CaptureFormEmbed";
+import GSSEmbed from "@/components/GSSEmbed";
 
 /**
  * Primary inbound acquisition path — the free Contractor Growth Systems
@@ -91,7 +91,7 @@ export default function GrowthSystemsScorePage() {
 
         {GSS_SURVEY_URL ? (
           <div className="max-w-xl mx-auto">
-            <CaptureFormEmbed
+            <GSSEmbed
               url={GSS_SURVEY_URL}
               title="Contractor Growth Systems Score"
             />
