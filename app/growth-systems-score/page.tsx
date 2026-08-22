@@ -6,22 +6,21 @@ import {
   BulletList,
   CtaBand,
 } from "@/components/PageChrome";
-import GSSEmbed from "@/components/GSSEmbed";
+import GSSForm from "@/components/gss/GSSForm";
 
 /**
  * Primary inbound acquisition path — the free Contractor Growth Systems
- * Score diagnostic. Rendering of the actual diagnostic is conditional on
- * NEXT_PUBLIC_GSS_SURVEY_URL so this page never ships a broken/empty embed
- * before the survey exists in GoHighLevel (Sites > Surveys). Same pattern
- * as CAPTURE_FORM_URL in app/contact/page.tsx and BOOKING_URL in
- * app/book-a-strategy-call/page.tsx — set the env var once the survey is
- * built and verified there.
+ * Score diagnostic. Built natively (own questions, own scoring engine in
+ * lib/gss/scoring.ts, own /api/gss/submit route) rather than depending on
+ * HighLevel's Survey Builder, which proved unreliable to construct via
+ * this session's browser automation. HighLevel remains the CRM
+ * destination — see GSS_EVENT_CONTRACT.md for the versioned payload the
+ * API route sends once GHL_PRIVATE_INTEGRATION_TOKEN is configured.
  *
  * This is a directional self-assessment, not a verified audit. Never let
  * copy on this page imply otherwise — that boundary is what keeps the paid
  * Growth & Systems Blueprint the actual diagnostic product.
  */
-const GSS_SURVEY_URL = process.env.NEXT_PUBLIC_GSS_SURVEY_URL;
 
 export const metadata: Metadata = {
   title: "Contractor Growth Systems Score",
@@ -89,23 +88,9 @@ export default function GrowthSystemsScorePage() {
           ))}
         </div>
 
-        {GSS_SURVEY_URL ? (
-          <div className="max-w-xl mx-auto">
-            <GSSEmbed
-              url={GSS_SURVEY_URL}
-              title="Contractor Growth Systems Score"
-            />
-          </div>
-        ) : (
-          <div className="max-w-xl mx-auto text-center">
-            <InfoCard title="Coming Soon">
-              <p>
-                The diagnostic is being finalized. In the meantime, book a free Shop Visit or call
-                727-600-3425 to talk through where your business stands.
-              </p>
-            </InfoCard>
-          </div>
-        )}
+        <div className="max-w-xl mx-auto">
+          <GSSForm />
+        </div>
 
         <div className="max-w-2xl mx-auto mt-10 text-center">
           <BulletList
