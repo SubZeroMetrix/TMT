@@ -90,8 +90,7 @@ async function writeToHighLevel(input: {
 
   if (!token || !locationId) {
     console.error(
-      "[gss] GHL_PRIVATE_INTEGRATION_TOKEN / GHL_LOCATION_ID not set — GSS result computed but NOT written to HighLevel.",
-      { email: input.contact.email, overall: input.result.overall }
+      `[gss] GHL_PRIVATE_INTEGRATION_TOKEN / GHL_LOCATION_ID not set — GSS result computed but NOT written to HighLevel. email=${input.contact.email} overall=${input.result.overall}`
     );
     return { delivered: false as const };
   }
@@ -152,15 +151,30 @@ async function writeToHighLevel(input: {
     ],
   };
 
-  const res = await fetch("https://services.leadconnectorhq.com/contacts/upsert", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Version: "2021-07-28",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(body),
-  });
+  // CRM write must never hang the response the visitor is waiting on — the
+  // diagnostic result has already been computed above and must ship even if
+  // HighLevel is slow or unreachable.
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000);
+
+  let res: Response;
+  try {
+    res = await fetch("https://services.leadconnectorhq.com/contacts/upsert", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Version: "2021-07-28",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+      signal: controller.signal,
+    });
+  } catch (err) {
+    console.error("[gss] HighLevel upsert request failed or timed out", err instanceof Error ? err.message : err);
+    return { delivered: false as const };
+  } finally {
+    clearTimeout(timeout);
+  }
 
   if (!res.ok) {
     const text = await res.text().catch(() => "");
