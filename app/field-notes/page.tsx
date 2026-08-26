@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero, ContentSection, BulletList } from "@/components/PageChrome";
-import FormEmbed from "@/components/FormEmbed";
+import FieldNotesSignupForm from "@/components/FieldNotesSignupForm";
 import JsonLd from "@/components/JsonLd";
-import { breadcrumbSchema, NAP } from "@/lib/seo/schema";
+import { breadcrumbSchema } from "@/lib/seo/schema";
 
 export const metadata: Metadata = {
   title: "Field Notes — The Modern Trades Mentor Newsletter",
@@ -12,14 +12,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/field-notes" },
 };
 
-/**
- * Newsletter signup form. GHL's public API has no form-creation endpoint —
- * confirmed 2026-08-17, same limitation as Workflows/Funnels — so this form
- * has to be built once in the GHL Forms Builder UI and its embed URL dropped
- * in here, same pattern as BOOKING_URL on /book-a-strategy-call. Honest
- * "not yet configured" fallback below until that's done, never a fake form.
- */
-const NEWSLETTER_FORM_URL = process.env.NEXT_PUBLIC_NEWSLETTER_FORM_URL || "";
+// Signup now goes through /api/field-notes-signup, a server-to-server proxy
+// to the shared SubZeroMetrix newsletter_subscribers table (see that route
+// for details) -- replaces the earlier GHL-form-embed plan, which was
+// blocked by GHL having no public form-creation API.
 
 const whatYouGet = [
   "One practical breakdown of a real business system — sales, ops, CRM, or automation",
@@ -69,23 +65,11 @@ export default function FieldNotesPage() {
               <h2 className="font-display font-semibold text-navy text-lg mb-4">
                 Join Field Notes
               </h2>
-              {NEWSLETTER_FORM_URL ? (
-                <FormEmbed url={NEWSLETTER_FORM_URL} title="Field Notes newsletter signup" />
-              ) : (
-                <div className="text-center py-10">
-                  <p className="text-sm text-navy/70 leading-relaxed">
-                    Signup form not yet configured. In the meantime, email{" "}
-                    <a href={`mailto:${NAP.email}`} className="font-semibold text-blue hover:underline">
-                      {NAP.email}
-                    </a>{" "}
-                    with &quot;Field Notes&quot; in the subject line and you&apos;ll be added by
-                    hand.
-                  </p>
-                </div>
-              )}
+              <FieldNotesSignupForm />
               <p className="mt-4 text-xs text-navy/50 leading-relaxed">
-                By signing up you agree to receive the Field Notes newsletter by email. Unsubscribe
-                any time — every issue has a one-click link at the bottom.
+                We store your name, email, and preferences to send this newsletter and let you
+                manage your subscription. SMS is never enabled from this form. Unsubscribe any time
+                — every issue has a one-click link at the bottom.
               </p>
             </div>
           </div>
