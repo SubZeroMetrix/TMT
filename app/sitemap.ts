@@ -64,6 +64,10 @@ const ROUTES: Entry[] = [
   // Wesley Chapel — tier:1 as of 2026-08-16 (see lib/seo/geo.ts), built for
   // the "automation consultant wesley chapel" search term.
   { path: "/locations/wesley-chapel", priority: 0.8, changeFrequency: "monthly" },
+  // Palm Harbor — explicitly named in the Pinellas local-priority order
+  // (St. Petersburg, Clearwater, Largo, Palm Harbor, Pinellas County,
+  // Tampa/Hillsborough) but had no page built until now.
+  { path: "/locations/palm-harbor", priority: 0.8, changeFrequency: "monthly" },
 
   // Trust and conversion
   { path: "/about", priority: 0.8, changeFrequency: "monthly" },

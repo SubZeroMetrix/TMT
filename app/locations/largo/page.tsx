@@ -45,6 +45,7 @@ const nearbyAreas = [
   { label: "St. Petersburg", href: "/locations/st-petersburg" },
   { label: "Clearwater", href: "/locations/clearwater" },
   { label: "Pinellas Park", href: "/locations/pinellas-park" },
+  { label: "Palm Harbor", href: "/locations/palm-harbor" },
 ];
 
 export default function LargoPage() {

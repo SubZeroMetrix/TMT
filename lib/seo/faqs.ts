@@ -389,6 +389,28 @@ export const LOCATION_FAQS: Record<string, Faq[]> = {
         "Directly. Largo gets the same on-site shop visit and advisory work as St. Petersburg or Clearwater — the location does not change the service, only the drive.",
     },
   ],
+  "palm-harbor": [
+    {
+      question: "Is Palm Harbor its own city?",
+      answer:
+        "No. Palm Harbor is an unincorporated community in Pinellas County -- there is no separate Palm Harbor city government, city hall, or city-level contractor licensing department. Contractor licensing, permitting, and business regulation for Palm Harbor run through Pinellas County directly, the same as for any other unincorporated part of the county.",
+    },
+    {
+      question: "Do you work with contractors based in Palm Harbor?",
+      answer:
+        "Yes. Palm Harbor sits on the US-19 corridor between Clearwater and Tarpon Springs, and its mix of established residential neighborhoods, waterfront property along Lake Tarpon, and nearby commercial development along US-19 makes it a common base for HVAC, plumbing, electrical, and other residential-service contractors covering north Pinellas.",
+    },
+    {
+      question: "What's different about running a contractor business out of Palm Harbor?",
+      answer:
+        "Being unincorporated changes very little operationally for a service business day-to-day -- work still runs through Pinellas County permitting and licensing. The practical difference is geographic: Palm Harbor sits north of Clearwater on the US-19 corridor, which affects drive time and territory planning if a business also covers Clearwater, Dunedin, or Tarpon Springs in the same day.",
+    },
+    {
+      question: "Do you serve Palm Harbor directly, or only as part of Pinellas County?",
+      answer:
+        "Directly. Palm Harbor gets the same on-site shop visit and advisory work as St. Petersburg, Clearwater, or Largo -- the location does not change the service, only the drive.",
+    },
+  ],
   "pinellas-park": [
     {
       question: "Do you work with contractors in Pinellas Park?",

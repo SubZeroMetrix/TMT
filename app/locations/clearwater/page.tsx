@@ -44,6 +44,7 @@ const nearbyAreas = [
   { label: "Greater Tampa Bay", href: "/locations/tampa-bay" },
   { label: "St. Petersburg", href: "/locations/st-petersburg" },
   { label: "Largo", href: "/locations/largo" },
+  { label: "Palm Harbor", href: "/locations/palm-harbor" },
   { label: "Tampa", href: "/locations/tampa" },
 ];
 
