@@ -1,19 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isGhlConfigured, getGhlMissingConfig, upsertSubscriber, normalizeEmail, GhlNotConfiguredError } from "@/lib/ghl/adapter";
 
 export const runtime = "nodejs";
 
 // ---------------------------------------------------------------------------
-// Pinellas Contractor Field Notes signup. Per explicit instruction: reuse the
-// existing shared SubZeroMetrix newsletter architecture rather than creating
-// a second database or independent subscriber list. This route is a
-// server-to-server proxy (Node fetch, not a browser call -- no CORS issue,
-// no new credentials) to subzerometrix.com's real /api/newsletter/subscribe
-// endpoint, which is the actual owner of the newsletter_subscribers table.
+// Pinellas Contractor Field Notes signup. GHL is the permanent contact/
+// subscriber source of truth (2026-08-26 direction) -- this route calls the
+// local GHL adapter directly instead of proxying to subzerometrix.com's
+// Supabase-backed newsletter table. That Supabase path
+// (supabase/migrations/0009_newsletter_subscribers.sql on subzerometrix)
+// stays as an inactive fallback only, per instruction not to build a second
+// subscriber database; it is not called from here anymore.
 //
-// That table is defined in migration 0009_newsletter_subscribers.sql but NOT
-// YET APPLIED (no DB connection string in that environment) -- the shared
-// API already returns an honest 503 in that case, which this route forwards
-// verbatim rather than masking it with a fake success.
+// FAIL CLOSED: the GHL adapter requires an explicit human-set
+// GHL_PRODUCTION_LOCATION_CONFIRMED=true before it will write -- see
+// lib/ghl/adapter.ts for exactly why. Until that's set, this returns an
+// honest 503, same shape as before, now honest about the real reason.
 // ---------------------------------------------------------------------------
 
 const ALLOWED_FIELDS = [
@@ -51,11 +53,28 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: false, error: "Too many requests. Please try again in a minute." }, { status: 429 });
   }
 
+  if (!isGhlConfigured()) {
+    console.error("[field-notes-signup] GHL not configured", { missing: getGhlMissingConfig() });
+    return NextResponse.json(
+      {
+        success: false,
+        disabled: true,
+        error: "Signup is temporarily unavailable while we finish setting up delivery. Please try again later.",
+      },
+      { status: 503 },
+    );
+  }
+
   let body: Record<string, unknown>;
   try {
     body = await req.json();
   } catch {
     return NextResponse.json({ success: false, error: "Invalid request body." }, { status: 400 });
+  }
+
+  // Honeypot: a real visitor never fills this hidden field.
+  if (clamp((body as Record<string, unknown>).website_url) !== "") {
+    return NextResponse.json({ success: true });
   }
 
   const clean: Record<string, string> = {};
@@ -75,49 +94,43 @@ export async function POST(req: NextRequest) {
 
   const interests = Array.isArray(body.interests)
     ? body.interests.filter((i): i is string => typeof i === "string").map((i) => i.slice(0, 60)).slice(0, 20)
-    : undefined;
+    : [];
 
   const emailConsent = body.email_consent === true;
+  if (!emailConsent) {
+    return NextResponse.json({ success: false, error: "Email consent is required to subscribe." }, { status: 400 });
+  }
 
   try {
-    const res = await fetch("https://www.subzerometrix.com/api/newsletter/subscribe", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: clean.email,
-        publication: "pinellas-field-notes",
-        firstName: clean.firstName,
-        lastName: clean.lastName || undefined,
-        trade: clean.trade || undefined,
-        geography: clean.geography || undefined,
-        interests,
-        emailConsent,
-        attribution: {
-          original_domain: clean.original_domain || "themoderntradesmentor.com",
-          original_landing_page: clean.original_landing_page || "",
-          source_tool: "field-notes-signup-form",
-          utm_source: clean.utm_source || "",
-          utm_medium: clean.utm_medium || "",
-          utm_campaign: clean.utm_campaign || "",
-        },
-      }),
+    const result = await upsertSubscriber({
+      email: normalizeEmail(clean.email),
+      firstName: clean.firstName,
+      lastName: clean.lastName || undefined,
+      trade: clean.trade || undefined,
+      geography: clean.geography || undefined,
+      publications: ["field-notes"],
+      emailConsent: true,
+      smsConsent: body.sms_consent === true,
+      consentSource: clean.original_landing_page || clean.original_domain || "themoderntradesmentor.com",
+      originalDomain: clean.original_domain || "themoderntradesmentor.com",
+      originalLandingPage: clean.original_landing_page || undefined,
+      sourceTool: "field-notes-signup-form",
+      utmSource: clean.utm_source || undefined,
+      utmMedium: clean.utm_medium || undefined,
+      utmCampaign: clean.utm_campaign || undefined,
+      subscriptionInterests: interests,
     });
 
-    const data = await res.json().catch(() => ({}));
-
-    if (res.status === 503) {
-      // Forward the shared API's honest "migration not applied yet" state
-      // verbatim -- never show a fake success.
-      return NextResponse.json({ success: false, disabled: true, error: data.error || "Signup is temporarily unavailable. Please try again later." }, { status: 503 });
-    }
-    if (!res.ok) {
-      console.log(`[field-notes-signup] shared API rejected submission, status ${res.status}`);
-      return NextResponse.json({ success: false, error: data.error || "Submission could not be processed." }, { status: 502 });
-    }
-
+    void result;
     return NextResponse.json({ success: true });
-  } catch {
-    console.log("[field-notes-signup] unexpected error reaching shared newsletter API");
-    return NextResponse.json({ success: false, error: "Something went wrong. Please try again." }, { status: 500 });
+  } catch (err) {
+    if (err instanceof GhlNotConfiguredError) {
+      return NextResponse.json(
+        { success: false, disabled: true, error: "Signup is temporarily unavailable. Please try again later." },
+        { status: 503 },
+      );
+    }
+    console.error("[field-notes-signup] GHL upsert failed", { message: err instanceof Error ? err.message : String(err) });
+    return NextResponse.json({ success: false, error: "Something went wrong. Please try again." }, { status: 502 });
   }
 }
