@@ -10,8 +10,9 @@ Against `WUDohU0gxddDrFhrOsQG`, verified 2026-08-27. See `TMT_PRODUCTION_BUILD_S
 - [x] 26-field adapter reconciliation complete — 24 new fields created, 2 reused, all live IDs recorded in `TMT_FIELD_REGISTRY.md`
 - [x] Load-bearing doc error fixed — the shared integration contract pointed at the wrong GHL location (`01-CORE-DEV`); corrected and redirected to production
 - [x] All 9 required forms built and verified live, each wired to correct field keys
-- [x] 10 new automation workflows built, published, and live (form→pipeline routing ×4, newsletter welcome ×1, unsubscribe suppression ×1, preference-update tagging ×1, stage-change internal tasks ×3: Lost reason ×2 pipelines, Blueprint Proposed follow-up)
+- [x] 12 new automation workflows built, published, and live (form→pipeline routing ×4, newsletter welcome ×1, unsubscribe suppression ×1, preference-update tagging ×1, stage-change internal tasks ×5: Lost reason ×2 pipelines, Blueprint Proposed follow-up, response-time tasks ×2 pipelines)
 - [x] Full function-matrix reconciliation against every required TMT/MTCRM/newsletter/delivery/customer-growth function — see `TMT_FUNCTION_MATRIX.md` for REUSED/BUILT/DRAFT/BLOCKED status of every named function
+- [x] Critical bug found and fixed: all 5 stage-change-triggered workflows had no task assignee set, causing GHL to silently skip task creation. Fixed on all 5, re-verified on 1 via API fire-test. See `TMT_TEST_RESULTS.md` Test 8.
 - [x] Pre-existing "Field Notes — Subscriber Welcome" workflow bug found and fixed (was wired to the wrong form, meaning real signups never reached it)
 - [x] Orphaned empty draft workflow cleaned up (soft-deleted)
 - [x] TMT Owner Dashboard built (cloned from default, pipeline filters scoped to TMT Consulting Sales + Modern Trades CRM Sales)

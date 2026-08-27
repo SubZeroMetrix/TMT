@@ -1,27 +1,43 @@
 # TMT Workflow Registry
 
-## Continuation pass — 2026-08-27 (function-matrix reconciliation)
-
-Full reconciliation against every required function lives in `TMT_FUNCTION_MATRIX.md` — read that
-file for the authoritative REUSED/BUILT/DRAFT/BLOCKED status of every named function. This section
-only logs the 3 additional workflows built in this pass, on top of the 7 already documented below.
+## Continuation pass 2 — 2026-08-27 (revenue-acquisition-system phase)
 
 | # | Workflow | Trigger | Action | Status |
 |---|---|---|---|---|
-| 8 | [TMT] Lost - Capture Reason Task | Opportunity changed: TMT Consulting Sales, stage → Lost/Disqualified | Add task, assigned to no one specific (single-owner shop), due same day | **PUBLISHED, VERIFIED LIVE** (id `17bc0826-26f3-44dd-9a9e-4cdc4c0a9227`) |
-| 9 | [MTCRM] Lost - Capture Reason Task | Opportunity changed: Modern Trades CRM Sales, stage → Lost/Disqualified | Add task | **PUBLISHED, VERIFIED LIVE** (id `b2ff2c54-79fa-44b9-be52-dc8e1c753382`) |
-| 10 | [TMT] Blueprint Proposed - Follow-Up Task | Opportunity changed: TMT Consulting Sales, stage → Blueprint Proposed | Add task | **PUBLISHED, VERIFIED LIVE** (id `2aaf1ecf-a9d4-480a-a3e1-1f19d2824dd3`) |
+| 11 | [TMT] New Inquiry - Response Time Task | Opportunity changed: TMT Consulting Sales, stage → New Inquiry | Add task, assigned to Richard Fritzke, due +1 day | **PUBLISHED, VERIFIED LIVE** (id `d5269113-3b7d-462f-83a8-8ade25c3679c`) — fire-tested via API stage-move, task confirmed created |
+| 12 | [MTCRM] New Setup Request - Response Time Task | Opportunity changed: Modern Trades CRM Sales, stage → New Setup Request | Add task, assigned to Richard Fritzke | **PUBLISHED, VERIFIED LIVE** (id `d2681847-6a76-4c2d-959d-3917bd12cde5`) — assignee bug fixed, not independently re-fire-tested (see Test 8) |
 
-Total workflows built this engagement: **10** (7 form-routing/tagging + 3 stage-change internal
-tasks). Plus 1 bug fix (Field Notes trigger) and 1 orphaned draft cleanup, both documented below.
+**Critical bug found and fixed this pass:** all 5 "Opportunity changed"-triggered workflows
+(#8, #9, #10, #11, #12) had their Add Task action's "Assign To" field left blank. GHL silently
+skips task creation with no assignee — the trigger fires but the task never appears. Confirmed via
+execution logs on workflow #11 ("Skipped — Task cannot be created with both assigned to contact's
+assigned user or custom assigned user"). Fixed on all 5 by explicitly assigning to Richard Fritzke.
+Re-verified on #11 via API stage-move; #8/#9/#10/#12 received the identical fix but were not each
+independently re-tested. Full detail: `TMT_TEST_RESULTS.md` Test 8.
 
-**6 of 7 form-routing workflows fire-tested live this pass** (in addition to General TMT Contact,
-verified in an earlier session) — see `TMT_TEST_RESULTS.md` Tests 3–6. All passed. One cosmetic
+## Continuation pass — 2026-08-27 (function-matrix reconciliation)
+
+Full reconciliation against every required function lives in `TMT_FUNCTION_MATRIX.md` — read that
+file for the authoritative REUSED/BUILT/DRAFT/BLOCKED status of every named function.
+
+| # | Workflow | Trigger | Action | Status |
+|---|---|---|---|---|
+| 8 | [TMT] Lost - Capture Reason Task | Opportunity changed: TMT Consulting Sales, stage → Lost/Disqualified | Add task, assigned to Richard Fritzke (fixed, see above) | **PUBLISHED, VERIFIED LIVE** (id `17bc0826-26f3-44dd-9a9e-4cdc4c0a9227`) |
+| 9 | [MTCRM] Lost - Capture Reason Task | Opportunity changed: Modern Trades CRM Sales, stage → Lost/Disqualified | Add task, assigned to Richard Fritzke (fixed) | **PUBLISHED, VERIFIED LIVE** (id `b2ff2c54-79fa-44b9-be52-dc8e1c753382`) |
+| 10 | [TMT] Blueprint Proposed - Follow-Up Task | Opportunity changed: TMT Consulting Sales, stage → Blueprint Proposed | Add task, assigned to Richard Fritzke (fixed) | **PUBLISHED, VERIFIED LIVE** (id `2aaf1ecf-a9d4-480a-a3e1-1f19d2824dd3`) |
+
+Total workflows built this engagement: **12** (7 form-routing/tagging + 5 stage-change internal
+tasks). Plus 1 bug fix (Field Notes trigger), 1 orphaned draft cleanup, and 1 assignee bug fixed
+across 5 workflows — all documented above/below.
+
+**6 of 7 form-routing workflows fire-tested live** (in addition to General TMT Contact, verified
+in an earlier session) — see `TMT_TEST_RESULTS.md` Tests 3–6. All passed. One cosmetic
 opportunity-naming quirk found and documented (Test 4), zero functional impact.
 
-**Genuinely deferred (not gated, just not built this session):** Shop Visit SMS
-reminder/no-show, MTCRM demo/setup follow-up + provisioning task, newsletter re-engagement
-sequence, review-request workflow. See `TMT_FUNCTION_MATRIX.md` "Known gaps" section.
+**Genuinely deferred (not gated, just not built this session):** qualification task, CRM demo
+follow-up, sold handoff, review-eligibility workflow, Shop Visit SMS reminder/no-show, MTCRM
+demo/setup provisioning task, newsletter re-engagement sequence. See `TMT_FUNCTION_MATRIX.md` and
+`TMT_REVENUE_ACQUISITION_STATUS.md` for the full breakdown.
 
 **Genuinely blocked (external prerequisite, verified not just assumed):** missed-call recovery and
 AI Front Desk — both require a phone number that does not exist on this location (`active-numbers`

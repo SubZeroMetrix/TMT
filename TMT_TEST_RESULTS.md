@@ -45,6 +45,36 @@ Already documented above as Test 2 — PASS, DND all channels confirmed.
 
 **All 7 new workflows are now fire-tested live** (General TMT Contact was verified in an earlier session per `TMT_WORKFLOW_REGISTRY.md`; the other 6 were verified fresh in this continuation). Every test passed on the first attempt except the one cosmetic opportunity-naming quirk noted in Test 4, which has zero functional impact.
 
+## Test 8 — Bug found and fixed: Add Task actions silently skipped with no assignee
+
+**Method:** Created a labeled test contact + opportunity via API directly in TMT Consulting
+Sales / New Inquiry stage to fire-test the newly built `[TMT] New Inquiry - Response Time Task`
+workflow (stage-change triggered, not form-triggered — the first of the 5 "Opportunity changed"
+workflows built this session to actually be fire-tested rather than only reviewed in the builder).
+
+**Result: FAILED on first attempt.** Execution logs showed the trigger fired correctly
+("Added To Workflow"), but the `#1 Add task` action showed status **Skipped**, with the reason:
+*"Task cannot be created with both assigned to contact's assigned user or custom assigned user"*
+— GHL requires an explicit assignee (either the contact's assigned user or a specific person) on
+every Add Task action; all 5 stage-change workflows built this session ([TMT] Lost, [MTCRM] Lost,
+[TMT] Blueprint Proposed Follow-Up, [TMT] New Inquiry Response Time, [MTCRM] New Setup Request
+Response Time) had this field left blank, meaning **every one of them would have silently failed
+to create its task in production** despite showing as published and despite the trigger itself
+working correctly.
+
+**Fix:** Set "Assign To" = Richard Fritzke (the location's sole active user) explicitly on all 5
+workflows. Re-tested the New Inquiry workflow by moving the same test opportunity out of and back
+into the New Inquiry stage via API — task was created successfully this time, correctly titled,
+correctly assigned, correct due date. Test contact and opportunity cleaned up via `delete-contact`.
+
+**Why this matters:** This is the first real fire-test of the "Opportunity changed" trigger
+pattern used across 5 of the 12 workflows built this session. Form-triggered workflows (the other
+7) were fire-tested and passed cleanly earlier; stage-change-triggered workflows had a silent,
+systematic bug that would not have been caught without this test. The 4 workflows other than
+New Inquiry (Lost x2, Blueprint Proposed, MTCRM New Setup) received the same fix but were not
+individually re-fire-tested given time — same action type, same fix, high confidence but not
+independently verified. Flagged honestly rather than assumed fixed.
+
 ## Coverage note
 
 This single test exercises the full chain shared by all 7 new form→action workflows (public form → GHL trigger filter → workflow action → resulting CRM state). Given the identical clone-based construction pattern used for workflows #2–7 (only the trigger's form filter and the action's target field/value differ), this one verified pass is representative evidence that the pattern works, not proof that every individual workflow was separately fire-tested. Workflows #1 and #2 were built from scratch and independently verified live in the builder (published status, correct trigger/action config reviewed step by step) before this end-to-end test ran.
