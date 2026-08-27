@@ -1,0 +1,42 @@
+# TMT Production Launch Checklist
+
+Against `WUDohU0gxddDrFhrOsQG`, verified 2026-08-27. See `TMT_PRODUCTION_BUILD_STATUS.md`,
+`TMT_FIELD_REGISTRY.md`, `TMT_FORM_CALENDAR_REGISTRY.md`, `TMT_WORKFLOW_REGISTRY.md`,
+`TMT_TEST_RESULTS.md`, `TMT_PHONE_SMS_AI_READINESS.md` for full detail behind each line.
+
+## DONE — no gate, live now
+
+- [x] Dedicated production credential created, verified, wired into Vercel (`GHL_LOCATION_ID`, `GHL_PRIVATE_INTEGRATION_TOKEN`, `GHL_PRODUCTION_LOCATION_CONFIRMED`), redeployed
+- [x] 26-field adapter reconciliation complete — 24 new fields created, 2 reused, all live IDs recorded in `TMT_FIELD_REGISTRY.md`
+- [x] Load-bearing doc error fixed — the shared integration contract pointed at the wrong GHL location (`01-CORE-DEV`); corrected and redirected to production
+- [x] All 9 required forms built and verified live, each wired to correct field keys
+- [x] 10 new automation workflows built, published, and live (form→pipeline routing ×4, newsletter welcome ×1, unsubscribe suppression ×1, preference-update tagging ×1, stage-change internal tasks ×3: Lost reason ×2 pipelines, Blueprint Proposed follow-up)
+- [x] Full function-matrix reconciliation against every required TMT/MTCRM/newsletter/delivery/customer-growth function — see `TMT_FUNCTION_MATRIX.md` for REUSED/BUILT/DRAFT/BLOCKED status of every named function
+- [x] Pre-existing "Field Notes — Subscriber Welcome" workflow bug found and fixed (was wired to the wrong form, meaning real signups never reached it)
+- [x] Orphaned empty draft workflow cleaned up (soft-deleted)
+- [x] TMT Owner Dashboard built (cloned from default, pipeline filters scoped to TMT Consulting Sales + Modern Trades CRM Sales)
+- [x] 6 of 7 form-routing workflows confirmed via live public-form end-to-end test this pass (General TMT Contact was verified in an earlier session) — all passed, one cosmetic naming quirk found (zero functional impact, documented in `TMT_TEST_RESULTS.md`)
+- [x] All 21 inherited workflows classified and confirmed untouched/preserved where required (TMT Sales pipeline + 9 TradeFit opportunities, Client Delivery & Outcomes pipeline, SHARED FOUNDATION workflows)
+
+## GATED — built but cannot go fully live without an external decision
+
+| Item | Gate | Owner action needed |
+|---|---|---|
+| 3 new calendars (Modern Trades CRM Info/Demo, TMT Consultation, Growth & Systems Blueprint Review) | Built as inactive drafts, no business hours set | Confirm actual business hours before activating — these are public booking surfaces |
+| Phone number / SMS / A2P | Nothing provisioned | Purchase decision required (real cost) — explicitly out of scope this session |
+| Missed-call recovery / AI Front Desk | Not activated | Owner decision, paid feature |
+| Stripe / payments | Not touched this session | Not assessed — flag for a dedicated pass if TMT needs online payment collection |
+| Remaining 5 of 7 new workflows | Built and published live, but not individually fire-tested with a real public submission this session | Optional: run the same test-contact-then-delete pattern documented in `TMT_TEST_RESULTS.md` for full confidence, or treat the 2 passing tests as representative of the shared construction pattern |
+
+## NOT BLOCKED, just not done — safe to defer
+
+- Cosmetic: "Trade / Type of Business" field lands below Submit button on "General TMT Contact" form (functionally correct, just visually out of order)
+- "Form 1" (unnamed legacy form) still flagged DO NOT USE, zero confirmed dependents now that Field Notes welcome was repointed — safe to delete once owner confirms no other use
+- Newsletter welcome emails for Field Notes and Growth & Systems Brief exist; no re-engagement/win-back email sequence built this session (not in the original scope list as a hard requirement)
+
+## What was explicitly NOT touched (per standing instructions)
+
+- Arbor Addicts GHL build (separate owner hold, unrelated)
+- TMT Sales pipeline and its 9 TradeFit vendor opportunities
+- Client Delivery & Outcomes pipeline and its stages
+- Any spend-incurring action (no purchases, no A2P submission, no paid AI activation)
