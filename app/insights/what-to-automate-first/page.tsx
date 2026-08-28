@@ -28,7 +28,7 @@ export default function Page() {
       related={[
         { label: "AI Automation", href: "/ai-automation" },
         { label: "AI Consulting in St. Petersburg", href: "/ai-consulting-st-petersburg-fl" },
-        { label: "Technology & AI Readiness Audit", href: "/services/technology-audit" },
+        { label: "Growth & Systems Blueprint", href: "/services/technology-audit" },
       ]}
     >
       <p className="text-lg text-navy/85">

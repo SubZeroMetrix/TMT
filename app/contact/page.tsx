@@ -154,7 +154,7 @@ export default function ContactPage() {
               dark
               items={[
                 "Strategy calls and discovery conversations",
-                "Technology & AI Readiness Audits",
+                "Growth & Systems Blueprints",
                 "Software selection and stack design",
                 "AI adoption and staff training",
                 "Workflow development and implementation planning",

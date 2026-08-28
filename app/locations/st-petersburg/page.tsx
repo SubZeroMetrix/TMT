@@ -111,7 +111,7 @@ export default function StPetersburgPage() {
 
       <CtaBand
         headline="St. Pete contractor ready for a practical plan?"
-        body="Start with a Technology & AI Readiness Audit or Book a Strategy Call."
+        body="Start with a Growth & Systems Blueprint or Book a Strategy Call."
         primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Explore the Audit", href: "/services/technology-audit" }}
       />

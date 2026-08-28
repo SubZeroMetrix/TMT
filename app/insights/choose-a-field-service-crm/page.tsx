@@ -28,7 +28,7 @@ export default function Page() {
       related={[
         { label: "CRM & Workflow Consulting", href: "/crm-workflow-consulting" },
         { label: "Software Selection & Stack Design", href: "/services/software-selection" },
-        { label: "Technology & AI Readiness Audit", href: "/services/technology-audit" },
+        { label: "Growth & Systems Blueprint", href: "/services/technology-audit" },
         { label: "AI Consulting in St. Petersburg", href: "/ai-consulting-st-petersburg-fl" },
       ]}
     >

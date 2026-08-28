@@ -22,7 +22,7 @@ const localFocus = [
   "HVAC, plumbing, electrical, roofing, and general contracting operations across Hillsborough County",
   "Commercial and residential service businesses navigating CRM, dispatch, and follow-up gaps",
   "Owner-led service businesses evaluating software and AI without a vendor sales pitch",
-  "Strategy calls and Technology & AI Readiness Audits — remote or local as appropriate",
+  "Strategy calls and Growth & Systems Blueprints — remote or local as appropriate",
 ];
 
 const nearbyAreas = [
@@ -68,7 +68,7 @@ export default function TampaPage() {
         <div className="grid lg:grid-cols-2 gap-8">
           <InfoCard title="Start here" dark>
             <p>
-              The Technology & AI Readiness Audit is a structured review of your current software,
+              The Growth & Systems Blueprint is a structured review of your current software,
               workflows, staff readiness, and modernization priorities — producing a prioritized
               roadmap instead of a sales pitch.
             </p>

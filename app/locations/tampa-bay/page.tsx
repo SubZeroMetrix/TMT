@@ -49,7 +49,7 @@ const locations = [
 ];
 
 const services = [
-  "Technology & AI Readiness Audit",
+  "Growth & Systems Blueprint",
   "Software selection and stack design",
   "AI adoption and staff training guidance",
   "Workflow and process improvement",
@@ -110,7 +110,7 @@ export default function TampaBayPage() {
 
       <CtaBand
         headline="Ready to modernize your Tampa Bay contracting business?"
-        body="Start with a strategy call or explore the Technology & AI Readiness Audit."
+        body="Start with a strategy call or explore the Growth & Systems Blueprint."
         primary={{ label: "Book a Strategy Call", href: "/book-a-strategy-call#schedule" }}
         secondary={{ label: "Explore the Audit", href: "/services/technology-audit" }}
       />

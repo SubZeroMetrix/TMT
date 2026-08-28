@@ -94,8 +94,8 @@ export default function IndustriesPage() {
 
       <CtaBand
         headline="Not sure where to start?"
-        body="The Technology & AI Readiness Audit gives you a structured review of your systems, workflows, and priorities — regardless of trade."
-        primary={{ label: "Explore the Audit", href: "/services/technology-audit" }}
+        body="The Growth & Systems Blueprint gives you a structured review of your systems, workflows, and priorities — regardless of trade."
+        primary={{ label: "Explore the Blueprint", href: "/services/technology-audit" }}
         secondary={{ label: "Call 727-600-3425", href: "tel:+17276003425" }}
       />
     </>
