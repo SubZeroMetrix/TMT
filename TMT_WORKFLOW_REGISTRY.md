@@ -26,9 +26,17 @@ file for the authoritative REUSED/BUILT/DRAFT/BLOCKED status of every named func
 | 9 | [MTCRM] Lost - Capture Reason Task | Opportunity changed: Modern Trades CRM Sales, stage → Lost/Disqualified | Add task, assigned to Richard Fritzke (fixed) | **PUBLISHED, VERIFIED LIVE** (id `b2ff2c54-79fa-44b9-be52-dc8e1c753382`) |
 | 10 | [TMT] Blueprint Proposed - Follow-Up Task | Opportunity changed: TMT Consulting Sales, stage → Blueprint Proposed | Add task, assigned to Richard Fritzke (fixed) | **PUBLISHED, VERIFIED LIVE** (id `2aaf1ecf-a9d4-480a-a3e1-1f19d2824dd3`) |
 
-Total workflows built this engagement: **12** (7 form-routing/tagging + 5 stage-change internal
-tasks). Plus 1 bug fix (Field Notes trigger), 1 orphaned draft cleanup, and 1 assignee bug fixed
+Total workflows built this engagement: **13** (7 form-routing/tagging + 6 stage-change internal
+tasks: Lost x2, Blueprint Proposed, New Inquiry Response, New Setup Request Response, Won/Sold
+Handoff). Plus 1 bug fix (Field Notes trigger), 1 orphaned draft cleanup, and 1 assignee bug fixed
 across 5 workflows — all documented above/below.
+
+**[TMT] Won - Sold Handoff Task** (id `97ee7bf0-1b37-4c7a-90ea-e84b8595b461`, trigger: TMT
+Consulting Sales, stage → Won) hit a second-order editor bug during construction: an in-canvas
+edit attempt left its Add Task action stuck in a disabled state that the kebab menu's "Enable"
+option (there isn't one) couldn't fix. Resolved by deleting the disabled action and adding a
+fresh one with the same title/description/assignee. Confirmed enabled and published after a
+hard reload. Not yet fire-tested with a live stage move.
 
 **6 of 7 form-routing workflows fire-tested live** (in addition to General TMT Contact, verified
 in an earlier session) — see `TMT_TEST_RESULTS.md` Tests 3–6. All passed. One cosmetic
