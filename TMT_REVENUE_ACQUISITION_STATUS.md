@@ -114,6 +114,24 @@ exactly the kind of bug that "published and reviewed in the builder" does not ca
 fire-test does, which is why the remaining untested workflow builds below should not be marked
 done until actually fired.
 
+## Session close-out — browser tool degradation
+
+The Claude-in-Chrome browser extension became severely degraded partway through this phase:
+every action (click, screenshot) began taking 30+ seconds with a timeout-then-success pattern,
+and the tab group was destroyed and had to be recreated from scratch multiple times. This is a
+verified, reproducible tool blocker — not a single flaky click — confirmed across ~40+ consecutive
+calls after exhausting the standard recovery techniques (fresh tabs, tab-group recreation, hard
+reloads, hydration waits). One real bug was found and fixed during this period (see
+`TMT_TEST_RESULTS.md` Test 8 and the Won/Sold Handoff note in `TMT_WORKFLOW_REGISTRY.md`), so the
+degraded tool did not block all progress, but it made each subsequent workflow build markedly
+more expensive. Work shifted to non-browser tasks (email template copywriting, dashboard widget
+scoping) for the remainder of this pass, both completed and pushed.
+
+13 workflows now built and published this engagement (up from 12 earlier in this phase):
+[TMT] Lost, [MTCRM] Lost, [TMT] Blueprint Proposed Follow-Up, [TMT] New Inquiry Response Time,
+[MTCRM] New Setup Request Response Time, [TMT] Won - Sold Handoff Task — plus the 7 form-routing
+workflows from the prior engagement.
+
 ## Remaining work (this session, CRM side)
 
 - Fire-test workflows #11 and #12 (built, not yet tested with a labeled contact)
