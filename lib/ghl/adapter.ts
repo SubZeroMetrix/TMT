@@ -209,11 +209,11 @@ export async function unsubscribe(email: string, source: string): Promise<{ cont
   const existing = await findContactByEmail(email);
   if (!existing) return { notFound: true };
 
-  const { locationId } = getConfig();
+  // PUT /contacts/{id} rejects a locationId body property with 422 "property locationId
+  // should not exist" (confirmed live 2026-08-31, unlike /contacts/upsert which requires it).
   const res = await ghlFetch(`/contacts/${existing.id}`, {
     method: "PUT",
     body: JSON.stringify({
-      locationId,
       customFields: [
         { id: CONTACT_FIELD_IDS.unsubscribeStatus, key: CONTACT_FIELD_KEYS.unsubscribeStatus, field_value: UNSUBSCRIBE_VALUE },
         { id: CONTACT_FIELD_IDS.emailConsentStatus, key: CONTACT_FIELD_KEYS.emailConsentStatus, field_value: CONSENT_STATUS.denied },
