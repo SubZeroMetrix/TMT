@@ -12,8 +12,8 @@ import { DOMAIN_LABELS, DOMAINS } from "@/lib/gss/scoring";
  *
  * CRM write is gated behind GHL_PRIVATE_INTEGRATION_TOKEN + GHL_LOCATION_ID
  * (server-only env vars, never exposed client-side — same pattern as
- * GMAIL_APP_PASSWORD in app/api/feedback/route.ts). Neither credential
- * exists in this repo/environment today; until they're set, this route
+ * GMAIL_APP_PASSWORD in app/api/feedback/route.ts). Both are live in
+ * production as of 2026-08-26; if either is ever unset, this route still
  * computes and returns the result honestly but logs that no CRM write
  * occurred, exactly like the feedback route's unconfigured-delivery path.
  *
@@ -124,29 +124,34 @@ async function writeToHighLevel(input: {
     phone: input.contact.phone,
     companyName: input.contact.company,
     tags: ["diagnostic-completed"],
+    // Field IDs verified live via GHL get-custom-fields 2026-08-31. GHL's /contacts/upsert
+    // silently ignores customFields entries that omit `id` -- `key` alone (even with the
+    // correct "contact." prefix, which this list was also missing) is not enough. Confirmed
+    // as the same defect class fixed in lib/ghl/adapter.ts the same day.
     customFields: [
-      { key: "growth_systems_score__demand", field_value: input.scores.demand },
-      { key: "growth_systems_score__conversion", field_value: input.scores.conversion },
-      { key: "growth_systems_score__revenue_capture", field_value: input.scores.revenue_capture },
-      { key: "growth_systems_score__operations", field_value: input.scores.operations },
-      { key: "growth_systems_score__systems__measurement", field_value: input.scores.systems_measurement },
-      { key: "growth_systems_score__growth__scale", field_value: input.scores.growth_scale },
-      { key: "growth_systems_score__overall", field_value: input.result.overall },
-      { key: "growth_systems_score__strongest_domain", field_value: strongestLabel },
-      { key: "growth_systems_score__weakest_domain", field_value: weakestLabel },
-      { key: "growth_systems_score__primary_systems_gap", field_value: input.result.primarySystemsGap },
+      { id: "Us97GtmijyWkmwLlN2wR", key: "contact.growth_systems_score__demand", field_value: input.scores.demand },
+      { id: "KGPeWIpZ3WZpQukrXpXH", key: "contact.growth_systems_score__conversion", field_value: input.scores.conversion },
+      { id: "Yp6j2IK7llpKPchYKUpT", key: "contact.growth_systems_score__revenue_capture", field_value: input.scores.revenue_capture },
+      { id: "IfT5OdmtFsm7dKwYWJyz", key: "contact.growth_systems_score__operations", field_value: input.scores.operations },
+      { id: "N63QXG9rDpu1xNhhNYb3", key: "contact.growth_systems_score__systems__measurement", field_value: input.scores.systems_measurement },
+      { id: "BKOKbQii2DlWF7gaygub", key: "contact.growth_systems_score__growth__scale", field_value: input.scores.growth_scale },
+      { id: "OkcUUC8sEYK7cqd1Y8wn", key: "contact.growth_systems_score__overall", field_value: input.result.overall },
+      { id: "aZhEpHLMg6HYK6hEYPON", key: "contact.growth_systems_score__strongest_domain", field_value: strongestLabel },
+      { id: "5aX7WIgK6fNw7zqWahBu", key: "contact.growth_systems_score__weakest_domain", field_value: weakestLabel },
+      { id: "XCbOFL7TgClL5ZYd3jfB", key: "contact.growth_systems_score__primary_systems_gap", field_value: input.result.primarySystemsGap },
       {
-        key: "growth_systems_score__recommended_next_action",
+        id: "d5tRxZi9MYAmtpjex0Jc",
+        key: "contact.growth_systems_score__recommended_next_action",
         field_value: nextActionFieldValue[input.result.recommendedNextAction],
       },
-      { key: "growth_systems_score__business_stage", field_value: businessStageFieldValue[input.businessStage] },
-      { key: "growth_systems_score__completion_date", field_value: new Date().toISOString() },
-      { key: "growth_systems_score__scoring_version", field_value: input.result.scoringVersion },
+      { id: "Zc2nzgg4OVm9SGk46p3I", key: "contact.growth_systems_score__business_stage", field_value: businessStageFieldValue[input.businessStage] },
+      { id: "Huok72ZkgimVjzJElj1t", key: "contact.growth_systems_score__completion_date", field_value: new Date().toISOString() },
+      { id: "ycvl0eamIbXZ1ALCmmHG", key: "contact.growth_systems_score__scoring_version", field_value: input.result.scoringVersion },
       ...(input.attribution?.utm_source
-        ? [{ key: "lead_source", field_value: "WEBSITE" }]
+        ? [{ id: "GaseXYpVnSwaNPVHTqzC", key: "contact.lead_source", field_value: "WEBSITE" }]
         : []),
       ...(input.attribution?.landing_page
-        ? [{ key: "lead_source_detail", field_value: String(input.attribution.landing_page) }]
+        ? [{ id: "BkU7ugfg4SK1KGl1tX0G", key: "contact.lead_source_detail", field_value: String(input.attribution.landing_page) }]
         : []),
     ],
   };
