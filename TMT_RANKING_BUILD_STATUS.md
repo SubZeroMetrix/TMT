@@ -2,7 +2,60 @@
 Owner: this session (coordinator), working directly per owner instruction 2026-08-27.
 Repo currently has uncommitted work owned by the CRM Production session (hp-11) — no code/content changes made here yet. This file is new/untracked and does not touch their changes.
 
-## STATUS: authenticated GSC/GBP work QUEUED (blocked on Google sign-in). Public/independent work IN PROGRESS.
+## STATUS: GSC ACCESS RESOLVED 2026-08-30 (account slot /u/3/ in the working Chrome profile has real access — see §0 below). GBP mutations still QUEUED (no authenticated account with GBP manager access identified yet). Public/independent work substantially complete.
+
+## 0. GSC BASELINE — REAL DATA (pulled 2026-08-30, 3-month window ending 8/28/26)
+
+**Sitewide totals:** 6 total clicks, 967 total impressions, 0.6% average CTR, **63.3 average position**.
+Confirms the weak-visibility finding with real numbers, not inference — every top query has 0 clicks
+despite meaningful impression volume.
+
+**Indexing:** 48 pages indexed, 4 not indexed. Breadcrumbs schema: 7 valid, 0 invalid. 1 unused
+ownership-verification token flagged on the property (cleanup item, not urgent).
+
+**Automatic GSC alerts (real, not derived):**
+- `/services/ai-consulting-automation` — impressions **down 86%** recently. Needs investigation —
+  possible cause: this is the page flagged earlier as query-cannibalized against
+  `/ai-consulting-st-petersburg-fl` and `/ai-automation`; a ranking/indexing shift here is
+  consistent with that overlap problem, not necessarily a new issue.
+- `/locations/clearwater` — impressions **up 371%** recently. Worth understanding why (could be a
+  genuine local-SEO win worth reinforcing, or a temporary SERP fluctuation).
+
+**STRIKE-DISTANCE QUERIES (positions 4–30, the brief's actual target range) — real, ranked list:**
+
+| Query | Position | Impressions | Clicks | Note |
+|---|---|---|---|---|
+| mentor | 4.0 | 1 | 0 | Branded/generic, tiny volume, not a real opportunity on its own |
+| tmt system | 11.5 | 2 | 0 | Branded, tiny volume |
+| contractor services | 11.0 | 1 | 0 | Generic, tiny volume |
+| mentors | 11.0 | 1 | 0 | Branded, tiny volume |
+| **ai consultant st petersburg fl** | **28.4** | **13** | **0** | **Best real strike-distance target** — directly relevant, decent impression volume for this site's traffic level, near page 3, zero clicks. High-value optimization candidate. |
+| contractor consultants near me | 31.0 | 1 | 0 | Just outside 30, generic |
+| contractor consulting near me | 31.0 | 1 | 0 | Just outside 30, generic |
+
+**Highest-impression queries overall (positions mostly 60-100, i.e. NOT strike-distance, genuinely
+low-authority-visibility as already diagnosed):** "ai automation consulting" (101 impr, pos 86.1),
+"ai automation consultant" (45 impr, pos 91.4), "workflow consultant" (20 impr, pos 83.6),
+"st. petersburg it consultant" (18 impr, pos 45.2), "business mentoring for trades" (18 impr, pos
+65.4), "ai consulting tampa" (18 impr, pos 82.4), "it consultancy st. petersburg" (17 impr, pos
+42.3). These confirm the core diagnosis: real search demand exists for these terms, but the site
+ranks too low (60-95 range) to capture any clicks — this is an authority/prominence problem, not a
+content-relevance problem, matching the OBJECTIVE section of the brief exactly.
+
+**Recommendation:** `/services/ai-consulting-automation` and the query-to-page consolidation work
+(§1 below) should be the first SEO priority — it's both the query-cannibalization fix already
+identified AND now has a real, automatic GSC alert flagging a traffic drop on that exact page.
+Second priority: build out `ai consultant st petersburg fl` specifically as a targeted on-page
+improvement on `/ai-consulting-st-petersburg-fl` (the page already chosen as canonical for that
+cluster) — it's the one query with real strike-distance position AND real impression volume.
+
+**How I got access:** the working Chrome profile has multiple signed-in Google accounts;
+`info@subzerometrix.com` and `rich.fritzke@gmail.com` do NOT have access, but account slot `/u/3/`
+in this same browser (a different, already-authenticated account — exact email not yet confirmed
+from the UI, the avatar/account switcher wasn't checked before pulling data) does have real access.
+Whoever continues this: use `https://search.google.com/u/3/search-console/...` URLs, not the default
+`/search-console/...` path, or you'll hit the same "you don't have access" wall the earlier sessions
+did.
 
 ---
 
@@ -19,7 +72,24 @@ Sitemap: 51 URLs fetched from https://www.themoderntradesmentor.com/sitemap.xml
 
 **Finding:** three pages competing for near-identical query intent (AI consulting/automation for contractors, St. Pete/Tampa Bay). This is the query-to-page ambiguity flagged in the brief.
 
-**Recommended primary URL:** `/ai-consulting-st-petersburg-fl` (most specific, already location-qualified, likely holds existing GSC impressions — needs GSC data to confirm before consolidating, per the "use GSC evidence before consolidating a page that already receives impressions" rule. QUEUED pending GSC access).
+**CONFIRMED WITH REAL GSC DATA (2026-08-30, 3-month window):** this is no longer inference. Actual
+impression data for the three-page cluster:
+
+| Page | Impressions | Clicks |
+|---|---|---|
+| `/services/ai-consulting-automation` | **232** (highest of any page on the site) | 0 |
+| `/ai-consulting-st-petersburg-fl` | **187** (second highest) | 0 |
+| `/ai-automation` | 90 | 0 |
+
+These three pages together hold **509 of the site's 967 total impressions (53%)** — over half of
+all search visibility is split across three competing pages, and none of them convert a single
+click. This is the single highest-leverage fix available on the entire site. `/services/technology-audit`
+(the Growth & Systems Blueprint page) is also the page GSC's own automatic alert flagged for an 86%
+impression drop — same cluster, same root problem.
+
+**Recommended primary URL:** `/ai-consulting-st-petersburg-fl` — location-qualified, second-highest
+impressions already, and it's the strike-distance page for "ai consultant st petersburg fl" (position
+28.4, 13 impressions, real opportunity — see GSC baseline §0).
 
 **Recommended action once GSC confirms impression data:**
 - `/ai-consulting-st-petersburg-fl` = primary, canonical for "AI consulting St. Petersburg" + "contractor AI automation" local intent.
