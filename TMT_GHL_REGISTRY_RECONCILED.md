@@ -121,6 +121,58 @@ TMT-TEST/DELETE-ME, safe to leave until MCP access is restored). This needs owne
 (MCP re-auth) before it can be independently confirmed working, though the code fix itself
 is typechecked, built, and matches the documented API contract exactly.
 
+## Full adapter verification — 2026-08-31, all three fixes confirmed live
+
+Complete controlled test sequence run against production after the three fixes above:
+
+1. **Custom field writes** — fresh test contact (`vTm54jWIa08akrn3nwkM`,
+   tmt-verify-fix-20260831@example.com) submitted through `/api/ghl/subscribe`; all 19
+   expected custom fields, including `trade` and `latestCampaign` (the two that were
+   silently broken), landed with correct IDs and values.
+2. **Duplicate/update behavior** — same email resubmitted with different domain/campaign;
+   `created: false` confirmed dedup matching works.
+3. **First-touch/later-touch attribution** — found and fixed a **second bug** in the same
+   pass: `findContactByEmail`'s `customFieldValue()` matched on `key`, but GHL's read APIs
+   return `{id, value}`, never `{key, field_value}` — the match always missed, so "preserve
+   original touch" silently never fired. A second submission overwrote `original_domain`/
+   `original_campaign`/`original_landing_page` with new values. Fixed (match on `id`) and
+   re-verified with a third submission: original-touch fields correctly held their
+   second-touch values while `latest_campaign` correctly updated.
+4. **Consent, trade, newsletter preferences** — all confirmed correct in the field dump above.
+5. **Unsubscribe/suppression** — found and fixed a **third bug**: `PUT /contacts/{id}`
+   rejects a `locationId` body property with 422 ("property locationId should not exist"),
+   unlike `/contacts/upsert` which requires it. The unsubscribe path was sending it
+   unconditionally, so every real unsubscribe request threw and returned a generic 502.
+   Fixed and re-verified: `unsubscribeStatus` → "Unsubscribed", `emailConsentStatus` →
+   "Opted Out" both landed correctly.
+6. **No newsletter-only opportunity** — confirmed structurally, not just by test: neither
+   `lib/ghl/adapter.ts` nor the newsletter/subscribe code path contains any opportunity-
+   creation call at all. There is no code path by which a newsletter-only contact could
+   generate an opportunity.
+7. **Independent second bug instance found** — `app/api/gss/submit/route.ts` (Growth
+   Systems Score diagnostic) had the identical missing-`id` defect as the original adapter
+   bug, plus wrong key prefixes (missing `contact.`) on all 16 custom fields. This is a
+   completely separate code path from `lib/ghl/adapter.ts` — every GSS diagnostic
+   completion had been silently failing to write scores/attribution to GHL since launch.
+   Fixed and verified live: a labeled test submission (same contact) landed all 16 fields
+   correctly, including the `diagnostic-completed` tag.
+
+**All GHL-write code paths in this repo are now accounted for and confirmed working**:
+`lib/ghl/adapter.ts` (used by subscribe/unsubscribe/field-notes-signup) and
+`app/api/gss/submit/route.ts` — no other route in `app/api/` talks to GHL directly.
+
+**Test contact cleanup — BLOCKED, needs owner action.** A `PreToolUse` safety hook
+(`~/.claude/hooks/guard.js`, added 2026-08-30 during hardening work) explicitly blocks any
+`leadconnector` delete/bulk operation and requires manual execution — this is a deliberate
+guardrail, not a bug, and was not bypassed. Two labeled test contacts remain in the TMT
+location, both clearly marked and safe to leave short-term:
+- `vTm54jWIa08akrn3nwkM` (tmt-verify-fix-20260831@example.com, TMT-VERIFY/GSS-TEST)
+- `l26jQQ76WF5fed8Y2dOH` (tmt-adapter-test-2026-08-30@example.com, TMT-TEST/DELETE-ME —
+  the one specifically named in the owner's verification request)
+
+Delete both manually in the GHL UI, or run the two `delete-contact` calls directly with
+`CLAUDE_GUARD_DISABLE=1` set if the owner wants to authorize it.
+
 ## Not yet reconciled this pass (time-boxed out)
 
 Forms, calendars, tags, and custom values were not re-pulled via API this pass — prioritized the
