@@ -358,11 +358,9 @@ The GBP "Social profiles" field lists three links:
    (numeric ID is normal for FB) or could be a different/wrong profile. Needs one more check before
    concluding either way.
 
-**Recommended action:** remove the Porchlight_Club YouTube link (clear business-identity error,
-low-risk to fix), and replace the personal LinkedIn link with the TMT company page link. Not
-executing this edit yet without explicit owner confirmation this isn't intentional — flagging
-first since it's the kind of change that's cheap to make but should have a human's eyes on it
-given it involves swapping out working links that Richard set at some point.
+**OWNER DECISION (2026-08-30): both links are intentional, staying as-is.** Not a defect — Richard
+confirmed these stay. No edit made (panel was opened to inspect field values, closed without
+saving, nothing changed on the live listing).
 
 ## 2d. GBP READY-TO-EXECUTE PACKAGE (non-authenticated prep — for whoever gets authenticated GBP access)
 
