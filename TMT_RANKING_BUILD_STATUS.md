@@ -329,6 +329,41 @@ Drafted from real material already gathered this session (link registry, contrib
 
 No invented statistics, survey data, or benchmarks — every "real timing benchmark" placeholder above needs Richard's actual input before publishing, flagged inline.
 
+## 2e. LIVE GBP PROFILE AUDIT (2026-08-30, direct authenticated access, account slot /u/3/)
+
+Opened the authoritative "The Modern Trades Mentor LLC" listing's edit panel directly. Findings:
+
+**Already correct, no action needed:**
+- Business name: "The Modern Trades Mentor LLC" — correct.
+- Category: "Business management consultant" — matches my earlier recommendation, no change.
+- Description: already excellent, already uses "Growth & Systems Blueprint" correctly, discloses
+  no fixed vendor list / referral relationships, leads with St. Petersburg/Clearwater/Tampa. Better
+  than the draft I wrote earlier — leaving as-is, not overwriting.
+- Business location: "No location; deliveries and home services only" — correct service-area
+  posture, no address exposed. Confirms the Dunedin-address-hiding recommendation is already
+  correctly implemented.
+- Service area: Largo, Tampa, Brandon, East Lake, Clearwater, Palm Harbor, Hudson + more — matches
+  the site's location pages.
+
+**REAL DEFECT FOUND — cross-contaminated social link:**
+The GBP "Social profiles" field lists three links:
+1. `youtube.com/@Porchlight_Club` — **this is a different SubZero Metrix venture (Porch Light
+   Club), not TMT.** This looks like a copy-paste or cross-account mistake, not something
+   intentionally cross-promoted. A live, public business profile is currently linking to an
+   unrelated company's YouTube channel.
+2. `linkedin.com/in/richard-fritzke-178b25205` — Richard's **personal** LinkedIn profile, not the
+   TMT company page (`linkedin.com/company/the-modern-trades-mentor-llc/`, confirmed to exist).
+3. `facebook.com/profile.php?id=61592848241796` — numeric profile ID, not yet cross-verified
+   against the `@TheModernTradesMentor` Facebook page found via search — could be the same page
+   (numeric ID is normal for FB) or could be a different/wrong profile. Needs one more check before
+   concluding either way.
+
+**Recommended action:** remove the Porchlight_Club YouTube link (clear business-identity error,
+low-risk to fix), and replace the personal LinkedIn link with the TMT company page link. Not
+executing this edit yet without explicit owner confirmation this isn't intentional — flagging
+first since it's the kind of change that's cheap to make but should have a human's eyes on it
+given it involves swapping out working links that Richard set at some point.
+
 ## 2d. GBP READY-TO-EXECUTE PACKAGE (non-authenticated prep — for whoever gets authenticated GBP access)
 
 **Duplicate-listing evidence (already confirmed live, re-verified 2026-08-27):**
