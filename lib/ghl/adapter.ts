@@ -1,4 +1,6 @@
-import { CONTACT_FIELD_KEYS, CONSENT_STATUS, UNSUBSCRIBE_VALUE } from "./field-registry";
+import { CONTACT_FIELD_KEYS, CONTACT_FIELD_IDS, CONSENT_STATUS, UNSUBSCRIBE_VALUE } from "./field-registry";
+
+type FieldName = keyof typeof CONTACT_FIELD_KEYS;
 
 /**
  * Single reusable server-side GHL adapter for every subscriber/CRM-interest
@@ -130,7 +132,11 @@ export async function upsertSubscriber(input: SubscribeInput): Promise<Subscribe
   const existing = await findContactByEmail(input.email);
 
   const nowIso = new Date().toISOString();
-  const customField = (key: string, field_value: unknown) => ({ key, field_value });
+  const customField = (name: FieldName, field_value: unknown) => ({
+    id: CONTACT_FIELD_IDS[name],
+    key: CONTACT_FIELD_KEYS[name],
+    field_value,
+  });
 
   const preservedOriginalDomain =
     existing?.customFieldValue(CONTACT_FIELD_KEYS.originalDomain) ?? input.originalDomain;
@@ -140,35 +146,32 @@ export async function upsertSubscriber(input: SubscribeInput): Promise<Subscribe
     existing?.customFieldValue(CONTACT_FIELD_KEYS.originalCampaign) ?? input.utmCampaign ?? "";
 
   const customFields = [
-    customField(CONTACT_FIELD_KEYS.originalDomain, preservedOriginalDomain),
-    customField(CONTACT_FIELD_KEYS.originalLandingPage, preservedOriginalLandingPage),
-    customField(CONTACT_FIELD_KEYS.originalCampaign, preservedOriginalCampaign),
-    customField(CONTACT_FIELD_KEYS.latestCampaign, input.utmCampaign ?? ""),
-    customField(CONTACT_FIELD_KEYS.sourceTool, input.sourceTool ?? ""),
-    customField(CONTACT_FIELD_KEYS.trade, input.trade ?? ""),
-    customField(CONTACT_FIELD_KEYS.geographicPriority, input.geography ?? ""),
-    customField(CONTACT_FIELD_KEYS.utmSource, input.utmSource ?? ""),
-    customField(CONTACT_FIELD_KEYS.utmMedium, input.utmMedium ?? ""),
-    customField(CONTACT_FIELD_KEYS.utmCampaign, input.utmCampaign ?? ""),
-    customField(CONTACT_FIELD_KEYS.utmContent, input.utmContent ?? ""),
-    customField(CONTACT_FIELD_KEYS.utmTerm, input.utmTerm ?? ""),
-    customField(CONTACT_FIELD_KEYS.subscriptionInterests, (input.subscriptionInterests ?? []).join(", ")),
+    customField("originalDomain", preservedOriginalDomain),
+    customField("originalLandingPage", preservedOriginalLandingPage),
+    customField("originalCampaign", preservedOriginalCampaign),
+    customField("latestCampaign", input.utmCampaign ?? ""),
+    customField("sourceTool", input.sourceTool ?? ""),
+    customField("trade", input.trade ?? ""),
+    customField("geographicPriority", input.geography ?? ""),
+    customField("utmSource", input.utmSource ?? ""),
+    customField("utmMedium", input.utmMedium ?? ""),
+    customField("utmCampaign", input.utmCampaign ?? ""),
+    customField("utmContent", input.utmContent ?? ""),
+    customField("utmTerm", input.utmTerm ?? ""),
+    customField("subscriptionInterests", (input.subscriptionInterests ?? []).join(", ")),
+    customField("newsletterLocalInterest", input.publications.includes("field-notes") ? ["Yes"] : []),
     customField(
-      CONTACT_FIELD_KEYS.newsletterLocalInterest,
-      input.publications.includes("field-notes") ? ["Yes"] : [],
-    ),
-    customField(
-      CONTACT_FIELD_KEYS.newsletterCrmInterest,
+      "newsletterCrmInterest",
       input.publications.includes("growth-systems-brief") ? ["Yes"] : [],
     ),
     customField(
-      CONTACT_FIELD_KEYS.emailConsentStatus,
+      "emailConsentStatus",
       input.emailConsent ? CONSENT_STATUS.granted : CONSENT_STATUS.denied,
     ),
-    customField(CONTACT_FIELD_KEYS.emailConsentSource, input.consentSource),
-    customField(CONTACT_FIELD_KEYS.emailConsentTimestamp, nowIso),
+    customField("emailConsentSource", input.consentSource),
+    customField("emailConsentTimestamp", nowIso),
     customField(
-      CONTACT_FIELD_KEYS.smsConsentStatus,
+      "smsConsentStatus",
       input.phone
         ? input.smsConsent
           ? CONSENT_STATUS.granted
@@ -176,10 +179,7 @@ export async function upsertSubscriber(input: SubscribeInput): Promise<Subscribe
         : CONSENT_STATUS.denied,
     ),
     ...(input.phone
-      ? [
-          customField(CONTACT_FIELD_KEYS.smsConsentSource, input.consentSource),
-          customField(CONTACT_FIELD_KEYS.smsConsentTimestamp, nowIso),
-        ]
+      ? [customField("smsConsentSource", input.consentSource), customField("smsConsentTimestamp", nowIso)]
       : []),
   ];
 
@@ -215,10 +215,10 @@ export async function unsubscribe(email: string, source: string): Promise<{ cont
     body: JSON.stringify({
       locationId,
       customFields: [
-        { key: CONTACT_FIELD_KEYS.unsubscribeStatus, field_value: UNSUBSCRIBE_VALUE },
-        { key: CONTACT_FIELD_KEYS.emailConsentStatus, field_value: CONSENT_STATUS.denied },
-        { key: CONTACT_FIELD_KEYS.emailConsentSource, field_value: source },
-        { key: CONTACT_FIELD_KEYS.emailConsentTimestamp, field_value: new Date().toISOString() },
+        { id: CONTACT_FIELD_IDS.unsubscribeStatus, key: CONTACT_FIELD_KEYS.unsubscribeStatus, field_value: UNSUBSCRIBE_VALUE },
+        { id: CONTACT_FIELD_IDS.emailConsentStatus, key: CONTACT_FIELD_KEYS.emailConsentStatus, field_value: CONSENT_STATUS.denied },
+        { id: CONTACT_FIELD_IDS.emailConsentSource, key: CONTACT_FIELD_KEYS.emailConsentSource, field_value: source },
+        { id: CONTACT_FIELD_IDS.emailConsentTimestamp, key: CONTACT_FIELD_KEYS.emailConsentTimestamp, field_value: new Date().toISOString() },
       ],
     }),
   });
