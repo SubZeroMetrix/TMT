@@ -155,8 +155,21 @@ Categories actually used by ranking competitors:
   - **Authorized Person:** Richard B. Fritzke, Title: MGR (Manager).
 
 **DUNEDIN/ST. PETERSBURG CONFLICT — RESOLVED with real evidence:** Dunedin (718 Wilkie St) is the legal/registered address (private, must stay hidden). St. Petersburg (PO Box 66093) is the public mailing address — matches the "St. Petersburg" branding used throughout the website/GBP. The live GBP listing already shows no public address (confirmed earlier), which is the CORRECT posture — do not change it, and definitely do not surface the Dunedin street address anywhere public. Website/legal pages should reference St. Petersburg (via the PO Box or general service-area language), never Dunedin or the residential street address. This is a **confirmed, evidence-based resolution**, not UNKNOWN.
-- BBB: **CONFIRMED via direct live browser search of bbb.org (not WebFetch/WebSearch, which gave unreliable/fabricated results on this one — see note below): zero results for "The Modern Trades Mentor."** No BBB profile exists. Real gap, not urgent (BBB accreditation is optional), worth noting as a missing trust signal. No Dunedin-address exposure risk on BBB since no profile exists there at all.
-  - **Data-quality note:** an earlier WebFetch pass against BBB's search page fabricated a specific, plausible-looking but false result (a Dunedin, FL listing) that a follow-up WebSearch couldn't corroborate. Resolved by going to the live page directly. Worth remembering for the rest of this build: verify any single-source WebFetch/WebSearch claim that would materially affect a recommendation, especially anything touching address/PII exposure.
+- BBB: **SECOND CORRECTION (2026-08-30) — a profile DOES exist after all.** Direct fetch of the real
+  BBB page confirms: `bbb.org/us/fl/dunedin/profile/consultant/the-modern-trades-mentor-llc-0653-90465091`.
+  File opened 8/20/2026, NOT accredited, "Not Rated" (business <6 months old, standard for a new BBB
+  file — not a red flag). Business Management: Richard Fritzke, Manager. Category: Consultant.
+  **Address shown: "Dunedin, FL 34698-7131" — city + ZIP+4 only, the full street address (718 Wilkie
+  St) is NOT exposed.** So no private-address leak here, but it does publicly surface "Dunedin"
+  rather than "St. Petersburg," which is inconsistent with the site's St.-Petersburg-first branding
+  — a real, minor NAP inconsistency, not a privacy problem. Low priority; could be corrected via
+  BBB's profile-update flow if the owner wants full consistency, or left as-is since it's a legally
+  accurate registered-agent city.
+  - **Why my earlier direct bbb.org site-search returned zero results:** unclear — possibly BBB's
+    own search index lag, or a search-term mismatch. The profile was reachable both via Google
+    search results and by a corrected direct URL. Lesson holds either way: verify anything
+    materially important (especially PII/address exposure claims) through more than one path before
+    concluding "confirmed absent," even after a direct check.
 - Google Maps: confirmed no address shown on live GBP listing (service-area business posture) — consistent so far, no Dunedin/St. Pete conflict directly visible on the GBP listing itself. Full reconciliation against Sunbiz registered address, website legal pages, and socials still needs the Sunbiz address pulled.
 
 ## 9. LOCAL/INDUSTRY LINK OPPORTUNITY REGISTRY (verified so far — building continuously, not a final 40)
@@ -214,7 +227,17 @@ Categories actually used by ranking competitors:
 
 ## 10. OFF-SITE ENTITY CHECK (2026-08-27)
 
-**CONFIRMED (direct site check, not just search):** the live homepage footer links exactly one social profile — LinkedIn company page `linkedin.com/company/the-modern-trades-mentor-llc/`. No Facebook, Instagram, YouTube, or X/Twitter link exists anywhere on the page. This is a real, confirmed entity-consistency gap, not a search-discoverability artifact — TMT genuinely has no presence (or at least no linked presence) on those platforms. Recommendation: this is an owner decision (create profiles vs. accept LinkedIn-only presence), not something to build without direction — flagging for the final blocker list rather than assuming.
+**CORRECTION (2026-08-30) — a Facebook page does exist, just not linked from the site footer.**
+Confirmed via Google search results (and the GBP knowledge panel's own listed profile): Facebook
+page `facebook.com/.../Business Consultant` handle `@TheModernTradesMentor`, description matches
+site branding exactly ("Helping contractors build the growth and operating systems behind their
+business — marketing, sales, CRM, operations, automation and AI where it helps."). The site's
+footer links LinkedIn only — Facebook exists but isn't cross-linked from the website. That's the
+actual, corrected gap: not "no Facebook presence," but "Facebook exists and isn't linked from the
+site," which is a much smaller, easy fix (add the footer link) rather than a from-scratch profile
+build. Instagram/YouTube/X still not found in any search pass — those may still be a genuine gap,
+but confidence is lower now given the Facebook miss; treat as UNKNOWN rather than confirmed-absent
+until directly checked via the GBP social-links field or asking the owner.
 
 ## 9a. LINK REGISTRY ADDITIONS — supply houses
 
