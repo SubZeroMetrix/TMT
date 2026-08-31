@@ -143,7 +143,6 @@ export async function upsertSubscriber(input: SubscribeInput): Promise<Subscribe
     customField(CONTACT_FIELD_KEYS.originalDomain, preservedOriginalDomain),
     customField(CONTACT_FIELD_KEYS.originalLandingPage, preservedOriginalLandingPage),
     customField(CONTACT_FIELD_KEYS.originalCampaign, preservedOriginalCampaign),
-    customField(CONTACT_FIELD_KEYS.latestLeadSource, input.sourceTool ?? input.originalDomain),
     customField(CONTACT_FIELD_KEYS.latestCampaign, input.utmCampaign ?? ""),
     customField(CONTACT_FIELD_KEYS.sourceTool, input.sourceTool ?? ""),
     customField(CONTACT_FIELD_KEYS.trade, input.trade ?? ""),
