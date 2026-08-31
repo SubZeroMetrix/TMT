@@ -139,11 +139,11 @@ export async function upsertSubscriber(input: SubscribeInput): Promise<Subscribe
   });
 
   const preservedOriginalDomain =
-    existing?.customFieldValue(CONTACT_FIELD_KEYS.originalDomain) ?? input.originalDomain;
+    existing?.customFieldValue("originalDomain") ?? input.originalDomain;
   const preservedOriginalLandingPage =
-    existing?.customFieldValue(CONTACT_FIELD_KEYS.originalLandingPage) ?? input.originalLandingPage ?? "";
+    existing?.customFieldValue("originalLandingPage") ?? input.originalLandingPage ?? "";
   const preservedOriginalCampaign =
-    existing?.customFieldValue(CONTACT_FIELD_KEYS.originalCampaign) ?? input.utmCampaign ?? "";
+    existing?.customFieldValue("originalCampaign") ?? input.utmCampaign ?? "";
 
   const customFields = [
     customField("originalDomain", preservedOriginalDomain),
@@ -228,9 +228,17 @@ export async function unsubscribe(email: string, source: string): Promise<{ cont
 
 type GhlContact = {
   id: string;
-  customFieldValue: (key: string) => string | undefined;
+  customFieldValue: (name: FieldName) => string | undefined;
 };
 
+/**
+ * GHL's contact-read APIs return customFields as {id, value} -- NOT {key, field_value}.
+ * Matching on `key` here always misses, which is exactly why original-touch preservation
+ * silently failed in production (confirmed live 2026-08-31: a second submission overwrote
+ * original_domain/original_campaign/original_landing_page instead of preserving them).
+ * Match on `id` (falling back to `key` only for forward-compat with any response shape
+ * that does include it) and read `value` (falling back to `field_value`).
+ */
 async function findContactByEmail(email: string): Promise<GhlContact | null> {
   const { locationId } = getConfig();
   const res = await ghlFetch(
@@ -245,9 +253,11 @@ async function findContactByEmail(email: string): Promise<GhlContact | null> {
     contact.customFields ?? contact.customField ?? [];
   return {
     id: contact.id,
-    customFieldValue: (key: string) => {
-      const match = fields.find((f) => f.key === key);
-      const v = match?.field_value ?? match?.value;
+    customFieldValue: (name: FieldName) => {
+      const id = CONTACT_FIELD_IDS[name];
+      const key = CONTACT_FIELD_KEYS[name];
+      const match = fields.find((f) => f.id === id || f.key === key);
+      const v = match?.value ?? match?.field_value;
       return typeof v === "string" ? v : undefined;
     },
   };
