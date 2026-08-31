@@ -236,6 +236,27 @@ Drafted from real material already gathered this session (link registry, contrib
 
 No invented statistics, survey data, or benchmarks — every "real timing benchmark" placeholder above needs Richard's actual input before publishing, flagged inline.
 
+## 2d. GBP READY-TO-EXECUTE PACKAGE (non-authenticated prep — for whoever gets authenticated GBP access)
+
+**Duplicate-listing evidence (already confirmed live, re-verified 2026-08-27):**
+- Authoritative: "The Modern Trades Mentor LLC" — 5.0★ (2 reviews: Kim Gordon, Brandon Harvey, both genuine), owner posts active, category "Business management consultant," (727) 600-3425, no public address (correct service-area posture).
+- Duplicate: "The Modern Trades Mentor" — 0 reviews, category "Consultant," same phone number.
+- **Action when authenticated:** use Google's "duplicate listing" report flow from within the LLC listing's management console, or via https://support.google.com/business/answer/4998767 — target the "Consultant" listing for removal/merge into the LLC listing. Do not create anything new.
+
+**Category recommendation:**
+- Keep primary: "Business management consultant" — this already matches the top-ranking category cluster for "business consultant St Petersburg FL" queries (verified via live Maps search).
+- Consider secondary: "Business to business service" or "Consultant" as secondary — Google has no literal "AI Consultant" category, so competitors differentiate via name/reviews, not category. Recommend NOT chasing an AI-specific category that doesn't exist; focus category strategy on staying in the correctly-matched "business consultant" cluster.
+
+**Service list recommendation (from live site service pages, for GBP Services section):**
+Growth & Systems Blueprint, AI Consulting & Automation, CRM & Workflow Consulting, Technology Audit / Software Selection, Shop Visit (onsite assessment) — matches the corrected commercial-language terms (post-08d526e fix), not the stale ones.
+
+**Business description recommendation (draft, needs Richard's review before posting — not fabricated claims):**
+"The Modern Trades Mentor helps Tampa Bay contractors (HVAC, plumbing, electrical, roofing) make better technology and CRM decisions — no software commission, no vendor pitch. Built on 26+ years of hands-on HVAC and facilities operations experience. Start with a free Shop Visit or Strategy Call."
+
+**Photo/post recommendations:** GBP currently has photos only "17 days ago, by owner" per the live listing (from earlier capture) — recommend a regular posting cadence tied to the same real content being built (authority guide, Field Notes posts) rather than generic stock content. Not fabricating a specific cadence number without Richard's bandwidth input.
+
+**UTM recommendation for website/booking links:** `?utm_source=google&utm_medium=organic&utm_campaign=gbp_profile` on the website link, and a booking-specific campaign tag on the "Book a Strategy Call" link — coordinate exact UTM naming with hp-11's CRM attribution fields so it maps to the "original domain/page" capture the adapter already tracks.
+
 ## 3. NEXT (in progress this session, not yet written up)
 - Public GBP/Maps visibility research (no login required for public listing view)
 - Competitor category/SERP analysis for the 6 target queries
